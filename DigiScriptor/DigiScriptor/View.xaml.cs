@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace DigiScriptor
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for View.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
