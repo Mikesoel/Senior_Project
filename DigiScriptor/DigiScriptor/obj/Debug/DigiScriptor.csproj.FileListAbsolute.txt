@@ -1,0 +1,11 @@
+C:\Users\savan\Desktop\source\repos\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.exe.config
+C:\Users\savan\Desktop\source\repos\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.exe
+C:\Users\savan\Desktop\source\repos\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.pdb
+C:\Users\savan\Desktop\source\repos\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.csprojAssemblyReference.cache
+C:\Users\savan\Desktop\source\repos\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.GalaxiesScreen.resources
+C:\Users\savan\Desktop\source\repos\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.HomeScreen.resources
+C:\Users\savan\Desktop\source\repos\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.Properties.Resources.resources
+C:\Users\savan\Desktop\source\repos\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.csproj.GenerateResource.cache
+C:\Users\savan\Desktop\source\repos\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.csproj.CoreCompileInputs.cache
+C:\Users\savan\Desktop\source\repos\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.exe
+C:\Users\savan\Desktop\source\repos\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.pdb
