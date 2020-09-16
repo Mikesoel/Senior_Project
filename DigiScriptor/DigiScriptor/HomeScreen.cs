@@ -50,5 +50,19 @@ namespace DigiScriptor
             GalaxiesScreen galScreen = new GalaxiesScreen();
             galScreen.Show();
         }
+
+        private void btnStars_Click(object sender, EventArgs e)
+        {
+            //hiding the home screen
+            this.Hide();
+
+
+            // open stars screen
+            StarsScreen starScreen = new StarsScreen();
+            starScreen.Show();
+
+        }
+
+
     }
 }
