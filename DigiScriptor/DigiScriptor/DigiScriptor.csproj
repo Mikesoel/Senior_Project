@@ -47,6 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EarthScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EarthScreen.Designer.cs">
+      <DependentUpon>EarthScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NebulaeScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NebulaeScreen.Designer.cs">
+      <DependentUpon>NebulaeScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="GalaxiesScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,11 +73,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EarthScreen.resx">
+      <DependentUpon>EarthScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GalaxiesScreen.resx">
       <DependentUpon>GalaxiesScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeScreen.resx">
       <DependentUpon>HomeScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NebulaeScreen.resx">
+      <DependentUpon>NebulaeScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
