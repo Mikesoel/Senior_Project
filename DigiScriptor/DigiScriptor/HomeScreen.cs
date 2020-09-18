@@ -23,7 +23,12 @@ namespace DigiScriptor
 
         private void btnLights_Click(object sender, EventArgs e)
         {
-            
+            //hiding the home screen
+            this.Hide();
+
+            //opening up the DomeLights screen
+            DomeLights lightScreen = new DomeLights();
+            lightScreen.Show();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -49,6 +54,25 @@ namespace DigiScriptor
             //opening up the galaxies screen
             GalaxiesScreen galScreen = new GalaxiesScreen();
             galScreen.Show();
+        }
+
+        private void HomeScreen_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnStars_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPlanets_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            //opening up the galaxies screen
+            PlanetScreen planScreen = new PlanetScreen();
+            planScreen.Show();
         }
     }
 }
