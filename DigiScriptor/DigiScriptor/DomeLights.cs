@@ -15,5 +15,7 @@ namespace DigiScriptor
         {
             InitializeComponent();
         }
+
+        
     }
 }
