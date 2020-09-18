@@ -38,6 +38,12 @@ namespace DigiScriptor
 
         private void btnSky_Click(object sender, EventArgs e)
         {
+            //hide the home screen
+            this.Hide();
+
+            //open night sky screen
+            NightSkyScreen skyScreen = new NightSkyScreen();
+            skyScreen.Show();
 
         }
 
