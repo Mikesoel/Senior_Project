@@ -31,6 +31,8 @@
             this.btnNebulaeBack = new System.Windows.Forms.Button();
             this.btnSubmitNebulae = new System.Windows.Forms.Button();
             this.lblNebulaeTitle = new System.Windows.Forms.Label();
+            this.lblNebulaeSelectionDropdown = new System.Windows.Forms.Label();
+            this.nebulaeDropdown = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnNebulaeBack
@@ -71,12 +73,34 @@
             this.lblNebulaeTitle.TabIndex = 19;
             this.lblNebulaeTitle.Text = "Nebulae";
             // 
+            // lblNebulaeSelectionDropdown
+            // 
+            this.lblNebulaeSelectionDropdown.AutoSize = true;
+            this.lblNebulaeSelectionDropdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNebulaeSelectionDropdown.Location = new System.Drawing.Point(13, 77);
+            this.lblNebulaeSelectionDropdown.Name = "lblNebulaeSelectionDropdown";
+            this.lblNebulaeSelectionDropdown.Size = new System.Drawing.Size(154, 20);
+            this.lblNebulaeSelectionDropdown.TabIndex = 20;
+            this.lblNebulaeSelectionDropdown.Text = "Nebulae Selections: ";
+            // 
+            // nebulaeDropdown
+            // 
+            this.nebulaeDropdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nebulaeDropdown.FormattingEnabled = true;
+            this.nebulaeDropdown.Location = new System.Drawing.Point(173, 77);
+            this.nebulaeDropdown.MaxDropDownItems = 20;
+            this.nebulaeDropdown.Name = "nebulaeDropdown";
+            this.nebulaeDropdown.Size = new System.Drawing.Size(149, 24);
+            this.nebulaeDropdown.TabIndex = 21;
+            // 
             // NebulaeScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.nebulaeDropdown);
+            this.Controls.Add(this.lblNebulaeSelectionDropdown);
             this.Controls.Add(this.lblNebulaeTitle);
             this.Controls.Add(this.btnSubmitNebulae);
             this.Controls.Add(this.btnNebulaeBack);
@@ -92,5 +116,7 @@
         private System.Windows.Forms.Button btnNebulaeBack;
         private System.Windows.Forms.Button btnSubmitNebulae;
         private System.Windows.Forms.Label lblNebulaeTitle;
+        private System.Windows.Forms.Label lblNebulaeSelectionDropdown;
+        private System.Windows.Forms.ComboBox nebulaeDropdown;
     }
 }
