@@ -4,27 +4,39 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DigiScriptor
 {
-    public partial class NightSkyScreen : Form
+    public partial class NightSkyScreen : Form { 
+private void label_Time_Click(object sender, EventArgs e)
     {
+
+    }
         public NightSkyScreen()
         {
             InitializeComponent();
         }
 
-        public void btn_back_click(object sender, EventArgs e)
-        {
-            //show the home screeen 
-            HomeScreen.Current.Show();
+    private void btn_back_Click(object sender, EventArgs e)
+    {
+        //back button goes back to Home Screen
+        HomeScreen.Current.Show();
 
-            //close the star screen
-            this.Close();
+        //close Night Sky form
+        this.Close();
+    }
+
+        private void comboBox_Min_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NightSkyScreen_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
