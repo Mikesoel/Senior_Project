@@ -46,7 +46,7 @@
             // btnLights
             // 
             this.btnLights.BackColor = System.Drawing.Color.DimGray;
-            this.btnLights.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLights.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLights.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnLights.Location = new System.Drawing.Point(88, 100);
             this.btnLights.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -60,19 +60,19 @@
             // lblDigi
             // 
             this.lblDigi.AutoSize = true;
-            this.lblDigi.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDigi.Font = new System.Drawing.Font("Bernard MT Condensed", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDigi.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lblDigi.Location = new System.Drawing.Point(23, 26);
             this.lblDigi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDigi.Name = "lblDigi";
-            this.lblDigi.Size = new System.Drawing.Size(218, 44);
+            this.lblDigi.Size = new System.Drawing.Size(191, 45);
             this.lblDigi.TabIndex = 1;
             this.lblDigi.Text = "DigiScriptor";
             // 
             // btnMoons
             // 
             this.btnMoons.BackColor = System.Drawing.Color.DimGray;
-            this.btnMoons.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMoons.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMoons.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnMoons.Location = new System.Drawing.Point(88, 248);
             this.btnMoons.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -85,7 +85,7 @@
             // btnSky
             // 
             this.btnSky.BackColor = System.Drawing.Color.DimGray;
-            this.btnSky.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSky.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSky.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnSky.Location = new System.Drawing.Point(265, 174);
             this.btnSky.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -99,7 +99,7 @@
             // btnGalaxies
             // 
             this.btnGalaxies.BackColor = System.Drawing.Color.DimGray;
-            this.btnGalaxies.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGalaxies.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGalaxies.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnGalaxies.Location = new System.Drawing.Point(88, 323);
             this.btnGalaxies.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -113,7 +113,7 @@
             // btnEarth
             // 
             this.btnEarth.BackColor = System.Drawing.Color.DimGray;
-            this.btnEarth.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEarth.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEarth.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnEarth.Location = new System.Drawing.Point(265, 100);
             this.btnEarth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -127,7 +127,7 @@
             // btnPlanets
             // 
             this.btnPlanets.BackColor = System.Drawing.Color.DimGray;
-            this.btnPlanets.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlanets.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlanets.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnPlanets.Location = new System.Drawing.Point(88, 174);
             this.btnPlanets.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -140,7 +140,7 @@
             // btnStars
             // 
             this.btnStars.BackColor = System.Drawing.Color.DimGray;
-            this.btnStars.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStars.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStars.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnStars.Location = new System.Drawing.Point(265, 248);
             this.btnStars.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -149,12 +149,11 @@
             this.btnStars.TabIndex = 7;
             this.btnStars.Text = "Stars";
             this.btnStars.UseVisualStyleBackColor = false;
-            this.btnStars.Click += new System.EventHandler(this.btnStars_Click);
             // 
             // btnNebulae
             // 
             this.btnNebulae.BackColor = System.Drawing.Color.DimGray;
-            this.btnNebulae.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNebulae.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNebulae.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnNebulae.Location = new System.Drawing.Point(265, 323);
             this.btnNebulae.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -163,6 +162,7 @@
             this.btnNebulae.TabIndex = 8;
             this.btnNebulae.Text = "Nebulae";
             this.btnNebulae.UseVisualStyleBackColor = false;
+            this.btnNebulae.Click += new System.EventHandler(this.btnNebulae_Click);
             // 
             // txtboxCart
             // 
@@ -183,7 +183,7 @@
             // 
             this.btnSubmit.BackColor = System.Drawing.Color.DimGray;
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.SpringGreen;
             this.btnSubmit.Location = new System.Drawing.Point(543, 327);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -196,12 +196,12 @@
             // lblCart
             // 
             this.lblCart.AutoSize = true;
-            this.lblCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCart.Font = new System.Drawing.Font("Bernard MT Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCart.ForeColor = System.Drawing.SystemColors.Menu;
             this.lblCart.Location = new System.Drawing.Point(525, 55);
             this.lblCart.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCart.Name = "lblCart";
-            this.lblCart.Size = new System.Drawing.Size(167, 29);
+            this.lblCart.Size = new System.Drawing.Size(143, 28);
             this.lblCart.TabIndex = 11;
             this.lblCart.Text = "Shopping Cart";
             // 
