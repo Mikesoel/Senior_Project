@@ -50,5 +50,10 @@ namespace DigiScriptor
             GalaxiesScreen galScreen = new GalaxiesScreen();
             galScreen.Show();
         }
+
+        private void HomeScreen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

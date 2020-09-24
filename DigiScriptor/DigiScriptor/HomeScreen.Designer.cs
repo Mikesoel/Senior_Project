@@ -156,9 +156,10 @@
             // 
             // txtboxCart
             // 
+            this.txtboxCart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtboxCart.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.txtboxCart.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxCart.Location = new System.Drawing.Point(710, 141);
+            this.txtboxCart.Location = new System.Drawing.Point(713, 141);
             this.txtboxCart.Multiline = true;
             this.txtboxCart.Name = "txtboxCart";
             this.txtboxCart.ReadOnly = true;
@@ -170,11 +171,12 @@
             // 
             // btnSubmit
             // 
+            this.btnSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSubmit.BackColor = System.Drawing.Color.DimGray;
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmit.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.SpringGreen;
-            this.btnSubmit.Location = new System.Drawing.Point(814, 503);
+            this.btnSubmit.Location = new System.Drawing.Point(810, 503);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(186, 75);
             this.btnSubmit.TabIndex = 10;
@@ -183,10 +185,11 @@
             // 
             // lblCart
             // 
+            this.lblCart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCart.AutoSize = true;
             this.lblCart.Font = new System.Drawing.Font("Bernard MT Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCart.ForeColor = System.Drawing.SystemColors.Menu;
-            this.lblCart.Location = new System.Drawing.Point(788, 84);
+            this.lblCart.Location = new System.Drawing.Point(797, 85);
             this.lblCart.Name = "lblCart";
             this.lblCart.Size = new System.Drawing.Size(212, 43);
             this.lblCart.TabIndex = 11;
@@ -194,8 +197,8 @@
             // 
             // HomeScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1178, 644);
             this.Controls.Add(this.lblCart);
@@ -212,6 +215,7 @@
             this.Controls.Add(this.btnLights);
             this.Name = "HomeScreen";
             this.Text = "DigiScriptor";
+            this.Load += new System.EventHandler(this.HomeScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
