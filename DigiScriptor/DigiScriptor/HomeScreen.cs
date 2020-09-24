@@ -56,6 +56,20 @@ namespace DigiScriptor
             galScreen.Show();
         }
 
+        private void btnStars_Click(object sender, EventArgs e)
+        {
+            //hiding the home screen
+            this.Hide();
+
+
+            // open stars screen
+            StarsScreen starScreen = new StarsScreen();
+            starScreen.Show();
+
+        }
+
+
+
         private void btnNebulae_Click(object sender, EventArgs e)
         {
             //hiding the home screen
