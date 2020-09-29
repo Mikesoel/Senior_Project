@@ -69,10 +69,9 @@
             // 
             // comboBoxGalaxies
             // 
-            this.comboBoxGalaxies.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxGalaxies.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxGalaxies.FormattingEnabled = true;
-            this.comboBoxGalaxies.Location = new System.Drawing.Point(751, 162);
+            this.comboBoxGalaxies.Location = new System.Drawing.Point(755, 162);
             this.comboBoxGalaxies.Name = "comboBoxGalaxies";
             this.comboBoxGalaxies.Size = new System.Drawing.Size(296, 37);
             this.comboBoxGalaxies.Sorted = true;
@@ -152,11 +151,10 @@
             // 
             // lblGalaxyDestination
             // 
-            this.lblGalaxyDestination.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGalaxyDestination.AutoSize = true;
             this.lblGalaxyDestination.Font = new System.Drawing.Font("Bernard MT Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGalaxyDestination.ForeColor = System.Drawing.SystemColors.Menu;
-            this.lblGalaxyDestination.Location = new System.Drawing.Point(808, 307);
+            this.lblGalaxyDestination.Location = new System.Drawing.Point(809, 310);
             this.lblGalaxyDestination.Name = "lblGalaxyDestination";
             this.lblGalaxyDestination.Size = new System.Drawing.Size(183, 43);
             this.lblGalaxyDestination.TabIndex = 13;
@@ -164,7 +162,6 @@
             // 
             // btnGalaxiesBack
             // 
-            this.btnGalaxiesBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnGalaxiesBack.BackColor = System.Drawing.Color.Gray;
             this.btnGalaxiesBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGalaxiesBack.Location = new System.Drawing.Point(29, 584);
@@ -177,11 +174,10 @@
             // 
             // lblGalaxiesOutput
             // 
-            this.lblGalaxiesOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGalaxiesOutput.AutoSize = true;
             this.lblGalaxiesOutput.Font = new System.Drawing.Font("Bernard MT Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGalaxiesOutput.ForeColor = System.Drawing.SystemColors.Menu;
-            this.lblGalaxiesOutput.Location = new System.Drawing.Point(793, 366);
+            this.lblGalaxiesOutput.Location = new System.Drawing.Point(795, 384);
             this.lblGalaxiesOutput.Name = "lblGalaxiesOutput";
             this.lblGalaxiesOutput.Size = new System.Drawing.Size(213, 43);
             this.lblGalaxiesOutput.TabIndex = 15;
@@ -189,7 +185,6 @@
             // 
             // btnSubmitGalaxy
             // 
-            this.btnSubmitGalaxy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSubmitGalaxy.BackColor = System.Drawing.Color.DimGray;
             this.btnSubmitGalaxy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmitGalaxy.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -203,8 +198,8 @@
             // 
             // GalaxiesScreen
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.AutoScroll = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1178, 644);
             this.Controls.Add(this.btnSubmitGalaxy);
@@ -222,7 +217,6 @@
             this.Controls.Add(this.btnAndromeda);
             this.Name = "GalaxiesScreen";
             this.Text = "Galaxies";
-            this.Load += new System.EventHandler(this.GalaxiesScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

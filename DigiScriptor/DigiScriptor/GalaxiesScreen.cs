@@ -44,10 +44,5 @@ namespace DigiScriptor
             //close this form
             this.Close();
         }
-
-        private void GalaxiesScreen_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
