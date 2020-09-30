@@ -45,19 +45,21 @@
             this.btnSubmitEarth = new System.Windows.Forms.Button();
             this.lblEarthVantagePoint = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.txtBoxVantagePoint = new System.Windows.Forms.TextBox();
             this.comboVantagePoint = new System.Windows.Forms.ComboBox();
+            this.txtBoxVantagePoint = new System.Windows.Forms.TextBox();
+            this.earthPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.earthPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblEarthTitle
             // 
             this.lblEarthTitle.AutoSize = true;
             this.lblEarthTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEarthTitle.Location = new System.Drawing.Point(12, 30);
+            this.lblEarthTitle.Location = new System.Drawing.Point(14, 10);
             this.lblEarthTitle.Name = "lblEarthTitle";
             this.lblEarthTitle.Size = new System.Drawing.Size(74, 29);
             this.lblEarthTitle.TabIndex = 0;
@@ -68,7 +70,7 @@
             // 
             this.lblPopularDropdown.AutoSize = true;
             this.lblPopularDropdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPopularDropdown.Location = new System.Drawing.Point(13, 75);
+            this.lblPopularDropdown.Location = new System.Drawing.Point(27, 61);
             this.lblPopularDropdown.Name = "lblPopularDropdown";
             this.lblPopularDropdown.Size = new System.Drawing.Size(140, 20);
             this.lblPopularDropdown.TabIndex = 1;
@@ -76,6 +78,7 @@
             // 
             // popularLocationsCombo
             // 
+            this.popularLocationsCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.popularLocationsCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.popularLocationsCombo.FormattingEnabled = true;
             this.popularLocationsCombo.Items.AddRange(new object[] {
@@ -87,7 +90,7 @@
             "Eiffel Tower",
             "Great Wall of China",
             "Add New"});
-            this.popularLocationsCombo.Location = new System.Drawing.Point(159, 74);
+            this.popularLocationsCombo.Location = new System.Drawing.Point(173, 61);
             this.popularLocationsCombo.MaxDropDownItems = 20;
             this.popularLocationsCombo.Name = "popularLocationsCombo";
             this.popularLocationsCombo.Size = new System.Drawing.Size(149, 24);
@@ -98,7 +101,7 @@
             // 
             this.lblEarthCustomLocation.AutoSize = true;
             this.lblEarthCustomLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEarthCustomLocation.Location = new System.Drawing.Point(13, 129);
+            this.lblEarthCustomLocation.Location = new System.Drawing.Point(34, 141);
             this.lblEarthCustomLocation.Name = "lblEarthCustomLocation";
             this.lblEarthCustomLocation.Size = new System.Drawing.Size(133, 20);
             this.lblEarthCustomLocation.TabIndex = 3;
@@ -144,7 +147,7 @@
             this.panel1.Controls.Add(this.textBoxLongitude);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.textBoxLatitude);
-            this.panel1.Location = new System.Drawing.Point(159, 129);
+            this.panel1.Location = new System.Drawing.Point(173, 141);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(228, 55);
             this.panel1.TabIndex = 4;
@@ -203,7 +206,7 @@
             // 
             this.btnEarthBack.BackColor = System.Drawing.Color.Gray;
             this.btnEarthBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEarthBack.Location = new System.Drawing.Point(11, 414);
+            this.btnEarthBack.Location = new System.Drawing.Point(13, 415);
             this.btnEarthBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnEarthBack.Name = "btnEarthBack";
             this.btnEarthBack.Size = new System.Drawing.Size(57, 25);
@@ -218,7 +221,7 @@
             this.btnSubmitEarth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmitEarth.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmitEarth.ForeColor = System.Drawing.Color.SpringGreen;
-            this.btnSubmitEarth.Location = new System.Drawing.Point(665, 390);
+            this.btnSubmitEarth.Location = new System.Drawing.Point(667, 391);
             this.btnSubmitEarth.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmitEarth.Name = "btnSubmitEarth";
             this.btnSubmitEarth.Size = new System.Drawing.Size(124, 49);
@@ -230,7 +233,7 @@
             // 
             this.lblEarthVantagePoint.AutoSize = true;
             this.lblEarthVantagePoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEarthVantagePoint.Location = new System.Drawing.Point(13, 200);
+            this.lblEarthVantagePoint.Location = new System.Drawing.Point(53, 230);
             this.lblEarthVantagePoint.Name = "lblEarthVantagePoint";
             this.lblEarthVantagePoint.Size = new System.Drawing.Size(114, 20);
             this.lblEarthVantagePoint.TabIndex = 18;
@@ -240,19 +243,10 @@
             // 
             this.panel4.Controls.Add(this.comboVantagePoint);
             this.panel4.Controls.Add(this.txtBoxVantagePoint);
-            this.panel4.Location = new System.Drawing.Point(159, 200);
+            this.panel4.Location = new System.Drawing.Point(173, 230);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(237, 29);
             this.panel4.TabIndex = 19;
-            // 
-            // txtBoxVantagePoint
-            // 
-            this.txtBoxVantagePoint.Location = new System.Drawing.Point(3, 3);
-            this.txtBoxVantagePoint.Name = "txtBoxVantagePoint";
-            this.txtBoxVantagePoint.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxVantagePoint.TabIndex = 0;
-            this.txtBoxVantagePoint.Text = "400";
-            this.txtBoxVantagePoint.TextChanged += new System.EventHandler(this.txtBoxVantagePoint_TextChanged);
             // 
             // comboVantagePoint
             // 
@@ -268,21 +262,39 @@
             this.comboVantagePoint.TabIndex = 1;
             this.comboVantagePoint.SelectedIndexChanged += new System.EventHandler(this.comboVantagePoint_SelectedIndexChanged);
             // 
+            // txtBoxVantagePoint
+            // 
+            this.txtBoxVantagePoint.Location = new System.Drawing.Point(3, 3);
+            this.txtBoxVantagePoint.Name = "txtBoxVantagePoint";
+            this.txtBoxVantagePoint.Size = new System.Drawing.Size(100, 20);
+            this.txtBoxVantagePoint.TabIndex = 0;
+            this.txtBoxVantagePoint.Text = "400";
+            this.txtBoxVantagePoint.TextChanged += new System.EventHandler(this.txtBoxVantagePoint_TextChanged);
+            // 
+            // earthPanel
+            // 
+            this.earthPanel.Controls.Add(this.btnSubmitEarth);
+            this.earthPanel.Controls.Add(this.lblEarthTitle);
+            this.earthPanel.Controls.Add(this.popularLocationsCombo);
+            this.earthPanel.Controls.Add(this.lblEarthCustomLocation);
+            this.earthPanel.Controls.Add(this.lblPopularDropdown);
+            this.earthPanel.Controls.Add(this.lblEarthVantagePoint);
+            this.earthPanel.Controls.Add(this.panel4);
+            this.earthPanel.Controls.Add(this.btnEarthBack);
+            this.earthPanel.Controls.Add(this.panel1);
+            this.earthPanel.Location = new System.Drawing.Point(-2, -1);
+            this.earthPanel.Name = "earthPanel";
+            this.earthPanel.Size = new System.Drawing.Size(807, 451);
+            this.earthPanel.TabIndex = 20;
+            this.earthPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
+            // 
             // EarthScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.lblEarthVantagePoint);
-            this.Controls.Add(this.btnSubmitEarth);
-            this.Controls.Add(this.btnEarthBack);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblEarthCustomLocation);
-            this.Controls.Add(this.popularLocationsCombo);
-            this.Controls.Add(this.lblPopularDropdown);
-            this.Controls.Add(this.lblEarthTitle);
+            this.Controls.Add(this.earthPanel);
             this.Name = "EarthScreen";
             this.Text = "Earth";
             this.Load += new System.EventHandler(this.EarthScreen_Load);
@@ -294,8 +306,9 @@
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.earthPanel.ResumeLayout(false);
+            this.earthPanel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -320,5 +333,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ComboBox comboVantagePoint;
         private System.Windows.Forms.TextBox txtBoxVantagePoint;
+        private System.Windows.Forms.Panel earthPanel;
     }
 }

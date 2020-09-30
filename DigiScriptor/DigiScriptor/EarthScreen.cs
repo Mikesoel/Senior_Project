@@ -12,6 +12,8 @@ namespace DigiScriptor
 {
     public partial class EarthScreen : Form
     {
+        public object Response { get; private set; }
+
         public EarthScreen()
         {
             InitializeComponent();
@@ -54,11 +56,9 @@ namespace DigiScriptor
 
         private void btnEarthBack_Click(object sender, EventArgs e)
         {
-            //bring back the previous form
-            HomeScreen.Current.Show();
-
-            //close this form
+            
             this.Close();
+            HomeScreen.Current.Show();
         }
 
         private void EarthScreen_Load(object sender, EventArgs e)
@@ -79,6 +79,17 @@ namespace DigiScriptor
         private void popularLocationsCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+            if (popularLocationsCombo.Text == "Add New")
+            {
+                MessageBox.Show("Hey");
+            }
         }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
     }
 }

@@ -34,10 +34,13 @@ namespace DigiScriptor
         private void btnEarth_Click(object sender, EventArgs e)
         {
             //close home screen
-            this.Hide();
+            //this.Hide();
 
             //open earth screen
             EarthScreen earScreen = new EarthScreen();
+            earScreen.TopLevel = false;
+            earScreen.AutoScroll = true;
+            this.Controls.Add(earScreen);
             earScreen.Show();
         }
 
