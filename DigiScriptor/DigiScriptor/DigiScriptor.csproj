@@ -47,6 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PanelGalaxies.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="EarthScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +88,66 @@
     <Compile Include="StarsScreen.Designer.cs">
       <DependentUpon>StarsScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlDomeLights.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlDomeLights.Designer.cs">
+      <DependentUpon>UserControlDomeLights.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlEarth.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlEarth.Designer.cs">
+      <DependentUpon>UserControlEarth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlMoons.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlMoons.Designer.cs">
+      <DependentUpon>UserControlMoons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlMovies.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlMovies.Designer.cs">
+      <DependentUpon>UserControlMovies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlNebulae.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlNebulae.Designer.cs">
+      <DependentUpon>UserControlNebulae.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlNightSky.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlNightSky.Designer.cs">
+      <DependentUpon>UserControlNightSky.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlHome.Designer.cs">
+      <DependentUpon>UserControlHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlGalaxies.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlGalaxies.Designer.cs">
+      <DependentUpon>UserControlGalaxies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlPlanets.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlPlanets.Designer.cs">
+      <DependentUpon>UserControlPlanets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlStars.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlStars.Designer.cs">
+      <DependentUpon>UserControlStars.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="EarthScreen.resx">
       <DependentUpon>EarthScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,6 +163,9 @@
     <EmbeddedResource Include="NightSkyScreen.resx">
       <DependentUpon>NightSkyScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PanelGalaxies.resx">
+      <DependentUpon>PanelGalaxies.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -111,6 +177,36 @@
     </Compile>
     <EmbeddedResource Include="StarsScreen.resx">
       <DependentUpon>StarsScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlDomeLights.resx">
+      <DependentUpon>UserControlDomeLights.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlEarth.resx">
+      <DependentUpon>UserControlEarth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlMoons.resx">
+      <DependentUpon>UserControlMoons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlMovies.resx">
+      <DependentUpon>UserControlMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlNebulae.resx">
+      <DependentUpon>UserControlNebulae.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlNightSky.resx">
+      <DependentUpon>UserControlNightSky.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlGalaxies.resx">
+      <DependentUpon>UserControlGalaxies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlHome.resx">
+      <DependentUpon>UserControlHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlPlanets.resx">
+      <DependentUpon>UserControlPlanets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlStars.resx">
+      <DependentUpon>UserControlStars.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

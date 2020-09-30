@@ -46,22 +46,21 @@
             // 
             // back
             // 
-            this.back.Location = new System.Drawing.Point(14, 337);
-            this.back.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.back.Location = new System.Drawing.Point(21, 518);
+            this.back.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.back.Name = "back";
-            this.back.Size = new System.Drawing.Size(66, 33);
+            this.back.Size = new System.Drawing.Size(99, 51);
             this.back.TabIndex = 0;
             this.back.Text = "Back";
             this.back.UseVisualStyleBackColor = true;
             this.back.Click += new System.EventHandler(this.btn_back_Click);
-
             // 
             // comboBox_Hours
             // 
             this.comboBox_Hours.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox_Hours.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.comboBox_Hours.FormattingEnabled = true;
-            this.comboBox_Hours.ItemHeight = 24;
+            this.comboBox_Hours.ItemHeight = 32;
             this.comboBox_Hours.Items.AddRange(new object[] {
             "00",
             "01",
@@ -76,10 +75,10 @@
             "10",
             "11",
             "12"});
-            this.comboBox_Hours.Location = new System.Drawing.Point(292, 61);
-            this.comboBox_Hours.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.comboBox_Hours.Location = new System.Drawing.Point(438, 94);
+            this.comboBox_Hours.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox_Hours.Name = "comboBox_Hours";
-            this.comboBox_Hours.Size = new System.Drawing.Size(70, 32);
+            this.comboBox_Hours.Size = new System.Drawing.Size(103, 40);
             this.comboBox_Hours.TabIndex = 2;
             // 
             // comboBox_Min
@@ -99,10 +98,10 @@
             "45",
             "50",
             "55"});
-            this.comboBox_Min.Location = new System.Drawing.Point(373, 61);
-            this.comboBox_Min.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.comboBox_Min.Location = new System.Drawing.Point(560, 94);
+            this.comboBox_Min.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox_Min.Name = "comboBox_Min";
-            this.comboBox_Min.Size = new System.Drawing.Size(70, 32);
+            this.comboBox_Min.Size = new System.Drawing.Size(103, 40);
             this.comboBox_Min.TabIndex = 3;
             this.comboBox_Min.SelectedIndexChanged += new System.EventHandler(this.comboBox_Min_SelectedIndexChanged);
             // 
@@ -114,10 +113,10 @@
             this.comboBox_Periods.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.comboBox_Periods.Location = new System.Drawing.Point(455, 61);
-            this.comboBox_Periods.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.comboBox_Periods.Location = new System.Drawing.Point(682, 94);
+            this.comboBox_Periods.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox_Periods.Name = "comboBox_Periods";
-            this.comboBox_Periods.Size = new System.Drawing.Size(70, 32);
+            this.comboBox_Periods.Size = new System.Drawing.Size(103, 40);
             this.comboBox_Periods.TabIndex = 4;
             // 
             // groupBox_Time
@@ -129,39 +128,39 @@
             this.groupBox_Time.Controls.Add(this.comboBox_Min);
             this.groupBox_Time.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.groupBox_Time.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox_Time.Location = new System.Drawing.Point(14, 10);
-            this.groupBox_Time.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.groupBox_Time.Location = new System.Drawing.Point(21, 15);
+            this.groupBox_Time.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox_Time.Name = "groupBox_Time";
-            this.groupBox_Time.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.groupBox_Time.Size = new System.Drawing.Size(564, 208);
+            this.groupBox_Time.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox_Time.Size = new System.Drawing.Size(846, 320);
             this.groupBox_Time.TabIndex = 5;
             this.groupBox_Time.TabStop = false;
             this.groupBox_Time.Text = "Date And Time Of Night";
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(16, 30);
-            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.monthCalendar1.Location = new System.Drawing.Point(24, 46);
+            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 10;
             // 
             // label_Time
             // 
             this.label_Time.AutoSize = true;
-            this.label_Time.Location = new System.Drawing.Point(275, 30);
-            this.label_Time.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label_Time.Location = new System.Drawing.Point(412, 46);
+            this.label_Time.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_Time.Name = "label_Time";
-            this.label_Time.Size = new System.Drawing.Size(58, 24);
+            this.label_Time.Size = new System.Drawing.Size(86, 32);
             this.label_Time.TabIndex = 5;
             this.label_Time.Text = "Time:";
             this.label_Time.Click += new System.EventHandler(this.label_Time_Click);
             // 
             // btn_Submit
             // 
-            this.btn_Submit.Location = new System.Drawing.Point(524, 337);
-            this.btn_Submit.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btn_Submit.Location = new System.Drawing.Point(786, 518);
+            this.btn_Submit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Submit.Name = "btn_Submit";
-            this.btn_Submit.Size = new System.Drawing.Size(68, 33);
+            this.btn_Submit.Size = new System.Drawing.Size(102, 51);
             this.btn_Submit.TabIndex = 1;
             this.btn_Submit.Text = "Submit";
             this.btn_Submit.UseVisualStyleBackColor = true;
@@ -170,10 +169,10 @@
             // 
             this.checkBox_MoreStars.AutoSize = true;
             this.checkBox_MoreStars.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.checkBox_MoreStars.Location = new System.Drawing.Point(110, 243);
-            this.checkBox_MoreStars.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.checkBox_MoreStars.Location = new System.Drawing.Point(165, 374);
+            this.checkBox_MoreStars.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox_MoreStars.Name = "checkBox_MoreStars";
-            this.checkBox_MoreStars.Size = new System.Drawing.Size(96, 21);
+            this.checkBox_MoreStars.Size = new System.Drawing.Size(134, 29);
             this.checkBox_MoreStars.TabIndex = 11;
             this.checkBox_MoreStars.Text = "More Stars";
             this.checkBox_MoreStars.UseVisualStyleBackColor = true;
@@ -183,10 +182,10 @@
             this.label_Options.AutoSize = true;
             this.label_Options.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.label_Options.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label_Options.Location = new System.Drawing.Point(16, 238);
-            this.label_Options.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label_Options.Location = new System.Drawing.Point(24, 366);
+            this.label_Options.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_Options.Name = "label_Options";
-            this.label_Options.Size = new System.Drawing.Size(80, 24);
+            this.label_Options.Size = new System.Drawing.Size(122, 32);
             this.label_Options.TabIndex = 12;
             this.label_Options.Text = "Options:";
             // 
@@ -194,10 +193,10 @@
             // 
             this.checkBox_ConstLabel.AutoSize = true;
             this.checkBox_ConstLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.checkBox_ConstLabel.Location = new System.Drawing.Point(243, 243);
-            this.checkBox_ConstLabel.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.checkBox_ConstLabel.Location = new System.Drawing.Point(364, 374);
+            this.checkBox_ConstLabel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox_ConstLabel.Name = "checkBox_ConstLabel";
-            this.checkBox_ConstLabel.Size = new System.Drawing.Size(154, 21);
+            this.checkBox_ConstLabel.Size = new System.Drawing.Size(214, 29);
             this.checkBox_ConstLabel.TabIndex = 13;
             this.checkBox_ConstLabel.Text = "Label Constellations";
             this.checkBox_ConstLabel.UseVisualStyleBackColor = true;
@@ -206,10 +205,10 @@
             // 
             this.checkBox_ConstLines.AutoSize = true;
             this.checkBox_ConstLines.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.checkBox_ConstLines.Location = new System.Drawing.Point(243, 277);
-            this.checkBox_ConstLines.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.checkBox_ConstLines.Location = new System.Drawing.Point(364, 426);
+            this.checkBox_ConstLines.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox_ConstLines.Name = "checkBox_ConstLines";
-            this.checkBox_ConstLines.Size = new System.Drawing.Size(146, 21);
+            this.checkBox_ConstLines.Size = new System.Drawing.Size(203, 29);
             this.checkBox_ConstLines.TabIndex = 14;
             this.checkBox_ConstLines.Text = "Constellation Lines";
             this.checkBox_ConstLines.UseVisualStyleBackColor = true;
@@ -218,20 +217,20 @@
             // 
             this.checkBox_ConstArt.AutoSize = true;
             this.checkBox_ConstArt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.checkBox_ConstArt.Location = new System.Drawing.Point(110, 277);
-            this.checkBox_ConstArt.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.checkBox_ConstArt.Location = new System.Drawing.Point(165, 426);
+            this.checkBox_ConstArt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox_ConstArt.Name = "checkBox_ConstArt";
-            this.checkBox_ConstArt.Size = new System.Drawing.Size(130, 21);
+            this.checkBox_ConstArt.Size = new System.Drawing.Size(181, 29);
             this.checkBox_ConstArt.TabIndex = 15;
             this.checkBox_ConstArt.Text = "Constellation Art";
             this.checkBox_ConstArt.UseVisualStyleBackColor = true;
             // 
             // NightSkyScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(621, 388);
+            this.ClientSize = new System.Drawing.Size(1178, 644);
             this.Controls.Add(this.checkBox_ConstArt);
             this.Controls.Add(this.checkBox_ConstLines);
             this.Controls.Add(this.checkBox_ConstLabel);
@@ -240,7 +239,7 @@
             this.Controls.Add(this.checkBox_MoreStars);
             this.Controls.Add(this.back);
             this.Controls.Add(this.groupBox_Time);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "NightSkyScreen";
             this.Text = "NightSkyScreen";
             this.Load += new System.EventHandler(this.NightSkyScreen_Load);
