@@ -16,5 +16,13 @@ namespace DigiScriptor
         {
             InitializeComponent();
         }
+
+        private void popularLocationsCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (popularLocationsCombo.Text == "Add New")
+            {
+                MessageBox.Show("Hey");
+            }
+        }
     }
 }
