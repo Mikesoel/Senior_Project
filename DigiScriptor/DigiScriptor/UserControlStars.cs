@@ -79,7 +79,7 @@ namespace DigiScriptor
             }
             else
             {
-                //data is invalid
+                //no data input
                 DecDTxt_Valid = false;
             }
             
@@ -103,19 +103,27 @@ namespace DigiScriptor
                     {
                         //if correct keep text black
                         DecMinTxt.ForeColor = Color.Black;
+                        DecMinTxt_Valid = true;
                     }
                     else
                     {
                         //if invalid value then change to red text
                         DecMinTxt.ForeColor = Color.Red;
+                        DecMinTxt_Valid = false;
                     }
                 }
                 catch
                 {
                     //if not a number then change text to red
                     DecMinTxt.ForeColor = Color.Red;
+                    DecMinTxt_Valid = false;
                 }
 
+            }
+            else
+            {
+                //no data input
+                DecMinTxt_Valid = false;
             }
 
         }
@@ -136,20 +144,29 @@ namespace DigiScriptor
                     {
                         //if correct keep text black
                         DecSecTxt.ForeColor = Color.Black;
+                        DecSecTxt_Valid = true;
+
 
                     }
                     else
                     {
                         //if invalid value then change to red text
                         DecSecTxt.ForeColor = Color.Red;
+                        DecSecTxt_Valid = false;
                     }
                 }
                 catch
                 {
                     //if not a number then change text to red
                     DecSecTxt.ForeColor = Color.Red;
+                    DecSecTxt_Valid = false;
                 }
 
+            }
+            else
+            {
+                //no data input
+                DecSecTxt_Valid = false;
             }
 
         }
@@ -171,20 +188,28 @@ namespace DigiScriptor
                     {
                         //if correct keep text black
                         RAsHrTxt.ForeColor = Color.Black;
+                        RAsHrTxt_Valid = true;
 
                     }
                     else
                     {
                         //if invalid value then change to red text
                         RAsHrTxt.ForeColor = Color.Red;
+                        RAsHrTxt_Valid = false;
                     }
                 }
                 catch
                 {
                     //if not a number then change text to red
                     RAsHrTxt.ForeColor = Color.Red;
+                    RAsHrTxt_Valid = false;
                 }
 
+            }
+            else
+            {
+                //no data input
+                RAsHrTxt_Valid = false;
             }
 
         }
@@ -205,20 +230,28 @@ namespace DigiScriptor
                     {
                         //if correct keep text black
                         RAsMinTxt.ForeColor = Color.Black;
+                        RAsMinTxt_Valid = true;
 
                     }
                     else
                     {
                         //if invalid value then change to red text
                         RAsMinTxt.ForeColor = Color.Red;
+                        RAsMinTxt_Valid = false;
                     }
                 }
                 catch
                 {
                     //if not a number then change text to red
                     RAsMinTxt.ForeColor = Color.Red;
+                    RAsMinTxt_Valid = false;
                 }
 
+            }
+            else
+            {
+                //no data input
+                RAsMinTxt_Valid = false;
             }
 
         }
@@ -239,20 +272,28 @@ namespace DigiScriptor
                     {
                         //if correct keep text black
                         RAsSecTxt.ForeColor = Color.Black;
+                        RAsSecTxt_Valid = true;
 
                     }
                     else
                     {
                         //if invalid value then change to red text
                         RAsSecTxt.ForeColor = Color.Red;
+                        RAsSecTxt_Valid = false;
                     }
                 }
                 catch
                 {
                     //if not a number then change text to red
                     RAsSecTxt.ForeColor = Color.Red;
+                    RAsSecTxt_Valid = false;
                 }
 
+            }
+            else
+            {
+                //no data input
+                RAsSecTxt_Valid = false;
             }
 
         }
