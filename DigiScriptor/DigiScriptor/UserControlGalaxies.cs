@@ -12,20 +12,16 @@ namespace DigiScriptor
 {
     public partial class UserControlGalaxies : UserControl
     {
-        private HomeScreen homeScreen;
-        private UserControlHome userControlHome;
 
         public UserControlGalaxies()
         {
             InitializeComponent();
 
-            homeScreen = (HomeScreen)this.Parent;
-            //userControlHome = homeScreen.userControlHome;
         }
 
         private void btnAndromeda_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnGalaxiesBack_Click(object sender, EventArgs e)
@@ -52,6 +48,11 @@ namespace DigiScriptor
         private void comboBoxGalaxies_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.lblGalaxiesOutput.Text = this.comboBoxGalaxies.Text;
+        }
+
+        private void btnSubmitGalaxy_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

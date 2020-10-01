@@ -158,7 +158,7 @@ namespace DigiScriptor
 
 
         //
-        // Events from UserControl Panels
+        // Events for moving between UserControl Panels
         //
 
         //HomeScreen -> Galaxies
@@ -338,6 +338,31 @@ namespace DigiScriptor
         {
             this.userControlDomeLights.Dispose();
             this.userControlHome.Show();
+        }
+
+        //
+        // Events for writing to script file
+        //
+
+        // Galaxies Submit Output
+        public void GalaxiesOutput(object sender, EventArgs e)
+        {
+            String outputString = null;
+
+            if(!(userControlGalaxies == null))
+            {
+                outputString = this.userControlGalaxies.lblGalaxiesOutput.Text;
+            }
+
+            if (!(outputString == "(Some Galaxy)"))
+            {
+                using (System.IO.StreamWriter file =
+                    new System.IO.StreamWriter(filePath, true)) //appending to file
+                {
+                    // this only works for Andromeda
+                    file.WriteLine("scipt play " + outputString + "\n");
+                }
+            }
         }
 
     }

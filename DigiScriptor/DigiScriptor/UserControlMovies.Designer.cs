@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.panelMovies = new System.Windows.Forms.Panel();
-            this.btnMoviesBack = new System.Windows.Forms.Button();
-            this.lblMoviesTitle = new System.Windows.Forms.Label();
-            this.btnTwoSmallPieces = new System.Windows.Forms.Button();
-            this.btnPharaohs = new System.Windows.Forms.Button();
-            this.btnChristmasStar = new System.Windows.Forms.Button();
-            this.btnSecretsSun = new System.Windows.Forms.Button();
-            this.btnFrozenWorlds = new System.Windows.Forms.Button();
+            this.lblGalaxyFavorites = new System.Windows.Forms.Label();
+            this.lblMoviesOutput = new System.Windows.Forms.Label();
+            this.lblMovieSelect = new System.Windows.Forms.Label();
             this.lblSearchMovies = new System.Windows.Forms.Label();
             this.btnSubmitMovies = new System.Windows.Forms.Button();
             this.comboBoxMovies = new System.Windows.Forms.ComboBox();
-            this.lblMoviesOutput = new System.Windows.Forms.Label();
-            this.lblMovieSelect = new System.Windows.Forms.Label();
-            this.lblGalaxyFavorites = new System.Windows.Forms.Label();
+            this.btnFrozenWorlds = new System.Windows.Forms.Button();
+            this.btnSecretsSun = new System.Windows.Forms.Button();
+            this.btnChristmasStar = new System.Windows.Forms.Button();
+            this.btnPharaohs = new System.Windows.Forms.Button();
+            this.btnTwoSmallPieces = new System.Windows.Forms.Button();
+            this.btnMoviesBack = new System.Windows.Forms.Button();
+            this.lblMoviesTitle = new System.Windows.Forms.Label();
             this.panelMovies.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,89 +65,39 @@
             this.panelMovies.Size = new System.Drawing.Size(1062, 997);
             this.panelMovies.TabIndex = 29;
             // 
-            // btnMoviesBack
+            // lblGalaxyFavorites
             // 
-            this.btnMoviesBack.BackColor = System.Drawing.Color.Gray;
-            this.btnMoviesBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMoviesBack.Location = new System.Drawing.Point(20, 936);
-            this.btnMoviesBack.Name = "btnMoviesBack";
-            this.btnMoviesBack.Size = new System.Drawing.Size(85, 39);
-            this.btnMoviesBack.TabIndex = 28;
-            this.btnMoviesBack.Text = "Back";
-            this.btnMoviesBack.UseVisualStyleBackColor = false;
+            this.lblGalaxyFavorites.AutoSize = true;
+            this.lblGalaxyFavorites.Font = new System.Drawing.Font("Bernard MT Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGalaxyFavorites.ForeColor = System.Drawing.SystemColors.Menu;
+            this.lblGalaxyFavorites.Location = new System.Drawing.Point(306, 165);
+            this.lblGalaxyFavorites.Name = "lblGalaxyFavorites";
+            this.lblGalaxyFavorites.Size = new System.Drawing.Size(143, 43);
+            this.lblGalaxyFavorites.TabIndex = 39;
+            this.lblGalaxyFavorites.Text = "Favorites";
             // 
-            // lblMoviesTitle
+            // lblMoviesOutput
             // 
-            this.lblMoviesTitle.AutoSize = true;
-            this.lblMoviesTitle.Font = new System.Drawing.Font("Bernard MT Condensed", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMoviesTitle.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lblMoviesTitle.Location = new System.Drawing.Point(22, 42);
-            this.lblMoviesTitle.Name = "lblMoviesTitle";
-            this.lblMoviesTitle.Size = new System.Drawing.Size(171, 67);
-            this.lblMoviesTitle.TabIndex = 3;
-            this.lblMoviesTitle.Text = "Movies";
+            this.lblMoviesOutput.AutoSize = true;
+            this.lblMoviesOutput.Font = new System.Drawing.Font("Bernard MT Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMoviesOutput.ForeColor = System.Drawing.SystemColors.Menu;
+            this.lblMoviesOutput.Location = new System.Drawing.Point(778, 449);
+            this.lblMoviesOutput.Name = "lblMoviesOutput";
+            this.lblMoviesOutput.Size = new System.Drawing.Size(199, 43);
+            this.lblMoviesOutput.TabIndex = 38;
+            this.lblMoviesOutput.Text = "(Some Movie)";
             // 
-            // btnTwoSmallPieces
+            // lblMovieSelect
             // 
-            this.btnTwoSmallPieces.BackColor = System.Drawing.Color.DimGray;
-            this.btnTwoSmallPieces.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTwoSmallPieces.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnTwoSmallPieces.Location = new System.Drawing.Point(94, 247);
-            this.btnTwoSmallPieces.Name = "btnTwoSmallPieces";
-            this.btnTwoSmallPieces.Size = new System.Drawing.Size(257, 130);
-            this.btnTwoSmallPieces.TabIndex = 29;
-            this.btnTwoSmallPieces.Text = "Two Small Pieces of Glass";
-            this.btnTwoSmallPieces.UseVisualStyleBackColor = false;
-            // 
-            // btnPharaohs
-            // 
-            this.btnPharaohs.BackColor = System.Drawing.Color.DimGray;
-            this.btnPharaohs.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPharaohs.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnPharaohs.Location = new System.Drawing.Point(402, 247);
-            this.btnPharaohs.Name = "btnPharaohs";
-            this.btnPharaohs.Size = new System.Drawing.Size(257, 130);
-            this.btnPharaohs.TabIndex = 30;
-            this.btnPharaohs.Text = "Stars of the Pharaohs";
-            this.btnPharaohs.UseVisualStyleBackColor = false;
-            this.btnPharaohs.Click += new System.EventHandler(this.btnFrozenWorlds_Click);
-            // 
-            // btnChristmasStar
-            // 
-            this.btnChristmasStar.BackColor = System.Drawing.Color.DimGray;
-            this.btnChristmasStar.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChristmasStar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnChristmasStar.Location = new System.Drawing.Point(94, 439);
-            this.btnChristmasStar.Name = "btnChristmasStar";
-            this.btnChristmasStar.Size = new System.Drawing.Size(257, 130);
-            this.btnChristmasStar.TabIndex = 31;
-            this.btnChristmasStar.Text = "The Christmas Star";
-            this.btnChristmasStar.UseCompatibleTextRendering = true;
-            this.btnChristmasStar.UseVisualStyleBackColor = false;
-            // 
-            // btnSecretsSun
-            // 
-            this.btnSecretsSun.BackColor = System.Drawing.Color.DimGray;
-            this.btnSecretsSun.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSecretsSun.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSecretsSun.Location = new System.Drawing.Point(402, 439);
-            this.btnSecretsSun.Name = "btnSecretsSun";
-            this.btnSecretsSun.Size = new System.Drawing.Size(257, 130);
-            this.btnSecretsSun.TabIndex = 32;
-            this.btnSecretsSun.Text = "Secrets of the Sun";
-            this.btnSecretsSun.UseVisualStyleBackColor = false;
-            // 
-            // btnFrozenWorlds
-            // 
-            this.btnFrozenWorlds.BackColor = System.Drawing.Color.DimGray;
-            this.btnFrozenWorlds.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFrozenWorlds.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnFrozenWorlds.Location = new System.Drawing.Point(94, 626);
-            this.btnFrozenWorlds.Name = "btnFrozenWorlds";
-            this.btnFrozenWorlds.Size = new System.Drawing.Size(257, 130);
-            this.btnFrozenWorlds.TabIndex = 33;
-            this.btnFrozenWorlds.Text = "Frozen Worlds";
-            this.btnFrozenWorlds.UseVisualStyleBackColor = false;
+            this.lblMovieSelect.AutoSize = true;
+            this.lblMovieSelect.Font = new System.Drawing.Font("Bernard MT Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMovieSelect.ForeColor = System.Drawing.SystemColors.Menu;
+            this.lblMovieSelect.Location = new System.Drawing.Point(802, 375);
+            this.lblMovieSelect.Name = "lblMovieSelect";
+            this.lblMovieSelect.Size = new System.Drawing.Size(151, 43);
+            this.lblMovieSelect.TabIndex = 37;
+            this.lblMovieSelect.Text = "Selection:";
+            this.lblMovieSelect.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblSearchMovies
             // 
@@ -192,39 +142,90 @@
             this.comboBoxMovies.TabIndex = 34;
             this.comboBoxMovies.SelectedIndexChanged += new System.EventHandler(this.comboBoxMovies_SelectedIndexChanged);
             // 
-            // lblMoviesOutput
+            // btnFrozenWorlds
             // 
-            this.lblMoviesOutput.AutoSize = true;
-            this.lblMoviesOutput.Font = new System.Drawing.Font("Bernard MT Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMoviesOutput.ForeColor = System.Drawing.SystemColors.Menu;
-            this.lblMoviesOutput.Location = new System.Drawing.Point(778, 449);
-            this.lblMoviesOutput.Name = "lblMoviesOutput";
-            this.lblMoviesOutput.Size = new System.Drawing.Size(199, 43);
-            this.lblMoviesOutput.TabIndex = 38;
-            this.lblMoviesOutput.Text = "(Some Movie)";
+            this.btnFrozenWorlds.BackColor = System.Drawing.Color.DimGray;
+            this.btnFrozenWorlds.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFrozenWorlds.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnFrozenWorlds.Location = new System.Drawing.Point(94, 626);
+            this.btnFrozenWorlds.Name = "btnFrozenWorlds";
+            this.btnFrozenWorlds.Size = new System.Drawing.Size(257, 130);
+            this.btnFrozenWorlds.TabIndex = 33;
+            this.btnFrozenWorlds.Text = "Frozen Worlds";
+            this.btnFrozenWorlds.UseVisualStyleBackColor = false;
             // 
-            // lblMovieSelect
+            // btnSecretsSun
             // 
-            this.lblMovieSelect.AutoSize = true;
-            this.lblMovieSelect.Font = new System.Drawing.Font("Bernard MT Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMovieSelect.ForeColor = System.Drawing.SystemColors.Menu;
-            this.lblMovieSelect.Location = new System.Drawing.Point(802, 375);
-            this.lblMovieSelect.Name = "lblMovieSelect";
-            this.lblMovieSelect.Size = new System.Drawing.Size(151, 43);
-            this.lblMovieSelect.TabIndex = 37;
-            this.lblMovieSelect.Text = "Selection:";
-            this.lblMovieSelect.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSecretsSun.BackColor = System.Drawing.Color.DimGray;
+            this.btnSecretsSun.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSecretsSun.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSecretsSun.Location = new System.Drawing.Point(402, 439);
+            this.btnSecretsSun.Name = "btnSecretsSun";
+            this.btnSecretsSun.Size = new System.Drawing.Size(257, 130);
+            this.btnSecretsSun.TabIndex = 32;
+            this.btnSecretsSun.Text = "Secrets of the Sun";
+            this.btnSecretsSun.UseVisualStyleBackColor = false;
             // 
-            // lblGalaxyFavorites
+            // btnChristmasStar
             // 
-            this.lblGalaxyFavorites.AutoSize = true;
-            this.lblGalaxyFavorites.Font = new System.Drawing.Font("Bernard MT Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGalaxyFavorites.ForeColor = System.Drawing.SystemColors.Menu;
-            this.lblGalaxyFavorites.Location = new System.Drawing.Point(306, 165);
-            this.lblGalaxyFavorites.Name = "lblGalaxyFavorites";
-            this.lblGalaxyFavorites.Size = new System.Drawing.Size(143, 43);
-            this.lblGalaxyFavorites.TabIndex = 39;
-            this.lblGalaxyFavorites.Text = "Favorites";
+            this.btnChristmasStar.BackColor = System.Drawing.Color.DimGray;
+            this.btnChristmasStar.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChristmasStar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnChristmasStar.Location = new System.Drawing.Point(94, 439);
+            this.btnChristmasStar.Name = "btnChristmasStar";
+            this.btnChristmasStar.Size = new System.Drawing.Size(257, 130);
+            this.btnChristmasStar.TabIndex = 31;
+            this.btnChristmasStar.Text = "The Christmas Star";
+            this.btnChristmasStar.UseCompatibleTextRendering = true;
+            this.btnChristmasStar.UseVisualStyleBackColor = false;
+            // 
+            // btnPharaohs
+            // 
+            this.btnPharaohs.BackColor = System.Drawing.Color.DimGray;
+            this.btnPharaohs.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPharaohs.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnPharaohs.Location = new System.Drawing.Point(402, 247);
+            this.btnPharaohs.Name = "btnPharaohs";
+            this.btnPharaohs.Size = new System.Drawing.Size(257, 130);
+            this.btnPharaohs.TabIndex = 30;
+            this.btnPharaohs.Text = "Stars of the Pharaohs";
+            this.btnPharaohs.UseVisualStyleBackColor = false;
+            this.btnPharaohs.Click += new System.EventHandler(this.btnFrozenWorlds_Click);
+            // 
+            // btnTwoSmallPieces
+            // 
+            this.btnTwoSmallPieces.BackColor = System.Drawing.Color.DimGray;
+            this.btnTwoSmallPieces.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTwoSmallPieces.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnTwoSmallPieces.Location = new System.Drawing.Point(94, 247);
+            this.btnTwoSmallPieces.Name = "btnTwoSmallPieces";
+            this.btnTwoSmallPieces.Size = new System.Drawing.Size(257, 130);
+            this.btnTwoSmallPieces.TabIndex = 29;
+            this.btnTwoSmallPieces.Text = "Two Small Pieces of Glass";
+            this.btnTwoSmallPieces.UseVisualStyleBackColor = false;
+            this.btnTwoSmallPieces.Click += new System.EventHandler(this.btnTwoSmallPieces_Click);
+            // 
+            // btnMoviesBack
+            // 
+            this.btnMoviesBack.BackColor = System.Drawing.Color.Gray;
+            this.btnMoviesBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMoviesBack.Location = new System.Drawing.Point(20, 936);
+            this.btnMoviesBack.Name = "btnMoviesBack";
+            this.btnMoviesBack.Size = new System.Drawing.Size(85, 39);
+            this.btnMoviesBack.TabIndex = 28;
+            this.btnMoviesBack.Text = "Back";
+            this.btnMoviesBack.UseVisualStyleBackColor = false;
+            // 
+            // lblMoviesTitle
+            // 
+            this.lblMoviesTitle.AutoSize = true;
+            this.lblMoviesTitle.Font = new System.Drawing.Font("Bernard MT Condensed", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMoviesTitle.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lblMoviesTitle.Location = new System.Drawing.Point(22, 42);
+            this.lblMoviesTitle.Name = "lblMoviesTitle";
+            this.lblMoviesTitle.Size = new System.Drawing.Size(171, 67);
+            this.lblMoviesTitle.TabIndex = 3;
+            this.lblMoviesTitle.Text = "Movies";
             // 
             // UserControlMovies
             // 

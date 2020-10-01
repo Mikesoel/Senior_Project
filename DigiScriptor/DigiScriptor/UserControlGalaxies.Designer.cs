@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelGalaxies = new System.Windows.Forms.Panel();
+            this.lblSearchGalaxies = new System.Windows.Forms.Label();
             this.btnSubmitGalaxy = new System.Windows.Forms.Button();
             this.lblGalaxiesOutput = new System.Windows.Forms.Label();
             this.btnGalaxiesBack = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@
             this.comboBoxGalaxies = new System.Windows.Forms.ComboBox();
             this.lblGalaxies = new System.Windows.Forms.Label();
             this.btnAndromeda = new System.Windows.Forms.Button();
-            this.lblSearchGalaxies = new System.Windows.Forms.Label();
             this.panelGalaxies.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +68,17 @@
             this.panelGalaxies.TabIndex = 27;
             this.panelGalaxies.Paint += new System.Windows.Forms.PaintEventHandler(this.panelGalaxies_Paint);
             // 
+            // lblSearchGalaxies
+            // 
+            this.lblSearchGalaxies.AutoSize = true;
+            this.lblSearchGalaxies.Font = new System.Drawing.Font("Bernard MT Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchGalaxies.ForeColor = System.Drawing.SystemColors.Menu;
+            this.lblSearchGalaxies.Location = new System.Drawing.Point(713, 244);
+            this.lblSearchGalaxies.Name = "lblSearchGalaxies";
+            this.lblSearchGalaxies.Size = new System.Drawing.Size(74, 28);
+            this.lblSearchGalaxies.TabIndex = 30;
+            this.lblSearchGalaxies.Text = "Search";
+            // 
             // btnSubmitGalaxy
             // 
             this.btnSubmitGalaxy.BackColor = System.Drawing.Color.DimGray;
@@ -80,6 +91,7 @@
             this.btnSubmitGalaxy.TabIndex = 29;
             this.btnSubmitGalaxy.Text = "Submit";
             this.btnSubmitGalaxy.UseVisualStyleBackColor = false;
+            this.btnSubmitGalaxy.Click += new System.EventHandler(this.btnSubmitGalaxy_Click);
             // 
             // lblGalaxiesOutput
             // 
@@ -233,17 +245,6 @@
             this.btnAndromeda.UseVisualStyleBackColor = false;
             this.btnAndromeda.Click += new System.EventHandler(this.btnAndromeda_Click);
             // 
-            // lblSearchGalaxies
-            // 
-            this.lblSearchGalaxies.AutoSize = true;
-            this.lblSearchGalaxies.Font = new System.Drawing.Font("Bernard MT Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchGalaxies.ForeColor = System.Drawing.SystemColors.Menu;
-            this.lblSearchGalaxies.Location = new System.Drawing.Point(713, 244);
-            this.lblSearchGalaxies.Name = "lblSearchGalaxies";
-            this.lblSearchGalaxies.Size = new System.Drawing.Size(74, 28);
-            this.lblSearchGalaxies.TabIndex = 30;
-            this.lblSearchGalaxies.Text = "Search";
-            // 
             // UserControlGalaxies
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -262,8 +263,8 @@
         #endregion
 
         private System.Windows.Forms.Panel panelGalaxies;
-        private System.Windows.Forms.Button btnSubmitGalaxy;
-        private System.Windows.Forms.Label lblGalaxiesOutput;
+        public System.Windows.Forms.Button btnSubmitGalaxy;
+        public System.Windows.Forms.Label lblGalaxiesOutput;
         public System.Windows.Forms.Button btnGalaxiesBack;
         private System.Windows.Forms.Label lblGalaxyDestination;
         private System.Windows.Forms.Label lblGalaxyFavorites;
