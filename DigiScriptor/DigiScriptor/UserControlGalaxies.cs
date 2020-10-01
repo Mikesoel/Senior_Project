@@ -43,5 +43,15 @@ namespace DigiScriptor
         {
 
         }
+
+        private void lblGalaxiesOutput_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxGalaxies_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.lblGalaxiesOutput.Text = this.comboBoxGalaxies.Text;
+        }
     }
 }
