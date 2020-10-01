@@ -166,6 +166,7 @@ namespace DigiScriptor
         {
             userControlGalaxies = new DigiScriptor.UserControlGalaxies();
             userControlGalaxies.btnGalaxiesBack.Click += ButtonGalaxiesBack;
+            userControlGalaxies.btnSubmitGalaxy.Click += GalaxiesOutput;
 
             this.Controls.Add(userControlGalaxies);
             userControlGalaxies.Show();
@@ -348,6 +349,7 @@ namespace DigiScriptor
         public void GalaxiesOutput(object sender, EventArgs e)
         {
             String outputString = null;
+            String fileOutput = null;
 
             if(!(userControlGalaxies == null))
             {
@@ -356,11 +358,17 @@ namespace DigiScriptor
 
             if (!(outputString == "(Some Galaxy)"))
             {
-                using (System.IO.StreamWriter file =
-                    new System.IO.StreamWriter(filePath, true)) //appending to file
+                fileOutput = "scipt play " + outputString + "\n";
+                if (System.IO.File.Exists(filePath))
                 {
-                    // this only works for Andromeda
-                    file.WriteLine("scipt play " + outputString + "\n");
+                    using (System.IO.StreamWriter file =
+                        new System.IO.StreamWriter(filePath, true)) //appending to file
+                    {
+                        // this only works for Andromeda
+                        file.WriteLine(fileOutput);
+                    }
+                } else {
+                    System.IO.File.WriteAllText(filePath, fileOutput);
                 }
             }
         }

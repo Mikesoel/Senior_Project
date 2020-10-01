@@ -28,6 +28,7 @@ namespace DigiScriptor
             dir = Directory.GetCurrentDirectory();
             fileName = "script.txt";
             filePath = dir + "\\" + fileName;
+            Console.WriteLine(filePath);
 
             // Events for moving to different screens
             this.userControlHome.btnGalaxies.Click += ButtonGalaxies;
@@ -40,7 +41,6 @@ namespace DigiScriptor
             this.userControlHome.btnMovies.Click += ButtonMovies;
             this.userControlHome.btnLights.Click += ButtonDomeLights;
 
-            //this.userControlGalaxies.btnSubmitGalaxy.Click += GalaxiesOutput;
         }
 
 
