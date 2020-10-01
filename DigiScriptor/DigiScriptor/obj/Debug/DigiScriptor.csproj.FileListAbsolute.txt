@@ -89,3 +89,6 @@ C:\Users\Richie\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\o
 C:\Users\Richie\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlHome.resources
 C:\Users\Richie\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlPlanets.resources
 C:\Users\Richie\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlStars.resources
+C:\Users\Richie\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\bin\Debug\DigiDataBase.mdf
+C:\Users\Richie\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\bin\Debug\DigiDataBase_log.ldf
+C:\Users\Richie\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.EditPopularEarthLocationsPopup.resources
