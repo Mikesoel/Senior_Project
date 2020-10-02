@@ -30,7 +30,7 @@ namespace DigiScriptor
 
         private void SubBtn_Click(object sender, EventArgs e)
         {
-            if( MessageBox.Show("Submited") == DialogResult.OK)
+            if( MessageBox.Show("Submitted") == DialogResult.OK)
             {
                 btnStarsBack.PerformClick();
             }
@@ -295,6 +295,11 @@ namespace DigiScriptor
                 //no data input
                 RAsSecTxt_Valid = false;
             }
+
+        }
+
+        private void labelStars_Click(object sender, EventArgs e)
+        {
 
         }
     }

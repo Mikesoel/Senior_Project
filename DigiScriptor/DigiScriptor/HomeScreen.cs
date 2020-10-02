@@ -78,57 +78,6 @@ namespace DigiScriptor
 
         }
 
-        private void btnGalaxies_Click_1(object sender, EventArgs e)
-        {
-            //hiding the home screen
-            this.Hide();
-
-            //opening up the galaxies screen
-            GalaxiesScreen galScreen = new GalaxiesScreen();
-            galScreen.Show();
-        }
-
-        private void btnEarth_Click_1(object sender, EventArgs e)
-        {
-            //close home screen
-            //this.Hide();
-
-            //open earth screen
-            //EarthScreen earScreen = new EarthScreen();
-            //earScreen.Show();
-            
-        }
-
-        private void btnNebulae_Click_1(object sender, EventArgs e)
-        {
-            //hiding the home screen
-            this.Hide();
-
-            //opening up the galaxies screen
-            NebulaeScreen nebScreen = new NebulaeScreen();
-            nebScreen.Show();
-        }
-
-        private void btnSky_Click_1(object sender, EventArgs e)
-        {
-            //hide the home screen
-            this.Hide();
-
-            //open night sky screen
-            NightSkyScreen skyScreen = new NightSkyScreen();
-            skyScreen.Show();
-        }
-
-        private void btnStars_Click_1(object sender, EventArgs e)
-        {
-            //hiding the home screen
-            this.Hide();
-
-
-            // open stars screen
-            StarsScreen starScreen = new StarsScreen();
-            starScreen.Show();
-        }
 
         private void lblCart_Click(object sender, EventArgs e)
         {
@@ -150,120 +99,17 @@ namespace DigiScriptor
 
         }
 
-        private void btnSubmitNebulae_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelNightSky_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelStars_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnEarthBack_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnLights_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnEarth_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnSky_Click(object sender, EventArgs e)
-        {
-            //panelHomeScreen.Hide();
-            
-        }
-
-        private void btnPlanets_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnMoons_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnStars_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnGalaxies_Click(object sender, EventArgs e)
-        {
-            //panelHomeScreen.Hide();
-            //panelGalaxies.Show();
-            //panelGalaxies.BringToFront();
-        }
-
-        private void btnNebulae_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnMovies_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnNebulaeBack_Click(object sender, EventArgs e)
-        {
-            //panelHomeScreen.Show();
-            //panelHomeScreen.BringToFront();
-        }
-
-        private void btnGalaxiesBack_Click(object sender, EventArgs e)
-        {
-            //panelGalaxies.Hide();
-            //panelHomeScreen.Show();
-            //panelHomeScreen.BringToFront();
-        }
-
-        private void btnMoviesBack_Click(object sender, EventArgs e)
-        {
-            //panelHomeScreen.Show();
-            //panelHomeScreen.BringToFront();
-        }
-
-        private void btnMoonsBack_Click(object sender, EventArgs e)
-        {
-            //panelHomeScreen.Show();
-            //panelHomeScreen.BringToFront();
-        }
-
-        private void btnSkyBack_Click(object sender, EventArgs e)
-        {
-            
-            //panelHomeScreen.Show();
-            //panelHomeScreen.BringToFront();
-        }
-
-        private void btnStarsBack_Click(object sender, EventArgs e)
-        {
-            //panelHomeScreen.Show();
-            //panelHomeScreen.BringToFront();
-        }
-
-        private void btnPlanetsBack_Click(object sender, EventArgs e)
-        {
-            //panelHomeScreen.Show();
-            //panelHomeScreen.BringToFront();
-        }
-
-        private void btnDomeLightsBack_Click(object sender, EventArgs e)
-        {
-            
-            //panelHomeScreen.Show();
-            //panelHomeScreen.BringToFront();
-        }
-
         private void userControlHome_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Submitted") == DialogResult.OK)
+            {
+                //do some stuff
+            }
         }
     }
 }
