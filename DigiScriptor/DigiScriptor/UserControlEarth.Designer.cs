@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelEarth = new System.Windows.Forms.Panel();
             this.btnSubmitEarth = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -48,11 +49,15 @@
             this.popularLocationsCombo = new System.Windows.Forms.ComboBox();
             this.lblPopularDropdown = new System.Windows.Forms.Label();
             this.lblEarthTitle = new System.Windows.Forms.Label();
+            this.digiDataBaseDataSet = new DigiScriptor.DigiDataBaseDataSet();
+            this.digiDataBaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelEarth.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.digiDataBaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.digiDataBaseDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelEarth
@@ -239,22 +244,15 @@
             // 
             // popularLocationsCombo
             // 
+            this.popularLocationsCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.popularLocationsCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.popularLocationsCombo.FormattingEnabled = true;
-            this.popularLocationsCombo.Items.AddRange(new object[] {
-            "Disneyland",
-            "Grand Canyon",
-            "Mount Everest",
-            "Sacramento State",
-            "Stonehenge",
-            "Eiffel Tower",
-            "Great Wall of China",
-            "Add New"});
             this.popularLocationsCombo.Location = new System.Drawing.Point(163, 69);
             this.popularLocationsCombo.MaxDropDownItems = 20;
             this.popularLocationsCombo.Name = "popularLocationsCombo";
             this.popularLocationsCombo.Size = new System.Drawing.Size(149, 24);
             this.popularLocationsCombo.TabIndex = 22;
+            this.popularLocationsCombo.SelectedIndexChanged += new System.EventHandler(this.popularLocationsCombo_SelectedIndexChanged);
             // 
             // lblPopularDropdown
             // 
@@ -276,6 +274,16 @@
             this.lblEarthTitle.TabIndex = 20;
             this.lblEarthTitle.Text = "Earth";
             // 
+            // digiDataBaseDataSet
+            // 
+            this.digiDataBaseDataSet.DataSetName = "DigiDataBaseDataSet";
+            this.digiDataBaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // digiDataBaseDataSetBindingSource
+            // 
+            this.digiDataBaseDataSetBindingSource.DataSource = this.digiDataBaseDataSet;
+            this.digiDataBaseDataSetBindingSource.Position = 0;
+            // 
             // UserControlEarth
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,6 +303,8 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.digiDataBaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.digiDataBaseDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -321,5 +331,7 @@
         private System.Windows.Forms.ComboBox popularLocationsCombo;
         private System.Windows.Forms.Label lblPopularDropdown;
         private System.Windows.Forms.Label lblEarthTitle;
+        private DigiDataBaseDataSet digiDataBaseDataSet;
+        private System.Windows.Forms.BindingSource digiDataBaseDataSetBindingSource;
     }
 }
