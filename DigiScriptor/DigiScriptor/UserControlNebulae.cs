@@ -16,5 +16,10 @@ namespace DigiScriptor
         {
             InitializeComponent();
         }
+
+        private void lblNebulaeVantagePoint_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

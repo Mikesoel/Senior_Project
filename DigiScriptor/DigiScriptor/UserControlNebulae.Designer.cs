@@ -34,40 +34,46 @@
             this.lblNebulaeTitle = new System.Windows.Forms.Label();
             this.btnSubmitNebulae = new System.Windows.Forms.Button();
             this.btnNebulaeBack = new System.Windows.Forms.Button();
+            this.lblNebulaeVantagePoint = new System.Windows.Forms.Label();
+            this.nebulaePanel = new System.Windows.Forms.Panel();
+            this.comboNebVantagePoint = new System.Windows.Forms.ComboBox();
+            this.txtBoxNebVantagePoint = new System.Windows.Forms.TextBox();
             this.panelNebulae.SuspendLayout();
+            this.nebulaePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelNebulae
             // 
+            this.panelNebulae.Controls.Add(this.nebulaePanel);
+            this.panelNebulae.Controls.Add(this.lblNebulaeVantagePoint);
             this.panelNebulae.Controls.Add(this.nebulaeDropdown);
             this.panelNebulae.Controls.Add(this.lblNebulaeSelectionDropdown);
             this.panelNebulae.Controls.Add(this.lblNebulaeTitle);
             this.panelNebulae.Controls.Add(this.btnSubmitNebulae);
             this.panelNebulae.Controls.Add(this.btnNebulaeBack);
             this.panelNebulae.Location = new System.Drawing.Point(0, 0);
+            this.panelNebulae.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelNebulae.Name = "panelNebulae";
-            this.panelNebulae.Size = new System.Drawing.Size(1062, 997);
+            this.panelNebulae.Size = new System.Drawing.Size(708, 648);
             this.panelNebulae.TabIndex = 27;
             // 
             // nebulaeDropdown
             // 
             this.nebulaeDropdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nebulaeDropdown.FormattingEnabled = true;
-            this.nebulaeDropdown.Location = new System.Drawing.Point(269, 111);
-            this.nebulaeDropdown.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nebulaeDropdown.Location = new System.Drawing.Point(182, 72);
             this.nebulaeDropdown.MaxDropDownItems = 20;
             this.nebulaeDropdown.Name = "nebulaeDropdown";
-            this.nebulaeDropdown.Size = new System.Drawing.Size(222, 33);
+            this.nebulaeDropdown.Size = new System.Drawing.Size(149, 24);
             this.nebulaeDropdown.TabIndex = 26;
             // 
             // lblNebulaeSelectionDropdown
             // 
             this.lblNebulaeSelectionDropdown.AutoSize = true;
             this.lblNebulaeSelectionDropdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNebulaeSelectionDropdown.Location = new System.Drawing.Point(29, 111);
-            this.lblNebulaeSelectionDropdown.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNebulaeSelectionDropdown.Location = new System.Drawing.Point(22, 72);
             this.lblNebulaeSelectionDropdown.Name = "lblNebulaeSelectionDropdown";
-            this.lblNebulaeSelectionDropdown.Size = new System.Drawing.Size(236, 29);
+            this.lblNebulaeSelectionDropdown.Size = new System.Drawing.Size(154, 20);
             this.lblNebulaeSelectionDropdown.TabIndex = 25;
             this.lblNebulaeSelectionDropdown.Text = "Nebulae Selections: ";
             // 
@@ -75,10 +81,9 @@
             // 
             this.lblNebulaeTitle.AutoSize = true;
             this.lblNebulaeTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNebulaeTitle.Location = new System.Drawing.Point(22, 42);
-            this.lblNebulaeTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNebulaeTitle.Location = new System.Drawing.Point(15, 27);
             this.lblNebulaeTitle.Name = "lblNebulaeTitle";
-            this.lblNebulaeTitle.Size = new System.Drawing.Size(158, 40);
+            this.lblNebulaeTitle.Size = new System.Drawing.Size(112, 29);
             this.lblNebulaeTitle.TabIndex = 24;
             this.lblNebulaeTitle.Text = "Nebulae";
             // 
@@ -88,9 +93,10 @@
             this.btnSubmitNebulae.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmitNebulae.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmitNebulae.ForeColor = System.Drawing.Color.SpringGreen;
-            this.btnSubmitNebulae.Location = new System.Drawing.Point(828, 890);
+            this.btnSubmitNebulae.Location = new System.Drawing.Point(552, 578);
+            this.btnSubmitNebulae.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSubmitNebulae.Name = "btnSubmitNebulae";
-            this.btnSubmitNebulae.Size = new System.Drawing.Size(186, 75);
+            this.btnSubmitNebulae.Size = new System.Drawing.Size(124, 49);
             this.btnSubmitNebulae.TabIndex = 23;
             this.btnSubmitNebulae.Text = "Submit";
             this.btnSubmitNebulae.UseVisualStyleBackColor = false;
@@ -99,23 +105,68 @@
             // 
             this.btnNebulaeBack.BackColor = System.Drawing.Color.Gray;
             this.btnNebulaeBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNebulaeBack.Location = new System.Drawing.Point(33, 927);
+            this.btnNebulaeBack.Location = new System.Drawing.Point(22, 603);
+            this.btnNebulaeBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNebulaeBack.Name = "btnNebulaeBack";
-            this.btnNebulaeBack.Size = new System.Drawing.Size(86, 38);
+            this.btnNebulaeBack.Size = new System.Drawing.Size(57, 25);
             this.btnNebulaeBack.TabIndex = 22;
             this.btnNebulaeBack.Text = "Back";
             this.btnNebulaeBack.UseVisualStyleBackColor = false;
             // 
+            // lblNebulaeVantagePoint
+            // 
+            this.lblNebulaeVantagePoint.AutoSize = true;
+            this.lblNebulaeVantagePoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNebulaeVantagePoint.Location = new System.Drawing.Point(59, 134);
+            this.lblNebulaeVantagePoint.Name = "lblNebulaeVantagePoint";
+            this.lblNebulaeVantagePoint.Size = new System.Drawing.Size(114, 20);
+            this.lblNebulaeVantagePoint.TabIndex = 28;
+            this.lblNebulaeVantagePoint.Text = "Vantage Point:";
+            this.lblNebulaeVantagePoint.Click += new System.EventHandler(this.lblNebulaeVantagePoint_Click);
+            // 
+            // nebulaePanel
+            // 
+            this.nebulaePanel.Controls.Add(this.comboNebVantagePoint);
+            this.nebulaePanel.Controls.Add(this.txtBoxNebVantagePoint);
+            this.nebulaePanel.Location = new System.Drawing.Point(179, 130);
+            this.nebulaePanel.Name = "nebulaePanel";
+            this.nebulaePanel.Size = new System.Drawing.Size(237, 29);
+            this.nebulaePanel.TabIndex = 29;
+            // 
+            // comboNebVantagePoint
+            // 
+            this.comboNebVantagePoint.FormattingEnabled = true;
+            this.comboNebVantagePoint.Items.AddRange(new object[] {
+            "Miles",
+            "Meters",
+            "Kilometers",
+            "Astronomical Units"});
+            this.comboNebVantagePoint.Location = new System.Drawing.Point(109, 3);
+            this.comboNebVantagePoint.Name = "comboNebVantagePoint";
+            this.comboNebVantagePoint.Size = new System.Drawing.Size(121, 21);
+            this.comboNebVantagePoint.TabIndex = 1;
+            // 
+            // txtBoxNebVantagePoint
+            // 
+            this.txtBoxNebVantagePoint.Location = new System.Drawing.Point(3, 3);
+            this.txtBoxNebVantagePoint.Name = "txtBoxNebVantagePoint";
+            this.txtBoxNebVantagePoint.Size = new System.Drawing.Size(100, 20);
+            this.txtBoxNebVantagePoint.TabIndex = 0;
+            this.txtBoxNebVantagePoint.Text = "400";
+            // 
             // UserControlNebulae
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Controls.Add(this.panelNebulae);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UserControlNebulae";
-            this.Size = new System.Drawing.Size(1062, 997);
+            this.Size = new System.Drawing.Size(708, 648);
             this.panelNebulae.ResumeLayout(false);
             this.panelNebulae.PerformLayout();
+            this.nebulaePanel.ResumeLayout(false);
+            this.nebulaePanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -128,5 +179,9 @@
         private System.Windows.Forms.Label lblNebulaeTitle;
         private System.Windows.Forms.Button btnSubmitNebulae;
         public System.Windows.Forms.Button btnNebulaeBack;
+        private System.Windows.Forms.Label lblNebulaeVantagePoint;
+        private System.Windows.Forms.Panel nebulaePanel;
+        private System.Windows.Forms.ComboBox comboNebVantagePoint;
+        private System.Windows.Forms.TextBox txtBoxNebVantagePoint;
     }
 }
