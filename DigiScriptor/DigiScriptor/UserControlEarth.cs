@@ -58,5 +58,10 @@ namespace DigiScriptor
             editData.Show();
 
         }
+
+        private void btnSubmitEarth_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Earth Selections Submitted");
+        }
     }
 }

@@ -21,5 +21,10 @@ namespace DigiScriptor
         {
 
         }
+
+        private void btnSubmitNebulae_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Nebulae Selections Submitted");
+        }
     }
 }

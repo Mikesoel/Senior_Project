@@ -97,6 +97,7 @@
             this.btnSubmitEarth.TabIndex = 26;
             this.btnSubmitEarth.Text = "Submit";
             this.btnSubmitEarth.UseVisualStyleBackColor = false;
+            this.btnSubmitEarth.Click += new System.EventHandler(this.btnSubmitEarth_Click);
             // 
             // panel4
             // 
