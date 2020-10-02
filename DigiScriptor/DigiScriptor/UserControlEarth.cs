@@ -23,7 +23,7 @@ namespace DigiScriptor
 
         }
 
-        public void LoadComboBox()
+        private void LoadComboBox()
         {
             popularLocationsCombo.Items.Clear();
             connect.Open();
