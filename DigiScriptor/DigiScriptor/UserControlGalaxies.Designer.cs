@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelGalaxies = new System.Windows.Forms.Panel();
             this.lblSearchGalaxies = new System.Windows.Forms.Label();
             this.btnSubmitGalaxy = new System.Windows.Forms.Button();
@@ -43,7 +44,11 @@
             this.comboBoxGalaxies = new System.Windows.Forms.ComboBox();
             this.lblGalaxies = new System.Windows.Forms.Label();
             this.btnAndromeda = new System.Windows.Forms.Button();
+            this.digiDataBaseDataSet = new DigiScriptor.DigiDataBaseDataSet();
+            this.digiDataBaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelGalaxies.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.digiDataBaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.digiDataBaseDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelGalaxies
@@ -205,7 +210,7 @@
             this.comboBoxGalaxies.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxGalaxies.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxGalaxies.FormattingEnabled = true;
-            this.comboBoxGalaxies.Items.AddRange(new object[] {
+            /*this.comboBoxGalaxies.Items.AddRange(new object[] {
             "Andromeda",
             "Cigar",
             "Milky Way",
@@ -213,7 +218,7 @@
             "Sombrero",
             "Sunflower",
             "Triangulum",
-            "Whirlpool"});
+            "Whirlpool"});*/
             this.comboBoxGalaxies.Location = new System.Drawing.Point(718, 284);
             this.comboBoxGalaxies.Name = "comboBoxGalaxies";
             this.comboBoxGalaxies.Size = new System.Drawing.Size(296, 37);
@@ -245,6 +250,16 @@
             this.btnAndromeda.UseVisualStyleBackColor = false;
             this.btnAndromeda.Click += new System.EventHandler(this.btnAndromeda_Click);
             // 
+            // digiDataBaseDataSet
+            // 
+            this.digiDataBaseDataSet.DataSetName = "DigiDataBaseDataSet";
+            this.digiDataBaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // digiDataBaseDataSetBindingSource
+            // 
+            this.digiDataBaseDataSetBindingSource.DataSource = this.digiDataBaseDataSet;
+            this.digiDataBaseDataSetBindingSource.Position = 0;
+            // 
             // UserControlGalaxies
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -256,6 +271,8 @@
             this.Load += new System.EventHandler(this.UserControlGalaxies_Load);
             this.panelGalaxies.ResumeLayout(false);
             this.panelGalaxies.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.digiDataBaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.digiDataBaseDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -277,5 +294,7 @@
         private System.Windows.Forms.Label lblGalaxies;
         private System.Windows.Forms.Button btnAndromeda;
         private System.Windows.Forms.Label lblSearchGalaxies;
+        private DigiDataBaseDataSet digiDataBaseDataSet;
+        private System.Windows.Forms.BindingSource digiDataBaseDataSetBindingSource;
     }
 }

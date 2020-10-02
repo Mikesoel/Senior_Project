@@ -81,7 +81,6 @@ namespace DigiScriptor
             this.lblCart.Size = new System.Drawing.Size(237, 40);
             this.lblCart.TabIndex = 14;
             this.lblCart.Text = "Current Show";
-            this.lblCart.Click += new System.EventHandler(this.lblCart_Click);
             // 
             // btnSubmit
             // 
@@ -95,7 +94,7 @@ namespace DigiScriptor
             this.btnSubmit.TabIndex = 13;
             this.btnSubmit.Text = "Generate Script";
             this.btnSubmit.UseVisualStyleBackColor = false;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click_1);
             // 
             // txtboxCart
             // 
@@ -118,7 +117,6 @@ namespace DigiScriptor
             this.userControlHome.Name = "userControlHome";
             this.userControlHome.Size = new System.Drawing.Size(1062, 994);
             this.userControlHome.TabIndex = 31;
-            this.userControlHome.Load += new System.EventHandler(this.userControlHome_Load);
             // 
             // HomeScreen
             // 
@@ -373,7 +371,7 @@ namespace DigiScriptor
             String fileOutput = null;
             
             outputString = this.userControlGalaxies.lblGalaxiesOutput.Text;
-            
+            outputString = outputString.TrimEnd();
 
             if (!(outputString == "(Some Galaxy)"))
             {
