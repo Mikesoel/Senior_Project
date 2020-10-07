@@ -41,7 +41,7 @@ namespace DigiScriptor
 
         private void btnAndromeda_Click(object sender, EventArgs e)
         {
-            
+            this.lblGalaxiesOutput.Text = this.btnAndromeda.Text;
         }
 
         private void btnGalaxiesBack_Click(object sender, EventArgs e)
@@ -78,6 +78,31 @@ namespace DigiScriptor
         private void btnSubmitGalaxy_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnMilkyWay_Click(object sender, EventArgs e)
+        {
+            this.lblGalaxiesOutput.Text = this.btnMilkyWay.Text;
+        }
+
+        private void btnLargeMagCloud_Click(object sender, EventArgs e)
+        {
+            this.lblGalaxiesOutput.Text = this.btnLargeMagCloud.Text;
+        }
+
+        private void btnWhirlpool_Click(object sender, EventArgs e)
+        {
+            this.lblGalaxiesOutput.Text = this.btnWhirlpool.Text;
+        }
+
+        private void btnSombrero_Click(object sender, EventArgs e)
+        {
+            this.lblGalaxiesOutput.Text = this.btnSombrero.Text;
+        }
+
+        private void btnTriangulum_Click(object sender, EventArgs e)
+        {
+            this.lblGalaxiesOutput.Text = this.btnTriangulum.Text;
         }
     }
 }

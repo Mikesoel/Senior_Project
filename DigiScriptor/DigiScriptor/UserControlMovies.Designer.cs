@@ -153,6 +153,7 @@
             this.btnFrozenWorlds.TabIndex = 33;
             this.btnFrozenWorlds.Text = "Frozen Worlds";
             this.btnFrozenWorlds.UseVisualStyleBackColor = false;
+            this.btnFrozenWorlds.Click += new System.EventHandler(this.btnFrozenWorlds_Click);
             // 
             // btnSecretsSun
             // 
@@ -165,6 +166,7 @@
             this.btnSecretsSun.TabIndex = 32;
             this.btnSecretsSun.Text = "Secrets of the Sun";
             this.btnSecretsSun.UseVisualStyleBackColor = false;
+            this.btnSecretsSun.Click += new System.EventHandler(this.btnSecretsSun_Click);
             // 
             // btnChristmasStar
             // 
@@ -178,6 +180,7 @@
             this.btnChristmasStar.Text = "The Christmas Star";
             this.btnChristmasStar.UseCompatibleTextRendering = true;
             this.btnChristmasStar.UseVisualStyleBackColor = false;
+            this.btnChristmasStar.Click += new System.EventHandler(this.btnChristmasStar_Click);
             // 
             // btnPharaohs
             // 
@@ -190,7 +193,7 @@
             this.btnPharaohs.TabIndex = 30;
             this.btnPharaohs.Text = "Stars of the Pharaohs";
             this.btnPharaohs.UseVisualStyleBackColor = false;
-            this.btnPharaohs.Click += new System.EventHandler(this.btnFrozenWorlds_Click);
+            this.btnPharaohs.Click += new System.EventHandler(this.btnPharaohs_Click);
             // 
             // btnTwoSmallPieces
             // 

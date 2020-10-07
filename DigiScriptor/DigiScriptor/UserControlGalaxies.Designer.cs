@@ -155,6 +155,7 @@
             this.btnTriangulum.TabIndex = 24;
             this.btnTriangulum.Text = "Triangulum";
             this.btnTriangulum.UseVisualStyleBackColor = false;
+            this.btnTriangulum.Click += new System.EventHandler(this.btnTriangulum_Click);
             // 
             // btnWhirlpool
             // 
@@ -167,6 +168,7 @@
             this.btnWhirlpool.TabIndex = 23;
             this.btnWhirlpool.Text = "Whirlpool";
             this.btnWhirlpool.UseVisualStyleBackColor = false;
+            this.btnWhirlpool.Click += new System.EventHandler(this.btnWhirlpool_Click);
             // 
             // btnLargeMagCloud
             // 
@@ -179,6 +181,7 @@
             this.btnLargeMagCloud.TabIndex = 22;
             this.btnLargeMagCloud.Text = "Large Magellanic Cloud";
             this.btnLargeMagCloud.UseVisualStyleBackColor = false;
+            this.btnLargeMagCloud.Click += new System.EventHandler(this.btnLargeMagCloud_Click);
             // 
             // btnSombrero
             // 
@@ -191,6 +194,7 @@
             this.btnSombrero.TabIndex = 21;
             this.btnSombrero.Text = "Sombrero";
             this.btnSombrero.UseVisualStyleBackColor = false;
+            this.btnSombrero.Click += new System.EventHandler(this.btnSombrero_Click);
             // 
             // btnMilkyWay
             // 
@@ -203,6 +207,7 @@
             this.btnMilkyWay.TabIndex = 20;
             this.btnMilkyWay.Text = "Milky Way";
             this.btnMilkyWay.UseVisualStyleBackColor = false;
+            this.btnMilkyWay.Click += new System.EventHandler(this.btnMilkyWay_Click);
             // 
             // comboBoxGalaxies
             // 
@@ -210,15 +215,6 @@
             this.comboBoxGalaxies.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxGalaxies.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxGalaxies.FormattingEnabled = true;
-            /*this.comboBoxGalaxies.Items.AddRange(new object[] {
-            "Andromeda",
-            "Cigar",
-            "Milky Way",
-            "Pinwheel",
-            "Sombrero",
-            "Sunflower",
-            "Triangulum",
-            "Whirlpool"});*/
             this.comboBoxGalaxies.Location = new System.Drawing.Point(718, 284);
             this.comboBoxGalaxies.Name = "comboBoxGalaxies";
             this.comboBoxGalaxies.Size = new System.Drawing.Size(296, 37);
