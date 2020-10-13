@@ -67,16 +67,47 @@ namespace DigiScriptor
         //Save all data from text boxes into table. Database table automatically increments LocationID by 1 for each entry
         private void dataSave_Click(object sender, EventArgs e)
         {
-            connect.Open();
-            SqlCommand cmd = connect.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "insert into EarthScreenFavorites (Name, Latitude, Longitude) VALUES (@Name, @Latitude, @Longitude)";
-            cmd.Parameters.AddWithValue("@Name", name);
-            cmd.Parameters.AddWithValue("@Latitude", latitude);
-            cmd.Parameters.AddWithValue("@Longitude", longitude);
-            cmd.ExecuteNonQuery();
-            connect.Close();
-            LoadTable();
+            
+            // Check lat and long text box validity
+            if (latitude_Valid == false && longitude_Valid == false)
+            {
+                MessageBox.Show("Latitude and Longitude values are invalid");
+
+                // Clear both boxes if invalid
+                latitudeTextBox.Clear();
+                longitudeTextBox.Clear();
+            }
+
+            //Check latitude validity if longitude is valid
+            else if (latitude_Valid == false)
+            {
+                MessageBox.Show("Latitude value is invalid");
+                //clear latitude box if invalid
+                latitudeTextBox.Clear();
+            }
+
+            //Check longitude validity if latitude is valid
+            else if (longitude_Valid == false)
+            {
+                MessageBox.Show("Latitude value is invalid");
+                //clear longitude box if invalid
+                longitudeTextBox.Clear();
+            }
+
+            // If all values valid, add to database
+            else
+            {
+                connect.Open();
+                SqlCommand cmd = connect.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "insert into EarthScreenFavorites (Name, Latitude, Longitude) VALUES (@Name, @Latitude, @Longitude)";
+                cmd.Parameters.AddWithValue("@Name", name);
+                cmd.Parameters.AddWithValue("@Latitude", latitude);
+                cmd.Parameters.AddWithValue("@Longitude", longitude);
+                cmd.ExecuteNonQuery();
+                connect.Close();
+                LoadTable();
+            }
 
         }
 
