@@ -104,6 +104,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShowItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShowItem.Designer.cs">
+      <DependentUpon>ShowItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="StarsScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ShowItem.resx">
+      <DependentUpon>ShowItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StarsScreen.resx">
       <DependentUpon>StarsScreen.cs</DependentUpon>
     </EmbeddedResource>

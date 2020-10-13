@@ -19,6 +19,13 @@ namespace DigiScriptor
         public String fileName;
         public String filePath;
 
+        private List<ShowItem> theList = new List<ShowItem>();
+
+
+
+
+
+
         public HomeScreen()
         {
             InitializeComponent();
@@ -41,7 +48,51 @@ namespace DigiScriptor
             this.userControlHome.btnMovies.Click += ButtonMovies;
             this.userControlHome.btnLights.Click += ButtonDomeLights;
 
+            populateList();
+
         }
+
+
+
+        private void populateList()
+        {
+            //test show
+            for (int i = 0; i < 2; i++)
+            {
+
+                ShowItem test = new ShowItem();
+                test.Title = "test title " + i;
+                test.Decription = "this is a test description";
+                theList.Add(test);
+                
+            }
+
+            UpdateList();
+
+        }
+
+
+
+
+        public void UpdateList()
+        {
+            //update the show list
+            for(int i= 0; i < theList.Count; i++)
+            {
+                //go through list adding show items to the show
+                showPanel.Controls.Add(theList[i]);
+
+            }
+        }
+
+        public void AddItem(ShowItem newItem)
+        {
+            //add items to list from other screens
+            theList.Add(newItem);
+            UpdateList();
+        }
+
+
 
 
 
@@ -109,6 +160,11 @@ namespace DigiScriptor
             {
                 //do some stuff
             }
+        }
+
+        private void showPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
