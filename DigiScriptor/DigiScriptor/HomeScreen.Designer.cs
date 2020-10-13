@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
-using System.Windows.Forms;
 
 namespace DigiScriptor
 {
@@ -32,11 +31,12 @@ namespace DigiScriptor
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeScreen));
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.showPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.lblCart = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.txtboxCart = new System.Windows.Forms.TextBox();
             this.userControlHome = new DigiScriptor.UserControlHome();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -46,16 +46,14 @@ namespace DigiScriptor
             // splitter2
             // 
             this.splitter2.Location = new System.Drawing.Point(0, 0);
-            this.splitter2.Margin = new System.Windows.Forms.Padding(2);
             this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(7, 666);
+            this.splitter2.Size = new System.Drawing.Size(10, 1024);
             this.splitter2.TabIndex = 22;
             this.splitter2.TabStop = false;
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Location = new System.Drawing.Point(10, 4);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2);
+            this.splitContainer1.Location = new System.Drawing.Point(15, 6);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -64,37 +62,25 @@ namespace DigiScriptor
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.showPanel);
             this.splitContainer1.Panel2.Controls.Add(this.lblCart);
             this.splitContainer1.Panel2.Controls.Add(this.btnSubmit);
+            this.splitContainer1.Panel2.Controls.Add(this.txtboxCart);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(1250, 650);
-            this.splitContainer1.SplitterDistance = 706;
-            this.splitContainer1.SplitterWidth = 3;
+            this.splitContainer1.Size = new System.Drawing.Size(1875, 1000);
+            this.splitContainer1.SplitterDistance = 1060;
             this.splitContainer1.TabIndex = 23;
-            // 
-            // showPanel
-            // 
-            this.showPanel.AutoScroll = true;
-            this.showPanel.BackColor = System.Drawing.Color.DarkGray;
-            this.showPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.showPanel.Location = new System.Drawing.Point(133, 109);
-            this.showPanel.Name = "showPanel";
-            this.showPanel.Size = new System.Drawing.Size(310, 400);
-            this.showPanel.TabIndex = 15;
-            this.showPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.showPanel_Paint);
             // 
             // lblCart
             // 
             this.lblCart.AutoSize = true;
             this.lblCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCart.ForeColor = System.Drawing.SystemColors.Menu;
-            this.lblCart.Location = new System.Drawing.Point(212, 44);
-            this.lblCart.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCart.Location = new System.Drawing.Point(318, 67);
             this.lblCart.Name = "lblCart";
-            this.lblCart.Size = new System.Drawing.Size(159, 29);
+            this.lblCart.Size = new System.Drawing.Size(247, 40);
             this.lblCart.TabIndex = 14;
-            this.lblCart.Text = "Current Show";
+            this.lblCart.Text = "Shopping Cart";
+            this.lblCart.Click += new System.EventHandler(this.lblCart_Click);
             // 
             // btnSubmit
             // 
@@ -102,34 +88,44 @@ namespace DigiScriptor
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.SpringGreen;
-            this.btnSubmit.Location = new System.Drawing.Point(204, 559);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSubmit.Location = new System.Drawing.Point(340, 860);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(181, 49);
+            this.btnSubmit.Size = new System.Drawing.Size(186, 75);
             this.btnSubmit.TabIndex = 13;
-            this.btnSubmit.Text = "Generate Script";
+            this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click_1);
+            // 
+            // txtboxCart
+            // 
+            this.txtboxCart.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtboxCart.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtboxCart.Location = new System.Drawing.Point(166, 147);
+            this.txtboxCart.Multiline = true;
+            this.txtboxCart.Name = "txtboxCart";
+            this.txtboxCart.ReadOnly = true;
+            this.txtboxCart.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtboxCart.Size = new System.Drawing.Size(551, 661);
+            this.txtboxCart.TabIndex = 12;
+            this.txtboxCart.Text = resources.GetString("txtboxCart.Text");
             // 
             // userControlHome
             // 
             this.userControlHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.userControlHome.Location = new System.Drawing.Point(0, 0);
-            this.userControlHome.Margin = new System.Windows.Forms.Padding(1);
             this.userControlHome.Name = "userControlHome";
-            this.userControlHome.Size = new System.Drawing.Size(708, 646);
+            this.userControlHome.Size = new System.Drawing.Size(1062, 994);
             this.userControlHome.TabIndex = 31;
+            this.userControlHome.Load += new System.EventHandler(this.userControlHome_Load);
             // 
             // HomeScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1265, 666);
-            this.Controls.Add(this.userControlHome);
+            this.ClientSize = new System.Drawing.Size(1898, 1024);
             this.Controls.Add(this.splitter2);
             this.Controls.Add(this.splitContainer1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Controls.Add(this.userControlHome);
             this.Name = "HomeScreen";
             this.Text = "DigiScriptor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -147,6 +143,7 @@ namespace DigiScriptor
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label lblCart;
         private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.TextBox txtboxCart;
         private UserControlHome userControlHome;
         private UserControlGalaxies userControlGalaxies;
         private UserControlNightSky userControlNightSky;
@@ -161,7 +158,7 @@ namespace DigiScriptor
 
 
         //
-        // Events for moving between UserControl Panels
+        // Events from UserControl Panels
         //
 
         //HomeScreen -> Galaxies
@@ -169,9 +166,7 @@ namespace DigiScriptor
         {
             userControlGalaxies = new DigiScriptor.UserControlGalaxies();
             userControlGalaxies.btnGalaxiesBack.Click += ButtonGalaxiesBack;
-            userControlGalaxies.btnSubmitGalaxy.Click += GalaxiesOutput;
 
-            this.btnSubmit.Hide();
             this.Controls.Add(userControlGalaxies);
             userControlGalaxies.Show();
             userControlGalaxies.BringToFront();
@@ -183,7 +178,6 @@ namespace DigiScriptor
         {
             this.userControlGalaxies.Dispose();
             this.userControlHome.Show();
-            this.btnSubmit.Show();
         }
 
 
@@ -193,7 +187,6 @@ namespace DigiScriptor
             userControlNightSky = new DigiScriptor.UserControlNightSky();
             userControlNightSky.btnSkyBack.Click += ButtonSkyBack;
 
-            this.btnSubmit.Hide();
             this.Controls.Add(userControlNightSky);
             userControlNightSky.Show();
             userControlNightSky.BringToFront();
@@ -205,7 +198,6 @@ namespace DigiScriptor
         {
             this.userControlNightSky.Dispose();
             this.userControlHome.Show();
-            this.btnSubmit.Show();
         }
 
 
@@ -215,7 +207,6 @@ namespace DigiScriptor
             userControlEarth = new DigiScriptor.UserControlEarth();
             userControlEarth.btnEarthBack.Click += ButtonEarthBack;
 
-            this.btnSubmit.Hide();
             this.Controls.Add(userControlEarth);
             userControlEarth.Show();
             userControlEarth.BringToFront();
@@ -227,7 +218,6 @@ namespace DigiScriptor
         {
             this.userControlEarth.Dispose();
             this.userControlHome.Show();
-            this.btnSubmit.Show();
         }
 
 
@@ -237,7 +227,6 @@ namespace DigiScriptor
             userControlStars = new DigiScriptor.UserControlStars();
             userControlStars.btnStarsBack.Click += ButtonStarsBack;
 
-            this.btnSubmit.Hide();
             this.Controls.Add(userControlStars);
             userControlStars.Show();
             userControlStars.BringToFront();
@@ -249,7 +238,6 @@ namespace DigiScriptor
         {
             this.userControlStars.Dispose();
             this.userControlHome.Show();
-            this.btnSubmit.Show();
         }
 
 
@@ -259,7 +247,6 @@ namespace DigiScriptor
             userControlMoons = new DigiScriptor.UserControlMoons();
             userControlMoons.btnMoonsBack.Click += ButtonMoonsBack;
 
-            this.btnSubmit.Hide();
             this.Controls.Add(userControlMoons);
             userControlMoons.Show();
             userControlMoons.BringToFront();
@@ -271,7 +258,6 @@ namespace DigiScriptor
         {
             this.userControlMoons.Dispose();
             this.userControlHome.Show();
-            this.btnSubmit.Show();
         }
 
 
@@ -281,7 +267,6 @@ namespace DigiScriptor
             userControlPlanets = new DigiScriptor.UserControlPlanets();
             userControlPlanets.btnPlanetsBack.Click += ButtonPlanetsBack;
 
-            this.btnSubmit.Hide();
             this.Controls.Add(userControlPlanets);
             userControlPlanets.Show();
             userControlPlanets.BringToFront();
@@ -293,7 +278,6 @@ namespace DigiScriptor
         {
             this.userControlPlanets.Dispose();
             this.userControlHome.Show();
-            this.btnSubmit.Show();
         }
 
 
@@ -303,7 +287,6 @@ namespace DigiScriptor
             userControlNebulae = new DigiScriptor.UserControlNebulae();
             userControlNebulae.btnNebulaeBack.Click += ButtonNebulaeBack;
 
-            this.btnSubmit.Hide();
             this.Controls.Add(userControlNebulae);
             userControlNebulae.Show();
             userControlNebulae.BringToFront();
@@ -315,7 +298,6 @@ namespace DigiScriptor
         {
             this.userControlNebulae.Dispose();
             this.userControlHome.Show();
-            this.btnSubmit.Show();
         }
 
 
@@ -325,7 +307,6 @@ namespace DigiScriptor
             userControlMovies = new DigiScriptor.UserControlMovies();
             userControlMovies.btnMoviesBack.Click += ButtonMoviesBack;
 
-            this.btnSubmit.Hide();
             this.Controls.Add(userControlMovies);
             userControlMovies.Show();
             userControlMovies.BringToFront();
@@ -337,7 +318,6 @@ namespace DigiScriptor
         {
             this.userControlMovies.Dispose();
             this.userControlHome.Show();
-            this.btnSubmit.Show();
         }
 
 
@@ -347,7 +327,6 @@ namespace DigiScriptor
             userControlDomeLights = new DigiScriptor.UserControlDomeLights();
             userControlDomeLights.btnDomeLightsBack.Click += ButtonDomeLightsBack;
 
-            this.btnSubmit.Hide();
             this.Controls.Add(userControlDomeLights);
             userControlDomeLights.Show();
             userControlDomeLights.BringToFront();
@@ -359,46 +338,8 @@ namespace DigiScriptor
         {
             this.userControlDomeLights.Dispose();
             this.userControlHome.Show();
-            this.btnSubmit.Show();
         }
 
-        //
-        // Events for writing to script file
-        //
-
-        // Galaxies Submit Output
-        public void GalaxiesOutput(object sender, EventArgs e)
-        {
-            String outputString = null;
-            String fileOutput = null;
-            
-            outputString = this.userControlGalaxies.lblGalaxiesOutput.Text;
-            outputString = outputString.TrimEnd();
-
-            if (!(outputString == "(Some Galaxy)"))
-            {
-                fileOutput = "scipt play " + outputString + ";\n";
-                if (System.IO.File.Exists(filePath))
-                {
-                    using (System.IO.StreamWriter file =
-                        new System.IO.StreamWriter(filePath, true)) //appending to file
-                    {
-                        // this only works for Andromeda
-                        file.WriteLine(fileOutput);
-                    }
-                } else {
-                    System.IO.File.WriteAllText(filePath, fileOutput);
-                }
-
-                // submitted pop-up
-                if (MessageBox.Show("Submitted") == DialogResult.OK)
-                {
-                    this.userControlGalaxies.btnGalaxiesBack.PerformClick();
-                }
-            }
-        }
-
-        public FlowLayoutPanel showPanel;
     }
 }
 
