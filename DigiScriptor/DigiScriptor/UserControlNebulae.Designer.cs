@@ -38,12 +38,14 @@
             this.lblNebulaeTitle = new System.Windows.Forms.Label();
             this.btnSubmitNebulae = new System.Windows.Forms.Button();
             this.btnNebulaeBack = new System.Windows.Forms.Button();
+            this.editPopularNebulaeButton = new System.Windows.Forms.Button();
             this.panelNebulae.SuspendLayout();
             this.nebulaePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelNebulae
             // 
+            this.panelNebulae.Controls.Add(this.editPopularNebulaeButton);
             this.panelNebulae.Controls.Add(this.nebulaePanel);
             this.panelNebulae.Controls.Add(this.lblNebulaeVantagePoint);
             this.panelNebulae.Controls.Add(this.nebulaeDropdown);
@@ -107,6 +109,7 @@
             this.nebulaeDropdown.Name = "nebulaeDropdown";
             this.nebulaeDropdown.Size = new System.Drawing.Size(149, 24);
             this.nebulaeDropdown.TabIndex = 26;
+            this.nebulaeDropdown.SelectedIndexChanged += new System.EventHandler(this.nebulaeDropdown_SelectedIndexChanged);
             // 
             // lblNebulaeSelectionDropdown
             // 
@@ -155,6 +158,16 @@
             this.btnNebulaeBack.Text = "Back";
             this.btnNebulaeBack.UseVisualStyleBackColor = false;
             // 
+            // editPopularNebulaeButton
+            // 
+            this.editPopularNebulaeButton.Location = new System.Drawing.Point(351, 73);
+            this.editPopularNebulaeButton.Name = "editPopularNebulaeButton";
+            this.editPopularNebulaeButton.Size = new System.Drawing.Size(75, 23);
+            this.editPopularNebulaeButton.TabIndex = 30;
+            this.editPopularNebulaeButton.Text = "Add/Edit";
+            this.editPopularNebulaeButton.UseVisualStyleBackColor = true;
+            this.editPopularNebulaeButton.Click += new System.EventHandler(this.editPopularNebulaeButton_Click);
+            // 
             // UserControlNebulae
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,5 +197,6 @@
         private System.Windows.Forms.Panel nebulaePanel;
         private System.Windows.Forms.ComboBox comboNebVantagePoint;
         private System.Windows.Forms.TextBox txtBoxNebVantagePoint;
+        private System.Windows.Forms.Button editPopularNebulaeButton;
     }
 }
