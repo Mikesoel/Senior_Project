@@ -117,19 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="txtboxCart.Text" xml:space="preserve">
-    <value>mercuryorbit fadeIntensity 75
-venusorbit fadeIntensity 75
-EarthOrbit fadeIntensity 75
-MarsOrbit fadeIntensity 75
-JupiterOrbit fadeIntensity 75
-SaturnOrbit fadeIntensity 75
-UranusOrbit fadeIntensity 75
-Neptuneorbit fadeIntensity 75
-
-navigation on
-navigation orbitRadiusScale 2.1
-navigation defaultOrbitRate 0
-navigation flyto Sun duration 8</value>
-  </data>
 </root>

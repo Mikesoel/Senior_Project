@@ -6,30 +6,20 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 using System.Windows.Forms;
-using System.Runtime.CompilerServices;
 
 namespace DigiScriptor
 {
     public partial class HomeScreen : Form
     {
         public static HomeScreen Current;
-        public String dir;
-        public String fileName;
-        public String filePath;
-
         public HomeScreen()
         {
             InitializeComponent();
 
             //used to keep track of this form
             Current = this;
-            dir = Directory.GetCurrentDirectory();
-            fileName = "script.txt";
-            filePath = dir + "\\" + fileName;
 
-            // Events for moving to different screens
             this.userControlHome.btnGalaxies.Click += ButtonGalaxies;
             this.userControlHome.btnSky.Click += ButtonNightSky;
             this.userControlHome.btnEarth.Click += ButtonEarth;
@@ -39,8 +29,6 @@ namespace DigiScriptor
             this.userControlHome.btnNebulae.Click += ButtonNebulae;
             this.userControlHome.btnMovies.Click += ButtonMovies;
             this.userControlHome.btnLights.Click += ButtonDomeLights;
-
-            //this.userControlGalaxies.btnSubmitGalaxy.Click += GalaxiesOutput;
         }
 
 
@@ -52,10 +40,12 @@ namespace DigiScriptor
 
         private void HomeScreen_Load(object sender, EventArgs e)
         {
+            //panelHomeScreen.Show();
+            //panelHomeScreen.BringToFront();
+            //panelHomeScreen.Hide();
             userControlHome.Show();
             userControlHome.BringToFront();
 
-            
         }
 
         private void lblDigi_Click_1(object sender, EventArgs e)
