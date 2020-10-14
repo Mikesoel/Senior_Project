@@ -14,15 +14,19 @@ namespace DigiScriptor
 {
     public partial class UserControlMovies : UserControl
     {
-        private static HomeScreen home;
-        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\DigiDataBase.mdf;Integrated Security=True");
+        //SqlConnection setup string
+        string sqlPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\")) + @"DigiDataBase.mdf;Integrated Security=True";
+        SqlConnection connect;
 
         public UserControlMovies()
         {
             InitializeComponent();
 
+            //make the SqlConnection with local file path
+            connect = new SqlConnection(sqlPath);
+
+            //load database into the combo box
             LoadComboBox();
-            //lblMoviesOutput.MaximumSize = new Size(100, 0);
         }
 
         public void LoadComboBox()

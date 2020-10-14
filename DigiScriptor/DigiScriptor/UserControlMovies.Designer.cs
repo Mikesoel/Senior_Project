@@ -132,12 +132,6 @@
             this.comboBoxMovies.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxMovies.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxMovies.FormattingEnabled = true;
-            this.comboBoxMovies.Items.AddRange(new object[] {
-            "Frozen Worlds",
-            "Secrets of the Sun",
-            "Stars of the Pharaohs",
-            "The Christmas Star",
-            "Two Small Pieces of Glass"});
             this.comboBoxMovies.Location = new System.Drawing.Point(731, 248);
             this.comboBoxMovies.Name = "comboBoxMovies";
             this.comboBoxMovies.Size = new System.Drawing.Size(296, 37);
