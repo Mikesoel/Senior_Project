@@ -85,5 +85,9 @@ namespace DigiScriptor
 
         #endregion
 
+        private void titleBox_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

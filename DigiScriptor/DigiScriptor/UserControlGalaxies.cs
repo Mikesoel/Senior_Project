@@ -19,6 +19,9 @@ namespace DigiScriptor
         {
             InitializeComponent();
             LoadComboBox();
+
+            //lblGalaxiesOutput.MaximumSize = new Size(100, 0);
+
         }
 
         public void LoadComboBox()
@@ -77,7 +80,41 @@ namespace DigiScriptor
 
         private void btnSubmitGalaxy_Click(object sender, EventArgs e)
         {
-            
+            String outputLbl = lblGalaxiesOutput.Text;
+            if (!(String.IsNullOrEmpty(outputLbl)))
+            {
+                //confirmation message
+                String sub = "submit?";
+                String con = "Confirm";
+                DialogResult results;
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+
+                //display messgae
+                results = MessageBox.Show(sub, con, buttons);
+                //if result is 'yes' then show submited
+                if (results == DialogResult.Yes)
+                {
+                    String cartOutput = "move to " + lblGalaxiesOutput.Text;
+
+                    //create star item
+                    ShowItem galaxyItem = new ShowItem("Galaxy Move", cartOutput);
+
+                    //add show item to list
+                    HomeScreen.Current.AddItem(galaxyItem);
+
+
+                    //update the show list after submit
+                    HomeScreen.Current.UpdateList();
+
+
+                    //for after submited is 'ok'
+                    if (MessageBox.Show("submitted") == DialogResult.OK)
+                    {
+                        //do something after submitted message
+                    }
+
+                }
+            }
         }
 
         private void btnMilkyWay_Click(object sender, EventArgs e)

@@ -354,5 +354,10 @@ namespace DigiScriptor
             }
 
         }
+
+        private void panelStars_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
