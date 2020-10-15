@@ -67,7 +67,45 @@ namespace DigiScriptor
 
         private void btnSubmitEarth_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Earth Selections Submitted");
+            //confirmation message
+            String sub = "Submit?";
+            String con = "Confirm";
+            DialogResult results;
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+
+            //display messgae
+            results = MessageBox.Show(sub, con, buttons);
+            //if result is 'yes' then show submited
+            if (results == DialogResult.Yes)
+            {
+
+                //create Earth item
+                ShowItem Earthitem = new ShowItem("Earth Move", "this is a earth move");
+
+                //add show item to list
+                HomeScreen.Current.AddItem(Earthitem);
+
+
+
+                //update the show list after submit
+                HomeScreen.Current.UpdateList();
+
+
+                //for after submited is 'ok'
+                if (MessageBox.Show("Submitted") == DialogResult.OK)
+                {
+                    //do something after submitted message
+                }
+
+            }
+            else
+            {
+                //what to do if no is selected
+
+            }
+
+
+
         }
 
         private void panelEarth_Paint(object sender, PaintEventArgs e)

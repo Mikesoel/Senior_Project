@@ -54,7 +54,42 @@ namespace DigiScriptor
 
         private void btnSubmitNebulae_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Nebulae Selections Submitted");
+            //confirmation message
+            String sub = "Submit?";
+            String con = "Confirm";
+            DialogResult results;
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+
+            //display messgae
+            results = MessageBox.Show(sub, con, buttons);
+            //if result is 'yes' then show submited
+            if (results == DialogResult.Yes)
+            {
+
+                //create Earth item
+                ShowItem Nebulaeitem = new ShowItem("Nebula Move", "this is a nebula move");
+
+                //add show item to list
+                HomeScreen.Current.AddItem(Nebulaeitem);
+
+
+
+                //update the show list after submit
+                HomeScreen.Current.UpdateList();
+
+
+                //for after submited is 'ok'
+                if (MessageBox.Show("Submitted") == DialogResult.OK)
+                {
+                    //do something after submitted message
+                }
+
+            }
+            else
+            {
+                //what to do if no is selected
+
+            }
         }
 
         private void editPopularNebulaeButton_Click(object sender, EventArgs e)
