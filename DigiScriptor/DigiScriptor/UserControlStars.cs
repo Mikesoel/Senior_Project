@@ -27,27 +27,7 @@ namespace DigiScriptor
         DataTable dt = new DataTable();
 
 
-        List<stars> starsList = new List<stars>();
-
-
-
-        public struct stars
-        {
-            public String name;
-            public int RAHr;
-            public int RAMin;
-            public float RASec;
-
-            public int DDeg;
-            public int DMin;
-            public float DSec;
-
-        }
-
-
-
-
-
+     
 
         public UserControlStars()
         {
@@ -78,9 +58,8 @@ namespace DigiScriptor
             {
                 StarFavorites.Items.Add(dr["Name"].ToString().Trim());
 
-                stars s;
-                s.name = dr["Name"].ToString();
-                //dr.ItemArray
+                
+                
 
 
 
@@ -427,7 +406,7 @@ namespace DigiScriptor
 
         private void StarFavorites_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*
+            
             connect.Open();
             SqlCommand cmd = connect.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -439,9 +418,36 @@ namespace DigiScriptor
             cmd.Parameters.AddWithValue("@index", StarFavorites.SelectedItem);
             cmd.ExecuteNonQuery();
 
-            
+            try
+            {
+                SqlDataAdapter sda = new SqlDataAdapter();
+                sda.SelectCommand = cmd;
+
+                
+                sda.Fill(dt);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    //StarFavorites.Items.Add(dr["Name"].ToString().Trim());
+
+                    RAsHrTxt.Text = dr["RAHr"].ToString();
+
+
+
+
+                }
+
+
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
             connect.Close();
-            */
+            
 
         }
 

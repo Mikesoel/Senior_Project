@@ -97,6 +97,7 @@ namespace DigiScriptor
                 sda.SelectCommand = cmd;
                 DataTable dbdataset = new DataTable();
                 sda.Fill(dbdataset);
+
                 BindingSource bSource = new BindingSource();
 
                 bSource.DataSource = dbdataset;
