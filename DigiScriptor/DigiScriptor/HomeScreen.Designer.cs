@@ -169,7 +169,6 @@ namespace DigiScriptor
         {
             userControlGalaxies = new DigiScriptor.UserControlGalaxies();
             userControlGalaxies.btnGalaxiesBack.Click += ButtonGalaxiesBack;
-            userControlGalaxies.btnSubmitGalaxy.Click += GalaxiesOutput;
 
             this.btnSubmit.Hide();
             this.Controls.Add(userControlGalaxies);

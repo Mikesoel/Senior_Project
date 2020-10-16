@@ -8,16 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.IO;
 
 namespace DigiScriptor
 {
     public partial class UserControlGalaxies : UserControl
     {
-        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\DigiDataBase.mdf;Integrated Security=True");
+        //SqlConnection setup string
+        string sqlPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\")) + @"DigiDataBase.mdf;Integrated Security=True";
+        SqlConnection connect;
 
         public UserControlGalaxies()
         {
             InitializeComponent();
+
+            //make the SqlConnection with local file path
+            connect = new SqlConnection(sqlPath);
+
+            //load database into the combo box
             LoadComboBox();
         }
 
@@ -77,7 +85,41 @@ namespace DigiScriptor
 
         private void btnSubmitGalaxy_Click(object sender, EventArgs e)
         {
-            
+            String outputLbl = lblGalaxiesOutput.Text;
+            if (!(String.IsNullOrEmpty(outputLbl)))
+            {
+                //confirmation message
+                String sub = "submit?";
+                String con = "Confirm";
+                DialogResult results;
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+
+                //display messgae
+                results = MessageBox.Show(sub, con, buttons);
+                //if result is 'yes' then show submited
+                if (results == DialogResult.Yes)
+                {
+                    String cartOutput = "move to " + lblGalaxiesOutput.Text + " Galaxy";
+
+                    //create star item
+                    ShowItem galaxyItem = new ShowItem("Galaxy Move", cartOutput);
+
+                    //add show item to list
+                    HomeScreen.Current.AddItem(galaxyItem);
+
+
+                    //update the show list after submit
+                    HomeScreen.Current.UpdateList();
+
+
+                    //for after submited is 'ok'
+                    if (MessageBox.Show("submitted") == DialogResult.OK)
+                    {
+                        //do something after submitted message
+                    }
+
+                }
+            }
         }
 
         private void btnMilkyWay_Click(object sender, EventArgs e)

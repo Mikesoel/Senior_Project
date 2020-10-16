@@ -78,21 +78,23 @@
             // 
             // lblMoviesOutput
             // 
-            this.lblMoviesOutput.AutoSize = true;
+            this.lblMoviesOutput.BackColor = System.Drawing.Color.Silver;
             this.lblMoviesOutput.Font = new System.Drawing.Font("Bernard MT Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMoviesOutput.ForeColor = System.Drawing.SystemColors.Menu;
-            this.lblMoviesOutput.Location = new System.Drawing.Point(778, 449);
+            this.lblMoviesOutput.ForeColor = System.Drawing.Color.Black;
+            this.lblMoviesOutput.Location = new System.Drawing.Point(759, 439);
+            this.lblMoviesOutput.MaximumSize = new System.Drawing.Size(500, 500);
             this.lblMoviesOutput.Name = "lblMoviesOutput";
-            this.lblMoviesOutput.Size = new System.Drawing.Size(199, 43);
+            this.lblMoviesOutput.Size = new System.Drawing.Size(247, 180);
             this.lblMoviesOutput.TabIndex = 38;
-            this.lblMoviesOutput.Text = "(Some Movie)";
+            this.lblMoviesOutput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMoviesOutput.Click += new System.EventHandler(this.lblMoviesOutput_Click);
             // 
             // lblMovieSelect
             // 
             this.lblMovieSelect.AutoSize = true;
             this.lblMovieSelect.Font = new System.Drawing.Font("Bernard MT Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMovieSelect.ForeColor = System.Drawing.SystemColors.Menu;
-            this.lblMovieSelect.Location = new System.Drawing.Point(802, 375);
+            this.lblMovieSelect.Location = new System.Drawing.Point(805, 375);
             this.lblMovieSelect.Name = "lblMovieSelect";
             this.lblMovieSelect.Size = new System.Drawing.Size(151, 43);
             this.lblMovieSelect.TabIndex = 37;
@@ -104,7 +106,7 @@
             this.lblSearchMovies.AutoSize = true;
             this.lblSearchMovies.Font = new System.Drawing.Font("Bernard MT Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearchMovies.ForeColor = System.Drawing.SystemColors.Menu;
-            this.lblSearchMovies.Location = new System.Drawing.Point(724, 211);
+            this.lblSearchMovies.Location = new System.Drawing.Point(726, 217);
             this.lblSearchMovies.Name = "lblSearchMovies";
             this.lblSearchMovies.Size = new System.Drawing.Size(74, 28);
             this.lblSearchMovies.TabIndex = 36;
@@ -116,12 +118,13 @@
             this.btnSubmitMovies.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmitMovies.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmitMovies.ForeColor = System.Drawing.Color.SpringGreen;
-            this.btnSubmitMovies.Location = new System.Drawing.Point(784, 593);
+            this.btnSubmitMovies.Location = new System.Drawing.Point(787, 652);
             this.btnSubmitMovies.Name = "btnSubmitMovies";
             this.btnSubmitMovies.Size = new System.Drawing.Size(186, 75);
             this.btnSubmitMovies.TabIndex = 35;
             this.btnSubmitMovies.Text = "Submit";
             this.btnSubmitMovies.UseVisualStyleBackColor = false;
+            this.btnSubmitMovies.Click += new System.EventHandler(this.btnSubmitMovies_Click);
             // 
             // comboBoxMovies
             // 
@@ -129,13 +132,7 @@
             this.comboBoxMovies.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxMovies.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxMovies.FormattingEnabled = true;
-            this.comboBoxMovies.Items.AddRange(new object[] {
-            "Frozen Worlds",
-            "Secrets of the Sun",
-            "Stars of the Pharaohs",
-            "The Christmas Star",
-            "Two Small Pieces of Glass"});
-            this.comboBoxMovies.Location = new System.Drawing.Point(729, 248);
+            this.comboBoxMovies.Location = new System.Drawing.Point(731, 248);
             this.comboBoxMovies.Name = "comboBoxMovies";
             this.comboBoxMovies.Size = new System.Drawing.Size(296, 37);
             this.comboBoxMovies.Sorted = true;
