@@ -87,6 +87,7 @@
             this.checkBox_ConstLines.TabIndex = 36;
             this.checkBox_ConstLines.Text = "Constellations Lines";
             this.checkBox_ConstLines.UseVisualStyleBackColor = true;
+            this.checkBox_ConstLines.CheckedChanged += new System.EventHandler(this.checkBox_ConstLines_CheckedChanged);
             // 
             // checkBox_LabelConst
             // 
@@ -98,6 +99,7 @@
             this.checkBox_LabelConst.TabIndex = 35;
             this.checkBox_LabelConst.Text = "Label Constellations";
             this.checkBox_LabelConst.UseVisualStyleBackColor = true;
+            this.checkBox_LabelConst.CheckedChanged += new System.EventHandler(this.checkBox_LabelConst_CheckedChanged);
             // 
             // checkBox_ConstArt
             // 
@@ -109,6 +111,7 @@
             this.checkBox_ConstArt.TabIndex = 34;
             this.checkBox_ConstArt.Text = "Constellation Art";
             this.checkBox_ConstArt.UseVisualStyleBackColor = true;
+            this.checkBox_ConstArt.CheckedChanged += new System.EventHandler(this.checkBox_ConstArt_CheckedChanged);
             // 
             // checkBox_MoreStars
             // 
@@ -120,6 +123,7 @@
             this.checkBox_MoreStars.TabIndex = 33;
             this.checkBox_MoreStars.Text = "More Stars";
             this.checkBox_MoreStars.UseVisualStyleBackColor = true;
+            this.checkBox_MoreStars.CheckedChanged += new System.EventHandler(this.checkBox_MoreStars_CheckedChanged);
             // 
             // label_Options
             // 
@@ -211,6 +215,7 @@
             this.comboBox_Hours.DropDownWidth = 213;
             this.comboBox_Hours.FormattingEnabled = true;
             this.comboBox_Hours.Items.AddRange(new object[] {
+            "00",
             "01",
             "02",
             "03",
