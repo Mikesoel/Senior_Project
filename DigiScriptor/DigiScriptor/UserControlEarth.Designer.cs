@@ -48,7 +48,7 @@
             this.lblEarthCustomLocation = new System.Windows.Forms.Label();
             this.popularLocationsCombo = new System.Windows.Forms.ComboBox();
             this.lblPopularDropdown = new System.Windows.Forms.Label();
-            this.lblEarthTitle = new System.Windows.Forms.Label();
+            this.lblGalaxies = new System.Windows.Forms.Label();
             this.panelEarth.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -58,6 +58,7 @@
             // 
             // panelEarth
             // 
+            this.panelEarth.Controls.Add(this.lblGalaxies);
             this.panelEarth.Controls.Add(this.editPopularLocationsButton);
             this.panelEarth.Controls.Add(this.btnSubmitEarth);
             this.panelEarth.Controls.Add(this.panel4);
@@ -67,12 +68,12 @@
             this.panelEarth.Controls.Add(this.lblEarthCustomLocation);
             this.panelEarth.Controls.Add(this.popularLocationsCombo);
             this.panelEarth.Controls.Add(this.lblPopularDropdown);
-            this.panelEarth.Controls.Add(this.lblEarthTitle);
             this.panelEarth.Location = new System.Drawing.Point(0, 0);
-            this.panelEarth.Margin = new System.Windows.Forms.Padding(2);
+            this.panelEarth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelEarth.Name = "panelEarth";
             this.panelEarth.Size = new System.Drawing.Size(708, 648);
             this.panelEarth.TabIndex = 25;
+            this.panelEarth.Paint += new System.Windows.Forms.PaintEventHandler(this.panelEarth_Paint);
             // 
             // editPopularLocationsButton
             // 
@@ -91,7 +92,7 @@
             this.btnSubmitEarth.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmitEarth.ForeColor = System.Drawing.Color.SpringGreen;
             this.btnSubmitEarth.Location = new System.Drawing.Point(561, 584);
-            this.btnSubmitEarth.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSubmitEarth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSubmitEarth.Name = "btnSubmitEarth";
             this.btnSubmitEarth.Size = new System.Drawing.Size(124, 49);
             this.btnSubmitEarth.TabIndex = 26;
@@ -233,7 +234,7 @@
             this.btnEarthBack.BackColor = System.Drawing.Color.Gray;
             this.btnEarthBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEarthBack.Location = new System.Drawing.Point(13, 608);
-            this.btnEarthBack.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEarthBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEarthBack.Name = "btnEarthBack";
             this.btnEarthBack.Size = new System.Drawing.Size(57, 25);
             this.btnEarthBack.TabIndex = 25;
@@ -273,15 +274,17 @@
             this.lblPopularDropdown.TabIndex = 21;
             this.lblPopularDropdown.Text = "Popular Locations:";
             // 
-            // lblEarthTitle
+            // lblGalaxies
             // 
-            this.lblEarthTitle.AutoSize = true;
-            this.lblEarthTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEarthTitle.Location = new System.Drawing.Point(15, 27);
-            this.lblEarthTitle.Name = "lblEarthTitle";
-            this.lblEarthTitle.Size = new System.Drawing.Size(74, 29);
-            this.lblEarthTitle.TabIndex = 20;
-            this.lblEarthTitle.Text = "Earth";
+            this.lblGalaxies.AutoSize = true;
+            this.lblGalaxies.Font = new System.Drawing.Font("Bernard MT Condensed", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGalaxies.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lblGalaxies.Location = new System.Drawing.Point(14, 15);
+            this.lblGalaxies.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGalaxies.Name = "lblGalaxies";
+            this.lblGalaxies.Size = new System.Drawing.Size(96, 45);
+            this.lblGalaxies.TabIndex = 30;
+            this.lblGalaxies.Text = "Earth";
             // 
             // UserControlEarth
             // 
@@ -289,7 +292,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Controls.Add(this.panelEarth);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UserControlEarth";
             this.Size = new System.Drawing.Size(708, 648);
             this.panelEarth.ResumeLayout(false);
@@ -327,7 +330,7 @@
         private System.Windows.Forms.Label lblEarthCustomLocation;
         private System.Windows.Forms.ComboBox popularLocationsCombo;
         private System.Windows.Forms.Label lblPopularDropdown;
-        private System.Windows.Forms.Label lblEarthTitle;
         private System.Windows.Forms.Button editPopularLocationsButton;
+        private System.Windows.Forms.Label lblGalaxies;
     }
 }

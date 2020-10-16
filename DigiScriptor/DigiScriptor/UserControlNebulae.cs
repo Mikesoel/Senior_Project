@@ -8,16 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace DigiScriptor
 {
     public partial class UserControlNebulae : UserControl
     {
-        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Richie\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\DigiDataBase.mdf;Integrated Security=True");
+        //SqlConnection setup string
+        string sqlPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\")) + @"DigiDataBase.mdf;Integrated Security=True";
+        SqlConnection connect;
 
         public UserControlNebulae()
         {
             InitializeComponent();
+
+            //make the SqlConnection with local file path
+            connect = new SqlConnection(sqlPath);
+
+            //load database into the combo box
             LoadComboBox();
         }
 
@@ -46,7 +54,42 @@ namespace DigiScriptor
 
         private void btnSubmitNebulae_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Nebulae Selections Submitted");
+            //confirmation message
+            String sub = "Submit?";
+            String con = "Confirm";
+            DialogResult results;
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+
+            //display messgae
+            results = MessageBox.Show(sub, con, buttons);
+            //if result is 'yes' then show submited
+            if (results == DialogResult.Yes)
+            {
+
+                //create Earth item
+                ShowItem Nebulaeitem = new ShowItem("Nebula Move", "this is a nebula move");
+
+                //add show item to list
+                HomeScreen.Current.AddItem(Nebulaeitem);
+
+
+
+                //update the show list after submit
+                HomeScreen.Current.UpdateList();
+
+
+                //for after submited is 'ok'
+                if (MessageBox.Show("Submitted") == DialogResult.OK)
+                {
+                    //do something after submitted message
+                }
+
+            }
+            else
+            {
+                //what to do if no is selected
+
+            }
         }
 
         private void editPopularNebulaeButton_Click(object sender, EventArgs e)
@@ -56,6 +99,11 @@ namespace DigiScriptor
         }
 
         private void nebulaeDropdown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelNebulae_Paint(object sender, PaintEventArgs e)
         {
 
         }

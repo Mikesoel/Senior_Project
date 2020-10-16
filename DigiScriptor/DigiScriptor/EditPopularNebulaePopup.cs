@@ -1,58 +1,69 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
+using System.IO;
 
 namespace DigiScriptor
 {
 
     public partial class EditPopularNebulaePopup : Form
     {
-        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Richie\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\DigiDataBase.mdf;Integrated Security=True");
+        //SqlConnection setup string
+        string sqlPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\")) + @"DigiDataBase.mdf;Integrated Security=True";
+        SqlConnection connect;
+
         private string name = string.Empty;
         private string cellName = string.Empty;
-        private int latitude, longitude;
-        private Boolean latitude_Valid = false;
-        private Boolean longitude_Valid = false;
+        private Boolean DecDTxt_Valid = false;
+        private Boolean DecMinTxt_Valid = false;
+        private Boolean DecSecTxt_Valid = false;
+        private Boolean RAsHrTxt_Valid = false;
+        private Boolean RAsMinTxt_Valid = false;
+        private Boolean RAsSecTxt_Valid = false;
 
         public EditPopularNebulaePopup()
         {
             InitializeComponent();
+
+            //make the SqlConnection with local file path
+            connect = new SqlConnection(sqlPath);
+
+            //Load nebulae database table into data grid
             LoadTable();
         }
 
         private void btnNebulaeSave_Click(object sender, EventArgs e)
         {
-            // Check lat and long text box validity
-            if (latitude_Valid == false && longitude_Valid == false)
+            //check Right Ascention is correct
+            if (RAsHrTxt_Valid == false || RAsMinTxt_Valid == false || RAsSecTxt_Valid == false)
             {
-                MessageBox.Show("Latitude and Longitude values are invalid");
+                //reort error in Right ascention
+                if (MessageBox.Show("Right Ascention is not correct. Please validate data.") ==
+                    DialogResult.OK)
+                {
+                    RAsHrTxt.Select();
+                }
 
-                // Clear both boxes if invalid
-                txtBoxLatitude.Clear();
-                txtBoxLongitude.Clear();
+                return;
             }
 
-            //Check latitude validity if longitude is valid
-            else if (latitude_Valid == false)
+            //check that Declination is correct
+            if (DecDTxt_Valid == false || DecMinTxt_Valid == false || DecSecTxt_Valid == false)
             {
-                MessageBox.Show("Latitude value is invalid");
-                //clear latitude box if invalid
-                txtBoxLatitude.Clear();
-            }
-
-            //Check longitude validity if latitude is valid
-            else if (longitude_Valid == false)
-            {
-                MessageBox.Show("Latitude value is invalid");
-                //clear longitude box if invalid
-                txtBoxLongitude.Clear();
+                //report an error in declination
+                if (MessageBox.Show("Declination is not correct. Please validate data.") ==
+                    DialogResult.OK)
+                {
+                    DecDTxt.Select();
+                }
+                return;
             }
 
             // If all values valid, add to database
@@ -63,8 +74,8 @@ namespace DigiScriptor
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "insert into NebulaeFavorites (Name, Latitude, Longitude) VALUES (@Name, @Latitude, @Longitude)";
                 cmd.Parameters.AddWithValue("@Name", name);
-                cmd.Parameters.AddWithValue("@Latitude", latitude);
-                cmd.Parameters.AddWithValue("@Longitude", longitude);
+                //cmd.Parameters.AddWithValue("@Latitude", latitude);
+                //cmd.Parameters.AddWithValue("@Longitude", longitude);
                 cmd.ExecuteNonQuery();
                 connect.Close();
                 LoadTable();
@@ -107,10 +118,6 @@ namespace DigiScriptor
             name = txtBoxName.Text;
         }
 
-        private void txtBoxLatitude_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnNebulaeDelete_Click(object sender, EventArgs e)
         {
@@ -136,9 +143,258 @@ namespace DigiScriptor
             LoadTable();
         }
 
-        private void txtBoxLongitude_TextChanged(object sender, EventArgs e)
+        private void RAsHrTxt_TextChanged(object sender, EventArgs e)
+        {
+            //check if text is empty
+            if (RAsHrTxt.Text != "")
+            {
+                int value = 0;
+
+                //if something is in box try to convert to int
+                try
+                {
+                    value = Convert.ToInt32(RAsHrTxt.Text);
+                    //validate data is within correct range
+                    if (value >= 0 && value <= 23)
+                    {
+                        //if correct keep text black
+                        RAsHrTxt.ForeColor = Color.Black;
+                        RAsHrTxt_Valid = true;
+
+                    }
+                    else
+                    {
+                        //if invalid value then change to red text
+                        RAsHrTxt.ForeColor = Color.Red;
+                        RAsHrTxt_Valid = false;
+                    }
+                }
+                catch
+                {
+                    //if not a number then change text to red
+                    RAsHrTxt.ForeColor = Color.Red;
+                    RAsHrTxt_Valid = false;
+                }
+
+            }
+            else
+            {
+                //no data input
+                RAsHrTxt_Valid = false;
+            }
+        }
+
+        private void RAsMinTxt_TextChanged(object sender, EventArgs e)
+        {
+            //check if text is empty
+            if (RAsMinTxt.Text != "")
+            {
+                int value = 0;
+
+                //if something is in box try to convert to int
+                try
+                {
+                    value = Convert.ToInt32(RAsMinTxt.Text);
+                    //validate data is within correct range
+                    if (value >= 0 && value <= 59)
+                    {
+                        //if correct keep text black
+                        RAsMinTxt.ForeColor = Color.Black;
+                        RAsMinTxt_Valid = true;
+
+                    }
+                    else
+                    {
+                        //if invalid value then change to red text
+                        RAsMinTxt.ForeColor = Color.Red;
+                        RAsMinTxt_Valid = false;
+                    }
+                }
+                catch
+                {
+                    //if not a number then change text to red
+                    RAsMinTxt.ForeColor = Color.Red;
+                    RAsMinTxt_Valid = false;
+                }
+
+            }
+            else
+            {
+                //no data input
+                RAsMinTxt_Valid = false;
+            }
+        }
+
+        private void RAsSecTxt_TextChanged(object sender, EventArgs e)
+        {
+            //check if text is empty
+            if (RAsSecTxt.Text != "")
+            {
+                int value = 0;
+
+                //if something is in box try to convert to int
+                try
+                {
+                    value = Convert.ToInt32(RAsSecTxt.Text);
+                    //validate data is within correct range
+                    if (value >= 0 && value <= 59)
+                    {
+                        //if correct keep text black
+                        RAsSecTxt.ForeColor = Color.Black;
+                        RAsSecTxt_Valid = true;
+
+                    }
+                    else
+                    {
+                        //if invalid value then change to red text
+                        RAsSecTxt.ForeColor = Color.Red;
+                        RAsSecTxt_Valid = false;
+                    }
+                }
+                catch
+                {
+                    //if not a number then change text to red
+                    RAsSecTxt.ForeColor = Color.Red;
+                    RAsSecTxt_Valid = false;
+                }
+
+            }
+            else
+            {
+                //no data input
+                RAsSecTxt_Valid = false;
+            }
+        }
+
+        private void DecDTxt_TextChanged(object sender, EventArgs e)
+        {
+            //check if text is empty
+            if (DecDTxt.Text != "")
+            {
+                int value = 0;
+
+                //if something is in box try to convert to int
+                try
+                {
+                    value = Convert.ToInt32(DecDTxt.Text);
+                    //validate data is within correct range
+                    if (value >= -90 && value <= 90)
+                    {
+                        //if correct keep text black
+                        DecDTxt.ForeColor = Color.Black;
+                        //data is valid
+                        DecDTxt_Valid = true;
+                    }
+                    else
+                    {
+                        //if invalid value then change to red text
+                        DecDTxt.ForeColor = Color.Red;
+                        //data is invalid
+                        DecDTxt_Valid = false;
+                    }
+                }
+                catch
+                {
+                    //if not a number then change text to red
+                    DecDTxt.ForeColor = Color.Red;
+                    //data is invalid
+                    DecDTxt_Valid = false;
+                }
+
+            }
+            else
+            {
+                //no data input
+                DecDTxt_Valid = false;
+            }
+        }
+
+        private void DecMinTxt_TextChanged(object sender, EventArgs e)
+        {
+            //check if text is empty
+            if (DecMinTxt.Text != "")
+            {
+                int value = 0;
+
+                //if something is in box try to convert to int
+                try
+                {
+                    value = Convert.ToInt32(DecMinTxt.Text);
+                    //validate data is within correct range
+                    if (value >= 0 && value <= 59)
+                    {
+                        //if correct keep text black
+                        DecMinTxt.ForeColor = Color.Black;
+                        DecMinTxt_Valid = true;
+                    }
+                    else
+                    {
+                        //if invalid value then change to red text
+                        DecMinTxt.ForeColor = Color.Red;
+                        DecMinTxt_Valid = false;
+                    }
+                }
+                catch
+                {
+                    //if not a number then change text to red
+                    DecMinTxt.ForeColor = Color.Red;
+                    DecMinTxt_Valid = false;
+                }
+
+            }
+            else
+            {
+                //no data input
+                DecMinTxt_Valid = false;
+            }
+        }
+
+        private void DecSecTxt_TextChanged(object sender, EventArgs e)
+        {
+            //check if text is empty
+            if (DecSecTxt.Text != "")
+            {
+                int value = 0;
+
+                //if something is in box try to convert to int
+                try
+                {
+                    value = Convert.ToInt32(DecSecTxt.Text);
+                    //validate data is within correct range
+                    if (value >= 0 && value <= 59)
+                    {
+                        //if correct keep text black
+                        DecSecTxt.ForeColor = Color.Black;
+                        DecSecTxt_Valid = true;
+
+
+                    }
+                    else
+                    {
+                        //if invalid value then change to red text
+                        DecSecTxt.ForeColor = Color.Red;
+                        DecSecTxt_Valid = false;
+                    }
+                }
+                catch
+                {
+                    //if not a number then change text to red
+                    DecSecTxt.ForeColor = Color.Red;
+                    DecSecTxt_Valid = false;
+                }
+
+            }
+            else
+            {
+                //no data input
+                DecSecTxt_Valid = false;
+            }
+        }
+
+        private void EditPopularNebulaePopup_Load(object sender, EventArgs e)
         {
 
         }
+
     }
 }
