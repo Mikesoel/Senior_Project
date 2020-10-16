@@ -43,10 +43,9 @@
             // btnNebulaeDelete
             // 
             this.btnNebulaeDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnNebulaeDelete.Location = new System.Drawing.Point(644, 617);
-            this.btnNebulaeDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnNebulaeDelete.Location = new System.Drawing.Point(429, 401);
             this.btnNebulaeDelete.Name = "btnNebulaeDelete";
-            this.btnNebulaeDelete.Size = new System.Drawing.Size(288, 40);
+            this.btnNebulaeDelete.Size = new System.Drawing.Size(192, 26);
             this.btnNebulaeDelete.TabIndex = 17;
             this.btnNebulaeDelete.Text = "Delete Selected Row";
             this.btnNebulaeDelete.UseVisualStyleBackColor = true;
@@ -55,10 +54,9 @@
             // btnNebulaeSave
             // 
             this.btnNebulaeSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnNebulaeSave.Location = new System.Drawing.Point(214, 280);
-            this.btnNebulaeSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnNebulaeSave.Location = new System.Drawing.Point(143, 182);
             this.btnNebulaeSave.Name = "btnNebulaeSave";
-            this.btnNebulaeSave.Size = new System.Drawing.Size(112, 45);
+            this.btnNebulaeSave.Size = new System.Drawing.Size(75, 29);
             this.btnNebulaeSave.TabIndex = 16;
             this.btnNebulaeSave.Text = "Save";
             this.btnNebulaeSave.UseVisualStyleBackColor = true;
@@ -66,28 +64,25 @@
             // 
             // txtBoxLongitude
             // 
-            this.txtBoxLongitude.Location = new System.Drawing.Point(172, 212);
-            this.txtBoxLongitude.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBoxLongitude.Location = new System.Drawing.Point(115, 138);
             this.txtBoxLongitude.Name = "txtBoxLongitude";
-            this.txtBoxLongitude.Size = new System.Drawing.Size(200, 26);
+            this.txtBoxLongitude.Size = new System.Drawing.Size(135, 20);
             this.txtBoxLongitude.TabIndex = 15;
             this.txtBoxLongitude.TextChanged += new System.EventHandler(this.txtBoxLongitude_TextChanged);
             // 
             // txtBoxLatitude
             // 
-            this.txtBoxLatitude.Location = new System.Drawing.Point(172, 140);
-            this.txtBoxLatitude.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBoxLatitude.Location = new System.Drawing.Point(115, 91);
             this.txtBoxLatitude.Name = "txtBoxLatitude";
-            this.txtBoxLatitude.Size = new System.Drawing.Size(200, 26);
+            this.txtBoxLatitude.Size = new System.Drawing.Size(135, 20);
             this.txtBoxLatitude.TabIndex = 14;
             this.txtBoxLatitude.TextChanged += new System.EventHandler(this.txtBoxLatitude_TextChanged);
             // 
             // txtBoxName
             // 
-            this.txtBoxName.Location = new System.Drawing.Point(172, 66);
-            this.txtBoxName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBoxName.Location = new System.Drawing.Point(115, 43);
             this.txtBoxName.Name = "txtBoxName";
-            this.txtBoxName.Size = new System.Drawing.Size(200, 26);
+            this.txtBoxName.Size = new System.Drawing.Size(135, 20);
             this.txtBoxName.TabIndex = 13;
             this.txtBoxName.TextChanged += new System.EventHandler(this.txtBoxName_TextChanged);
             // 
@@ -95,10 +90,9 @@
             // 
             this.lblNebulaeLong.AutoSize = true;
             this.lblNebulaeLong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblNebulaeLong.Location = new System.Drawing.Point(36, 209);
-            this.lblNebulaeLong.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNebulaeLong.Location = new System.Drawing.Point(24, 136);
             this.lblNebulaeLong.Name = "lblNebulaeLong";
-            this.lblNebulaeLong.Size = new System.Drawing.Size(126, 29);
+            this.lblNebulaeLong.Size = new System.Drawing.Size(84, 20);
             this.lblNebulaeLong.TabIndex = 12;
             this.lblNebulaeLong.Text = "Longitude ";
             // 
@@ -106,10 +100,9 @@
             // 
             this.lblNebulaeLat.AutoSize = true;
             this.lblNebulaeLat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblNebulaeLat.Location = new System.Drawing.Point(50, 137);
-            this.lblNebulaeLat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNebulaeLat.Location = new System.Drawing.Point(33, 89);
             this.lblNebulaeLat.Name = "lblNebulaeLat";
-            this.lblNebulaeLat.Size = new System.Drawing.Size(110, 29);
+            this.lblNebulaeLat.Size = new System.Drawing.Size(75, 20);
             this.lblNebulaeLat.TabIndex = 11;
             this.lblNebulaeLat.Text = "Latitude: ";
             // 
@@ -117,10 +110,9 @@
             // 
             this.lblNebulaeName.AutoSize = true;
             this.lblNebulaeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblNebulaeName.Location = new System.Drawing.Point(66, 63);
-            this.lblNebulaeName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNebulaeName.Location = new System.Drawing.Point(44, 41);
             this.lblNebulaeName.Name = "lblNebulaeName";
-            this.lblNebulaeName.Size = new System.Drawing.Size(84, 29);
+            this.lblNebulaeName.Size = new System.Drawing.Size(55, 20);
             this.lblNebulaeName.TabIndex = 10;
             this.lblNebulaeName.Text = "Name:";
             // 
@@ -129,19 +121,19 @@
             this.nebulaeDataGrid.AllowUserToAddRows = false;
             this.nebulaeDataGrid.AllowUserToDeleteRows = false;
             this.nebulaeDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.nebulaeDataGrid.Location = new System.Drawing.Point(423, 37);
-            this.nebulaeDataGrid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nebulaeDataGrid.Location = new System.Drawing.Point(282, 24);
             this.nebulaeDataGrid.Name = "nebulaeDataGrid";
             this.nebulaeDataGrid.RowHeadersWidth = 62;
-            this.nebulaeDataGrid.Size = new System.Drawing.Size(742, 557);
+            this.nebulaeDataGrid.Size = new System.Drawing.Size(495, 362);
             this.nebulaeDataGrid.TabIndex = 9;
+            this.nebulaeDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.nebulaeDataGrid_CellContentClick);
             // 
             // EditPopularNebulaePopup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnNebulaeDelete);
             this.Controls.Add(this.btnNebulaeSave);
             this.Controls.Add(this.txtBoxLongitude);
@@ -151,7 +143,6 @@
             this.Controls.Add(this.lblNebulaeLat);
             this.Controls.Add(this.lblNebulaeName);
             this.Controls.Add(this.nebulaeDataGrid);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "EditPopularNebulaePopup";
             this.Text = "Add/Edit Popular Nebulae";
             this.Load += new System.EventHandler(this.EditPopularNebulaePopup_Load);

@@ -82,7 +82,6 @@ namespace DigiScriptor
 
         //Load table from database into data grid view
         private void LoadTable()
-
         {
             connect.Open();
             SqlCommand cmd = connect.CreateCommand();
@@ -146,6 +145,11 @@ namespace DigiScriptor
         }
 
         private void EditPopularNebulaePopup_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nebulaeDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

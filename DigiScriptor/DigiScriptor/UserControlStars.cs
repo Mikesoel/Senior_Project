@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.IO;
 
 namespace DigiScriptor
 {
@@ -20,7 +21,9 @@ namespace DigiScriptor
         private Boolean RAsMinTxt_Valid = false;
         private Boolean RAsSecTxt_Valid = false;
 
-        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\micha\source\repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\DigiDataBase.mdf;Integrated Security=True");
+
+        string sqlPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\")) + @"DigiDataBase.mdf;Integrated Security=True";
+        SqlConnection connect;
         DataTable dt = new DataTable();
 
 
@@ -49,6 +52,8 @@ namespace DigiScriptor
         public UserControlStars()
         {
             InitializeComponent();
+            //set up connection
+            connect = new SqlConnection(sqlPath);
             LoadComboBox();
         }
 
@@ -424,8 +429,13 @@ namespace DigiScriptor
         {
 
             
-                MessageBox.Show(StarFavorites.SelectedItem.ToString());
-            
+        }
+
+        private void EditFavorite_Click(object sender, EventArgs e)
+        {
+            //bring up menu to edit favorite stars
+            EditPopularStarsPopup editData = new EditPopularStarsPopup();
+            editData.Show();
         }
     }
 }
