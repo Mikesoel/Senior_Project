@@ -104,6 +104,7 @@
             this.nebulaeDataGrid.RowHeadersWidth = 62;
             this.nebulaeDataGrid.Size = new System.Drawing.Size(495, 362);
             this.nebulaeDataGrid.TabIndex = 9;
+            this.nebulaeDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.nebulaeDataGrid_CellContentClick);
             // 
             // CoordinateBox
             // 
