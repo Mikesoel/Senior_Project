@@ -104,7 +104,42 @@ namespace DigiScriptor
             //no error message, successfully submitted
             else
             {
-                MessageBox.Show("Submitted");
+                //confirmation message
+                String sub = "submit?";
+                String con = "Confirm";
+                DialogResult results;
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+
+                //display messgae
+                results = MessageBox.Show(sub, con, buttons);
+                //if result is 'yes' then show submited
+                if (results == DialogResult.Yes)
+                {
+
+                    //create star item
+                    ShowItem Staritem = new ShowItem("Star Move", "this is a star move");
+
+                    //add show item to list
+                    HomeScreen.Current.AddItem(Staritem);
+
+
+
+                    //update the show list after submit
+                    HomeScreen.Current.UpdateList();
+
+
+                    //for after submited is 'ok'
+                    if (MessageBox.Show("submitted") == DialogResult.OK)
+                    {
+                        //do something after submitted message
+                    }
+
+                }
+                else
+                {
+                    //what to do if no is selected
+
+                }
             }
 
         }//end submit btn
