@@ -19,7 +19,7 @@ namespace DigiScriptor
         string sqlPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\")) + @"DigiDataBase.mdf;Integrated Security=True";
         SqlConnection connect;
 
-        private string name = string.Empty;
+        
         private string cellName = string.Empty;
 
 
@@ -31,6 +31,8 @@ namespace DigiScriptor
         private Boolean RAMinTxt_Valid = false;
         private Boolean RASecTxt_Valid = false;
         private Boolean Name_Valid = false;
+        int RAHr,RAMin,RASec,DDeg,DMin,DSec = 0;
+        string starName = string.Empty;
 
 
 
@@ -111,40 +113,49 @@ namespace DigiScriptor
 
         private void btnStarSave_Click(object sender, EventArgs e)
         {
-
+            //see if any part of RA is wrong
             if (RAHrTxt_Valid ==false || RAMinTxt_Valid ==false || RASecTxt_Valid ==false)
             {
                 MessageBox.Show("Right Ascension not correct");
                 RAHrTxt.Focus();
             }
 
-            if (DecDTxt_Valid == false || DecMinTxt_Valid == false || DecSecTxt_Valid == false)
+            //see if any part of Dec is wrong
+            else if (DecDTxt_Valid == false || DecMinTxt_Valid == false || DecSecTxt_Valid == false)
             {
                 MessageBox.Show("Declination not correct");
                 DecDTxt.Focus();
             }
 
+            //see if name invalid
+            else if(Name_Valid == false)
+            {
+                MessageBox.Show("Invalid name. cant be blank or start with a space");
+                NametextBox.Focus();
+            }
+
+            else
+            {
+                //data is valid add entry to database
+                connect.Open();
+                SqlCommand cmd = connect.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                //create sql command
+                cmd.CommandText = "insert into StarFavorites (Name, RAHr, RAMin, RASec, DDeg, DMin, DSec) VALUES (@Name,  @RAHr, @RAMin, @RASec, @DDeg, @DMin, @DSec)";
+                cmd.Parameters.AddWithValue("@Name", starName);
+                cmd.Parameters.AddWithValue("@RAHr", RAHr);
+                cmd.Parameters.AddWithValue("@RAMin", RAMin);
+                cmd.Parameters.AddWithValue("@RASec", RASec);
+                cmd.Parameters.AddWithValue("@DDeg", DDeg);
+                cmd.Parameters.AddWithValue("@DMin", DMin);
+                cmd.Parameters.AddWithValue("@DSec", DSec);
+                cmd.ExecuteNonQuery();
+                connect.Close();
+                LoadTable();
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            }
 
 
         }
@@ -173,6 +184,7 @@ namespace DigiScriptor
                         //if correct keep text black
                         RAHrTxt.ForeColor = Color.Black;
                         RAHrTxt_Valid = true;
+                        RAHr = value;
 
                     }
                     else
@@ -216,6 +228,7 @@ namespace DigiScriptor
                         //if correct keep text black
                         RAsMinTxt.ForeColor = Color.Black;
                         RAMinTxt_Valid = true;
+                        RAMin = value;
 
                     }
                     else
@@ -259,6 +272,7 @@ namespace DigiScriptor
                         //if correct keep text black
                         RAsSecTxt.ForeColor = Color.Black;
                         RASecTxt_Valid = true;
+                        RASec = value;
 
                     }
                     else
@@ -305,6 +319,7 @@ namespace DigiScriptor
                         DecDTxt.ForeColor = Color.Black;
                         //data is valid
                         DecDTxt_Valid = true;
+                        DDeg = value;
                     }
                     else
                     {
@@ -351,6 +366,7 @@ namespace DigiScriptor
                         //if correct keep text black
                         DecMinTxt.ForeColor = Color.Black;
                         DecMinTxt_Valid = true;
+                        DMin = value;
                     }
                     else
                     {
@@ -393,6 +409,7 @@ namespace DigiScriptor
                         //if correct keep text black
                         DecSecTxt.ForeColor = Color.Black;
                         DecSecTxt_Valid = true;
+                        DSec = value;
 
 
                     }
@@ -421,10 +438,16 @@ namespace DigiScriptor
 
         private void NametextBox_TextChanged(object sender, EventArgs e)
         {
-
+            //chaek if name is valid
             if(NametextBox.Text == "" || NametextBox.Text.StartsWith(" "))
             {
                 Name_Valid = false;
+                starName = string.Empty;
+            }
+            else
+            {
+                Name_Valid = true;
+                starName = NametextBox.Text;
             }
 
         }
