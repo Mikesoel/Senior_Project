@@ -12,12 +12,12 @@ namespace DigiScriptor
 {
     public partial class UserControlStars : UserControl
     {
-        private Boolean DecDTxt_Valid = true;
-        private Boolean DecMinTxt_Valid = true;
-        private Boolean DecSecTxt_Valid = true;
-        private Boolean RAsHrTxt_Valid = true;
-        private Boolean RAsMinTxt_Valid = true;
-        private Boolean RAsSecTxt_Valid = true;
+        private Boolean DecDTxt_Valid = false;
+        private Boolean DecMinTxt_Valid = false;
+        private Boolean DecSecTxt_Valid = false;
+        private Boolean RAsHrTxt_Valid = false;
+        private Boolean RAsMinTxt_Valid = false;
+        private Boolean RAsSecTxt_Valid = false;
 
 
 
@@ -30,11 +30,68 @@ namespace DigiScriptor
 
         private void SubBtn_Click(object sender, EventArgs e)
         {
-            if( MessageBox.Show("Submited") == DialogResult.OK)
+
+            //check Right Ascention is correct
+            if(RAsHrTxt_Valid == false|| RAsMinTxt_Valid == false || RAsSecTxt_Valid == false)
             {
-                btnStarsBack.PerformClick();
+                //reort error in Right ascention
+                if (MessageBox.Show("Right Ascention is not correct. Please validate data.") ==
+                    DialogResult.OK)
+                {
+                    RAsHrTxt.Select();
+                }
+
+                return;
             }
 
+            //check that Declination is correct
+            if(DecDTxt_Valid== false|| DecMinTxt_Valid == false || DecSecTxt_Valid == false)
+            {   
+                //report an error in declination
+                if(MessageBox.Show("Declination is not correct. Please validate data.") ==
+                    DialogResult.OK)
+                {
+                    DecDTxt.Select();
+                }
+                return;
+            }
+
+            //confirmation message
+            String sub = "submit?";
+            String con = "Confirm";
+            DialogResult results;
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+
+            //display messgae
+            results = MessageBox.Show(sub, con, buttons);
+            //if result is 'yes' then show submited
+            if (results == DialogResult.Yes)
+            {
+
+                //create star item
+                ShowItem Staritem = new ShowItem("Star Move", "this is a star move");
+
+                //add show item to list
+                HomeScreen.Current.AddItem(Staritem);
+
+
+
+                //update the show list after submit
+                HomeScreen.Current.UpdateList();
+
+
+                //for after submited is 'ok'
+                if (MessageBox.Show("submitted") == DialogResult.OK)
+                {
+                    //do something after submitted message
+                }
+
+            }
+            else
+            {
+                //what to do if no is selected
+
+            }
             
 
 

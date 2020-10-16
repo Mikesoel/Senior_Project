@@ -217,6 +217,7 @@
             this.Controls.Add(this.btnAndromeda);
             this.Name = "GalaxiesScreen";
             this.Text = "Galaxies";
+            this.Load += new System.EventHandler(this.GalaxiesScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
