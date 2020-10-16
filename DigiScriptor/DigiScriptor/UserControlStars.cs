@@ -88,12 +88,6 @@ namespace DigiScriptor
 
 
 
-
-
-
-
-
-
         private void SubBtn_Click(object sender, EventArgs e)
         {
 

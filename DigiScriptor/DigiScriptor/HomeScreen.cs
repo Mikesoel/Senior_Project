@@ -57,7 +57,7 @@ namespace DigiScriptor
         private void populateList()
         {
             //test show
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 2; i++)
             {
 
                 ShowItem test = new ShowItem();
