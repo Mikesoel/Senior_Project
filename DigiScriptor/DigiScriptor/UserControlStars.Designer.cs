@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panelStars = new System.Windows.Forms.Panel();
+            this.EditFavorite = new System.Windows.Forms.Button();
             this.FavLbl = new System.Windows.Forms.Label();
             this.SubBtn = new System.Windows.Forms.Button();
             this.CoordinateBox = new System.Windows.Forms.GroupBox();
-            this.EditFavorite = new System.Windows.Forms.Button();
             this.DecSecLbl = new System.Windows.Forms.Label();
             this.DecSecTxt = new System.Windows.Forms.TextBox();
             this.DecMinLbl = new System.Windows.Forms.Label();
@@ -69,6 +69,18 @@
             this.panelStars.Size = new System.Drawing.Size(708, 648);
             this.panelStars.TabIndex = 30;
             this.panelStars.Paint += new System.Windows.Forms.PaintEventHandler(this.panelStars_Paint);
+            // 
+            // EditFavorite
+            // 
+            this.EditFavorite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.EditFavorite.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.EditFavorite.Location = new System.Drawing.Point(61, 181);
+            this.EditFavorite.Name = "EditFavorite";
+            this.EditFavorite.Size = new System.Drawing.Size(154, 29);
+            this.EditFavorite.TabIndex = 34;
+            this.EditFavorite.Text = "Edit Favorites";
+            this.EditFavorite.UseVisualStyleBackColor = true;
+            this.EditFavorite.Click += new System.EventHandler(this.EditFavorite_Click);
             // 
             // FavLbl
             // 
@@ -122,18 +134,6 @@
             this.CoordinateBox.TabIndex = 32;
             this.CoordinateBox.TabStop = false;
             this.CoordinateBox.Text = "Coordinates";
-            // 
-            // EditFavorite
-            // 
-            this.EditFavorite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.EditFavorite.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.EditFavorite.Location = new System.Drawing.Point(61, 181);
-            this.EditFavorite.Name = "EditFavorite";
-            this.EditFavorite.Size = new System.Drawing.Size(154, 29);
-            this.EditFavorite.TabIndex = 34;
-            this.EditFavorite.Text = "Edit Favorites";
-            this.EditFavorite.UseVisualStyleBackColor = true;
-            this.EditFavorite.Click += new System.EventHandler(this.EditFavorite_Click);
             // 
             // DecSecLbl
             // 
@@ -271,11 +271,14 @@
             // 
             // StarFavorites
             // 
+            this.StarFavorites.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.StarFavorites.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.StarFavorites.FormattingEnabled = true;
             this.StarFavorites.Location = new System.Drawing.Point(61, 143);
             this.StarFavorites.Name = "StarFavorites";
+            this.StarFavorites.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StarFavorites.Size = new System.Drawing.Size(154, 32);
+            this.StarFavorites.Sorted = true;
             this.StarFavorites.TabIndex = 0;
             this.StarFavorites.SelectedIndexChanged += new System.EventHandler(this.StarFavorites_SelectedIndexChanged);
             // 

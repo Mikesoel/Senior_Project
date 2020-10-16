@@ -76,7 +76,7 @@ namespace DigiScriptor
             da.Fill(dt);
             foreach (DataRow dr in dt.Rows)
             {
-                StarFavorites.Items.Add(dr["Name"].ToString());
+                StarFavorites.Items.Add(dr["Name"].ToString().Trim());
 
                 stars s;
                 s.name = dr["Name"].ToString();
@@ -427,8 +427,22 @@ namespace DigiScriptor
 
         private void StarFavorites_SelectedIndexChanged(object sender, EventArgs e)
         {
+            /*
+            connect.Open();
+            SqlCommand cmd = connect.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+
+            //Tracks user selected row in datagridview
+
+            //Queries database with selected info to delete row
+            cmd.CommandText = "SELECT * FROM StarFavorites WHERE Name LIKE @index";
+            cmd.Parameters.AddWithValue("@index", StarFavorites.SelectedItem);
+            cmd.ExecuteNonQuery();
 
             
+            connect.Close();
+            */
+
         }
 
         private void EditFavorite_Click(object sender, EventArgs e)
