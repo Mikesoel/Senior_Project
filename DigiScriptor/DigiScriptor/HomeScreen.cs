@@ -57,12 +57,12 @@ namespace DigiScriptor
         private void populateList()
         {
             //test show
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 20; i++)
             {
 
                 ShowItem test = new ShowItem();
                 test.Title = "test title " + i;
-                test.Decription = "this is a test description";
+                test.Decription = "this is a test description \n new line";
                 theList.Add(test);
                 
             }

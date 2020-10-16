@@ -90,3 +90,4 @@ C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\ob
 C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\bin\Debug\DigiDataBase.mdf
 C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\bin\Debug\DigiDataBase_log.ldf
 C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.ShowItem.resources
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.csprojAssemblyReference.cache
