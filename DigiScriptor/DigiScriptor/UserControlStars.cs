@@ -44,6 +44,7 @@ namespace DigiScriptor
             //clear combo box
             StarFavorites.Items.Clear();
             
+            
             //open database
             connect.Open();
             //establish connection
@@ -53,15 +54,12 @@ namespace DigiScriptor
             cmd.ExecuteNonQuery();
             
             SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //clear datatable
+            dt = new DataTable();
             da.Fill(dt);
             foreach (DataRow dr in dt.Rows)
             {
                 StarFavorites.Items.Add(dr["Name"].ToString().Trim());
-
-                
-                
-
-
 
             }
             connect.Close();
@@ -454,7 +452,7 @@ namespace DigiScriptor
         private void EditFavorite_Click(object sender, EventArgs e)
         {
             //bring up menu to edit favorite stars
-            EditPopularStarsPopup editData = new EditPopularStarsPopup();
+            EditPopularStarsPopup editData = new EditPopularStarsPopup(this);
             editData.Show();
         }
     }
