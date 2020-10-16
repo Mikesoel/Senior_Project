@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace DigiScriptor
@@ -19,6 +20,28 @@ namespace DigiScriptor
         private Boolean RAsMinTxt_Valid = false;
         private Boolean RAsSecTxt_Valid = false;
 
+        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\micha\source\repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\DigiDataBase.mdf;Integrated Security=True");
+        DataTable dt = new DataTable();
+
+
+        List<stars> starsList = new List<stars>();
+
+
+
+        public struct stars
+        {
+            public String name;
+            public int RAHr;
+            public int RAMin;
+            public float RASec;
+
+            public int DDeg;
+            public int DMin;
+            public float DSec;
+
+        }
+
+
 
 
 
@@ -26,7 +49,50 @@ namespace DigiScriptor
         public UserControlStars()
         {
             InitializeComponent();
+            LoadComboBox();
         }
+
+
+
+        public void LoadComboBox()
+        {
+            //clear combo box
+            StarFavorites.Items.Clear();
+            
+            //open database
+            connect.Open();
+            //establish connection
+            SqlCommand cmd = connect.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select Name from StarFavorites";
+            cmd.ExecuteNonQuery();
+            
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                StarFavorites.Items.Add(dr["Name"].ToString());
+
+                stars s;
+                s.name = dr["Name"].ToString();
+                //dr.ItemArray
+
+
+
+            }
+            connect.Close();
+
+        }
+
+
+
+
+
+
+
+
+
+
 
         private void SubBtn_Click(object sender, EventArgs e)
         {
@@ -353,6 +419,19 @@ namespace DigiScriptor
                 RAsSecTxt_Valid = false;
             }
 
+        }
+
+        private void panelStars_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void StarFavorites_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            
+                MessageBox.Show(StarFavorites.SelectedItem.ToString());
+            
         }
     }
 }
