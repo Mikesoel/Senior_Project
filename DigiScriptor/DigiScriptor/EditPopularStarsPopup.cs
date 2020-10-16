@@ -82,6 +82,8 @@ namespace DigiScriptor
             }
             connect.Close();
             LoadTable();
+            //update combox
+            starPanel.LoadComboBox();
 
 
         }
