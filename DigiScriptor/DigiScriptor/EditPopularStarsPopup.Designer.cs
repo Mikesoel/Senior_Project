@@ -154,12 +154,12 @@
             this.DecSecTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.DecSecTxt.TextChanged += new System.EventHandler(this.DecSecTxt_TextChanged);
             // 
-            // RAsHrTxt
+            // RAHrTxt
             // 
             this.RAHrTxt.AcceptsTab = true;
             this.RAHrTxt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.RAHrTxt.Location = new System.Drawing.Point(122, 28);
-            this.RAHrTxt.Name = "RAsHrTxt";
+            this.RAHrTxt.Name = "RAHrTxt";
             this.RAHrTxt.Size = new System.Drawing.Size(100, 29);
             this.RAHrTxt.TabIndex = 11;
             this.RAHrTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -294,7 +294,7 @@
             this.Controls.Add(this.DeleteBtn);
             this.Controls.Add(this.StarDataBaseView);
             this.Name = "EditPopularStarsPopup";
-            this.Text = "EditPopularStarsPopup";
+            this.Text = "Edit Popular Stars";
             this.Load += new System.EventHandler(this.EditPopularStarsPopup_Load);
             ((System.ComponentModel.ISupportInitialize)(this.StarDataBaseView)).EndInit();
             this.groupBox1.ResumeLayout(false);

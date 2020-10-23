@@ -247,3 +247,5 @@ C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\bi
 C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.pdb
 C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.exe
 C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.pdb
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.csprojAssemblyReference.cache
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.SaveMenu.resources
