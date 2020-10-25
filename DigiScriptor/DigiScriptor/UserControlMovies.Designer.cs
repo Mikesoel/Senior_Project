@@ -42,11 +42,13 @@
             this.btnTwoSmallPieces = new System.Windows.Forms.Button();
             this.btnMoviesBack = new System.Windows.Forms.Button();
             this.lblMoviesTitle = new System.Windows.Forms.Label();
+            this.btnDarkMatter = new System.Windows.Forms.Button();
             this.panelMovies.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMovies
             // 
+            this.panelMovies.Controls.Add(this.btnDarkMatter);
             this.panelMovies.Controls.Add(this.lblGalaxyFavorites);
             this.panelMovies.Controls.Add(this.lblMoviesOutput);
             this.panelMovies.Controls.Add(this.lblMovieSelect);
@@ -148,7 +150,7 @@
             this.btnFrozenWorlds.Name = "btnFrozenWorlds";
             this.btnFrozenWorlds.Size = new System.Drawing.Size(257, 130);
             this.btnFrozenWorlds.TabIndex = 33;
-            this.btnFrozenWorlds.Text = "Frozen Worlds";
+            this.btnFrozenWorlds.Text = "Ice Worlds";
             this.btnFrozenWorlds.UseVisualStyleBackColor = false;
             this.btnFrozenWorlds.Click += new System.EventHandler(this.btnFrozenWorlds_Click);
             // 
@@ -174,7 +176,7 @@
             this.btnChristmasStar.Name = "btnChristmasStar";
             this.btnChristmasStar.Size = new System.Drawing.Size(257, 130);
             this.btnChristmasStar.TabIndex = 31;
-            this.btnChristmasStar.Text = "The Christmas Star";
+            this.btnChristmasStar.Text = "The Mystery of the Christmas Star";
             this.btnChristmasStar.UseCompatibleTextRendering = true;
             this.btnChristmasStar.UseVisualStyleBackColor = false;
             this.btnChristmasStar.Click += new System.EventHandler(this.btnChristmasStar_Click);
@@ -227,6 +229,19 @@
             this.lblMoviesTitle.TabIndex = 3;
             this.lblMoviesTitle.Text = "Movies";
             // 
+            // btnDarkMatter
+            // 
+            this.btnDarkMatter.BackColor = System.Drawing.Color.DimGray;
+            this.btnDarkMatter.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDarkMatter.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDarkMatter.Location = new System.Drawing.Point(402, 624);
+            this.btnDarkMatter.Name = "btnDarkMatter";
+            this.btnDarkMatter.Size = new System.Drawing.Size(257, 130);
+            this.btnDarkMatter.TabIndex = 40;
+            this.btnDarkMatter.Text = "The Dark Matter Mystery";
+            this.btnDarkMatter.UseVisualStyleBackColor = false;
+            this.btnDarkMatter.Click += new System.EventHandler(this.btnDarkMatter_Click);
+            // 
             // UserControlMovies
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -257,5 +272,6 @@
         private System.Windows.Forms.Label lblMoviesOutput;
         private System.Windows.Forms.Label lblMovieSelect;
         private System.Windows.Forms.Label lblGalaxyFavorites;
+        private System.Windows.Forms.Button btnDarkMatter;
     }
 }

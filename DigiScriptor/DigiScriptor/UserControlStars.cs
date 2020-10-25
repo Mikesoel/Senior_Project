@@ -101,7 +101,7 @@ namespace DigiScriptor
             }
 
             //confirmation message
-            String sub = "submit?";
+            String sub = "Submit?";
             String con = "Confirm";
             DialogResult results;
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
@@ -125,7 +125,7 @@ namespace DigiScriptor
 
 
                 //for after submited is 'ok'
-                if (MessageBox.Show("submitted") == DialogResult.OK)
+                if (MessageBox.Show("Submitted") == DialogResult.OK)
                 {
                     //do something after submitted message
                 }
