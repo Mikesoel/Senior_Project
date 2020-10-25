@@ -19,6 +19,7 @@ namespace DigiScriptor
         string sqlPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\")) + @"DigiDataBase.mdf;Integrated Security=True";
         SqlConnection connect;
 
+        //Variables for nebula name, cellName (name of selected row in datagrid) declination degree/min/max and right ascension hour/minutes/seconds
         private string name = string.Empty;
         private string cellName = string.Empty;
         private Boolean DecDTxt_Valid = false;
@@ -69,14 +70,23 @@ namespace DigiScriptor
             // If all values valid, add to database
             else
             {
+                // Open DB connection
                 connect.Open();
+                
+                //Bind cmd to SQL commands
                 SqlCommand cmd = connect.CreateCommand();
                 cmd.CommandType = CommandType.Text;
+                
+                //SQL command to be entered into DB
                 cmd.CommandText = "insert into NebulaeFavorites (Name, Latitude, Longitude) VALUES (@Name, @Latitude, @Longitude)";
+                
+                //Bind variables to SQL command names
                 cmd.Parameters.AddWithValue("@Name", name);
                 //cmd.Parameters.AddWithValue("@Latitude", latitude);
                 //cmd.Parameters.AddWithValue("@Longitude", longitude);
                 cmd.ExecuteNonQuery();
+                
+                //Close DB connection and reload datagrid
                 connect.Close();
                 LoadTable();
             }
@@ -86,13 +96,18 @@ namespace DigiScriptor
         private void LoadTable()
 
         {
+            //Open DB connection
             connect.Open();
+
+            //Bind cmd to SQL commands
             SqlCommand cmd = connect.CreateCommand();
             cmd.CommandType = CommandType.Text;
+            
+            //SQL command to be entered into DB
             cmd.CommandText = "select Name, Latitude, Longitude from NebulaeFavorites";
             cmd.ExecuteNonQuery();
 
-            //opens connection for selected data from table
+            //Bind DB into datagrid view
             try
             {
                 SqlDataAdapter sda = new SqlDataAdapter();
@@ -139,6 +154,7 @@ namespace DigiScriptor
                 cmd.ExecuteNonQuery();
 
             }
+            //Close DB connection and reload datagrid view
             connect.Close();
             LoadTable();
         }
