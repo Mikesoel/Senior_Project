@@ -31,12 +31,21 @@ namespace DigiScriptor
 
         private void LoadComboBox()
         {
+            //Clear contents from Nebulae Favorites combo box
             nebulaeDropdown.Items.Clear();
+            
+            //Open DB connection
             connect.Open();
+            
+            //Bind cmd to SQL commands
             SqlCommand cmd = connect.CreateCommand();
             cmd.CommandType = CommandType.Text;
+            
+            //SQL command to select names from DB
             cmd.CommandText = "select Name from NebulaeFavorites";
             cmd.ExecuteNonQuery();
+            
+            //Add names to combobox
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
@@ -44,6 +53,8 @@ namespace DigiScriptor
             {
                 nebulaeDropdown.Items.Add(dr["Name"].ToString());
             }
+            
+            //Close DB connection
             connect.Close();
         }
 
@@ -60,7 +71,7 @@ namespace DigiScriptor
             DialogResult results;
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
 
-            //display messgae
+            //display message
             results = MessageBox.Show(sub, con, buttons);
             //if result is 'yes' then show submited
             if (results == DialogResult.Yes)
@@ -94,6 +105,7 @@ namespace DigiScriptor
 
         private void editPopularNebulaeButton_Click(object sender, EventArgs e)
         {
+            //Opens nebulae favorites add/edit popup window when clicked
             EditPopularNebulaePopup editNebulaeData = new EditPopularNebulaePopup();
             editNebulaeData.Show();
         }
