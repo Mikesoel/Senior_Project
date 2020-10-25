@@ -31,12 +31,21 @@ namespace DigiScriptor
 
         private void LoadComboBox()
         {
+            //Clear combo box from old items
             popularLocationsCombo.Items.Clear();
+
+            //Open DB connection
             connect.Open();
+
+            //Bind cmd to create SQL commands
             SqlCommand cmd = connect.CreateCommand();
             cmd.CommandType = CommandType.Text;
+
+            //SQL command to load names into combo box
             cmd.CommandText = "select Name from EarthScreenFavorites";
             cmd.ExecuteNonQuery();
+
+            //Populate combo box with names
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
@@ -44,6 +53,8 @@ namespace DigiScriptor
             {
                 popularLocationsCombo.Items.Add(dr["Name"].ToString());
             }
+            
+            //Close connection to DB
             connect.Close();
         }
 
@@ -54,12 +65,14 @@ namespace DigiScriptor
 
         private void popularLocationsCombo_Click(object sender, EventArgs e)
         {
+            //Reload combo box every time it is clicked, assures data within is always accurate
             LoadComboBox();
         }
 
 
         private void editPopularLocationsButton_Click(object sender, EventArgs e)
         {
+            //Open edit popular earth locations popup window
             EditPopularEarthLocationsPopup editData = new EditPopularEarthLocationsPopup();
             editData.Show();
 
@@ -73,7 +86,7 @@ namespace DigiScriptor
             DialogResult results;
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
 
-            //display messgae
+            //display message
             results = MessageBox.Show(sub, con, buttons);
             //if result is 'yes' then show submited
             if (results == DialogResult.Yes)
