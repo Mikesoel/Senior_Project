@@ -93,6 +93,7 @@ namespace DigiScriptor
                 
                 //Close DB connection and reload datagrid
                 connect.Close();
+                MessageBox.Show("Submitted " + name + " into database");
                 LoadTable();
             }
         }
