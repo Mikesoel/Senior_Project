@@ -6,7 +6,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.IO;
 
 namespace DigiScriptor
 {
@@ -20,13 +22,53 @@ namespace DigiScriptor
         private Boolean RAsSecTxt_Valid = false;
 
 
+        string sqlPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\")) + @"DigiDataBase.mdf;Integrated Security=True";
+        SqlConnection connect;
+        DataTable dt = new DataTable();
 
 
+     
 
         public UserControlStars()
         {
             InitializeComponent();
+            //set up connection
+            connect = new SqlConnection(sqlPath);
+            LoadComboBox();
         }
+
+
+
+        public void LoadComboBox()
+        {
+            //clear combo box
+            StarFavorites.Items.Clear();
+            
+            
+            //open database
+            connect.Open();
+            //establish connection
+            SqlCommand cmd = connect.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select Name from StarFavorites";
+            cmd.ExecuteNonQuery();
+            
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //clear datatable
+            dt = new DataTable();
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                StarFavorites.Items.Add(dr["Name"].ToString().Trim());
+
+            }
+            connect.Close();
+
+        }
+
+
+
+
 
         private void SubBtn_Click(object sender, EventArgs e)
         {
@@ -358,6 +400,60 @@ namespace DigiScriptor
         private void panelStars_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void StarFavorites_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            connect.Open();
+            SqlCommand cmd = connect.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+
+            //Tracks user selected row in datagridview
+
+            //Queries database with selected info to delete row
+            cmd.CommandText = "SELECT * FROM StarFavorites WHERE Name LIKE @index";
+            cmd.Parameters.AddWithValue("@index", StarFavorites.SelectedItem);
+            cmd.ExecuteNonQuery();
+
+            try
+            {
+                SqlDataAdapter sda = new SqlDataAdapter();
+                sda.SelectCommand = cmd;
+
+                
+                sda.Fill(dt);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    //StarFavorites.Items.Add(dr["Name"].ToString().Trim());
+
+                    RAsHrTxt.Text = dr["RAHr"].ToString();
+
+
+
+
+                }
+
+
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+            connect.Close();
+            
+
+        }
+
+        private void EditFavorite_Click(object sender, EventArgs e)
+        {
+            //bring up menu to edit favorite stars
+            EditPopularStarsPopup editData = new EditPopularStarsPopup(this);
+            editData.Show();
         }
     }
 }

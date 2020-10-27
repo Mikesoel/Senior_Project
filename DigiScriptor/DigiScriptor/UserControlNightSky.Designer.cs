@@ -29,12 +29,15 @@
         private void InitializeComponent()
         {
             this.panelNightSky = new System.Windows.Forms.Panel();
+            this.button_Submit = new System.Windows.Forms.Button();
             this.checkBox_ConstLines = new System.Windows.Forms.CheckBox();
             this.checkBox_LabelConst = new System.Windows.Forms.CheckBox();
             this.checkBox_ConstArt = new System.Windows.Forms.CheckBox();
             this.checkBox_MoreStars = new System.Windows.Forms.CheckBox();
             this.label_Options = new System.Windows.Forms.Label();
             this.groupBox_DateTime = new System.Windows.Forms.GroupBox();
+            this.label_Min = new System.Windows.Forms.Label();
+            this.label_Hour = new System.Windows.Forms.Label();
             this.comboBox_Periods = new System.Windows.Forms.ComboBox();
             this.comboBox_Min = new System.Windows.Forms.ComboBox();
             this.comboBox_Hours = new System.Windows.Forms.ComboBox();
@@ -42,9 +45,6 @@
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.btnSkyBack = new System.Windows.Forms.Button();
             this.labelNightSky = new System.Windows.Forms.Label();
-            this.button_Submit = new System.Windows.Forms.Button();
-            this.label_Hour = new System.Windows.Forms.Label();
-            this.label_Min = new System.Windows.Forms.Label();
             this.panelNightSky.SuspendLayout();
             this.groupBox_DateTime.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +66,17 @@
             this.panelNightSky.Size = new System.Drawing.Size(2242, 1839);
             this.panelNightSky.TabIndex = 28;
             // 
+            // button_Submit
+            // 
+            this.button_Submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Submit.Location = new System.Drawing.Point(1658, 1644);
+            this.button_Submit.Name = "button_Submit";
+            this.button_Submit.Size = new System.Drawing.Size(179, 68);
+            this.button_Submit.TabIndex = 37;
+            this.button_Submit.Text = "Submit";
+            this.button_Submit.UseVisualStyleBackColor = true;
+            this.button_Submit.Click += new System.EventHandler(this.button_Submit_Click);
+            // 
             // checkBox_ConstLines
             // 
             this.checkBox_ConstLines.AutoSize = true;
@@ -76,6 +87,7 @@
             this.checkBox_ConstLines.TabIndex = 36;
             this.checkBox_ConstLines.Text = "Constellations Lines";
             this.checkBox_ConstLines.UseVisualStyleBackColor = true;
+            this.checkBox_ConstLines.CheckedChanged += new System.EventHandler(this.checkBox_ConstLines_CheckedChanged);
             // 
             // checkBox_LabelConst
             // 
@@ -87,6 +99,7 @@
             this.checkBox_LabelConst.TabIndex = 35;
             this.checkBox_LabelConst.Text = "Label Constellations";
             this.checkBox_LabelConst.UseVisualStyleBackColor = true;
+            this.checkBox_LabelConst.CheckedChanged += new System.EventHandler(this.checkBox_LabelConst_CheckedChanged);
             // 
             // checkBox_ConstArt
             // 
@@ -98,6 +111,7 @@
             this.checkBox_ConstArt.TabIndex = 34;
             this.checkBox_ConstArt.Text = "Constellation Art";
             this.checkBox_ConstArt.UseVisualStyleBackColor = true;
+            this.checkBox_ConstArt.CheckedChanged += new System.EventHandler(this.checkBox_ConstArt_CheckedChanged);
             // 
             // checkBox_MoreStars
             // 
@@ -109,6 +123,7 @@
             this.checkBox_MoreStars.TabIndex = 33;
             this.checkBox_MoreStars.Text = "More Stars";
             this.checkBox_MoreStars.UseVisualStyleBackColor = true;
+            this.checkBox_MoreStars.CheckedChanged += new System.EventHandler(this.checkBox_MoreStars_CheckedChanged);
             // 
             // label_Options
             // 
@@ -138,6 +153,24 @@
             this.groupBox_DateTime.TabIndex = 31;
             this.groupBox_DateTime.TabStop = false;
             this.groupBox_DateTime.Text = "Date And Time Of Night";
+            // 
+            // label_Min
+            // 
+            this.label_Min.AutoSize = true;
+            this.label_Min.Location = new System.Drawing.Point(1419, 199);
+            this.label_Min.Name = "label_Min";
+            this.label_Min.Size = new System.Drawing.Size(68, 59);
+            this.label_Min.TabIndex = 6;
+            this.label_Min.Text = "M";
+            // 
+            // label_Hour
+            // 
+            this.label_Hour.AutoSize = true;
+            this.label_Hour.Location = new System.Drawing.Point(1128, 199);
+            this.label_Hour.Name = "label_Hour";
+            this.label_Hour.Size = new System.Drawing.Size(63, 59);
+            this.label_Hour.TabIndex = 5;
+            this.label_Hour.Text = "H";
             // 
             // comboBox_Periods
             // 
@@ -241,35 +274,6 @@
             this.labelNightSky.Size = new System.Drawing.Size(448, 133);
             this.labelNightSky.TabIndex = 3;
             this.labelNightSky.Text = "Night Sky";
-            // 
-            // button_Submit
-            // 
-            this.button_Submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Submit.Location = new System.Drawing.Point(1658, 1644);
-            this.button_Submit.Name = "button_Submit";
-            this.button_Submit.Size = new System.Drawing.Size(179, 68);
-            this.button_Submit.TabIndex = 37;
-            this.button_Submit.Text = "Submit";
-            this.button_Submit.UseVisualStyleBackColor = true;
-            this.button_Submit.Click += new System.EventHandler(this.button_Submit_Click);
-            // 
-            // label_Hour
-            // 
-            this.label_Hour.AutoSize = true;
-            this.label_Hour.Location = new System.Drawing.Point(1128, 199);
-            this.label_Hour.Name = "label_Hour";
-            this.label_Hour.Size = new System.Drawing.Size(63, 59);
-            this.label_Hour.TabIndex = 5;
-            this.label_Hour.Text = "H";
-            // 
-            // label_Min
-            // 
-            this.label_Min.AutoSize = true;
-            this.label_Min.Location = new System.Drawing.Point(1419, 199);
-            this.label_Min.Name = "label_Min";
-            this.label_Min.Size = new System.Drawing.Size(68, 59);
-            this.label_Min.TabIndex = 6;
-            this.label_Min.Text = "M";
             // 
             // UserControlNightSky
             // 
