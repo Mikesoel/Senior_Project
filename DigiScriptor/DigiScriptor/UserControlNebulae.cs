@@ -119,5 +119,11 @@ namespace DigiScriptor
         {
 
         }
+
+        private void nebulaeDropdown_Click(object sender, EventArgs e)
+        {
+            //Reload combo box every time it is clicked, assures data within is always accurate
+            LoadComboBox();
+        }
     }
 }
