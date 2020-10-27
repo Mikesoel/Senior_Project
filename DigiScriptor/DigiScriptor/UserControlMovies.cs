@@ -98,9 +98,11 @@ namespace DigiScriptor
                 //if result is 'yes' then show submited
                 if (results == DialogResult.Yes)
                 {
-                    String cartOutput = "play " + lblMoviesOutput.Text;
+                    String cartDescription = "play " + lblMoviesOutput.Text;
+                    String cartCode = "movie play " + lblMoviesOutput.Text + ";";
+
                     //create star item
-                    ShowItem movieItem = new ShowItem("Movie Play", cartOutput);
+                    ShowItem movieItem = new ShowItem("Movie Play", cartDescription, cartCode);
 
                     //add show item to list
                     HomeScreen.Current.AddItem(movieItem);
