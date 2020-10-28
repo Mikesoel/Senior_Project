@@ -79,7 +79,7 @@ namespace DigiScriptor
                 cmd.CommandType = CommandType.Text;
 
                 //SQL command to be entered into DB
-                cmd.CommandText = "insert into NebulaeFavorites (Name, RAHr, RAMin, RASec, DDeg, DMin, DSec) VALUES (@Name,  @RAHr, @RAMin, @RASec, @DDeg, @DMin, @DSec)";
+                cmd.CommandText = "insert into NebulaeFavorites (CommonName, RAHr, RAMin, RASec, DDeg, DMin, DSec) VALUES (@Name,  @RAHr, @RAMin, @RASec, @DDeg, @DMin, @DSec)";
 
                 //Bind variables to SQL command names
                 cmd.Parameters.AddWithValue("@Name", name);
@@ -110,7 +110,7 @@ namespace DigiScriptor
             cmd.CommandType = CommandType.Text;
             
             //SQL command to be entered into DB
-            cmd.CommandText = "select Name, RAHr, RAMin, RASec, DDEG, Dmin, Dsec from NebulaeFavorites";
+            cmd.CommandText = "select CommonName, ScientificName, RAHr, RAMin, RASec, DDEG, Dmin, Dsec from NebulaeFavorites";
             cmd.ExecuteNonQuery();
 
             //Bind DB into datagrid view

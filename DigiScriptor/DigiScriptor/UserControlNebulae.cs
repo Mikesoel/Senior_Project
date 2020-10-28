@@ -42,7 +42,7 @@ namespace DigiScriptor
             cmd.CommandType = CommandType.Text;
             
             //SQL command to select names from DB
-            cmd.CommandText = "select Name from NebulaeFavorites";
+            cmd.CommandText = "select CommonName from NebulaeFavorites";
             cmd.ExecuteNonQuery();
             
             //Add names to combobox
@@ -51,7 +51,7 @@ namespace DigiScriptor
             da.Fill(dt);
             foreach (DataRow dr in dt.Rows)
             {
-                nebulaeDropdown.Items.Add(dr["Name"].ToString());
+                nebulaeDropdown.Items.Add(dr["CommonName"].ToString());
             }
             
             //Close DB connection
