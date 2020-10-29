@@ -50,12 +50,15 @@
             this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
             this.colorEnter = new System.Windows.Forms.Button();
             this.toolTip4 = new System.Windows.Forms.ToolTip(this.components);
+            this.dimmerValue = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panelDomeLights.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dimmer)).BeginInit();
             this.SuspendLayout();
             // 
             // panelDomeLights
             // 
+            this.panelDomeLights.Controls.Add(this.dimmerValue);
             this.panelDomeLights.Controls.Add(this.colorEnter);
             this.panelDomeLights.Controls.Add(this.label1);
             this.panelDomeLights.Controls.Add(this.lblB);
@@ -197,6 +200,7 @@
             this.dimmer.Name = "dimmer";
             this.dimmer.Size = new System.Drawing.Size(239, 56);
             this.dimmer.TabIndex = 29;
+            this.dimmer.Scroll += new System.EventHandler(this.dimmer_Scroll);
             // 
             // btnDomeLightsBack
             // 
@@ -231,6 +235,19 @@
             this.colorEnter.UseVisualStyleBackColor = true;
             this.colorEnter.Click += new System.EventHandler(this.colorEnter_Click);
             this.colorEnter.MouseHover += new System.EventHandler(this.colorEnter_MouseHover);
+            // 
+            // dimmerValue
+            // 
+            this.dimmerValue.Location = new System.Drawing.Point(375, 327);
+            this.dimmerValue.Name = "dimmerValue";
+            this.dimmerValue.Size = new System.Drawing.Size(43, 22);
+            this.dimmerValue.TabIndex = 57;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // UserControlDomeLights
             // 
@@ -271,5 +288,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button colorEnter;
         private System.Windows.Forms.ToolTip toolTip4;
+        private System.Windows.Forms.TextBox dimmerValue;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

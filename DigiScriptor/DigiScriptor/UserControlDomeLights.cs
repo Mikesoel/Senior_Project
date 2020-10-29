@@ -28,6 +28,9 @@ namespace DigiScriptor
         {
             colorDialog1.ShowDialog();
             textBox1.BackColor = colorDialog1.Color;
+            textBoxR.Text = "" + colorDialog1.Color.R;
+            textBoxG.Text = "" + colorDialog1.Color.G;
+            textBoxB.Text = "" + colorDialog1.Color.B;
             //converts the rgb to a hex color
             String hex_color = String.Format("#{0:X2}{1:X2}{2:X2}", colorDialog1.Color.R, colorDialog1.Color.G, colorDialog1.Color.B);
             //hex.Text = hex_color;
@@ -221,6 +224,9 @@ namespace DigiScriptor
             textBox1.BackColor = colorDialog1.Color;
         }
 
-       
+        private void dimmer_Scroll(object sender, EventArgs e)
+        {
+            dimmerValue.Text = "" + dimmer.Value;
+        }
     }
 }
