@@ -16,17 +16,43 @@ namespace DigiScriptor
         string filePath = string.Empty;
         FileStream fs;
 
+        public List<ShowItem> showList = new List<ShowItem>();
+
 
 
         public SaveMenu()
         {
             InitializeComponent();
+
+            
+
+
         }
 
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
 
         }
+
+
+
+        public void UpdateList()
+        {
+
+            showList = HomeScreen.Current.GetList();
+
+
+            for (int i =0; i < showList.Count; i++)
+            {
+                ShowPanel.Controls.Add(showList[i]);
+
+            }
+
+
+
+        }
+
+
 
         private void Location_Btn_Click(object sender, EventArgs e)
         {
@@ -67,17 +93,17 @@ namespace DigiScriptor
                 //check that file existe
                 if (File.Exists(filePath))
                 {
-                    
-                    MessageBox.Show("file exist");
 
                     try
                     {
-                        fs = File.OpenWrite(filePath);
+                        //open file and write to it
+                        //fs = File.OpenWrite(filePath);
+                        System.IO.File.WriteAllText(filePath, HomeScreen.Current.showCodeBuilder());
 
 
 
-
-                        fs.Close();
+                        //close file after writing to it
+                        //fs.Close();
                     }
                     catch
                     {
@@ -93,13 +119,10 @@ namespace DigiScriptor
                     //if file doesnt exist
                     try
                     {
-                        fs = File.Create(filePath);
+                        //create new file and then write code to it
+                        System.IO.File.WriteAllText(filePath, HomeScreen.Current.showCodeBuilder());
 
-
-
-
-
-                        fs.Close();
+                        
                     }
                     catch
                     {
@@ -113,15 +136,9 @@ namespace DigiScriptor
 
         }
 
+        private void showPanel_Paint(object sender, PaintEventArgs e)
+        {
 
-
-
-
-
-
-
-
-
-
+        }
     }
 }
