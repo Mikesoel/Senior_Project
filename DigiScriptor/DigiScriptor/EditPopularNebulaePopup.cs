@@ -20,7 +20,9 @@ namespace DigiScriptor
         SqlConnection connect;
 
         //Variables for nebula name, cellName (name of selected row in datagrid) declination degree/min/max and right ascension hour/minutes/seconds
-        private string name = string.Empty;
+        private string commonName = string.Empty;
+        private string sciName = string.Empty;
+        private string search = string.Empty;
         int RAHr, RAMin, RASec, DDeg, DMin, DSec = 0;
         private string cellName = string.Empty;
         private Boolean DecDTxt_Valid = false;
@@ -29,6 +31,8 @@ namespace DigiScriptor
         private Boolean RAsHrTxt_Valid = false;
         private Boolean RAsMinTxt_Valid = false;
         private Boolean RAsSecTxt_Valid = false;
+        private Boolean sciName_Valid = false;
+        private Boolean search_Valid = false;
 
         public EditPopularNebulaePopup()
         {
@@ -78,11 +82,17 @@ namespace DigiScriptor
                 SqlCommand cmd = connect.CreateCommand();
                 cmd.CommandType = CommandType.Text;
 
-                //SQL command to be entered into DB
-                cmd.CommandText = "insert into NebulaeFavorites (CommonName, RAHr, RAMin, RASec, DDeg, DMin, DSec) VALUES (@Name,  @RAHr, @RAMin, @RASec, @DDeg, @DMin, @DSec)";
+                //SQL command to be entered into DB with Scientific Name
+                if (sciName_Valid == true)
+                    cmd.CommandText = "insert into NebulaeFavorites (CommonName, ScientificName, RAHr, RAMin, RASec, DDeg, DMin, DSec) VALUES (@commonName, @sciName, @RAHr, @RAMin, @RASec, @DDeg, @DMin, @DSec)";
+                
+                //SQL command to be entered into DB without scientific name
+                else
+                    cmd.CommandText = "insert into NebulaeFavorites (CommonName, RAHr, RAMin, RASec, DDeg, DMin, DSec) VALUES (@commonName,  @RAHr, @RAMin, @RASec, @DDeg, @DMin, @DSec)";
 
                 //Bind variables to SQL command names
-                cmd.Parameters.AddWithValue("@Name", name);
+                cmd.Parameters.AddWithValue("@commonName", commonName);
+                cmd.Parameters.AddWithValue("@sciName", sciName);
                 cmd.Parameters.AddWithValue("@RAHr", RAHr);
                 cmd.Parameters.AddWithValue("@RAMin", RAMin);
                 cmd.Parameters.AddWithValue("@RASec", RASec);
@@ -93,7 +103,7 @@ namespace DigiScriptor
                 
                 //Close DB connection and reload datagrid
                 connect.Close();
-                MessageBox.Show("Submitted " + name + " into database");
+                MessageBox.Show("Submitted " + commonName + " into database");
                 LoadTable();
             }
         }
@@ -108,10 +118,25 @@ namespace DigiScriptor
             //Bind cmd to SQL commands
             SqlCommand cmd = connect.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            
-            //SQL command to be entered into DB
-            cmd.CommandText = "select CommonName, ScientificName, RAHr, RAMin, RASec, DDEG, Dmin, Dsec from NebulaeFavorites";
-            cmd.ExecuteNonQuery();
+
+            //SQL command to be entered into DB if search is false
+            if (search_Valid == false)
+            {
+                cmd.CommandText = "select CommonName, ScientificName, RAHr, RAMin, RASec, DDEG, Dmin, Dsec " +
+                                  "FROM NebulaeFavorites";
+                cmd.ExecuteNonQuery();
+            }
+
+            //SQL command to be entered into DB if search is true
+            else
+            {
+                cmd.CommandText = "select CommonName, ScientificName, RAHr, RAMin, RASec, DDEG, Dmin, Dsec " +
+                                  "FROM NebulaeFavorites" +
+                                  "WHERE CommonName LIKE '*" + "@searchValue" + "*'";
+                cmd.Parameters.AddWithValue("@searchValue", search);
+                cmd.ExecuteNonQuery();
+            }
+
 
             //Bind DB into datagrid view
             try
@@ -136,7 +161,7 @@ namespace DigiScriptor
 
         private void txtBoxName_TextChanged(object sender, EventArgs e)
         {
-            name = txtBoxName.Text;
+            commonName = txtBoxName.Text;
         }
 
 
@@ -155,7 +180,7 @@ namespace DigiScriptor
                 cellName = nebulaeDataGrid.SelectedCells[0].Value.ToString();
 
                 //Queries database with selected info to delete row
-                cmd.CommandText = "DELETE FROM NebulaeFavorites WHERE Name = @index";
+                cmd.CommandText = "DELETE FROM NebulaeFavorites WHERE CommonName = @index";
                 cmd.Parameters.AddWithValue("@index", cellName);
                 cmd.ExecuteNonQuery();
 
@@ -247,6 +272,40 @@ namespace DigiScriptor
                 //no data input
                 RAsMinTxt_Valid = false;
             }
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            //When clear button is clicked, clear all contents from text boxes
+
+            txtBoxName.Clear();
+            txtBoxSciName.Clear();
+            RAsHrTxt.Clear();
+            RAsMinTxt.Clear();
+            RAsSecTxt.Clear();
+            DecDTxt.Clear();
+            DecMinTxt.Clear();
+            DecSecTxt.Clear();
+        }
+
+        private void txtBoxSciName_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBoxSciName.Text != "")
+            {
+                sciName = txtBoxName.Text;
+                sciName_Valid = true;
+            }
+        }
+
+        private void searchTxt_TextChanged(object sender, EventArgs e)
+        {
+            if(searchTxt.Text != "")
+            {
+                search = searchTxt.Text;
+                search_Valid = true;
+                LoadTable();
+            }
+             
         }
 
         private void RAsSecTxt_TextChanged(object sender, EventArgs e)
