@@ -20,10 +20,7 @@ namespace DigiScriptor
         public String filePath;
 
         private List<ShowItem> theList = new List<ShowItem>();
-
-        //create singular save menu
-        SaveMenu save;
-
+        private Boolean isNavigationOn = false;
 
 
 
@@ -51,9 +48,7 @@ namespace DigiScriptor
             this.userControlHome.btnMovies.Click += ButtonMovies;
             this.userControlHome.btnLights.Click += ButtonDomeLights;
 
-
-
-            populateList();
+            //populateList();
 
         }
 
@@ -94,11 +89,29 @@ namespace DigiScriptor
         {
             //add items to list from other screens
             theList.Add(newItem);
+
+            //checking to see if the item being added is to turn
+            //navigation on
+            if ((newItem.Title).Equals("Navigation On"))
+            {
+                isNavigationOn = true;
+            }
+
             UpdateList();
         }
 
 
+        public int GetListCount()
+        {
+            //returns the number of elements in the ShowItem list
+            return theList.Count;
+        }
 
+        public Boolean GetIsNavOn()
+        {
+            //returns whether nagivation has been turned on yet
+            return isNavigationOn;
+        }
 
 
         private void splitter1_SplitterMoved(object sender, SplitterEventArgs e)
@@ -161,33 +174,10 @@ namespace DigiScriptor
 
         private void btnSubmit_Click_1(object sender, EventArgs e)
         {
-            /*
             if (MessageBox.Show("Submitted") == DialogResult.OK)
             {
                 //do some stuff
             }
-            */
-
-            if(save != null)
-            {
-                //if previously closed then remake save popup
-                if (save.IsDisposed == true)
-                {
-                    save = null;
-                    save = new SaveMenu();
-                }
-
-                //make sure show is showing and bring to front
-                save.Show();
-                save.Focus();
-            }
-            else
-            {
-                //initial time save menu shows
-                save = new SaveMenu();
-                save.Show();
-            }
-
         }
 
         private void showPanel_Paint(object sender, PaintEventArgs e)
@@ -195,6 +185,12 @@ namespace DigiScriptor
 
         }
 
-
+        private void devModeCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            if(devModeCheck.Checked == true)
+            {
+                //make it so the shopping cart now shows the code as well
+            }
+        }
     }
 }

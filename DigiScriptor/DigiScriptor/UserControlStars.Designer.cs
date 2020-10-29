@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelStars = new System.Windows.Forms.Panel();
+            this.EditFavorite = new System.Windows.Forms.Button();
             this.FavLbl = new System.Windows.Forms.Label();
             this.SubBtn = new System.Windows.Forms.Button();
             this.CoordinateBox = new System.Windows.Forms.GroupBox();
@@ -55,6 +56,7 @@
             // 
             // panelStars
             // 
+            this.panelStars.Controls.Add(this.EditFavorite);
             this.panelStars.Controls.Add(this.FavLbl);
             this.panelStars.Controls.Add(this.SubBtn);
             this.panelStars.Controls.Add(this.CoordinateBox);
@@ -62,11 +64,23 @@
             this.panelStars.Controls.Add(this.btnStarsBack);
             this.panelStars.Controls.Add(this.labelStars);
             this.panelStars.Location = new System.Drawing.Point(0, 0);
-            this.panelStars.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.panelStars.Margin = new System.Windows.Forms.Padding(2);
             this.panelStars.Name = "panelStars";
-            this.panelStars.Size = new System.Drawing.Size(708, 649);
+            this.panelStars.Size = new System.Drawing.Size(708, 648);
             this.panelStars.TabIndex = 30;
             this.panelStars.Paint += new System.Windows.Forms.PaintEventHandler(this.panelStars_Paint);
+            // 
+            // EditFavorite
+            // 
+            this.EditFavorite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.EditFavorite.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.EditFavorite.Location = new System.Drawing.Point(61, 181);
+            this.EditFavorite.Name = "EditFavorite";
+            this.EditFavorite.Size = new System.Drawing.Size(154, 29);
+            this.EditFavorite.TabIndex = 34;
+            this.EditFavorite.Text = "Edit Favorites";
+            this.EditFavorite.UseVisualStyleBackColor = true;
+            this.EditFavorite.Click += new System.EventHandler(this.EditFavorite_Click);
             // 
             // FavLbl
             // 
@@ -82,12 +96,13 @@
             // 
             // SubBtn
             // 
+            this.SubBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.SubBtn.BackColor = System.Drawing.Color.DimGray;
             this.SubBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SubBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.SubBtn.ForeColor = System.Drawing.Color.SpringGreen;
             this.SubBtn.Location = new System.Drawing.Point(550, 584);
-            this.SubBtn.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.SubBtn.Margin = new System.Windows.Forms.Padding(2);
             this.SubBtn.Name = "SubBtn";
             this.SubBtn.Size = new System.Drawing.Size(124, 49);
             this.SubBtn.TabIndex = 7;
@@ -228,7 +243,7 @@
             // DeclinationLbl
             // 
             this.DeclinationLbl.AutoSize = true;
-            this.DeclinationLbl.Location = new System.Drawing.Point(7, 90);
+            this.DeclinationLbl.Location = new System.Drawing.Point(7, 89);
             this.DeclinationLbl.Name = "DeclinationLbl";
             this.DeclinationLbl.Size = new System.Drawing.Size(103, 24);
             this.DeclinationLbl.TabIndex = 2;
@@ -256,19 +271,23 @@
             // 
             // StarFavorites
             // 
+            this.StarFavorites.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.StarFavorites.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.StarFavorites.FormattingEnabled = true;
             this.StarFavorites.Location = new System.Drawing.Point(61, 143);
             this.StarFavorites.Name = "StarFavorites";
+            this.StarFavorites.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StarFavorites.Size = new System.Drawing.Size(154, 32);
+            this.StarFavorites.Sorted = true;
             this.StarFavorites.TabIndex = 0;
+            this.StarFavorites.SelectedIndexChanged += new System.EventHandler(this.StarFavorites_SelectedIndexChanged);
             // 
             // btnStarsBack
             // 
             this.btnStarsBack.BackColor = System.Drawing.Color.Gray;
             this.btnStarsBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStarsBack.Location = new System.Drawing.Point(21, 608);
-            this.btnStarsBack.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnStarsBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnStarsBack.Name = "btnStarsBack";
             this.btnStarsBack.Size = new System.Drawing.Size(57, 25);
             this.btnStarsBack.TabIndex = 3;
@@ -293,9 +312,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Controls.Add(this.panelStars);
-            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserControlStars";
-            this.Size = new System.Drawing.Size(708, 649);
+            this.Size = new System.Drawing.Size(708, 648);
             this.panelStars.ResumeLayout(false);
             this.panelStars.PerformLayout();
             this.CoordinateBox.ResumeLayout(false);
@@ -327,5 +346,6 @@
         private System.Windows.Forms.Label DecMinLbl;
         private System.Windows.Forms.TextBox DecMinTxt;
         private System.Windows.Forms.Label FavLbl;
+        private System.Windows.Forms.Button EditFavorite;
     }
 }
