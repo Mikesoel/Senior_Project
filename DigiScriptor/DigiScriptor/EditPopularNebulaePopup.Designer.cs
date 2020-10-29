@@ -312,6 +312,8 @@
             // 
             // searchTxt
             // 
+            this.searchTxt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.searchTxt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.searchTxt.Location = new System.Drawing.Point(702, 161);
             this.searchTxt.Name = "searchTxt";
             this.searchTxt.Size = new System.Drawing.Size(206, 20);
