@@ -28,6 +28,7 @@ namespace DigiScriptor
             InitializeComponent();
         }
 
+       //Mouse Hover implementation to provide more details to the user
         private void textBoxOrbit_MouseHover(object sender, EventArgs e)
         {
             toolTip1.Show("Enter desired speed you wish to orbit", textBoxOrbit);
@@ -190,31 +191,37 @@ namespace DigiScriptor
 
         private void planetDropdown_TextChanged(object sender, EventArgs e)
         {
+            //check that a planet has been selected by the planet dropdown menu
             planet_selected = true;
         }
         private void axisDropdown_TextChanged(object sender, EventArgs e)
         {
+            //check that the rotation axis has been selected from the rotaion dropdowwn
             RotationAxis_selected = true;
         }
 
         private void vp_units_TextChanged(object sender, EventArgs e)
         {
+           //check if the user chose a unit for the vantage point
             vp_unit_selected = true;
         }
         private void os_units_TextChanged(object sender, EventArgs e)
         {
+            //check if the user chose a unit for the orbit speed
             os_unit_selected = true;
         }
 
         private void rs_units_TextChanged(object sender, EventArgs e)
         {
+            //check if the user chose a unit for the rotation speed
             rs_unit_selected = true;
         }
 
 
         private Boolean ValidPlanetEntry()
         {
-           if (textBoxRot_Valid & textBoxOrbit_Valid & textBoxVantage_Valid & planet_selected & RotationAxis_selected & vp_unit_selected & os_unit_selected & rs_unit_selected)
+         //checks if all inputs have been completed and are valid
+            if (textBoxRot_Valid & textBoxOrbit_Valid & textBoxVantage_Valid & planet_selected & RotationAxis_selected & vp_unit_selected & os_unit_selected & rs_unit_selected)
             {
                 return true;
             }else   return false;
