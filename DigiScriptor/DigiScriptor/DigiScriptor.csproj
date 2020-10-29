@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,7 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
@@ -47,26 +64,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DigiDataBaseDataSet.Designer.cs">
+      <DependentUpon>DigiDataBaseDataSet.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="EditPopularEarthLocationsPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditPopularEarthLocationsPopup.Designer.cs">
+      <DependentUpon>EditPopularEarthLocationsPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditPopularNebulaePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditPopularNebulaePopup.Designer.cs">
+      <DependentUpon>EditPopularNebulaePopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditPopularStarsPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditPopularStarsPopup.Designer.cs">
+      <DependentUpon>EditPopularStarsPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="PanelGalaxies.cs">
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="EarthScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EarthScreen.Designer.cs">
-      <DependentUpon>EarthScreen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NebulaeScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NebulaeScreen.Designer.cs">
-      <DependentUpon>NebulaeScreen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GalaxiesScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GalaxiesScreen.Designer.cs">
-      <DependentUpon>GalaxiesScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="HomeScreen.cs">
       <SubType>Form</SubType>
@@ -74,19 +96,13 @@
     <Compile Include="HomeScreen.Designer.cs">
       <DependentUpon>HomeScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="NightSkyScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NightSkyScreen.Designer.cs">
-      <DependentUpon>NightSkyScreen.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StarsScreen.cs">
-      <SubType>Form</SubType>
+    <Compile Include="ShowItem.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="StarsScreen.Designer.cs">
-      <DependentUpon>StarsScreen.cs</DependentUpon>
+    <Compile Include="ShowItem.Designer.cs">
+      <DependentUpon>ShowItem.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlDomeLights.cs">
       <SubType>UserControl</SubType>
@@ -148,20 +164,17 @@
     <Compile Include="UserControlStars.Designer.cs">
       <DependentUpon>UserControlStars.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="EarthScreen.resx">
-      <DependentUpon>EarthScreen.cs</DependentUpon>
+    <EmbeddedResource Include="EditPopularEarthLocationsPopup.resx">
+      <DependentUpon>EditPopularEarthLocationsPopup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GalaxiesScreen.resx">
-      <DependentUpon>GalaxiesScreen.cs</DependentUpon>
+    <EmbeddedResource Include="EditPopularNebulaePopup.resx">
+      <DependentUpon>EditPopularNebulaePopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditPopularStarsPopup.resx">
+      <DependentUpon>EditPopularStarsPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeScreen.resx">
       <DependentUpon>HomeScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NebulaeScreen.resx">
-      <DependentUpon>NebulaeScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NightSkyScreen.resx">
-      <DependentUpon>NightSkyScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PanelGalaxies.resx">
       <DependentUpon>PanelGalaxies.cs</DependentUpon>
@@ -175,8 +188,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="StarsScreen.resx">
-      <DependentUpon>StarsScreen.cs</DependentUpon>
+    <EmbeddedResource Include="ShowItem.resx">
+      <DependentUpon>ShowItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlDomeLights.resx">
       <DependentUpon>UserControlDomeLights.cs</DependentUpon>
@@ -208,6 +221,17 @@
     <EmbeddedResource Include="UserControlStars.resx">
       <DependentUpon>UserControlStars.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DigiDataBaseDataSet.xsc">
+      <DependentUpon>DigiDataBaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DigiDataBaseDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DigiDataBaseDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DigiDataBaseDataSet.xss">
+      <DependentUpon>DigiDataBaseDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -220,6 +244,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DigiDataBase.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DigiDataBase_log.ldf">
+      <DependentUpon>DigiDataBase.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

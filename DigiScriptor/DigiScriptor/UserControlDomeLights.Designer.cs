@@ -36,12 +36,14 @@
             this.btnDomeLightsBack = new System.Windows.Forms.Button();
             this.lblDomeLights = new System.Windows.Forms.Label();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.btnSubmitPlanet = new System.Windows.Forms.Button();
             this.panelDomeLights.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dimmer)).BeginInit();
             this.SuspendLayout();
             // 
             // panelDomeLights
             // 
+            this.panelDomeLights.Controls.Add(this.btnSubmitPlanet);
             this.panelDomeLights.Controls.Add(this.hex);
             this.panelDomeLights.Controls.Add(this.textBox1);
             this.panelDomeLights.Controls.Add(this.colorBtn);
@@ -108,6 +110,21 @@
             this.lblDomeLights.TabIndex = 3;
             this.lblDomeLights.Text = "Dome Lights";
             // 
+            // btnSubmitPlanet
+            // 
+            this.btnSubmitPlanet.BackColor = System.Drawing.Color.DimGray;
+            this.btnSubmitPlanet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmitPlanet.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmitPlanet.ForeColor = System.Drawing.Color.SpringGreen;
+            this.btnSubmitPlanet.Location = new System.Drawing.Point(80, 376);
+            this.btnSubmitPlanet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSubmitPlanet.Name = "btnSubmitPlanet";
+            this.btnSubmitPlanet.Size = new System.Drawing.Size(165, 60);
+            this.btnSubmitPlanet.TabIndex = 47;
+            this.btnSubmitPlanet.Text = "Submit";
+            this.btnSubmitPlanet.UseVisualStyleBackColor = false;
+            this.btnSubmitPlanet.Click += new System.EventHandler(this.btnSubmitPlanet_Click);
+            // 
             // UserControlDomeLights
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -134,5 +151,6 @@
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox hex;
+        private System.Windows.Forms.Button btnSubmitPlanet;
     }
 }

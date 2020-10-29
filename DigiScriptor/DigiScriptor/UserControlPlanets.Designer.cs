@@ -30,11 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelPlanets = new System.Windows.Forms.Panel();
+            this.rs_units = new System.Windows.Forms.ComboBox();
+            this.os_units = new System.Windows.Forms.ComboBox();
+            this.vp_units = new System.Windows.Forms.ComboBox();
+            this.btnSubmitPlanet = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblRotaion = new System.Windows.Forms.Label();
             this.lblVantage = new System.Windows.Forms.Label();
             this.lblOrbit = new System.Windows.Forms.Label();
             this.textBoxVantage = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.axisDropdown = new System.Windows.Forms.ComboBox();
             this.textBoxRotation = new System.Windows.Forms.TextBox();
             this.textBoxOrbit = new System.Windows.Forms.TextBox();
             this.lblPlanetSelectionDropdown = new System.Windows.Forms.Label();
@@ -44,28 +49,23 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnSubmitPlanet = new System.Windows.Forms.Button();
             this.toolTip4 = new System.Windows.Forms.ToolTip(this.components);
-            this.cmbBoxDist = new System.Windows.Forms.ComboBox();
             this.toolTip5 = new System.Windows.Forms.ToolTip(this.components);
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.panelPlanets.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelPlanets
             // 
-            this.panelPlanets.Controls.Add(this.comboBox3);
-            this.panelPlanets.Controls.Add(this.comboBox2);
-            this.panelPlanets.Controls.Add(this.cmbBoxDist);
+            this.panelPlanets.Controls.Add(this.rs_units);
+            this.panelPlanets.Controls.Add(this.os_units);
+            this.panelPlanets.Controls.Add(this.vp_units);
             this.panelPlanets.Controls.Add(this.btnSubmitPlanet);
             this.panelPlanets.Controls.Add(this.label1);
             this.panelPlanets.Controls.Add(this.lblRotaion);
             this.panelPlanets.Controls.Add(this.lblVantage);
             this.panelPlanets.Controls.Add(this.lblOrbit);
             this.panelPlanets.Controls.Add(this.textBoxVantage);
-            this.panelPlanets.Controls.Add(this.comboBox1);
+            this.panelPlanets.Controls.Add(this.axisDropdown);
             this.panelPlanets.Controls.Add(this.textBoxRotation);
             this.panelPlanets.Controls.Add(this.textBoxOrbit);
             this.panelPlanets.Controls.Add(this.lblPlanetSelectionDropdown);
@@ -77,6 +77,70 @@
             this.panelPlanets.Name = "panelPlanets";
             this.panelPlanets.Size = new System.Drawing.Size(944, 798);
             this.panelPlanets.TabIndex = 27;
+            // 
+            // rs_units
+            // 
+            this.rs_units.FormattingEnabled = true;
+            this.rs_units.Items.AddRange(new object[] {
+            "km/hr",
+            "km/s"});
+            this.rs_units.Location = new System.Drawing.Point(418, 372);
+            this.rs_units.Name = "rs_units";
+            this.rs_units.Size = new System.Drawing.Size(99, 24);
+            this.rs_units.TabIndex = 49;
+            this.rs_units.TextChanged += new System.EventHandler(this.rs_units_TextChanged);
+            // 
+            // os_units
+            // 
+            this.os_units.FormattingEnabled = true;
+            this.os_units.Items.AddRange(new object[] {
+            "km/hr",
+            "km/s"});
+            this.os_units.Location = new System.Drawing.Point(418, 286);
+            this.os_units.Name = "os_units";
+            this.os_units.Size = new System.Drawing.Size(99, 24);
+            this.os_units.TabIndex = 48;
+            this.os_units.TextChanged += new System.EventHandler(this.os_units_TextChanged);
+            // 
+            // vp_units
+            // 
+            this.vp_units.FormattingEnabled = true;
+            this.vp_units.Items.AddRange(new object[] {
+            "Meters",
+            "Kilometers"});
+            this.vp_units.Location = new System.Drawing.Point(418, 191);
+            this.vp_units.Name = "vp_units";
+            this.vp_units.Size = new System.Drawing.Size(99, 24);
+            this.vp_units.TabIndex = 47;
+            this.vp_units.TextChanged += new System.EventHandler(this.vp_units_TextChanged);
+            this.vp_units.MouseHover += new System.EventHandler(this.cmbBoxDist_MouseHover);
+            // 
+            // btnSubmitPlanet
+            // 
+            this.btnSubmitPlanet.BackColor = System.Drawing.Color.DimGray;
+            this.btnSubmitPlanet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmitPlanet.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmitPlanet.ForeColor = System.Drawing.Color.SpringGreen;
+            this.btnSubmitPlanet.Location = new System.Drawing.Point(192, 575);
+            this.btnSubmitPlanet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSubmitPlanet.Name = "btnSubmitPlanet";
+            this.btnSubmitPlanet.Size = new System.Drawing.Size(165, 60);
+            this.btnSubmitPlanet.TabIndex = 46;
+            this.btnSubmitPlanet.Text = "Submit";
+            this.btnSubmitPlanet.UseVisualStyleBackColor = false;
+            this.btnSubmitPlanet.Click += new System.EventHandler(this.btnSubmitPlanet_Click);
+            this.btnSubmitPlanet.MouseHover += new System.EventHandler(this.btnSubmitPlanet_MouseHover);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(23, 441);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(132, 25);
+            this.label1.TabIndex = 45;
+            this.label1.Text = "Rotation Axis:";
             // 
             // lblRotaion
             // 
@@ -120,20 +184,21 @@
             this.textBoxVantage.Text = "Enter desired vantage point";
             this.textBoxVantage.TextChanged += new System.EventHandler(this.textBoxVantage_TextChanged);
             // 
-            // comboBox1
+            // axisDropdown
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.axisDropdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.axisDropdown.FormattingEnabled = true;
+            this.axisDropdown.Items.AddRange(new object[] {
             "Axis of rotation",
             "Equator (halfway between axis)"});
-            this.comboBox1.Location = new System.Drawing.Point(211, 442);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.MaxDropDownItems = 20;
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(306, 28);
-            this.comboBox1.TabIndex = 39;
-            this.comboBox1.Text = "Select an axis";
+            this.axisDropdown.Location = new System.Drawing.Point(211, 442);
+            this.axisDropdown.Margin = new System.Windows.Forms.Padding(4);
+            this.axisDropdown.MaxDropDownItems = 20;
+            this.axisDropdown.Name = "axisDropdown";
+            this.axisDropdown.Size = new System.Drawing.Size(306, 28);
+            this.axisDropdown.TabIndex = 39;
+            this.axisDropdown.Text = "Select an axis";
+            this.axisDropdown.TextChanged += new System.EventHandler(this.axisDropdown_TextChanged);
             // 
             // textBoxRotation
             // 
@@ -215,66 +280,6 @@
             this.labelPlanets.TabIndex = 3;
             this.labelPlanets.Text = "Planets";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 441);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 25);
-            this.label1.TabIndex = 45;
-            this.label1.Text = "Rotation Axis:";
-            // 
-            // btnSubmitPlanet
-            // 
-            this.btnSubmitPlanet.BackColor = System.Drawing.Color.DimGray;
-            this.btnSubmitPlanet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubmitPlanet.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmitPlanet.ForeColor = System.Drawing.Color.SpringGreen;
-            this.btnSubmitPlanet.Location = new System.Drawing.Point(192, 575);
-            this.btnSubmitPlanet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSubmitPlanet.Name = "btnSubmitPlanet";
-            this.btnSubmitPlanet.Size = new System.Drawing.Size(165, 60);
-            this.btnSubmitPlanet.TabIndex = 46;
-            this.btnSubmitPlanet.Text = "Submit";
-            this.btnSubmitPlanet.UseVisualStyleBackColor = false;
-            this.btnSubmitPlanet.MouseHover += new System.EventHandler(this.btnSubmitPlanet_MouseHover);
-            // 
-            // cmbBoxDist
-            // 
-            this.cmbBoxDist.FormattingEnabled = true;
-            this.cmbBoxDist.Items.AddRange(new object[] {
-            "Meters",
-            "Kilometers"});
-            this.cmbBoxDist.Location = new System.Drawing.Point(418, 191);
-            this.cmbBoxDist.Name = "cmbBoxDist";
-            this.cmbBoxDist.Size = new System.Drawing.Size(99, 24);
-            this.cmbBoxDist.TabIndex = 47;
-            this.cmbBoxDist.MouseHover += new System.EventHandler(this.cmbBoxDist_MouseHover);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "km/hr",
-            "km/s"});
-            this.comboBox2.Location = new System.Drawing.Point(418, 286);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(99, 24);
-            this.comboBox2.TabIndex = 48;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "km/hr",
-            "km/s"});
-            this.comboBox3.Location = new System.Drawing.Point(418, 372);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(99, 24);
-            this.comboBox3.TabIndex = 49;
-            // 
             // UserControlPlanets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -302,7 +307,7 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ToolTip toolTip2;
         private System.Windows.Forms.TextBox textBoxVantage;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox axisDropdown;
         private System.Windows.Forms.ToolTip toolTip3;
         private System.Windows.Forms.Label lblOrbit;
         private System.Windows.Forms.Label lblRotaion;
@@ -310,9 +315,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSubmitPlanet;
         private System.Windows.Forms.ToolTip toolTip4;
-        private System.Windows.Forms.ComboBox cmbBoxDist;
+        private System.Windows.Forms.ComboBox vp_units;
         private System.Windows.Forms.ToolTip toolTip5;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox rs_units;
+        private System.Windows.Forms.ComboBox os_units;
     }
 }

@@ -27,5 +27,45 @@ namespace DigiScriptor
 
 
         }
+
+        private void btnSubmitPlanet_Click(object sender, EventArgs e)
+        {
+
+            if (hex.Text != null)
+            {
+                //confirmation message
+                String sub = "submit?";
+                String con = "Confirm";
+                DialogResult results;
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+
+                //display messgae
+                results = MessageBox.Show(sub, con, buttons);
+                //if result is 'yes' then show submited
+                if (results == DialogResult.Yes)
+                {
+                    String cartOutput = "Domelights Update";
+
+                    //create star item
+                    ShowItem planetItem = new ShowItem("Domelights", cartOutput);
+
+                    //add show item to list
+                    HomeScreen.Current.AddItem(planetItem);
+
+
+                    //update the show list after submit
+                    HomeScreen.Current.UpdateList();
+
+
+                    //for after submited is 'ok'
+                    if (MessageBox.Show("submitted") == DialogResult.OK)
+                    {
+                        //do something after submitted message
+                    }
+
+                }
+            }
+        }
+
     }
 }
