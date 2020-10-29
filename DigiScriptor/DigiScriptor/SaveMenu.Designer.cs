@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Location_btn = new System.Windows.Forms.Button();
             this.SaveBtn = new System.Windows.Forms.Button();
+            this.ShowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // saveFileDialog
@@ -41,7 +42,7 @@
             // 
             // LoctxtBox
             // 
-            this.LoctxtBox.Location = new System.Drawing.Point(98, 388);
+            this.LoctxtBox.Location = new System.Drawing.Point(98, 427);
             this.LoctxtBox.Name = "LoctxtBox";
             this.LoctxtBox.ReadOnly = true;
             this.LoctxtBox.Size = new System.Drawing.Size(438, 20);
@@ -50,7 +51,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 391);
+            this.label1.Location = new System.Drawing.Point(12, 430);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 13);
             this.label1.TabIndex = 1;
@@ -59,7 +60,7 @@
             // Location_btn
             // 
             this.Location_btn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Location_btn.Location = new System.Drawing.Point(542, 386);
+            this.Location_btn.Location = new System.Drawing.Point(542, 425);
             this.Location_btn.Name = "Location_btn";
             this.Location_btn.Size = new System.Drawing.Size(75, 23);
             this.Location_btn.TabIndex = 2;
@@ -70,7 +71,7 @@
             // SaveBtn
             // 
             this.SaveBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.SaveBtn.Location = new System.Drawing.Point(542, 415);
+            this.SaveBtn.Location = new System.Drawing.Point(542, 454);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(75, 23);
             this.SaveBtn.TabIndex = 3;
@@ -78,12 +79,24 @@
             this.SaveBtn.UseVisualStyleBackColor = true;
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
+            // ShowPanel
+            // 
+            this.ShowPanel.BackColor = System.Drawing.Color.DarkGray;
+            this.ShowPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.ShowPanel.Location = new System.Drawing.Point(172, 12);
+            this.ShowPanel.Name = "ShowPanel";
+            this.ShowPanel.Size = new System.Drawing.Size(310, 400);
+            this.ShowPanel.TabIndex = 4;
+            this.ShowPanel.WrapContents = false;
+            this.ShowPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.showPanel_Paint);
+            // 
             // SaveMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(629, 450);
+            this.ClientSize = new System.Drawing.Size(629, 485);
+            this.Controls.Add(this.ShowPanel);
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.Location_btn);
             this.Controls.Add(this.label1);
@@ -108,5 +121,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Location_btn;
         private System.Windows.Forms.Button SaveBtn;
+        private System.Windows.Forms.FlowLayoutPanel ShowPanel;
     }
 }

@@ -19,10 +19,11 @@ namespace DigiScriptor
         public String fileName;
         public String filePath;
 
+        //create show list
         private List<ShowItem> theList = new List<ShowItem>();
 
         //create singular save menu
-        SaveMenu save;
+        public SaveMenu save;
 
 
 
@@ -97,7 +98,12 @@ namespace DigiScriptor
             UpdateList();
         }
 
+        public List<ShowItem> GetList()
+        {
+            
 
+            return theList;
+        }
 
 
 
@@ -161,12 +167,6 @@ namespace DigiScriptor
 
         private void btnSubmit_Click_1(object sender, EventArgs e)
         {
-            /*
-            if (MessageBox.Show("Submitted") == DialogResult.OK)
-            {
-                //do some stuff
-            }
-            */
 
             if(save != null)
             {
@@ -194,6 +194,65 @@ namespace DigiScriptor
         {
 
         }
+
+
+
+
+        public string showCodeBuilder()
+        {
+            string codeOut = string.Empty;
+
+
+            
+            for(int i =0; i < theList.Count; i++)
+            {
+                //comment the title
+                codeOut += @"//";
+                codeOut += theList[i].Title;
+                codeOut += "\n";
+
+
+                //comment the description
+                codeOut += @"/*";
+                codeOut += theList[i].Decription;
+                codeOut += "\n";
+                codeOut += @"*/";
+                codeOut += "\n";
+
+
+                //check if item has code
+                if (theList[i].Code != "")
+                {
+                    codeOut += theList[i].Code;
+
+
+                    codeOut += "\n";
+                }
+                else
+                {
+                    //fill code sections
+                    codeOut += @"// code goes here!!!!!";
+                    codeOut += "\n\n";
+
+
+                }
+
+
+
+            }
+            
+
+
+
+            
+
+
+
+            return codeOut;
+
+        }
+
+
 
 
     }
