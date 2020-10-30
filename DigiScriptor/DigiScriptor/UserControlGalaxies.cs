@@ -89,7 +89,7 @@ namespace DigiScriptor
             if (!(String.IsNullOrEmpty(outputLbl)))
             {
                 //confirmation message
-                String sub = "submit?";
+                String sub = "Submit?";
                 String con = "Confirm";
                 DialogResult results;
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
@@ -99,10 +99,21 @@ namespace DigiScriptor
                 //if result is 'yes' then show submited
                 if (results == DialogResult.Yes)
                 {
-                    String cartOutput = "move to " + lblGalaxiesOutput.Text + " Galaxy";
+                    Boolean isNavigationOn = HomeScreen.Current.GetIsNavOn();
+
+                    //if navigation has not been turned on yet, turn it on to
+                    //flyTo galaxy
+                    if(!isNavigationOn)
+                    {
+                        ShowItem naviItem = new ShowItem("Navigation On", "turn navigation on for flyTo commands", "navigation on;");
+                        HomeScreen.Current.AddItem(naviItem);
+                    }
+
+                    String cartDescription = "move to " + lblGalaxiesOutput.Text + " Galaxy";
+                    String cartCode = "navigation flyTo " + lblGalaxiesOutput.Text + ";";
 
                     //create star item
-                    ShowItem galaxyItem = new ShowItem("Galaxy Move", cartOutput);
+                    ShowItem galaxyItem = new ShowItem("Galaxy Move", cartDescription, cartCode);
 
                     //add show item to list
                     HomeScreen.Current.AddItem(galaxyItem);
@@ -112,11 +123,13 @@ namespace DigiScriptor
                     HomeScreen.Current.UpdateList();
 
 
-                    //for after submited is 'ok'
-                    if (MessageBox.Show("submitted") == DialogResult.OK)
+                    //NO CONFIRMATIONS NEEDED
+                    /*/for after submited is 'ok'
+                    if (MessageBox.Show("Submitted") == DialogResult.OK)
                     {
                         //do something after submitted message
                     }
+                    */
 
                 }
             }

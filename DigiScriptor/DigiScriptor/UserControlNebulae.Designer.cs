@@ -121,6 +121,7 @@
             this.nebulaeDropdown.Size = new System.Drawing.Size(149, 24);
             this.nebulaeDropdown.TabIndex = 26;
             this.nebulaeDropdown.SelectedIndexChanged += new System.EventHandler(this.nebulaeDropdown_SelectedIndexChanged);
+            this.nebulaeDropdown.Click += new System.EventHandler(this.nebulaeDropdown_Click);
             // 
             // lblNebulaeSelectionDropdown
             // 

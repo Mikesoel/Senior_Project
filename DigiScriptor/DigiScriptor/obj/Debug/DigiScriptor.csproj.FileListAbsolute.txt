@@ -63,6 +63,33 @@ C:\Users\savan\Desktop\Senior_Project-savanna\Senior_Project-savanna\DigiScripto
 C:\Users\savan\Desktop\Senior_Project-savanna\Senior_Project-savanna\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlNebulae.resources
 C:\Users\savan\Desktop\Senior_Project-savanna\Senior_Project-savanna\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlPlanets.resources
 C:\Users\savan\Desktop\Senior_Project-savanna\Senior_Project-savanna\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlStars.resources
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.exe.config
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.exe
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.pdb
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.EarthScreen.resources
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.GalaxiesScreen.resources
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.HomeScreen.resources
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.NebulaeScreen.resources
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.NightSkyScreen.resources
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.PanelGalaxies.resources
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.Properties.Resources.resources
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.StarsScreen.resources
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlDomeLights.resources
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlEarth.resources
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlMoons.resources
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlMovies.resources
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlNebulae.resources
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlNightSky.resources
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlGalaxies.resources
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlHome.resources
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlPlanets.resources
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlStars.resources
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.csproj.GenerateResource.cache
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.exe
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.pdb
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\bin\Debug\DigiDataBase.mdf
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\bin\Debug\DigiDataBase_log.ldf
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.ShowItem.resources
 C:\Users\savan\Desktop\sav-rich combined 10.14.2020\DigiScriptor\DigiScriptor\bin\Debug\DigiDataBase.mdf
 C:\Users\savan\Desktop\sav-rich combined 10.14.2020\DigiScriptor\DigiScriptor\bin\Debug\DigiDataBase_log.ldf
 C:\Users\savan\Desktop\sav-rich combined 10.14.2020\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.exe.config
@@ -222,28 +249,89 @@ C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\D
 C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.csproj.CoreCompileInputs.cache
 C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.exe
 C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.pdb
-C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.EditPopularEarthLocationsPopup.resources
-C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.EditPopularNebulaePopup.resources
-C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.EditPopularStarsPopup.resources
-C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.HomeScreen.resources
-C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.PanelGalaxies.resources
-C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.Properties.Resources.resources
-C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.ShowItem.resources
-C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlDomeLights.resources
-C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlEarth.resources
-C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlMoons.resources
-C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlMovies.resources
-C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlNebulae.resources
-C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlNightSky.resources
-C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlGalaxies.resources
-C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlHome.resources
-C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlPlanets.resources
-C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlStars.resources
-C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.csproj.GenerateResource.cache
-C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\bin\Debug\DigiDataBase.mdf
-C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\bin\Debug\DigiDataBase_log.ldf
-C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.exe.config
-C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.exe
-C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.pdb
-C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.exe
-C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.pdb
+C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.csprojAssemblyReference.cache
+C:\Users\savan\Desktop\sav-mike merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.csprojAssemblyReference.cache
+C:\Users\savan\Desktop\sav-mike merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.EditPopularEarthLocationsPopup.resources
+C:\Users\savan\Desktop\sav-mike merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.EditPopularNebulaePopup.resources
+C:\Users\savan\Desktop\sav-mike merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.EditPopularStarsPopup.resources
+C:\Users\savan\Desktop\sav-mike merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.HomeScreen.resources
+C:\Users\savan\Desktop\sav-mike merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.PanelGalaxies.resources
+C:\Users\savan\Desktop\sav-mike merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.Properties.Resources.resources
+C:\Users\savan\Desktop\sav-mike merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.SaveMenu.resources
+C:\Users\savan\Desktop\sav-mike merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.ShowItem.resources
+C:\Users\savan\Desktop\sav-mike merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlDomeLights.resources
+C:\Users\savan\Desktop\sav-mike merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlEarth.resources
+C:\Users\savan\Desktop\sav-mike merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlMoons.resources
+C:\Users\savan\Desktop\sav-mike merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlMovies.resources
+C:\Users\savan\Desktop\sav-mike merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlNebulae.resources
+C:\Users\savan\Desktop\sav-mike merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlNightSky.resources
+C:\Users\savan\Desktop\sav-mike merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlGalaxies.resources
+C:\Users\savan\Desktop\sav-mike merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlHome.resources
+C:\Users\savan\Desktop\sav-mike merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlPlanets.resources
+C:\Users\savan\Desktop\sav-mike merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlStars.resources
+C:\Users\savan\Desktop\sav-mike merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.csproj.GenerateResource.cache
+C:\Users\savan\Desktop\sav-mike merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.csproj.CoreCompileInputs.cache
+C:\Users\savan\Desktop\sav-mike merge\DigiScriptor\DigiScriptor\bin\Debug\DigiDataBase.mdf
+C:\Users\savan\Desktop\sav-mike merge\DigiScriptor\DigiScriptor\bin\Debug\DigiDataBase_log.ldf
+C:\Users\savan\Desktop\sav-mike merge\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.exe.config
+C:\Users\savan\Desktop\sav-mike merge\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.exe
+C:\Users\savan\Desktop\sav-mike merge\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.pdb
+C:\Users\savan\Desktop\sav-mike merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.exe
+C:\Users\savan\Desktop\sav-mike merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.pdb
+C:\Users\savan\Desktop\sav-rich merge\DigiScriptor\DigiScriptor\bin\Debug\DigiDataBase.mdf
+C:\Users\savan\Desktop\sav-rich merge\DigiScriptor\DigiScriptor\bin\Debug\DigiDataBase_log.ldf
+C:\Users\savan\Desktop\sav-rich merge\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.exe.config
+C:\Users\savan\Desktop\sav-rich merge\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.exe
+C:\Users\savan\Desktop\sav-rich merge\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.pdb
+C:\Users\savan\Desktop\sav-rich merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.csprojAssemblyReference.cache
+C:\Users\savan\Desktop\sav-rich merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.EditPopularEarthLocationsPopup.resources
+C:\Users\savan\Desktop\sav-rich merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.EditPopularNebulaePopup.resources
+C:\Users\savan\Desktop\sav-rich merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.EditPopularStarsPopup.resources
+C:\Users\savan\Desktop\sav-rich merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.HomeScreen.resources
+C:\Users\savan\Desktop\sav-rich merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.PanelGalaxies.resources
+C:\Users\savan\Desktop\sav-rich merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.Properties.Resources.resources
+C:\Users\savan\Desktop\sav-rich merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.SaveMenu.resources
+C:\Users\savan\Desktop\sav-rich merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.ShowItem.resources
+C:\Users\savan\Desktop\sav-rich merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlDomeLights.resources
+C:\Users\savan\Desktop\sav-rich merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlEarth.resources
+C:\Users\savan\Desktop\sav-rich merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlMoons.resources
+C:\Users\savan\Desktop\sav-rich merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlMovies.resources
+C:\Users\savan\Desktop\sav-rich merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlNebulae.resources
+C:\Users\savan\Desktop\sav-rich merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlNightSky.resources
+C:\Users\savan\Desktop\sav-rich merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlGalaxies.resources
+C:\Users\savan\Desktop\sav-rich merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlHome.resources
+C:\Users\savan\Desktop\sav-rich merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlPlanets.resources
+C:\Users\savan\Desktop\sav-rich merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlStars.resources
+C:\Users\savan\Desktop\sav-rich merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.csproj.GenerateResource.cache
+C:\Users\savan\Desktop\sav-rich merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.csproj.CoreCompileInputs.cache
+C:\Users\savan\Desktop\sav-rich merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.exe
+C:\Users\savan\Desktop\sav-rich merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.pdb
+C:\Users\savan\Desktop\sav-julissa merge\DigiScriptor\DigiScriptor\bin\Debug\DigiDataBase.mdf
+C:\Users\savan\Desktop\sav-julissa merge\DigiScriptor\DigiScriptor\bin\Debug\DigiDataBase_log.ldf
+C:\Users\savan\Desktop\sav-julissa merge\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.exe.config
+C:\Users\savan\Desktop\sav-julissa merge\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.exe
+C:\Users\savan\Desktop\sav-julissa merge\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.pdb
+C:\Users\savan\Desktop\sav-julissa merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.csprojAssemblyReference.cache
+C:\Users\savan\Desktop\sav-julissa merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.EditPopularEarthLocationsPopup.resources
+C:\Users\savan\Desktop\sav-julissa merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.EditPopularNebulaePopup.resources
+C:\Users\savan\Desktop\sav-julissa merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.EditPopularStarsPopup.resources
+C:\Users\savan\Desktop\sav-julissa merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.HomeScreen.resources
+C:\Users\savan\Desktop\sav-julissa merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.PanelGalaxies.resources
+C:\Users\savan\Desktop\sav-julissa merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.Properties.Resources.resources
+C:\Users\savan\Desktop\sav-julissa merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.SaveMenu.resources
+C:\Users\savan\Desktop\sav-julissa merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.ShowItem.resources
+C:\Users\savan\Desktop\sav-julissa merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlDomeLights.resources
+C:\Users\savan\Desktop\sav-julissa merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlEarth.resources
+C:\Users\savan\Desktop\sav-julissa merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlMoons.resources
+C:\Users\savan\Desktop\sav-julissa merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlMovies.resources
+C:\Users\savan\Desktop\sav-julissa merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlNebulae.resources
+C:\Users\savan\Desktop\sav-julissa merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlNightSky.resources
+C:\Users\savan\Desktop\sav-julissa merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlGalaxies.resources
+C:\Users\savan\Desktop\sav-julissa merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlHome.resources
+C:\Users\savan\Desktop\sav-julissa merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlPlanets.resources
+C:\Users\savan\Desktop\sav-julissa merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlStars.resources
+C:\Users\savan\Desktop\sav-julissa merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.csproj.GenerateResource.cache
+C:\Users\savan\Desktop\sav-julissa merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.csproj.CoreCompileInputs.cache
+C:\Users\savan\Desktop\sav-julissa merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.exe
+C:\Users\savan\Desktop\sav-julissa merge\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.pdb
+C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.SaveMenu.resources

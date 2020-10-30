@@ -31,19 +31,30 @@ namespace DigiScriptor
 
         private void LoadComboBox()
         {
+            //Clear contents from Nebulae Favorites combo box
             nebulaeDropdown.Items.Clear();
+            
+            //Open DB connection
             connect.Open();
+            
+            //Bind cmd to SQL commands
             SqlCommand cmd = connect.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Name from NebulaeFavorites";
+            
+            //SQL command to select names from DB
+            cmd.CommandText = "select CommonName from NebulaeFavorites";
             cmd.ExecuteNonQuery();
+            
+            //Add names to combobox
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             foreach (DataRow dr in dt.Rows)
             {
-                nebulaeDropdown.Items.Add(dr["Name"].ToString());
+                nebulaeDropdown.Items.Add(dr["CommonName"].ToString());
             }
+            
+            //Close DB connection
             connect.Close();
         }
 
@@ -60,7 +71,7 @@ namespace DigiScriptor
             DialogResult results;
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
 
-            //display messgae
+            //display message
             results = MessageBox.Show(sub, con, buttons);
             //if result is 'yes' then show submited
             if (results == DialogResult.Yes)
@@ -94,6 +105,7 @@ namespace DigiScriptor
 
         private void editPopularNebulaeButton_Click(object sender, EventArgs e)
         {
+            //Opens nebulae favorites add/edit popup window when clicked
             EditPopularNebulaePopup editNebulaeData = new EditPopularNebulaePopup();
             editNebulaeData.Show();
         }
@@ -106,6 +118,12 @@ namespace DigiScriptor
         private void panelNebulae_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void nebulaeDropdown_Click(object sender, EventArgs e)
+        {
+            //Reload combo box every time it is clicked, assures data within is always accurate
+            LoadComboBox();
         }
     }
 }

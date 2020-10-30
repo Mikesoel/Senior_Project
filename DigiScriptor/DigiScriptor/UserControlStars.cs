@@ -44,7 +44,6 @@ namespace DigiScriptor
             //clear combo box
             StarFavorites.Items.Clear();
             
-            
             //open database
             connect.Open();
             //establish connection
@@ -54,12 +53,15 @@ namespace DigiScriptor
             cmd.ExecuteNonQuery();
             
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-            //clear datatable
-            dt = new DataTable();
             da.Fill(dt);
             foreach (DataRow dr in dt.Rows)
             {
                 StarFavorites.Items.Add(dr["Name"].ToString().Trim());
+
+                
+                
+
+
 
             }
             connect.Close();
@@ -99,7 +101,7 @@ namespace DigiScriptor
             }
 
             //confirmation message
-            String sub = "submit?";
+            String sub = "Submit?";
             String con = "Confirm";
             DialogResult results;
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
@@ -123,7 +125,7 @@ namespace DigiScriptor
 
 
                 //for after submited is 'ok'
-                if (MessageBox.Show("submitted") == DialogResult.OK)
+                if (MessageBox.Show("Submitted") == DialogResult.OK)
                 {
                     //do something after submitted message
                 }
