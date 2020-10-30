@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelMovies = new System.Windows.Forms.Panel();
+            this.btnDarkMatter = new System.Windows.Forms.Button();
             this.lblGalaxyFavorites = new System.Windows.Forms.Label();
             this.lblMoviesOutput = new System.Windows.Forms.Label();
             this.lblMovieSelect = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@
             this.btnTwoSmallPieces = new System.Windows.Forms.Button();
             this.btnMoviesBack = new System.Windows.Forms.Button();
             this.lblMoviesTitle = new System.Windows.Forms.Label();
-            this.btnDarkMatter = new System.Windows.Forms.Button();
             this.panelMovies.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,6 +66,19 @@
             this.panelMovies.Name = "panelMovies";
             this.panelMovies.Size = new System.Drawing.Size(1062, 997);
             this.panelMovies.TabIndex = 29;
+            // 
+            // btnDarkMatter
+            // 
+            this.btnDarkMatter.BackColor = System.Drawing.Color.DimGray;
+            this.btnDarkMatter.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDarkMatter.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDarkMatter.Location = new System.Drawing.Point(402, 624);
+            this.btnDarkMatter.Name = "btnDarkMatter";
+            this.btnDarkMatter.Size = new System.Drawing.Size(257, 130);
+            this.btnDarkMatter.TabIndex = 40;
+            this.btnDarkMatter.Text = "The Dark Matter Mystery";
+            this.btnDarkMatter.UseVisualStyleBackColor = false;
+            this.btnDarkMatter.Click += new System.EventHandler(this.btnDarkMatter_Click);
             // 
             // lblGalaxyFavorites
             // 
@@ -108,7 +121,7 @@
             this.lblSearchMovies.AutoSize = true;
             this.lblSearchMovies.Font = new System.Drawing.Font("Bernard MT Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearchMovies.ForeColor = System.Drawing.SystemColors.Menu;
-            this.lblSearchMovies.Location = new System.Drawing.Point(726, 217);
+            this.lblSearchMovies.Location = new System.Drawing.Point(727, 216);
             this.lblSearchMovies.Name = "lblSearchMovies";
             this.lblSearchMovies.Size = new System.Drawing.Size(74, 28);
             this.lblSearchMovies.TabIndex = 36;
@@ -132,11 +145,13 @@
             // 
             this.comboBoxMovies.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBoxMovies.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBoxMovies.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxMovies.DropDownWidth = 360;
+            this.comboBoxMovies.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBoxMovies.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxMovies.FormattingEnabled = true;
-            this.comboBoxMovies.Location = new System.Drawing.Point(731, 248);
+            this.comboBoxMovies.Location = new System.Drawing.Point(732, 247);
             this.comboBoxMovies.Name = "comboBoxMovies";
-            this.comboBoxMovies.Size = new System.Drawing.Size(296, 37);
+            this.comboBoxMovies.Size = new System.Drawing.Size(298, 33);
             this.comboBoxMovies.Sorted = true;
             this.comboBoxMovies.TabIndex = 34;
             this.comboBoxMovies.SelectedIndexChanged += new System.EventHandler(this.comboBoxMovies_SelectedIndexChanged);
@@ -228,19 +243,6 @@
             this.lblMoviesTitle.Size = new System.Drawing.Size(171, 67);
             this.lblMoviesTitle.TabIndex = 3;
             this.lblMoviesTitle.Text = "Movies";
-            // 
-            // btnDarkMatter
-            // 
-            this.btnDarkMatter.BackColor = System.Drawing.Color.DimGray;
-            this.btnDarkMatter.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDarkMatter.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDarkMatter.Location = new System.Drawing.Point(402, 624);
-            this.btnDarkMatter.Name = "btnDarkMatter";
-            this.btnDarkMatter.Size = new System.Drawing.Size(257, 130);
-            this.btnDarkMatter.TabIndex = 40;
-            this.btnDarkMatter.Text = "The Dark Matter Mystery";
-            this.btnDarkMatter.UseVisualStyleBackColor = false;
-            this.btnDarkMatter.Click += new System.EventHandler(this.btnDarkMatter_Click);
             // 
             // UserControlMovies
             // 
