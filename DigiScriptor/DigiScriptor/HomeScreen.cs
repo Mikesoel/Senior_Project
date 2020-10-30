@@ -171,14 +171,6 @@ namespace DigiScriptor
 
         }
 
-        private void devModeCheck_CheckedChanged(object sender, EventArgs e)
-        {
-            if(devModeCheck.Checked == true)
-            {
-                //make it so the shopping cart now shows the code as well
-            }
-        }
-
         public string showCodeBuilder()
         {
             string codeOut = string.Empty;

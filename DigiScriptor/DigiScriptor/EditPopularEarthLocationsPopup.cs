@@ -40,9 +40,14 @@ namespace DigiScriptor
         private void LoadTable()
 
         {
+            //open connection to database
             connect.Open();
+            
+            //Set command for SQL commands
             SqlCommand cmd = connect.CreateCommand();
             cmd.CommandType = CommandType.Text;
+            
+            //SQL command for database
             cmd.CommandText = "select Name, Latitude, Longitude from EarthScreenFavorites";
             cmd.ExecuteNonQuery();
 
@@ -105,15 +110,24 @@ namespace DigiScriptor
             // If all values valid, add to database
             else
             {
+                //Open connection to database
                 connect.Open();
+                
+                //bind command to enter text for SQL commands
                 SqlCommand cmd = connect.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "insert into EarthScreenFavorites (Name, Latitude, Longitude) VALUES (@Name, @Latitude, @Longitude)";
+                
+                //variables for SQL command
                 cmd.Parameters.AddWithValue("@Name", name);
                 cmd.Parameters.AddWithValue("@Latitude", latitude);
                 cmd.Parameters.AddWithValue("@Longitude", longitude);
                 cmd.ExecuteNonQuery();
+                
+                //close database connection
                 connect.Close();
+                
+                //Re-Load database into datagrid
                 LoadTable();
             }
 
@@ -228,7 +242,10 @@ namespace DigiScriptor
                 cmd.ExecuteNonQuery();
                
             }
+            //Close database connection
             connect.Close();
+            
+            //Re-Load database into Datagrid
             LoadTable();
         }
 
@@ -239,6 +256,7 @@ namespace DigiScriptor
 
         private void nameTextBox_TextChanged(object sender, EventArgs e)
         {
+            //Name variable from textbox
             name = nameTextBox.Text;
         }
 

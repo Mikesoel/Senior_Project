@@ -34,7 +34,6 @@ namespace DigiScriptor
         {
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.devModeCheck = new System.Windows.Forms.CheckBox();
             this.showPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.lblCart = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
@@ -48,7 +47,7 @@ namespace DigiScriptor
             // 
             this.splitter2.Location = new System.Drawing.Point(0, 0);
             this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(10, 1025);
+            this.splitter2.Size = new System.Drawing.Size(10, 1024);
             this.splitter2.TabIndex = 22;
             this.splitter2.TabStop = false;
             // 
@@ -63,7 +62,6 @@ namespace DigiScriptor
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.devModeCheck);
             this.splitContainer1.Panel2.Controls.Add(this.showPanel);
             this.splitContainer1.Panel2.Controls.Add(this.lblCart);
             this.splitContainer1.Panel2.Controls.Add(this.btnSubmit);
@@ -71,19 +69,6 @@ namespace DigiScriptor
             this.splitContainer1.Size = new System.Drawing.Size(1875, 1000);
             this.splitContainer1.SplitterDistance = 1059;
             this.splitContainer1.TabIndex = 23;
-            // 
-            // devModeCheck
-            // 
-            this.devModeCheck.AutoSize = true;
-            this.devModeCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.devModeCheck.ForeColor = System.Drawing.Color.White;
-            this.devModeCheck.Location = new System.Drawing.Point(348, 932);
-            this.devModeCheck.Name = "devModeCheck";
-            this.devModeCheck.Size = new System.Drawing.Size(178, 29);
-            this.devModeCheck.TabIndex = 16;
-            this.devModeCheck.Text = "developer mode";
-            this.devModeCheck.UseVisualStyleBackColor = true;
-            this.devModeCheck.CheckedChanged += new System.EventHandler(this.devModeCheck_CheckedChanged);
             // 
             // showPanel
             // 
@@ -136,10 +121,12 @@ namespace DigiScriptor
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1898, 1025);
+            this.ClientSize = new System.Drawing.Size(1898, 1024);
             this.Controls.Add(this.userControlHome);
             this.Controls.Add(this.splitter2);
             this.Controls.Add(this.splitContainer1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1920, 1080);
             this.Name = "HomeScreen";
             this.Text = "DigiScriptor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -408,7 +395,6 @@ namespace DigiScriptor
         }
 
         public FlowLayoutPanel showPanel;
-        private CheckBox devModeCheck;
     }
 }
 
