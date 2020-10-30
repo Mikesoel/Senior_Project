@@ -19,10 +19,15 @@ namespace DigiScriptor
         public String fileName;
         public String filePath;
 
+        //create show list
         private List<ShowItem> theList = new List<ShowItem>();
+        
+        //create flag for whether turning navigation on has been added
+        //to the show list
         private Boolean isNavigationOn = false;
 
-
+        //create singular save menu
+        public SaveMenu save;
 
 
 
@@ -62,7 +67,7 @@ namespace DigiScriptor
 
                 ShowItem test = new ShowItem();
                 test.Title = "test title " + i;
-                test.Decription = "this is a test description";
+                test.Description = "this is a test description";
                 theList.Add(test);
                 
             }
@@ -100,6 +105,11 @@ namespace DigiScriptor
             UpdateList();
         }
 
+        public List<ShowItem> GetList()
+        {
+            return theList;
+        }
+
 
         public int GetListCount()
         {
@@ -114,22 +124,12 @@ namespace DigiScriptor
         }
 
 
-        private void splitter1_SplitterMoved(object sender, SplitterEventArgs e)
-        {
-
-        }
-
         private void HomeScreen_Load(object sender, EventArgs e)
         {
             userControlHome.Show();
             userControlHome.BringToFront();
 
             
-        }
-
-        private void lblDigi_Click_1(object sender, EventArgs e)
-        {
-
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
@@ -142,41 +142,27 @@ namespace DigiScriptor
 
         }
 
-        private void btnLights_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblCart_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelDomeLights_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelNebulae_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelMoons_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void userControlHome_Load(object sender, EventArgs e)
-        {
-            
-        }
 
         private void btnSubmit_Click_1(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Submitted") == DialogResult.OK)
+            if(save != null)
             {
-                //do some stuff
+                //if previously closed then remake save popup
+                if(save.IsDisposed == true)
+                {
+                    save = null;
+                    save = new SaveMenu();
+                }
+
+                //make sure show is showing and brought to front
+                save.Show();
+                save.Focus();
+            }
+            else
+            {
+                //initial time save menu shows
+                save = new SaveMenu();
+                save.Show();
             }
         }
 
@@ -191,6 +177,42 @@ namespace DigiScriptor
             {
                 //make it so the shopping cart now shows the code as well
             }
+        }
+
+        public string showCodeBuilder()
+        {
+            string codeOut = string.Empty;
+
+            for (int i = 0; i < theList.Count; i++)
+            {
+                //comment the title
+                codeOut += @"//";
+                codeOut += theList[i].Title;
+                codeOut += "\n";
+
+                //comment the description
+                codeOut += @"/*";
+                codeOut += theList[i].Description;
+                codeOut += "\n";
+                codeOut += @"*/";
+                codeOut += "\n";
+
+                //check if the item has code
+                if (theList[i].Code != "")
+                {
+                    codeOut += theList[i].Code;
+                    codeOut += "\n\n";
+                }
+                else
+                {
+                    //fill code sections with comment
+                    codeOut += @"// code goes here!!!!!";
+                    codeOut += "\n\n";
+                }
+
+            }//end of for-loop
+
+            return codeOut;
         }
     }
 }

@@ -454,7 +454,7 @@ namespace DigiScriptor
         private void EditFavorite_Click(object sender, EventArgs e)
         {
             //bring up menu to edit favorite stars
-            EditPopularStarsPopup editData = new EditPopularStarsPopup();
+            EditPopularStarsPopup editData = new EditPopularStarsPopup(this);
             editData.Show();
         }
     }

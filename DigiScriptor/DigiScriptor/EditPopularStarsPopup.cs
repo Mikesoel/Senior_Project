@@ -33,12 +33,12 @@ namespace DigiScriptor
         private Boolean Name_Valid = false;
         int RAHr,RAMin,RASec,DDeg,DMin,DSec = 0;
         string starName = string.Empty;
+        UserControlStars starPanel;
 
 
 
 
-
-        public EditPopularStarsPopup()
+        public EditPopularStarsPopup(UserControlStars StarP)
         {
             InitializeComponent();
             //make the SqlConnection with local file path
@@ -46,6 +46,12 @@ namespace DigiScriptor
 
             //Load star database table into data grid
             LoadTable();
+
+            //load in star panel
+            starPanel = StarP;
+
+
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -76,6 +82,8 @@ namespace DigiScriptor
             }
             connect.Close();
             LoadTable();
+            //update combox
+            starPanel.LoadComboBox();
 
 
         }
@@ -154,8 +162,8 @@ namespace DigiScriptor
                 connect.Close();
                 LoadTable();
 
-
-
+                starPanel.LoadComboBox();
+               
             }
 
 

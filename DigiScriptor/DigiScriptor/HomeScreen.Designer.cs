@@ -34,10 +34,10 @@ namespace DigiScriptor
         {
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.devModeCheck = new System.Windows.Forms.CheckBox();
             this.showPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.lblCart = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.devModeCheck = new System.Windows.Forms.CheckBox();
             this.userControlHome = new DigiScriptor.UserControlHome();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -72,6 +72,19 @@ namespace DigiScriptor
             this.splitContainer1.SplitterDistance = 1059;
             this.splitContainer1.TabIndex = 23;
             // 
+            // devModeCheck
+            // 
+            this.devModeCheck.AutoSize = true;
+            this.devModeCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.devModeCheck.ForeColor = System.Drawing.Color.White;
+            this.devModeCheck.Location = new System.Drawing.Point(348, 932);
+            this.devModeCheck.Name = "devModeCheck";
+            this.devModeCheck.Size = new System.Drawing.Size(178, 29);
+            this.devModeCheck.TabIndex = 16;
+            this.devModeCheck.Text = "developer mode";
+            this.devModeCheck.UseVisualStyleBackColor = true;
+            this.devModeCheck.CheckedChanged += new System.EventHandler(this.devModeCheck_CheckedChanged);
+            // 
             // showPanel
             // 
             this.showPanel.AutoScroll = true;
@@ -101,26 +114,13 @@ namespace DigiScriptor
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.SpringGreen;
-            this.btnSubmit.Location = new System.Drawing.Point(306, 860);
+            this.btnSubmit.Location = new System.Drawing.Point(306, 839);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(272, 75);
             this.btnSubmit.TabIndex = 13;
             this.btnSubmit.Text = "Generate Script";
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click_1);
-            // 
-            // devModeCheck
-            // 
-            this.devModeCheck.AutoSize = true;
-            this.devModeCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.devModeCheck.ForeColor = System.Drawing.Color.White;
-            this.devModeCheck.Location = new System.Drawing.Point(96, 887);
-            this.devModeCheck.Name = "devModeCheck";
-            this.devModeCheck.Size = new System.Drawing.Size(178, 29);
-            this.devModeCheck.TabIndex = 16;
-            this.devModeCheck.Text = "developer mode";
-            this.devModeCheck.UseVisualStyleBackColor = true;
-            this.devModeCheck.CheckedChanged += new System.EventHandler(this.devModeCheck_CheckedChanged);
             // 
             // userControlHome
             // 

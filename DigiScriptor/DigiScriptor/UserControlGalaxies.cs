@@ -105,7 +105,7 @@ namespace DigiScriptor
                     //flyTo galaxy
                     if(!isNavigationOn)
                     {
-                        ShowItem naviItem = new ShowItem("Navigation On", "turn navigation on", "navigation on;");
+                        ShowItem naviItem = new ShowItem("Navigation On", "turn navigation on for flyTo commands", "navigation on;");
                         HomeScreen.Current.AddItem(naviItem);
                     }
 
@@ -123,11 +123,13 @@ namespace DigiScriptor
                     HomeScreen.Current.UpdateList();
 
 
-                    //for after submited is 'ok'
+                    //NO CONFIRMATIONS NEEDED
+                    /*/for after submited is 'ok'
                     if (MessageBox.Show("Submitted") == DialogResult.OK)
                     {
                         //do something after submitted message
                     }
+                    */
 
                 }
             }
