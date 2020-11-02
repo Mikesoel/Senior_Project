@@ -24,6 +24,7 @@ namespace DigiScriptor
         private string sciName = string.Empty;
         private string search = string.Empty;
         int RAHr, RAMin, DDeg, DMin = 0;
+        private string nebulaID = null;
         double RASec, DSec = 0;
         private string cellName = string.Empty;
         private Boolean DecDTxt_Valid = false;
@@ -34,6 +35,7 @@ namespace DigiScriptor
         private Boolean RAsSecTxt_Valid = false;
         private Boolean sciName_Valid = false;
         private Boolean search_Valid = false;
+        private Boolean editRow = false;
 
         public EditPopularNebulaePopup()
         {
@@ -83,8 +85,18 @@ namespace DigiScriptor
                 SqlCommand cmd = connect.CreateCommand();
                 cmd.CommandType = CommandType.Text;
 
+                
+                //SQL Command to update data if user wishes to edit data in DB
+                if (editRow == true)
+                {
+                    //set editRow to false to prevent future save/delete issues
+                    editRow = false;
+                    cmd.CommandText = "Update NebulaeFavorites Set CommonName = @commonName, ScientificName = @sciName, RAHr = @RAHr, RAMin = @RAMin, RASec = @RASec, DDeg = @DDeg, DMin = @DMin, DSec = @DSec WHERE (NebulaeID = @NebID)";
+                    cmd.Parameters.AddWithValue("@NebID", nebulaID);
+                }
+
                 //SQL command to be entered into DB with Scientific Name
-                if (sciName_Valid == true)
+               else if (sciName_Valid == true)
                     cmd.CommandText = "insert into NebulaeFavorites (CommonName, ScientificName, RAHr, RAMin, RASec, DDeg, DMin, DSec) VALUES (@commonName, @sciName, @RAHr, @RAMin, @RASec, @DDeg, @DMin, @DSec)";
                 
                 //SQL command to be entered into DB without scientific name
@@ -100,13 +112,21 @@ namespace DigiScriptor
                 cmd.Parameters.AddWithValue("@DDeg", DDeg);
                 cmd.Parameters.AddWithValue("@DMin", DMin);
                 cmd.Parameters.AddWithValue("@DSec", DSec);
+
                 cmd.ExecuteNonQuery();
                 
                 //Close DB connection and reload datagrid
                 connect.Close();
                 MessageBox.Show("Submitted " + commonName + " into database");
+                
+                //Clear data from Text boxes
                 Clear_Input();
+
+                //Reload Table
                 LoadTable();
+
+                //Set nebula ID to null to prevent unwanted editing or deleting
+                nebulaID = null;
             }
         }
 
@@ -124,14 +144,14 @@ namespace DigiScriptor
             //SQL command to be entered into DB if search is false
             if (search_Valid == false)
             {
-                cmd.CommandText = "select CommonName, ScientificName, RAHr, RAMin, RASec, DDEG, Dmin, Dsec " +
+                cmd.CommandText = "select CommonName, ScientificName, RAHr, RAMin, RASec, DDEG, Dmin, Dsec, NebulaeID " +
                                   "FROM NebulaeFavorites";
             }
 
             //SQL command to be entered into DB if search is true
             else
             {
-                cmd.CommandText = "select CommonName, ScientificName, RAHr, RAMin, RASec, DDEG, Dmin, Dsec FROM NebulaeFavorites WHERE (CommonName LIKE '%' + @searchValue + '%') " +
+                cmd.CommandText = "select CommonName, ScientificName, RAHr, RAMin, RASec, DDEG, Dmin, Dsec, NebulaeID FROM NebulaeFavorites WHERE (CommonName LIKE '%' + @searchValue + '%') " +
                     "OR (ScientificName LIKE '%' + @searchValue + '%') " +
                     "OR (RAHr LIKE '%' + @searchValue + '%')" +
                     "OR (RAMin LIKE '%' + @searchValue + '%')" +
@@ -139,6 +159,8 @@ namespace DigiScriptor
                     "OR (DDEG LIKE '%' + @searchValue + '%')" +
                     "OR (Dmin LIKE '%' + @searchValue + '%')" +
                     "OR (Dsec LIKE '%' + @searchValue + '%')";
+                
+                //Binds text from search text box into searchValue variable
                 cmd.Parameters.AddWithValue("@searchValue", search);
             }
             cmd.ExecuteNonQuery();
@@ -182,12 +204,13 @@ namespace DigiScriptor
                 MessageBox.Show("Successfully Deleted " + nebulaeDataGrid.SelectedCells[0].Value.ToString());
 
                 //Reads info from first cell in row selected to use as variable to delete selected from database
-                cellName = nebulaeDataGrid.SelectedCells[0].Value.ToString();
+                nebulaID = nebulaeDataGrid.SelectedCells[8].Value.ToString();
 
                 //Queries database with selected info to delete row
-                cmd.CommandText = "DELETE FROM NebulaeFavorites WHERE CommonName = @index";
-                cmd.Parameters.AddWithValue("@index", cellName);
+                cmd.CommandText = "DELETE FROM NebulaeFavorites WHERE NebulaeID = @index";
+                cmd.Parameters.AddWithValue("@index", nebulaID);
                 cmd.ExecuteNonQuery();
+                nebulaID = null;
 
             }
             //Close DB connection and reload datagrid view
@@ -288,6 +311,7 @@ namespace DigiScriptor
 
         private void Clear_Input()
         {
+            //Function to clear all text boxes of data
             txtBoxName.Clear();
             txtBoxSciName.Clear();
             RAsHrTxt.Clear();
@@ -300,6 +324,8 @@ namespace DigiScriptor
 
         private void txtBoxSciName_TextChanged(object sender, EventArgs e)
         {
+            //Tests if user inputted scientific name
+            //If yes, boolean set to true to use a different SQL statement
             if (txtBoxSciName.Text != "")
             {
                 sciName = txtBoxName.Text;
@@ -309,6 +335,9 @@ namespace DigiScriptor
 
         private void searchTxt_TextChanged(object sender, EventArgs e)
         {
+            //Tests is user inputted into search field
+            //If boolean set to true, database gets searched with every input
+            //Updates every text change event in text box
             if (searchTxt.Text != "")
             {
                 search = searchTxt.Text;
@@ -316,6 +345,8 @@ namespace DigiScriptor
                 LoadTable();
             }
 
+            //If search text becomes empty (user done searching)
+            //Boolean set to false and table loaded again with all data
             else
             {
                 search_Valid = false;
@@ -413,6 +444,29 @@ namespace DigiScriptor
                 //no data input
                 DecDTxt_Valid = false;
             }
+        }
+
+        private void editRowBtn_Click(object sender, EventArgs e)
+        {
+            //sets editRow boolean to true to use different SQL statement when save button is clicked
+            editRow = true;
+            
+            //Sends all data from selected row into text boxes
+            foreach (DataGridViewRow row in nebulaeDataGrid.SelectedRows)
+            {
+                //Reads info from each cell in data table and adds to text boxes to be edited
+                txtBoxName.Text = nebulaeDataGrid.SelectedCells[0].Value.ToString();
+                txtBoxSciName.Text = nebulaeDataGrid.SelectedCells[1].Value.ToString();
+                RAsHrTxt.Text = nebulaeDataGrid.SelectedCells[2].Value.ToString();
+                RAsMinTxt.Text = nebulaeDataGrid.SelectedCells[3].Value.ToString();
+                RAsSecTxt.Text = nebulaeDataGrid.SelectedCells[4].Value.ToString();
+                DecDTxt.Text = nebulaeDataGrid.SelectedCells[5].Value.ToString();
+                DecMinTxt.Text = nebulaeDataGrid.SelectedCells[6].Value.ToString();
+                DecSecTxt.Text = nebulaeDataGrid.SelectedCells[7].Value.ToString();
+                nebulaID = nebulaeDataGrid.SelectedCells[8].Value.ToString();
+
+            }
+
         }
 
         private void DecMinTxt_TextChanged(object sender, EventArgs e)

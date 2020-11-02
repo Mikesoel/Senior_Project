@@ -57,10 +57,10 @@
             this.clearButton = new System.Windows.Forms.Button();
             this.lblSearch = new System.Windows.Forms.Label();
             this.searchTxt = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.nebulaeFavoritesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nebulaeFavoritesTableAdapter = new DigiScriptor.DigiDataBaseDataSetTableAdapters.NebulaeFavoritesTableAdapter();
             this.nebulaeFavoritesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.editRowBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nebulaeDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nebulaeFavoritesBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.digiDataBaseDataSet)).BeginInit();
@@ -72,7 +72,7 @@
             // btnNebulaeDelete
             // 
             this.btnNebulaeDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnNebulaeDelete.Location = new System.Drawing.Point(521, 678);
+            this.btnNebulaeDelete.Location = new System.Drawing.Point(660, 678);
             this.btnNebulaeDelete.Name = "btnNebulaeDelete";
             this.btnNebulaeDelete.Size = new System.Drawing.Size(192, 26);
             this.btnNebulaeDelete.TabIndex = 17;
@@ -295,11 +295,11 @@
             this.lblSciName.AutoSize = true;
             this.lblSciName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblSciName.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblSciName.Location = new System.Drawing.Point(147, 79);
+            this.lblSciName.Location = new System.Drawing.Point(129, 79);
             this.lblSciName.Name = "lblSciName";
-            this.lblSciName.Size = new System.Drawing.Size(123, 20);
+            this.lblSciName.Size = new System.Drawing.Size(141, 20);
             this.lblSciName.TabIndex = 34;
-            this.lblSciName.Text = "Scientific Name:";
+            this.lblSciName.Text = "Scientific Name(s):";
             // 
             // txtBoxSciName
             // 
@@ -341,17 +341,6 @@
             this.searchTxt.TabIndex = 38;
             this.searchTxt.TextChanged += new System.EventHandler(this.searchTxt_TextChanged);
             // 
-            // btnSearch
-            // 
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnSearch.Location = new System.Drawing.Point(757, 187);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 29);
-            this.btnSearch.TabIndex = 39;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
             // nebulaeFavoritesBindingSource
             // 
             this.nebulaeFavoritesBindingSource.DataMember = "NebulaeFavorites";
@@ -366,13 +355,24 @@
             this.nebulaeFavoritesBindingSource1.DataMember = "NebulaeFavorites";
             this.nebulaeFavoritesBindingSource1.DataSource = this.digiDataBaseDataSet;
             // 
+            // editRowBtn
+            // 
+            this.editRowBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.editRowBtn.Location = new System.Drawing.Point(391, 678);
+            this.editRowBtn.Name = "editRowBtn";
+            this.editRowBtn.Size = new System.Drawing.Size(192, 26);
+            this.editRowBtn.TabIndex = 39;
+            this.editRowBtn.Text = "Edit Selected Row";
+            this.editRowBtn.UseVisualStyleBackColor = true;
+            this.editRowBtn.Click += new System.EventHandler(this.editRowBtn_Click);
+            // 
             // EditPopularNebulaePopup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1221, 736);
-            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.editRowBtn);
             this.Controls.Add(this.searchTxt);
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.clearButton);
@@ -426,7 +426,6 @@
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.TextBox searchTxt;
-        private System.Windows.Forms.Button btnSearch;
         private DigiDataBaseDataSet digiDataBaseDataSet;
         private System.Windows.Forms.BindingSource nebulaeFavoritesBindingSource;
         private DigiDataBaseDataSetTableAdapters.NebulaeFavoritesTableAdapter nebulaeFavoritesTableAdapter;
@@ -439,5 +438,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dsecDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource nebulaeFavoritesBindingSource1;
         private System.Windows.Forms.BindingSource nebulaeFavoritesBindingSource2;
+        private System.Windows.Forms.Button editRowBtn;
     }
 }
