@@ -64,6 +64,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DigiDataBaseDataSet.cs">
+      <DependentUpon>DigiDataBaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DigiDataBaseDataSet.Designer.cs">
       <DependentUpon>DigiDataBaseDataSet.xsd</DependentUpon>
       <DesignTime>True</DesignTime>

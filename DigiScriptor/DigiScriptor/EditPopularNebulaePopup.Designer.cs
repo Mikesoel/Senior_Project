@@ -29,11 +29,14 @@
 
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnNebulaeDelete = new System.Windows.Forms.Button();
             this.btnNebulaeSave = new System.Windows.Forms.Button();
             this.txtBoxName = new System.Windows.Forms.TextBox();
             this.lblNebulaeName = new System.Windows.Forms.Label();
             this.nebulaeDataGrid = new System.Windows.Forms.DataGridView();
+            this.nebulaeFavoritesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.digiDataBaseDataSet = new DigiScriptor.DigiDataBaseDataSet();
             this.CoordinateBox = new System.Windows.Forms.GroupBox();
             this.DecSecLbl = new System.Windows.Forms.Label();
             this.DecSecTxt = new System.Windows.Forms.TextBox();
@@ -54,8 +57,16 @@
             this.clearButton = new System.Windows.Forms.Button();
             this.lblSearch = new System.Windows.Forms.Label();
             this.searchTxt = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.nebulaeFavoritesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nebulaeFavoritesTableAdapter = new DigiScriptor.DigiDataBaseDataSetTableAdapters.NebulaeFavoritesTableAdapter();
+            this.nebulaeFavoritesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nebulaeDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nebulaeFavoritesBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.digiDataBaseDataSet)).BeginInit();
             this.CoordinateBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nebulaeFavoritesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nebulaeFavoritesBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNebulaeDelete
@@ -109,6 +120,16 @@
             this.nebulaeDataGrid.RowHeadersWidth = 62;
             this.nebulaeDataGrid.Size = new System.Drawing.Size(941, 339);
             this.nebulaeDataGrid.TabIndex = 9;
+            // 
+            // nebulaeFavoritesBindingSource2
+            // 
+            this.nebulaeFavoritesBindingSource2.DataMember = "NebulaeFavorites";
+            this.nebulaeFavoritesBindingSource2.DataSource = this.digiDataBaseDataSet;
+            // 
+            // digiDataBaseDataSet
+            // 
+            this.digiDataBaseDataSet.DataSetName = "DigiDataBaseDataSet";
+            this.digiDataBaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // CoordinateBox
             // 
@@ -320,12 +341,38 @@
             this.searchTxt.TabIndex = 38;
             this.searchTxt.TextChanged += new System.EventHandler(this.searchTxt_TextChanged);
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnSearch.Location = new System.Drawing.Point(757, 187);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 29);
+            this.btnSearch.TabIndex = 39;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // nebulaeFavoritesBindingSource
+            // 
+            this.nebulaeFavoritesBindingSource.DataMember = "NebulaeFavorites";
+            this.nebulaeFavoritesBindingSource.DataSource = this.digiDataBaseDataSet;
+            // 
+            // nebulaeFavoritesTableAdapter
+            // 
+            this.nebulaeFavoritesTableAdapter.ClearBeforeFill = true;
+            // 
+            // nebulaeFavoritesBindingSource1
+            // 
+            this.nebulaeFavoritesBindingSource1.DataMember = "NebulaeFavorites";
+            this.nebulaeFavoritesBindingSource1.DataSource = this.digiDataBaseDataSet;
+            // 
             // EditPopularNebulaePopup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1221, 736);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.searchTxt);
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.clearButton);
@@ -341,8 +388,12 @@
             this.Text = "Add/Edit Popular Nebulae";
             this.Load += new System.EventHandler(this.EditPopularNebulaePopup_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nebulaeDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nebulaeFavoritesBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.digiDataBaseDataSet)).EndInit();
             this.CoordinateBox.ResumeLayout(false);
             this.CoordinateBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nebulaeFavoritesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nebulaeFavoritesBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -375,5 +426,18 @@
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.TextBox searchTxt;
+        private System.Windows.Forms.Button btnSearch;
+        private DigiDataBaseDataSet digiDataBaseDataSet;
+        private System.Windows.Forms.BindingSource nebulaeFavoritesBindingSource;
+        private DigiDataBaseDataSetTableAdapters.NebulaeFavoritesTableAdapter nebulaeFavoritesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nebulaeIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn latitudeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn longitudeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dDEGDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dminDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dsecDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource nebulaeFavoritesBindingSource1;
+        private System.Windows.Forms.BindingSource nebulaeFavoritesBindingSource2;
     }
 }

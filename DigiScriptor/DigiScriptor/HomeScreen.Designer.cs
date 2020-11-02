@@ -37,7 +37,6 @@ namespace DigiScriptor
             this.showPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.lblCart = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.devModeCheck = new System.Windows.Forms.CheckBox();
             this.userControlHome = new DigiScriptor.UserControlHome();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -47,14 +46,16 @@ namespace DigiScriptor
             // splitter2
             // 
             this.splitter2.Location = new System.Drawing.Point(0, 0);
+            this.splitter2.Margin = new System.Windows.Forms.Padding(2);
             this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(10, 1025);
+            this.splitter2.Size = new System.Drawing.Size(7, 666);
             this.splitter2.TabIndex = 22;
             this.splitter2.TabStop = false;
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Location = new System.Drawing.Point(15, 6);
+            this.splitContainer1.Location = new System.Drawing.Point(10, 4);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -63,13 +64,13 @@ namespace DigiScriptor
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.devModeCheck);
             this.splitContainer1.Panel2.Controls.Add(this.showPanel);
             this.splitContainer1.Panel2.Controls.Add(this.lblCart);
             this.splitContainer1.Panel2.Controls.Add(this.btnSubmit);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(1875, 1000);
-            this.splitContainer1.SplitterDistance = 1059;
+            this.splitContainer1.Size = new System.Drawing.Size(1250, 650);
+            this.splitContainer1.SplitterDistance = 706;
+            this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 23;
             // 
             // showPanel
@@ -77,10 +78,9 @@ namespace DigiScriptor
             this.showPanel.AutoScroll = true;
             this.showPanel.BackColor = System.Drawing.Color.DarkGray;
             this.showPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.showPanel.Location = new System.Drawing.Point(200, 168);
-            this.showPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.showPanel.Location = new System.Drawing.Point(133, 109);
             this.showPanel.Name = "showPanel";
-            this.showPanel.Size = new System.Drawing.Size(463, 613);
+            this.showPanel.Size = new System.Drawing.Size(310, 400);
             this.showPanel.TabIndex = 15;
             this.showPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.showPanel_Paint);
             // 
@@ -89,9 +89,10 @@ namespace DigiScriptor
             this.lblCart.AutoSize = true;
             this.lblCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCart.ForeColor = System.Drawing.SystemColors.Menu;
-            this.lblCart.Location = new System.Drawing.Point(318, 68);
+            this.lblCart.Location = new System.Drawing.Point(212, 44);
+            this.lblCart.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCart.Name = "lblCart";
-            this.lblCart.Size = new System.Drawing.Size(237, 40);
+            this.lblCart.Size = new System.Drawing.Size(159, 29);
             this.lblCart.TabIndex = 14;
             this.lblCart.Text = "Current Show";
             // 
@@ -101,45 +102,34 @@ namespace DigiScriptor
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.SpringGreen;
-            this.btnSubmit.Location = new System.Drawing.Point(306, 860);
+            this.btnSubmit.Location = new System.Drawing.Point(204, 559);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(272, 75);
+            this.btnSubmit.Size = new System.Drawing.Size(181, 49);
             this.btnSubmit.TabIndex = 13;
             this.btnSubmit.Text = "Generate Script";
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click_1);
             // 
-            // devModeCheck
-            // 
-            this.devModeCheck.AutoSize = true;
-            this.devModeCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.devModeCheck.ForeColor = System.Drawing.Color.White;
-            this.devModeCheck.Location = new System.Drawing.Point(96, 887);
-            this.devModeCheck.Name = "devModeCheck";
-            this.devModeCheck.Size = new System.Drawing.Size(178, 29);
-            this.devModeCheck.TabIndex = 16;
-            this.devModeCheck.Text = "developer mode";
-            this.devModeCheck.UseVisualStyleBackColor = true;
-            this.devModeCheck.CheckedChanged += new System.EventHandler(this.devModeCheck_CheckedChanged);
-            // 
             // userControlHome
             // 
             this.userControlHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.userControlHome.Location = new System.Drawing.Point(0, 0);
-            this.userControlHome.Margin = new System.Windows.Forms.Padding(2);
+            this.userControlHome.Margin = new System.Windows.Forms.Padding(1);
             this.userControlHome.Name = "userControlHome";
-            this.userControlHome.Size = new System.Drawing.Size(1062, 994);
+            this.userControlHome.Size = new System.Drawing.Size(708, 646);
             this.userControlHome.TabIndex = 31;
             // 
             // HomeScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1898, 1025);
+            this.ClientSize = new System.Drawing.Size(1265, 666);
             this.Controls.Add(this.userControlHome);
             this.Controls.Add(this.splitter2);
             this.Controls.Add(this.splitContainer1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HomeScreen";
             this.Text = "DigiScriptor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -408,7 +398,6 @@ namespace DigiScriptor
         }
 
         public FlowLayoutPanel showPanel;
-        private CheckBox devModeCheck;
     }
 }
 

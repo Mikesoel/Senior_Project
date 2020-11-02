@@ -23,7 +23,8 @@ namespace DigiScriptor
         private string commonName = string.Empty;
         private string sciName = string.Empty;
         private string search = string.Empty;
-        int RAHr, RAMin, RASec, DDeg, DMin, DSec = 0;
+        int RAHr, RAMin, DDeg, DMin = 0;
+        double RASec, DSec = 0;
         private string cellName = string.Empty;
         private Boolean DecDTxt_Valid = false;
         private Boolean DecMinTxt_Valid = false;
@@ -104,6 +105,7 @@ namespace DigiScriptor
                 //Close DB connection and reload datagrid
                 connect.Close();
                 MessageBox.Show("Submitted " + commonName + " into database");
+                Clear_Input();
                 LoadTable();
             }
         }
@@ -124,19 +126,22 @@ namespace DigiScriptor
             {
                 cmd.CommandText = "select CommonName, ScientificName, RAHr, RAMin, RASec, DDEG, Dmin, Dsec " +
                                   "FROM NebulaeFavorites";
-                cmd.ExecuteNonQuery();
             }
 
             //SQL command to be entered into DB if search is true
             else
             {
-                cmd.CommandText = "select CommonName, ScientificName, RAHr, RAMin, RASec, DDEG, Dmin, Dsec " +
-                                  "FROM NebulaeFavorites" +
-                                  "WHERE CommonName LIKE '*" + "@searchValue" + "*'";
+                cmd.CommandText = "select CommonName, ScientificName, RAHr, RAMin, RASec, DDEG, Dmin, Dsec FROM NebulaeFavorites WHERE (CommonName LIKE '%' + @searchValue + '%') " +
+                    "OR (ScientificName LIKE '%' + @searchValue + '%') " +
+                    "OR (RAHr LIKE '%' + @searchValue + '%')" +
+                    "OR (RAMin LIKE '%' + @searchValue + '%')" +
+                    "OR (RASec LIKE '%' + @searchValue + '%')" +
+                    "OR (DDEG LIKE '%' + @searchValue + '%')" +
+                    "OR (Dmin LIKE '%' + @searchValue + '%')" +
+                    "OR (Dsec LIKE '%' + @searchValue + '%')";
                 cmd.Parameters.AddWithValue("@searchValue", search);
-                cmd.ExecuteNonQuery();
             }
-
+            cmd.ExecuteNonQuery();
 
             //Bind DB into datagrid view
             try
@@ -278,6 +283,11 @@ namespace DigiScriptor
         {
             //When clear button is clicked, clear all contents from text boxes
 
+            Clear_Input();
+        }
+
+        private void Clear_Input()
+        {
             txtBoxName.Clear();
             txtBoxSciName.Clear();
             RAsHrTxt.Clear();
@@ -299,13 +309,24 @@ namespace DigiScriptor
 
         private void searchTxt_TextChanged(object sender, EventArgs e)
         {
-            if(searchTxt.Text != "")
+            if (searchTxt.Text != "")
             {
                 search = searchTxt.Text;
                 search_Valid = true;
                 LoadTable();
             }
+
+            else
+            {
+                search_Valid = false;
+                LoadTable();
+            }
              
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void RAsSecTxt_TextChanged(object sender, EventArgs e)
@@ -313,14 +334,14 @@ namespace DigiScriptor
             //check if text is empty
             if (RAsSecTxt.Text != "")
             {
-                int value = 0;
+                double value = 0;
 
                 //if something is in box try to convert to int
                 try
                 {
-                    value = Convert.ToInt32(RAsSecTxt.Text);
+                    value = Convert.ToDouble(RAsSecTxt.Text);
                     //validate data is within correct range
-                    if (value >= 0 && value <= 59)
+                    if (value >= 0 && value <= 59.9)
                     {
                         //if correct keep text black
                         RAsSecTxt.ForeColor = Color.Black;
@@ -440,14 +461,14 @@ namespace DigiScriptor
             //check if text is empty
             if (DecSecTxt.Text != "")
             {
-                int value = 0;
+                double value = 0;
 
                 //if something is in box try to convert to int
                 try
                 {
-                    value = Convert.ToInt32(DecSecTxt.Text);
+                    value = Convert.ToDouble(DecSecTxt.Text);
                     //validate data is within correct range
-                    if (value >= 0 && value <= 59)
+                    if (value >= 0 && value <= 59.9)
                     {
                         //if correct keep text black
                         DecSecTxt.ForeColor = Color.Black;
@@ -479,7 +500,14 @@ namespace DigiScriptor
 
         private void EditPopularNebulaePopup_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'digiDataBaseDataSet.NebulaeFavorites' table. You can move, or remove it, as needed.
+            //this.nebulaeFavoritesTableAdapter.Fill(this.digiDataBaseDataSet.NebulaeFavorites);
 
+        }
+
+        private void LoadData()
+        {
+            //this.nebulaeFavoritesTableAdapter.UpdateAll(this.digiDataBaseDataSet);
         }
 
     }

@@ -89,7 +89,7 @@ namespace DigiScriptor
             if (!(String.IsNullOrEmpty(outputLbl)))
             {
                 //confirmation message
-                String sub = "Submit?";
+                String sub = "submit?";
                 String con = "Confirm";
                 DialogResult results;
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
@@ -99,21 +99,10 @@ namespace DigiScriptor
                 //if result is 'yes' then show submited
                 if (results == DialogResult.Yes)
                 {
-                    Boolean isNavigationOn = HomeScreen.Current.GetIsNavOn();
-
-                    //if navigation has not been turned on yet, turn it on to
-                    //flyTo galaxy
-                    if(!isNavigationOn)
-                    {
-                        ShowItem naviItem = new ShowItem("Navigation On", "turn navigation on", "navigation on;");
-                        HomeScreen.Current.AddItem(naviItem);
-                    }
-
-                    String cartDescription = "move to " + lblGalaxiesOutput.Text + " Galaxy";
-                    String cartCode = "navigation flyTo " + lblGalaxiesOutput.Text + ";";
+                    String cartOutput = "move to " + lblGalaxiesOutput.Text + " Galaxy";
 
                     //create star item
-                    ShowItem galaxyItem = new ShowItem("Galaxy Move", cartDescription, cartCode);
+                    ShowItem galaxyItem = new ShowItem("Galaxy Move", cartOutput);
 
                     //add show item to list
                     HomeScreen.Current.AddItem(galaxyItem);
@@ -124,7 +113,7 @@ namespace DigiScriptor
 
 
                     //for after submited is 'ok'
-                    if (MessageBox.Show("Submitted") == DialogResult.OK)
+                    if (MessageBox.Show("submitted") == DialogResult.OK)
                     {
                         //do something after submitted message
                     }

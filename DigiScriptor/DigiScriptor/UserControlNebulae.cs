@@ -107,7 +107,8 @@ namespace DigiScriptor
         {
             //Opens nebulae favorites add/edit popup window when clicked
             EditPopularNebulaePopup editNebulaeData = new EditPopularNebulaePopup();
-            editNebulaeData.Show();
+            //Form1 editNebulaeData = new Form1();
+            editNebulaeData.Show(); 
         }
 
         private void nebulaeDropdown_SelectedIndexChanged(object sender, EventArgs e)
