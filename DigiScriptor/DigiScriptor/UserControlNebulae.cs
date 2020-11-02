@@ -65,41 +65,43 @@ namespace DigiScriptor
 
         private void btnSubmitNebulae_Click(object sender, EventArgs e)
         {
-            //confirmation message
-            String sub = "Submit?";
-            String con = "Confirm";
-            DialogResult results;
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-
-            //display message
-            results = MessageBox.Show(sub, con, buttons);
-            //if result is 'yes' then show submited
-            if (results == DialogResult.Yes)
+            String outputLbl = nebulaeDropdown.Text;
+            if (!(String.IsNullOrEmpty(outputLbl)))
             {
+                //confirmation message
+                String sub = "Submit?";
+                String con = "Confirm";
+                DialogResult results;
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
 
-                //create Nebula item
-                ShowItem Nebulaeitem = new ShowItem("Nebula Move", "this is a nebula move");
-
-                //add show item to list
-                HomeScreen.Current.AddItem(Nebulaeitem);
-
-
-
-                //update the show list after submit
-                HomeScreen.Current.UpdateList();
-
-
-                //for after submited is 'ok'
-                if (MessageBox.Show("Submitted") == DialogResult.OK)
+                //display messgae
+                results = MessageBox.Show(sub, con, buttons);
+                //if result is 'yes' then show submited
+                if (results == DialogResult.Yes)
                 {
-                    //do something after submitted message
+                    Boolean isNavigationOn = HomeScreen.Current.GetIsNavOn();
+
+                    //if navigation has not been turned on yet, turn it on to
+                    //flyTo galaxy
+                    if (!isNavigationOn)
+                    {
+                        ShowItem naviItem = new ShowItem("Navigation On", "turn navigation on for flyTo commands", "navigation on;");
+                        HomeScreen.Current.AddItem(naviItem);
+                    }
+
+                    String cartDescription = "move to " + nebulaeDropdown.Text.Trim();
+                    String cartCode = "navigation flyTo " + nebulaeDropdown.Text.Trim() + ";";
+
+                    //create star item
+                    ShowItem nebulaeItem = new ShowItem("Nebula Move", cartDescription, cartCode);
+
+                    //add show item to list
+                    HomeScreen.Current.AddItem(nebulaeItem);
+
+
+                    //update the show list after submit
+                    HomeScreen.Current.UpdateList();
                 }
-
-            }
-            else
-            {
-                //what to do if no is selected
-
             }
         }
 
