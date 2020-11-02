@@ -19,14 +19,13 @@ namespace DigiScriptor
         string sqlPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\")) + @"DigiDataBase.mdf;Integrated Security=True";
         SqlConnection connect;
 
-        //Variables for nebula name, cellName (name of selected row in datagrid) declination degree/min/max and right ascension hour/minutes/seconds
+        //Variables for nebula name, declination degree/min/max and right ascension hour/minutes/seconds
         private string commonName = string.Empty;
         private string sciName = string.Empty;
         private string search = string.Empty;
         int RAHr, RAMin, DDeg, DMin = 0;
         private string nebulaID = null;
         double RASec, DSec = 0;
-        private string cellName = string.Empty;
         private Boolean DecDTxt_Valid = false;
         private Boolean DecMinTxt_Valid = false;
         private Boolean DecSecTxt_Valid = false;

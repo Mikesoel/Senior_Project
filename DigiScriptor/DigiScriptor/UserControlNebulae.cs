@@ -77,7 +77,7 @@ namespace DigiScriptor
             if (results == DialogResult.Yes)
             {
 
-                //create Earth item
+                //create Nebula item
                 ShowItem Nebulaeitem = new ShowItem("Nebula Move", "this is a nebula move");
 
                 //add show item to list

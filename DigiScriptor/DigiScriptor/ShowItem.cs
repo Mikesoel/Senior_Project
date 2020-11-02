@@ -66,7 +66,7 @@ namespace DigiScriptor
         }
 
 
-        public String Decription
+        public String Description
         {
             get { return description; }
             set { description = value; descriptionBox.Text = value; }
