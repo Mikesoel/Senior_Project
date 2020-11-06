@@ -20,7 +20,7 @@ namespace DigiScriptor
         SqlConnection connect;
         private string name = string.Empty;
         private string cellName = string.Empty;
-        private int latitude, longitude;
+        private double latitude, longitude;
         private Boolean latitude_Valid = false;
         private Boolean longitude_Valid = false;
 
@@ -138,12 +138,12 @@ namespace DigiScriptor
             //check if text is empty
             if (latitudeTextBox.Text != "")
             {
-                int value = 0;
+                double value = 0;
 
                 //if something is in box try to convert to int
                 try
                 {
-                    value = Convert.ToInt32(latitudeTextBox.Text);
+                    value = Convert.ToDouble(latitudeTextBox.Text);
                     //validate data is within correct range
                     if (value >= -180 && value <= 180)
                     {
@@ -182,12 +182,12 @@ namespace DigiScriptor
             //check if text is empty
             if (longitudeTextBox.Text != "")
             {
-                int value = 0;
+                double value = 0;
 
                 //if something is in box try to convert to int
                 try
                 {
-                    value = Convert.ToInt32(longitudeTextBox.Text);
+                    value = Convert.ToDouble(longitudeTextBox.Text);
                     //validate data is within correct range
                     if (value >= -180 && value <= 180)
                     {
