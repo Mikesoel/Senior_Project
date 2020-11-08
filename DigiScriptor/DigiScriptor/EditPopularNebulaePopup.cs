@@ -116,7 +116,7 @@ namespace DigiScriptor
                 
                 //Close DB connection and reload datagrid
                 connect.Close();
-                MessageBox.Show("Submitted " + commonName + " into database");
+                MessageBox.Show("Submitted " + commonName.Trim() + " into database");
                 
                 //Clear data from Text boxes
                 Clear_Input();

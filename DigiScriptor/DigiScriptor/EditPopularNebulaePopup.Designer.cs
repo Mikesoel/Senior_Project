@@ -75,7 +75,7 @@
             this.btnNebulaeDelete.Location = new System.Drawing.Point(660, 678);
             this.btnNebulaeDelete.Name = "btnNebulaeDelete";
             this.btnNebulaeDelete.Size = new System.Drawing.Size(192, 26);
-            this.btnNebulaeDelete.TabIndex = 17;
+            this.btnNebulaeDelete.TabIndex = 99;
             this.btnNebulaeDelete.Text = "Delete Selected Row";
             this.btnNebulaeDelete.UseVisualStyleBackColor = true;
             this.btnNebulaeDelete.Click += new System.EventHandler(this.btnNebulaeDelete_Click);
@@ -86,7 +86,7 @@
             this.btnNebulaeSave.Location = new System.Drawing.Point(243, 274);
             this.btnNebulaeSave.Name = "btnNebulaeSave";
             this.btnNebulaeSave.Size = new System.Drawing.Size(75, 29);
-            this.btnNebulaeSave.TabIndex = 16;
+            this.btnNebulaeSave.TabIndex = 9;
             this.btnNebulaeSave.Text = "Save";
             this.btnNebulaeSave.UseVisualStyleBackColor = true;
             this.btnNebulaeSave.Click += new System.EventHandler(this.btnNebulaeSave_Click);
@@ -96,7 +96,7 @@
             this.txtBoxName.Location = new System.Drawing.Point(281, 49);
             this.txtBoxName.Name = "txtBoxName";
             this.txtBoxName.Size = new System.Drawing.Size(174, 20);
-            this.txtBoxName.TabIndex = 13;
+            this.txtBoxName.TabIndex = 1;
             this.txtBoxName.TextChanged += new System.EventHandler(this.txtBoxName_TextChanged);
             // 
             // lblNebulaeName
@@ -170,7 +170,7 @@
             this.DecSecTxt.Location = new System.Drawing.Point(270, 116);
             this.DecSecTxt.Name = "DecSecTxt";
             this.DecSecTxt.Size = new System.Drawing.Size(100, 29);
-            this.DecSecTxt.TabIndex = 6;
+            this.DecSecTxt.TabIndex = 8;
             this.DecSecTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.DecSecTxt.TextChanged += new System.EventHandler(this.DecSecTxt_TextChanged);
             // 
@@ -188,7 +188,7 @@
             this.DecMinTxt.Location = new System.Drawing.Point(136, 116);
             this.DecMinTxt.Name = "DecMinTxt";
             this.DecMinTxt.Size = new System.Drawing.Size(100, 29);
-            this.DecMinTxt.TabIndex = 5;
+            this.DecMinTxt.TabIndex = 7;
             this.DecMinTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.DecMinTxt.TextChanged += new System.EventHandler(this.DecMinTxt_TextChanged);
             // 
@@ -239,7 +239,7 @@
             this.RAsSecTxt.Location = new System.Drawing.Point(270, 57);
             this.RAsSecTxt.Name = "RAsSecTxt";
             this.RAsSecTxt.Size = new System.Drawing.Size(100, 29);
-            this.RAsSecTxt.TabIndex = 3;
+            this.RAsSecTxt.TabIndex = 5;
             this.RAsSecTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.RAsSecTxt.TextChanged += new System.EventHandler(this.RAsSecTxt_TextChanged);
             // 
@@ -248,7 +248,7 @@
             this.RAsMinTxt.Location = new System.Drawing.Point(136, 57);
             this.RAsMinTxt.Name = "RAsMinTxt";
             this.RAsMinTxt.Size = new System.Drawing.Size(100, 29);
-            this.RAsMinTxt.TabIndex = 2;
+            this.RAsMinTxt.TabIndex = 4;
             this.RAsMinTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.RAsMinTxt.TextChanged += new System.EventHandler(this.RAsMinTxt_TextChanged);
             // 
@@ -257,7 +257,7 @@
             this.DecDTxt.Location = new System.Drawing.Point(6, 116);
             this.DecDTxt.Name = "DecDTxt";
             this.DecDTxt.Size = new System.Drawing.Size(100, 29);
-            this.DecDTxt.TabIndex = 4;
+            this.DecDTxt.TabIndex = 6;
             this.DecDTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.DecDTxt.TextChanged += new System.EventHandler(this.DecDTxt_TextChanged);
             // 
@@ -286,7 +286,7 @@
             this.RAsHrTxt.Location = new System.Drawing.Point(6, 57);
             this.RAsHrTxt.Name = "RAsHrTxt";
             this.RAsHrTxt.Size = new System.Drawing.Size(100, 29);
-            this.RAsHrTxt.TabIndex = 1;
+            this.RAsHrTxt.TabIndex = 3;
             this.RAsHrTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.RAsHrTxt.TextChanged += new System.EventHandler(this.RAsHrTxt_TextChanged);
             // 
@@ -306,7 +306,7 @@
             this.txtBoxSciName.Location = new System.Drawing.Point(281, 81);
             this.txtBoxSciName.Name = "txtBoxSciName";
             this.txtBoxSciName.Size = new System.Drawing.Size(174, 20);
-            this.txtBoxSciName.TabIndex = 35;
+            this.txtBoxSciName.TabIndex = 2;
             this.txtBoxSciName.TextChanged += new System.EventHandler(this.txtBoxSciName_TextChanged);
             // 
             // clearButton
@@ -315,7 +315,7 @@
             this.clearButton.Location = new System.Drawing.Point(367, 274);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(75, 29);
-            this.clearButton.TabIndex = 36;
+            this.clearButton.TabIndex = 10;
             this.clearButton.Text = "Clear";
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);

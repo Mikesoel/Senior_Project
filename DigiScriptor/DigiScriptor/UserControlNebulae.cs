@@ -51,7 +51,7 @@ namespace DigiScriptor
             da.Fill(dt);
             foreach (DataRow dr in dt.Rows)
             {
-                nebulaeDropdown.Items.Add(dr["CommonName"].ToString());
+                nebulaeDropdown.Items.Add(dr["CommonName"].ToString().Trim());
             }
             
             //Close DB connection
@@ -92,7 +92,7 @@ namespace DigiScriptor
                     String cartDescription = "move to " + nebulaeDropdown.Text.Trim();
                     String cartCode = "navigation flyTo " + nebulaeDropdown.Text.Trim() + ";";
 
-                    //create star item
+                    //create Nebula item
                     ShowItem nebulaeItem = new ShowItem("Nebula Move", cartDescription, cartCode);
 
                     //add show item to list
@@ -109,7 +109,6 @@ namespace DigiScriptor
         {
             //Opens nebulae favorites add/edit popup window when clicked
             EditPopularNebulaePopup editNebulaeData = new EditPopularNebulaePopup();
-            //Form1 editNebulaeData = new Form1();
             editNebulaeData.Show(); 
         }
 
