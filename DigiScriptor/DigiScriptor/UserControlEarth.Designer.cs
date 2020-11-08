@@ -69,9 +69,9 @@
             this.panelEarth.Controls.Add(this.popularLocationsCombo);
             this.panelEarth.Controls.Add(this.lblPopularDropdown);
             this.panelEarth.Location = new System.Drawing.Point(0, 0);
-            this.panelEarth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelEarth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelEarth.Name = "panelEarth";
-            this.panelEarth.Size = new System.Drawing.Size(1298, 1196);
+            this.panelEarth.Size = new System.Drawing.Size(708, 648);
             this.panelEarth.TabIndex = 25;
             this.panelEarth.Paint += new System.Windows.Forms.PaintEventHandler(this.panelEarth_Paint);
             // 
@@ -80,19 +80,18 @@
             this.lblGalaxies.AutoSize = true;
             this.lblGalaxies.Font = new System.Drawing.Font("Bernard MT Condensed", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGalaxies.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lblGalaxies.Location = new System.Drawing.Point(26, 28);
-            this.lblGalaxies.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGalaxies.Location = new System.Drawing.Point(14, 15);
+            this.lblGalaxies.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGalaxies.Name = "lblGalaxies";
-            this.lblGalaxies.Size = new System.Drawing.Size(165, 78);
+            this.lblGalaxies.Size = new System.Drawing.Size(96, 45);
             this.lblGalaxies.TabIndex = 30;
             this.lblGalaxies.Text = "Earth";
             // 
             // editPopularLocationsButton
             // 
-            this.editPopularLocationsButton.Location = new System.Drawing.Point(596, 129);
-            this.editPopularLocationsButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.editPopularLocationsButton.Location = new System.Drawing.Point(325, 70);
             this.editPopularLocationsButton.Name = "editPopularLocationsButton";
-            this.editPopularLocationsButton.Size = new System.Drawing.Size(138, 42);
+            this.editPopularLocationsButton.Size = new System.Drawing.Size(75, 23);
             this.editPopularLocationsButton.TabIndex = 29;
             this.editPopularLocationsButton.Text = "Add/Edit";
             this.editPopularLocationsButton.UseVisualStyleBackColor = true;
@@ -104,10 +103,10 @@
             this.btnSubmitEarth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmitEarth.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmitEarth.ForeColor = System.Drawing.Color.SpringGreen;
-            this.btnSubmitEarth.Location = new System.Drawing.Point(1029, 1078);
-            this.btnSubmitEarth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSubmitEarth.Location = new System.Drawing.Point(561, 584);
+            this.btnSubmitEarth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSubmitEarth.Name = "btnSubmitEarth";
-            this.btnSubmitEarth.Size = new System.Drawing.Size(227, 90);
+            this.btnSubmitEarth.Size = new System.Drawing.Size(124, 49);
             this.btnSubmitEarth.TabIndex = 26;
             this.btnSubmitEarth.Text = "Submit";
             this.btnSubmitEarth.UseVisualStyleBackColor = false;
@@ -117,10 +116,9 @@
             // 
             this.panel4.Controls.Add(this.comboVantagePoint);
             this.panel4.Controls.Add(this.txtBoxVantagePoint);
-            this.panel4.Location = new System.Drawing.Point(299, 360);
-            this.panel4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel4.Location = new System.Drawing.Point(163, 195);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(435, 54);
+            this.panel4.Size = new System.Drawing.Size(237, 29);
             this.panel4.TabIndex = 28;
             // 
             // comboVantagePoint
@@ -131,18 +129,16 @@
             "Meters",
             "Kilometers",
             "Astronomical Units"});
-            this.comboVantagePoint.Location = new System.Drawing.Point(200, 6);
-            this.comboVantagePoint.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.comboVantagePoint.Location = new System.Drawing.Point(109, 3);
             this.comboVantagePoint.Name = "comboVantagePoint";
-            this.comboVantagePoint.Size = new System.Drawing.Size(219, 32);
+            this.comboVantagePoint.Size = new System.Drawing.Size(121, 21);
             this.comboVantagePoint.TabIndex = 1;
             // 
             // txtBoxVantagePoint
             // 
-            this.txtBoxVantagePoint.Location = new System.Drawing.Point(6, 6);
-            this.txtBoxVantagePoint.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtBoxVantagePoint.Location = new System.Drawing.Point(3, 3);
             this.txtBoxVantagePoint.Name = "txtBoxVantagePoint";
-            this.txtBoxVantagePoint.Size = new System.Drawing.Size(180, 29);
+            this.txtBoxVantagePoint.Size = new System.Drawing.Size(100, 20);
             this.txtBoxVantagePoint.TabIndex = 0;
             this.txtBoxVantagePoint.Text = "400";
             // 
@@ -150,10 +146,9 @@
             // 
             this.lblEarthVantagePoint.AutoSize = true;
             this.lblEarthVantagePoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEarthVantagePoint.Location = new System.Drawing.Point(33, 360);
-            this.lblEarthVantagePoint.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblEarthVantagePoint.Location = new System.Drawing.Point(18, 195);
             this.lblEarthVantagePoint.Name = "lblEarthVantagePoint";
-            this.lblEarthVantagePoint.Size = new System.Drawing.Size(203, 32);
+            this.lblEarthVantagePoint.Size = new System.Drawing.Size(114, 20);
             this.lblEarthVantagePoint.TabIndex = 27;
             this.lblEarthVantagePoint.Text = "Vantage Point:";
             // 
@@ -163,29 +158,26 @@
             this.panel1.Controls.Add(this.textBoxLongitude);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.textBoxLatitude);
-            this.panel1.Location = new System.Drawing.Point(299, 227);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel1.Location = new System.Drawing.Point(163, 123);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(418, 102);
+            this.panel1.Size = new System.Drawing.Size(228, 55);
             this.panel1.TabIndex = 24;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.westRadioButton);
             this.panel3.Controls.Add(this.eastRadio);
-            this.panel3.Location = new System.Drawing.Point(200, 54);
-            this.panel3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel3.Location = new System.Drawing.Point(109, 29);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(211, 48);
+            this.panel3.Size = new System.Drawing.Size(115, 26);
             this.panel3.TabIndex = 5;
             // 
             // westRadioButton
             // 
             this.westRadioButton.AutoSize = true;
-            this.westRadioButton.Location = new System.Drawing.Point(110, 6);
-            this.westRadioButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.westRadioButton.Location = new System.Drawing.Point(60, 3);
             this.westRadioButton.Name = "westRadioButton";
-            this.westRadioButton.Size = new System.Drawing.Size(83, 29);
+            this.westRadioButton.Size = new System.Drawing.Size(50, 17);
             this.westRadioButton.TabIndex = 1;
             this.westRadioButton.TabStop = true;
             this.westRadioButton.Text = "West";
@@ -194,10 +186,9 @@
             // eastRadio
             // 
             this.eastRadio.AutoSize = true;
-            this.eastRadio.Location = new System.Drawing.Point(6, 6);
-            this.eastRadio.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.eastRadio.Location = new System.Drawing.Point(3, 3);
             this.eastRadio.Name = "eastRadio";
-            this.eastRadio.Size = new System.Drawing.Size(76, 29);
+            this.eastRadio.Size = new System.Drawing.Size(46, 17);
             this.eastRadio.TabIndex = 0;
             this.eastRadio.TabStop = true;
             this.eastRadio.Text = "East";
@@ -205,10 +196,9 @@
             // 
             // textBoxLongitude
             // 
-            this.textBoxLongitude.Location = new System.Drawing.Point(6, 55);
-            this.textBoxLongitude.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBoxLongitude.Location = new System.Drawing.Point(3, 30);
             this.textBoxLongitude.Name = "textBoxLongitude";
-            this.textBoxLongitude.Size = new System.Drawing.Size(180, 29);
+            this.textBoxLongitude.Size = new System.Drawing.Size(100, 20);
             this.textBoxLongitude.TabIndex = 6;
             this.textBoxLongitude.Text = "Enter Longitude";
             this.textBoxLongitude.TextChanged += new System.EventHandler(this.textBoxLongitude_TextChanged);
@@ -217,19 +207,17 @@
             // 
             this.panel2.Controls.Add(this.northRadio);
             this.panel2.Controls.Add(this.southRadio);
-            this.panel2.Location = new System.Drawing.Point(200, 6);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel2.Location = new System.Drawing.Point(109, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(211, 41);
+            this.panel2.Size = new System.Drawing.Size(115, 22);
             this.panel2.TabIndex = 5;
             // 
             // northRadio
             // 
             this.northRadio.AutoSize = true;
-            this.northRadio.Location = new System.Drawing.Point(6, 6);
-            this.northRadio.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.northRadio.Location = new System.Drawing.Point(3, 3);
             this.northRadio.Name = "northRadio";
-            this.northRadio.Size = new System.Drawing.Size(84, 29);
+            this.northRadio.Size = new System.Drawing.Size(51, 17);
             this.northRadio.TabIndex = 1;
             this.northRadio.TabStop = true;
             this.northRadio.Text = "North";
@@ -238,10 +226,9 @@
             // southRadio
             // 
             this.southRadio.AutoSize = true;
-            this.southRadio.Location = new System.Drawing.Point(110, 6);
-            this.southRadio.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.southRadio.Location = new System.Drawing.Point(60, 3);
             this.southRadio.Name = "southRadio";
-            this.southRadio.Size = new System.Drawing.Size(89, 29);
+            this.southRadio.Size = new System.Drawing.Size(53, 17);
             this.southRadio.TabIndex = 2;
             this.southRadio.TabStop = true;
             this.southRadio.Text = "South";
@@ -249,10 +236,9 @@
             // 
             // textBoxLatitude
             // 
-            this.textBoxLatitude.Location = new System.Drawing.Point(6, 9);
-            this.textBoxLatitude.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBoxLatitude.Location = new System.Drawing.Point(3, 5);
             this.textBoxLatitude.Name = "textBoxLatitude";
-            this.textBoxLatitude.Size = new System.Drawing.Size(180, 29);
+            this.textBoxLatitude.Size = new System.Drawing.Size(100, 20);
             this.textBoxLatitude.TabIndex = 0;
             this.textBoxLatitude.Text = "Enter Latitude";
             this.textBoxLatitude.TextChanged += new System.EventHandler(this.textBoxLatitude_TextChanged);
@@ -261,10 +247,10 @@
             // 
             this.btnEarthBack.BackColor = System.Drawing.Color.Gray;
             this.btnEarthBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEarthBack.Location = new System.Drawing.Point(24, 1122);
-            this.btnEarthBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEarthBack.Location = new System.Drawing.Point(13, 608);
+            this.btnEarthBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEarthBack.Name = "btnEarthBack";
-            this.btnEarthBack.Size = new System.Drawing.Size(105, 46);
+            this.btnEarthBack.Size = new System.Drawing.Size(57, 25);
             this.btnEarthBack.TabIndex = 25;
             this.btnEarthBack.Text = "Back";
             this.btnEarthBack.UseVisualStyleBackColor = false;
@@ -273,23 +259,22 @@
             // 
             this.lblEarthCustomLocation.AutoSize = true;
             this.lblEarthCustomLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEarthCustomLocation.Location = new System.Drawing.Point(33, 227);
-            this.lblEarthCustomLocation.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblEarthCustomLocation.Location = new System.Drawing.Point(18, 123);
             this.lblEarthCustomLocation.Name = "lblEarthCustomLocation";
-            this.lblEarthCustomLocation.Size = new System.Drawing.Size(236, 32);
+            this.lblEarthCustomLocation.Size = new System.Drawing.Size(133, 20);
             this.lblEarthCustomLocation.TabIndex = 23;
             this.lblEarthCustomLocation.Text = "Custom Location:";
             // 
             // popularLocationsCombo
             // 
-            this.popularLocationsCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.popularLocationsCombo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.popularLocationsCombo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.popularLocationsCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.popularLocationsCombo.FormattingEnabled = true;
-            this.popularLocationsCombo.Location = new System.Drawing.Point(299, 127);
-            this.popularLocationsCombo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.popularLocationsCombo.Location = new System.Drawing.Point(163, 69);
             this.popularLocationsCombo.MaxDropDownItems = 20;
             this.popularLocationsCombo.Name = "popularLocationsCombo";
-            this.popularLocationsCombo.Size = new System.Drawing.Size(270, 37);
+            this.popularLocationsCombo.Size = new System.Drawing.Size(149, 24);
             this.popularLocationsCombo.TabIndex = 22;
             this.popularLocationsCombo.SelectedIndexChanged += new System.EventHandler(this.popularLocationsCombo_SelectedIndexChanged);
             this.popularLocationsCombo.Click += new System.EventHandler(this.popularLocationsCombo_Click);
@@ -298,22 +283,21 @@
             // 
             this.lblPopularDropdown.AutoSize = true;
             this.lblPopularDropdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPopularDropdown.Location = new System.Drawing.Point(33, 129);
-            this.lblPopularDropdown.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblPopularDropdown.Location = new System.Drawing.Point(18, 70);
             this.lblPopularDropdown.Name = "lblPopularDropdown";
-            this.lblPopularDropdown.Size = new System.Drawing.Size(252, 32);
+            this.lblPopularDropdown.Size = new System.Drawing.Size(140, 20);
             this.lblPopularDropdown.TabIndex = 21;
             this.lblPopularDropdown.Text = "Popular Locations:";
             // 
             // UserControlEarth
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Controls.Add(this.panelEarth);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UserControlEarth";
-            this.Size = new System.Drawing.Size(1298, 1196);
+            this.Size = new System.Drawing.Size(708, 648);
             this.panelEarth.ResumeLayout(false);
             this.panelEarth.PerformLayout();
             this.panel4.ResumeLayout(false);

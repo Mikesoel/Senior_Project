@@ -23,8 +23,9 @@ namespace DigiScriptor
         private double latitude, longitude;
         private Boolean latitude_Valid = false;
         private Boolean longitude_Valid = false;
+        UserControlEarth earthPanel;
 
-        public EditPopularEarthLocationsPopup()
+        public EditPopularEarthLocationsPopup(UserControlEarth EarthP)
         {
             InitializeComponent();
 
@@ -32,7 +33,9 @@ namespace DigiScriptor
             connect = new SqlConnection(sqlPath);
 
             //Load earth favorites table into data grid
-            LoadTable();                                                                                
+            LoadTable();
+
+            earthPanel = EarthP;
 
         }
 
@@ -128,6 +131,7 @@ namespace DigiScriptor
                 
                 //Re-Load database into datagrid
                 LoadTable();
+                earthPanel.LoadComboBox();
             }
 
         }
@@ -244,8 +248,9 @@ namespace DigiScriptor
             //Close database connection
             connect.Close();
             
-            //Re-Load database into Datagrid
+            //Re-Load database into Datagrid and combobox in earth panel
             LoadTable();
+            earthPanel.LoadComboBox();
         }
 
         private void EditPopularEarthLocationsPopup_Load(object sender, EventArgs e)

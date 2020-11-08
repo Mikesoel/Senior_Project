@@ -34,7 +34,7 @@ namespace DigiScriptor
             LoadComboBox();
         }
 
-        private void LoadComboBox()
+        public void LoadComboBox()
         {
             //Clear combo box from old items
             popularLocationsCombo.Items.Clear();
@@ -56,7 +56,7 @@ namespace DigiScriptor
             da.Fill(dt);
             foreach (DataRow dr in dt.Rows)
             {
-                popularLocationsCombo.Items.Add(dr["Name"].ToString());
+                popularLocationsCombo.Items.Add(dr["Name"].ToString().Trim());
             }
             
             //Close connection to DB
@@ -71,14 +71,14 @@ namespace DigiScriptor
         private void popularLocationsCombo_Click(object sender, EventArgs e)
         {
             //Reload combo box every time it is clicked, assures data within is always accurate
-            LoadComboBox();
+            //LoadComboBox();
         }
 
 
         private void editPopularLocationsButton_Click(object sender, EventArgs e)
         {
             //Open edit popular earth locations popup window
-            EditPopularEarthLocationsPopup editData = new EditPopularEarthLocationsPopup();
+            EditPopularEarthLocationsPopup editData = new EditPopularEarthLocationsPopup(this);
             editData.Show();
 
         }
