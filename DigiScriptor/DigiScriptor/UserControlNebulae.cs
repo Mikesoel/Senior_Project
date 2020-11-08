@@ -14,6 +14,11 @@ namespace DigiScriptor
 {
     public partial class UserControlNebulae : UserControl
     {
+        //int RAHr, RAMin, DDeg, DMin = 0;
+        //double RASec, DSec = 0;
+
+        string RAHr, RAMin, DDeg, DMin, RASec, DSec;
+
         //SqlConnection setup string
         string sqlPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\")) + @"DigiDataBase.mdf;Integrated Security=True";
         SqlConnection connect;
@@ -58,6 +63,39 @@ namespace DigiScriptor
             connect.Close();
         }
 
+        //Gets Coordinates from DB and puts them into variables for Script Generation
+        private void getCoordinates()
+        {
+            connect.Open();
+
+            //Bind cmd to SQL commands
+            SqlCommand cmd = connect.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+
+            //SQL command to select data from DB that coorolates to drop selection in drop down box
+            cmd.CommandText = "select * from NebulaeFavorites where CommonName = @CommonName";
+            cmd.Parameters.AddWithValue("@CommonName", nebulaeDropdown.Text.Trim());
+            cmd.ExecuteNonQuery();
+
+            //Make a datareader that reads through the row
+            SqlDataReader reader = null;
+            reader = cmd.ExecuteReader();
+
+            //While row still has info, add coordinates into string variables for script
+            while(reader.Read())
+            {
+                RAHr = reader["RAHr"].ToString();
+                RAMin = reader["RAMin"].ToString();
+                RASec = reader["RASec"].ToString();
+                DDeg = reader["DDeg"].ToString();
+                DMin = reader["DMin"].ToString();
+                DSec = reader["DSec"].ToString();
+            }
+
+            //Close Connection
+            connect.Close();
+        }
+
         private void lblNebulaeVantagePoint_Click(object sender, EventArgs e)
         {
 
@@ -89,8 +127,9 @@ namespace DigiScriptor
                         HomeScreen.Current.AddItem(naviItem);
                     }
 
+                    getCoordinates();
                     String cartDescription = "move to " + nebulaeDropdown.Text.Trim();
-                    String cartCode = "navigation flyTo " + nebulaeDropdown.Text.Trim() + ";";
+                    String cartCode = "navigation flyTo celestial " + RAHr + ":" + RAMin + ":" + RASec + " " + DDeg + ":" + DMin + ":" + DSec + "";
 
                     //create Nebula item
                     ShowItem nebulaeItem = new ShowItem("Nebula Move", cartDescription, cartCode);

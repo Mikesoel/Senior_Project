@@ -202,7 +202,7 @@ namespace DigiScriptor
             {
                 MessageBox.Show("Successfully Deleted " + nebulaeDataGrid.SelectedCells[0].Value.ToString());
 
-                //Reads info from first cell in row selected to use as variable to delete selected from database
+                //Reads nebula id from specified cell to use to delete row from DB
                 nebulaID = nebulaeDataGrid.SelectedCells[8].Value.ToString();
 
                 //Queries database with selected info to delete row
