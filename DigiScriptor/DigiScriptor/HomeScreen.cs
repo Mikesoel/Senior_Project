@@ -110,6 +110,14 @@ namespace DigiScriptor
             return theList;
         }
 
+        public void Swap<ShowItem>(int index1, int index2)
+        {
+            //swap two ShowItems in the list
+            DigiScriptor.ShowItem tmp = theList[index1];
+            theList[index1] = theList[index2];
+            theList[index2] = tmp;
+            UpdateList();
+        }
 
         public int GetListCount()
         {

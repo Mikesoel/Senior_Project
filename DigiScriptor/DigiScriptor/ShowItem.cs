@@ -86,5 +86,47 @@ namespace DigiScriptor
         {
 
         }
+
+        private void btnUp_Click(object sender, EventArgs e)
+        {
+            //get the index of this ShowItem in the list
+            List<ShowItem> list = HomeScreen.Current.GetList();
+            int thisIndex = list.IndexOf(this);
+
+            if (list.Count >= 2) //make sure there are at least two items in the list
+            {
+                if (thisIndex > 0) //if you press "up", there should be something above
+                {
+                    //if this iem does not need to have navigation on, do the swap
+                    if(!((this.Title).Contains("Galaxy") || (this.Title).Contains("Nebula") || (this.Title).Contains("Star")))
+                    {
+                        //swap with the ShowItem above
+                        HomeScreen.Current.Swap<ShowItem>(thisIndex, thisIndex - 1);
+
+                    } else //check to see if Navigation On is the ShowItem directly above
+                    {
+                        if (!(list[thisIndex - 1].Title).Contains("Navigation"))
+                        {
+                            HomeScreen.Current.Swap<ShowItem>(thisIndex, thisIndex - 1);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void btnDown_Click(object sender, EventArgs e)
+        {
+            //get the index of this ShowItem in the list
+            List<ShowItem> list = HomeScreen.Current.GetList();
+            int thisIndex = list.IndexOf(this);
+
+            if (list.Count >= 2) //make sure there are at least two items in the list
+            {
+                if (thisIndex < list.Count - 1) //if you press "down", there should be something belows
+                {
+                    HomeScreen.Current.Swap<ShowItem>(thisIndex, thisIndex + 1);
+                }
+            }
+        }
     }
 }
