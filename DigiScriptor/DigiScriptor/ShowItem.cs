@@ -128,5 +128,15 @@ namespace DigiScriptor
                 }
             }
         }
+
+        private void descriptionBox_TextChanged(object sender, EventArgs e)
+        {
+            //if this is a Custom Code ShowItem, update the code when user changes text
+            if((this.Title).Contains("Custom"))
+            {
+                //this.description = descriptionBox.Text;
+                this.code = descriptionBox.Text;
+            }
+        }
     }
 }

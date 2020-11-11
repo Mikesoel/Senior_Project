@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.titleBox = new System.Windows.Forms.GroupBox();
-            this.descriptionBox = new System.Windows.Forms.RichTextBox();
             this.btnUp = new System.Windows.Forms.Button();
             this.btnDown = new System.Windows.Forms.Button();
+            this.descriptionBox = new System.Windows.Forms.RichTextBox();
             this.titleBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,19 +50,6 @@
             this.titleBox.TabStop = false;
             this.titleBox.Text = "default title";
             this.titleBox.Enter += new System.EventHandler(this.titleBox_Enter);
-            // 
-            // descriptionBox
-            // 
-            this.descriptionBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.descriptionBox.Location = new System.Drawing.Point(8, 38);
-            this.descriptionBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.descriptionBox.Name = "descriptionBox";
-            this.descriptionBox.ReadOnly = true;
-            this.descriptionBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.descriptionBox.Size = new System.Drawing.Size(314, 158);
-            this.descriptionBox.TabIndex = 0;
-            this.descriptionBox.TabStop = false;
-            this.descriptionBox.Text = "";
             // 
             // btnUp
             // 
@@ -88,6 +75,20 @@
             this.btnDown.UseVisualStyleBackColor = true;
             this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
+            // descriptionBox
+            // 
+            this.descriptionBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.descriptionBox.Location = new System.Drawing.Point(8, 38);
+            this.descriptionBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.descriptionBox.Name = "descriptionBox";
+            this.descriptionBox.ReadOnly = true;
+            this.descriptionBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.descriptionBox.Size = new System.Drawing.Size(314, 158);
+            this.descriptionBox.TabIndex = 0;
+            this.descriptionBox.TabStop = false;
+            this.descriptionBox.Text = "";
+            this.descriptionBox.TextChanged += new System.EventHandler(this.descriptionBox_TextChanged);
+            // 
             // ShowItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -104,7 +105,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox titleBox;
-        private System.Windows.Forms.RichTextBox descriptionBox;
+        public System.Windows.Forms.RichTextBox descriptionBox;
         private System.Windows.Forms.Button btnUp;
         private System.Windows.Forms.Button btnDown;
     }

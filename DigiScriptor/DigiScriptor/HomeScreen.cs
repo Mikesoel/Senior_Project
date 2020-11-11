@@ -77,8 +77,6 @@ namespace DigiScriptor
         }
 
 
-
-
         public void UpdateList()
         {
             //update the show list
@@ -105,10 +103,12 @@ namespace DigiScriptor
             UpdateList();
         }
 
+
         public List<ShowItem> GetList()
         {
             return theList;
         }
+
 
         public void Swap<ShowItem>(int index1, int index2)
         {
@@ -119,11 +119,13 @@ namespace DigiScriptor
             UpdateList();
         }
 
+
         public int GetListCount()
         {
             //returns the number of elements in the ShowItem list
             return theList.Count;
         }
+
 
         public Boolean GetIsNavOn()
         {
@@ -137,7 +139,6 @@ namespace DigiScriptor
             userControlHome.Show();
             userControlHome.BringToFront();
 
-            
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
@@ -192,7 +193,13 @@ namespace DigiScriptor
 
                 //comment the description
                 codeOut += @"/*";
-                codeOut += theList[i].Description;
+                if((theList[i].Title).Contains("Custom"))
+                {
+                    codeOut += "user inputted code";
+                } else
+                {
+                    codeOut += theList[i].Description;
+                }
                 codeOut += "\n";
                 codeOut += @"*/";
                 codeOut += "\n";

@@ -359,6 +359,7 @@ namespace DigiScriptor
             this.btnSubmit.Show();
         }
 
+
         //
         // Events for writing to script file
         //
