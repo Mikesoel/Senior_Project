@@ -56,18 +56,12 @@
             this.toolTip4 = new System.Windows.Forms.ToolTip(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolTip5 = new System.Windows.Forms.ToolTip(this.components);
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panelDomeLights.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dimmer)).BeginInit();
             this.SuspendLayout();
             // 
             // panelDomeLights
             // 
-            this.panelDomeLights.Controls.Add(this.label3);
-            this.panelDomeLights.Controls.Add(this.textBox2);
-            this.panelDomeLights.Controls.Add(this.label4);
             this.panelDomeLights.Controls.Add(this.dtimmer_unit);
             this.panelDomeLights.Controls.Add(this.dtransTime);
             this.panelDomeLights.Controls.Add(this.label2);
@@ -92,7 +86,6 @@
             this.panelDomeLights.Name = "panelDomeLights";
             this.panelDomeLights.Size = new System.Drawing.Size(944, 798);
             this.panelDomeLights.TabIndex = 31;
-            this.panelDomeLights.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDomeLights_Paint);
             // 
             // dtimmer_unit
             // 
@@ -104,7 +97,6 @@
             this.dtimmer_unit.Size = new System.Drawing.Size(86, 25);
             this.dtimmer_unit.TabIndex = 60;
             this.dtimmer_unit.Text = "seconds";
-            this.dtimmer_unit.Click += new System.EventHandler(this.dtimmer_unit_Click);
             // 
             // dtransTime
             // 
@@ -125,7 +117,6 @@
             this.label2.Size = new System.Drawing.Size(209, 25);
             this.label2.TabIndex = 58;
             this.label2.Text = "Dimmer transition time:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // dimmerValue
             // 
@@ -133,11 +124,10 @@
             this.dimmerValue.Name = "dimmerValue";
             this.dimmerValue.Size = new System.Drawing.Size(43, 22);
             this.dimmerValue.TabIndex = 57;
-            this.dimmerValue.TextChanged += new System.EventHandler(this.dimmerValue_TextChanged);
             // 
             // colorEnter
             // 
-            this.colorEnter.Location = new System.Drawing.Point(361, 257);
+            this.colorEnter.Location = new System.Drawing.Point(366, 296);
             this.colorEnter.Name = "colorEnter";
             this.colorEnter.Size = new System.Drawing.Size(75, 23);
             this.colorEnter.TabIndex = 56;
@@ -156,13 +146,12 @@
             this.label1.Size = new System.Drawing.Size(85, 25);
             this.label1.TabIndex = 55;
             this.label1.Text = "Dimmer:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblB
             // 
             this.lblB.AutoSize = true;
             this.lblB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblB.Location = new System.Drawing.Point(250, 253);
+            this.lblB.Location = new System.Drawing.Point(255, 292);
             this.lblB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblB.Name = "lblB";
             this.lblB.Size = new System.Drawing.Size(31, 25);
@@ -173,7 +162,7 @@
             // 
             this.lblG.AutoSize = true;
             this.lblG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblG.Location = new System.Drawing.Point(145, 253);
+            this.lblG.Location = new System.Drawing.Point(150, 292);
             this.lblG.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblG.Name = "lblG";
             this.lblG.Size = new System.Drawing.Size(33, 25);
@@ -184,7 +173,7 @@
             // 
             this.lblR.AutoSize = true;
             this.lblR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblR.Location = new System.Drawing.Point(42, 253);
+            this.lblR.Location = new System.Drawing.Point(47, 292);
             this.lblR.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblR.Name = "lblR";
             this.lblR.Size = new System.Drawing.Size(31, 25);
@@ -195,7 +184,7 @@
             // 
             this.lblManualColor.AutoSize = true;
             this.lblManualColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblManualColor.Location = new System.Drawing.Point(57, 228);
+            this.lblManualColor.Location = new System.Drawing.Point(62, 267);
             this.lblManualColor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblManualColor.Name = "lblManualColor";
             this.lblManualColor.Size = new System.Drawing.Size(185, 25);
@@ -204,7 +193,7 @@
             // 
             // textBoxG
             // 
-            this.textBoxG.Location = new System.Drawing.Point(185, 257);
+            this.textBoxG.Location = new System.Drawing.Point(190, 296);
             this.textBoxG.Name = "textBoxG";
             this.textBoxG.Size = new System.Drawing.Size(58, 22);
             this.textBoxG.TabIndex = 50;
@@ -213,7 +202,7 @@
             // 
             // textBoxB
             // 
-            this.textBoxB.Location = new System.Drawing.Point(283, 256);
+            this.textBoxB.Location = new System.Drawing.Point(288, 295);
             this.textBoxB.Name = "textBoxB";
             this.textBoxB.Size = new System.Drawing.Size(58, 22);
             this.textBoxB.TabIndex = 49;
@@ -222,7 +211,7 @@
             // 
             // textBoxR
             // 
-            this.textBoxR.Location = new System.Drawing.Point(80, 256);
+            this.textBoxR.Location = new System.Drawing.Point(85, 295);
             this.textBoxR.Name = "textBoxR";
             this.textBoxR.Size = new System.Drawing.Size(58, 22);
             this.textBoxR.TabIndex = 48;
@@ -299,36 +288,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(407, 334);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 25);
-            this.label3.TabIndex = 63;
-            this.label3.Text = "seconds";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(283, 334);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(91, 22);
-            this.textBox2.TabIndex = 62;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(42, 330);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(209, 25);
-            this.label4.TabIndex = 61;
-            this.label4.Text = "Dimmer transition time:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
             // UserControlDomeLights
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -374,8 +333,5 @@
         private System.Windows.Forms.Label dtimmer_unit;
         private System.Windows.Forms.TextBox dtransTime;
         private System.Windows.Forms.ToolTip toolTip5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label4;
     }
 }
