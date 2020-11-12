@@ -21,13 +21,18 @@ namespace DigiScriptor
         private Boolean RAsMinTxt_Valid = false;
         private Boolean RAsSecTxt_Valid = false;
 
+        private int DecD,DecMin,DecSec;
+        private int RAHr, RAMin, RASec;
+
+
+
+
+
 
         string sqlPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\")) + @"DigiDataBase.mdf;Integrated Security=True";
         SqlConnection connect;
         DataTable dt = new DataTable();
 
-
-     
 
         public UserControlStars()
         {
@@ -70,8 +75,6 @@ namespace DigiScriptor
 
 
 
-
-
         private void SubBtn_Click(object sender, EventArgs e)
         {
 
@@ -111,24 +114,20 @@ namespace DigiScriptor
             //if result is 'yes' then show submited
             if (results == DialogResult.Yes)
             {
+                String desription = String.Empty;
+
+                //create desrciption 
+                desription += "Right Ascention: " + RAHr + "h " + RAMin + "m " + RASec + "s\n"+
+                    "Description: " + DecD + "° " + DecMin + "\' " + DecSec + "\"";
 
                 //create star item
-                ShowItem Staritem = new ShowItem("Star Move", "this is a star move");
+                ShowItem Staritem = new ShowItem("Star Move", desription);
 
                 //add show item to list
                 HomeScreen.Current.AddItem(Staritem);
 
-
-
                 //update the show list after submit
                 HomeScreen.Current.UpdateList();
-
-
-                //for after submited is 'ok'
-                if (MessageBox.Show("Submitted") == DialogResult.OK)
-                {
-                    //do something after submitted message
-                }
 
             }
             else
@@ -136,8 +135,6 @@ namespace DigiScriptor
                 //what to do if no is selected
 
             }
-            
-
 
         }
 
@@ -160,6 +157,8 @@ namespace DigiScriptor
                         DecDTxt.ForeColor = Color.Black;
                         //data is valid
                         DecDTxt_Valid = true;
+                        DecD = value;
+
                     }
                     else
                     {
@@ -205,6 +204,7 @@ namespace DigiScriptor
                         //if correct keep text black
                         DecMinTxt.ForeColor = Color.Black;
                         DecMinTxt_Valid = true;
+                        DecMin = value;
                     }
                     else
                     {
@@ -246,7 +246,7 @@ namespace DigiScriptor
                         //if correct keep text black
                         DecSecTxt.ForeColor = Color.Black;
                         DecSecTxt_Valid = true;
-
+                        DecSec = value;
 
                     }
                     else
@@ -290,6 +290,7 @@ namespace DigiScriptor
                         //if correct keep text black
                         RAsHrTxt.ForeColor = Color.Black;
                         RAsHrTxt_Valid = true;
+                        RAHr = value;
 
                     }
                     else
@@ -332,6 +333,7 @@ namespace DigiScriptor
                         //if correct keep text black
                         RAsMinTxt.ForeColor = Color.Black;
                         RAsMinTxt_Valid = true;
+                        RAMin = value;
 
                     }
                     else
@@ -374,6 +376,7 @@ namespace DigiScriptor
                         //if correct keep text black
                         RAsSecTxt.ForeColor = Color.Black;
                         RAsSecTxt_Valid = true;
+                        RASec = value;
 
                     }
                     else
@@ -414,7 +417,7 @@ namespace DigiScriptor
             //Tracks user selected row in datagridview
 
             //Queries database with selected info to delete row
-            cmd.CommandText = "SELECT * FROM StarFavorites WHERE Name LIKE @index";
+            cmd.CommandText = "SELECT * FROM StarFavorites WHERE Name = @index";
             cmd.Parameters.AddWithValue("@index", StarFavorites.SelectedItem);
             cmd.ExecuteNonQuery();
 
@@ -431,12 +434,7 @@ namespace DigiScriptor
 
                     RAsHrTxt.Text = dr["RAHr"].ToString();
 
-
-
-
                 }
-
-
 
             }
 

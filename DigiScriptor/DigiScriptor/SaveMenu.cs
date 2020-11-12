@@ -90,46 +90,18 @@ namespace DigiScriptor
             }
             else
             {
-                //check that file existe
-                if (File.Exists(filePath))
+                try
                 {
-
-                    try
-                    {
-                        //open file and write to it
-                        //fs = File.OpenWrite(filePath);
-                        System.IO.File.WriteAllText(filePath, HomeScreen.Current.showCodeBuilder());
-
-
-
-                        //close file after writing to it
-                        //fs.Close();
-                    }
-                    catch
-                    {
-
-                    }
-
-
-
-
+                    //create new file and then write code to it
+                    System.IO.File.WriteAllText(filePath, HomeScreen.Current.showCodeBuilder());
+                    
+                    //close save menu after file is created
+                    this.Close();
                 }
-                else
+                catch
                 {
-                    //if file doesnt exist
-                    try
-                    {
-                        //create new file and then write code to it
-                        System.IO.File.WriteAllText(filePath, HomeScreen.Current.showCodeBuilder());
-
-                        
-                    }
-                    catch
-                    {
-                        //couldnt create file
-                        MessageBox.Show("error creating file");
-                    }
-
+                    //couldnt create file
+                    MessageBox.Show("error creating file");
                 }
 
             }

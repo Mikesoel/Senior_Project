@@ -130,7 +130,7 @@
             this.CoordinateBox.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.CoordinateBox.Location = new System.Drawing.Point(274, 114);
             this.CoordinateBox.Name = "CoordinateBox";
-            this.CoordinateBox.Size = new System.Drawing.Size(400, 164);
+            this.CoordinateBox.Size = new System.Drawing.Size(400, 209);
             this.CoordinateBox.TabIndex = 32;
             this.CoordinateBox.TabStop = false;
             this.CoordinateBox.Text = "Coordinates";
