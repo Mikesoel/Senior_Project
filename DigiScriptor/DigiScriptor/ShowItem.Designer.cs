@@ -41,11 +41,9 @@
             this.titleBox.Controls.Add(this.btnDown);
             this.titleBox.Controls.Add(this.descriptionBox);
             this.titleBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.titleBox.Location = new System.Drawing.Point(0, 5);
-            this.titleBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.titleBox.Location = new System.Drawing.Point(0, 0);
             this.titleBox.Name = "titleBox";
-            this.titleBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.titleBox.Size = new System.Drawing.Size(412, 206);
+            this.titleBox.Size = new System.Drawing.Size(300, 140);
             this.titleBox.TabIndex = 0;
             this.titleBox.TabStop = false;
             this.titleBox.Text = "default title";
@@ -54,36 +52,35 @@
             // btnUp
             // 
             this.btnUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUp.Location = new System.Drawing.Point(329, 74);
-            this.btnUp.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.btnUp.Location = new System.Drawing.Point(256, 53);
+            this.btnUp.Margin = new System.Windows.Forms.Padding(1);
             this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(73, 34);
+            this.btnUp.Size = new System.Drawing.Size(40, 20);
             this.btnUp.TabIndex = 38;
-            this.btnUp.Text = "up";
+            this.btnUp.Text = "▲";
             this.btnUp.UseVisualStyleBackColor = true;
             this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
             // btnDown
             // 
             this.btnDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDown.Location = new System.Drawing.Point(329, 112);
-            this.btnDown.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.btnDown.Location = new System.Drawing.Point(256, 75);
+            this.btnDown.Margin = new System.Windows.Forms.Padding(1);
             this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(73, 34);
+            this.btnDown.Size = new System.Drawing.Size(40, 20);
             this.btnDown.TabIndex = 39;
-            this.btnDown.Text = "down";
+            this.btnDown.Text = "▼";
             this.btnDown.UseVisualStyleBackColor = true;
             this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
             // descriptionBox
             // 
             this.descriptionBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.descriptionBox.Location = new System.Drawing.Point(8, 38);
-            this.descriptionBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.descriptionBox.Location = new System.Drawing.Point(5, 25);
             this.descriptionBox.Name = "descriptionBox";
             this.descriptionBox.ReadOnly = true;
             this.descriptionBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.descriptionBox.Size = new System.Drawing.Size(314, 158);
+            this.descriptionBox.Size = new System.Drawing.Size(247, 104);
             this.descriptionBox.TabIndex = 0;
             this.descriptionBox.TabStop = false;
             this.descriptionBox.Text = "";
@@ -91,12 +88,11 @@
             // 
             // ShowItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.titleBox);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ShowItem";
-            this.Size = new System.Drawing.Size(412, 216);
+            this.Size = new System.Drawing.Size(300, 140);
             this.titleBox.ResumeLayout(false);
             this.ResumeLayout(false);
 

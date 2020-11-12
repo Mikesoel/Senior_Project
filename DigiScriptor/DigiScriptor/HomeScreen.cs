@@ -108,10 +108,7 @@ namespace DigiScriptor
             return theList;
         }
 
-        public List<ShowItem> GetList()
-        {
-            return theList;
-        }
+     
 
 
         public void Swap<ShowItem>(int index1, int index2)
@@ -196,7 +193,7 @@ namespace DigiScriptor
                 codeOut += "\n";
 
                 //comment the description
-                codeOut += @"/*";
+                codeOut += @"/* " + "\n";
                 if((theList[i].Title).Contains("Custom"))
                 {
                     codeOut += "user inputted code";
