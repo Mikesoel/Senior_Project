@@ -34,7 +34,7 @@ namespace DigiScriptor
             LoadComboBox();
         }
 
-        private void LoadComboBox()
+        public void LoadComboBox()
         {
             //Clear contents from Nebulae Favorites combo box
             nebulaeDropdown.Items.Clear();
@@ -147,7 +147,7 @@ namespace DigiScriptor
         private void editPopularNebulaeButton_Click(object sender, EventArgs e)
         {
             //Opens nebulae favorites add/edit popup window when clicked
-            EditPopularNebulaePopup editNebulaeData = new EditPopularNebulaePopup();
+            EditPopularNebulaePopup editNebulaeData = new EditPopularNebulaePopup(this);
             editNebulaeData.Show(); 
         }
 
@@ -163,8 +163,9 @@ namespace DigiScriptor
 
         private void nebulaeDropdown_Click(object sender, EventArgs e)
         {
+            //Now load combo box from editpopularearthpopup to let auto suggest work properly
             //Reload combo box every time it is clicked, assures data within is always accurate
-            LoadComboBox();
+            //LoadComboBox();
         }
     }
 }

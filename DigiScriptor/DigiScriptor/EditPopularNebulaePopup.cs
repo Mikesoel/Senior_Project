@@ -35,8 +35,9 @@ namespace DigiScriptor
         private Boolean sciName_Valid = false;
         private Boolean search_Valid = false;
         private Boolean editRow = false;
+        UserControlNebulae nebulaePanel;
 
-        public EditPopularNebulaePopup()
+        public EditPopularNebulaePopup(UserControlNebulae NebulaeP)
         {
             InitializeComponent();
 
@@ -45,6 +46,8 @@ namespace DigiScriptor
 
             //Load nebulae database table into data grid
             LoadTable();
+
+            nebulaePanel = NebulaeP;
         }
 
         private void btnNebulaeSave_Click(object sender, EventArgs e)
@@ -123,6 +126,9 @@ namespace DigiScriptor
 
                 //Reload Table
                 LoadTable();
+
+                //Reload combo box on nebulae user control
+                nebulaePanel.LoadComboBox();
 
                 //Set nebula ID to null to prevent unwanted editing or deleting
                 nebulaID = null;

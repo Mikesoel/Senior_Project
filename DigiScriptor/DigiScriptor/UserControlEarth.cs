@@ -22,6 +22,7 @@ namespace DigiScriptor
         double latitude, longitude = 0;
         private Boolean Latitude_Valid = false;
         private Boolean Longitude_Valid = false;
+        string landLatitude, landLongitude;
 
         public UserControlEarth()
         {
@@ -70,7 +71,10 @@ namespace DigiScriptor
 
         private void popularLocationsCombo_Click(object sender, EventArgs e)
         {
+            //Now load combo box from editpopularearthpopup to let auto suggest work properly
+            
             //Reload combo box every time it is clicked, assures data within is always accurate
+            
             //LoadComboBox();
         }
 
@@ -85,45 +89,74 @@ namespace DigiScriptor
 
         private void btnSubmitEarth_Click(object sender, EventArgs e)
         {
-            //confirmation message
-            String sub = "Submit?";
-            String con = "Confirm";
-            DialogResult results;
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-
-            //display message
-            results = MessageBox.Show(sub, con, buttons);
-            //if result is 'yes' then show submited
-            if (results == DialogResult.Yes)
+            String outputLbl = popularLocationsCombo.Text;
+            if (!(String.IsNullOrEmpty(outputLbl)))
             {
+                //confirmation message
+                String sub = "Submit?";
+                String con = "Confirm";
+                DialogResult results;
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
 
-                //create Earth item
-                ShowItem Earthitem = new ShowItem("Earth Move", "this is a earth move");
-
-                //add show item to list
-                HomeScreen.Current.AddItem(Earthitem);
-
-
-
-                //update the show list after submit
-                HomeScreen.Current.UpdateList();
-
-
-                //for after submited is 'ok'
-                if (MessageBox.Show("Submitted") == DialogResult.OK)
+                //display messgae
+                results = MessageBox.Show(sub, con, buttons);
+                //if result is 'yes' then show submited
+                if (results == DialogResult.Yes)
                 {
-                    //do something after submitted message
+                    Boolean isNavigationOn = HomeScreen.Current.GetIsNavOn();
+
+                    //if navigation has not been turned on yet, turn it on to
+                    //flyTo galaxy
+                    if (!isNavigationOn)
+                    {
+                        ShowItem naviItem = new ShowItem("Navigation On", "turn navigation on for flyTo commands", "navigation on;");
+                        HomeScreen.Current.AddItem(naviItem);
+                    }
+
+                    getCoordinates();
+                    String cartDescription = "move to " + popularLocationsCombo.Text.Trim();
+                    String cartCode = "navigation landLatitude " + landLatitude + "\n" +
+                                      "navigation landLongitude " + landLongitude + "\n ";
+
+                    //create Earth item
+                    ShowItem earthItem = new ShowItem("Earth Move", cartDescription, cartCode);
+
+                    //add show item to list
+                    HomeScreen.Current.AddItem(earthItem);
+
+
+                    //update the show list after submit
+                    HomeScreen.Current.UpdateList();
                 }
-
             }
-            else
+        }
+
+        private void getCoordinates()
+        {
+            connect.Open();
+
+            //Bind cmd to SQL commands
+            SqlCommand cmd = connect.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+
+            //SQL command to select data from DB that coorolates to drop selection in drop down box
+            cmd.CommandText = "select * from EarthScreenFavorites where Name = @Name";
+            cmd.Parameters.AddWithValue("@Name", popularLocationsCombo.Text.Trim());
+            cmd.ExecuteNonQuery();
+
+            //Make a datareader that reads through the row
+            SqlDataReader reader = null;
+            reader = cmd.ExecuteReader();
+
+            //While row still has info, add coordinates into string variables for script
+            while (reader.Read())
             {
-                //what to do if no is selected
-
+                landLatitude = reader["Latitude"].ToString();
+                landLongitude = reader["Longitude"].ToString();
             }
 
-
-
+            //Close Connection
+            connect.Close();
         }
 
         private void panelEarth_Paint(object sender, PaintEventArgs e)
