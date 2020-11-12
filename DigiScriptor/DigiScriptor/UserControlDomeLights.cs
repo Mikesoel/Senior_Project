@@ -16,6 +16,7 @@ namespace DigiScriptor
         private Boolean r_valid = false;
         private Boolean g_valid = false;
         private Boolean b_valid = false;
+        private Boolean dtt_valid = false;
         private int r;
         private int g;
         private int b;
@@ -68,11 +69,7 @@ namespace DigiScriptor
                     HomeScreen.Current.UpdateList();
 
 
-                    //for after submited is 'ok'
-                    if (MessageBox.Show("submitted") == DialogResult.OK)
-                    {
-                        //do something after submitted message
-                    }
+                   
 
                 }
             }
@@ -97,6 +94,10 @@ namespace DigiScriptor
         private void colorEnter_MouseHover(object sender, EventArgs e)
         {
             toolTip4.Show("Pressing enter creates a custom color displayed in the box", textBoxR);
+        }
+        private void dtransTime_MouseHover(object sender, EventArgs e)
+        {
+            toolTip5.Show("Duration for lights to reach level of dimness", textBoxR);
         }
 
         private void textBoxR_TextChanged(object sender, EventArgs e)
@@ -247,5 +248,47 @@ namespace DigiScriptor
             }
             
         }
+
+        
+
+        private void dtransTime_TextChanged(object sender, EventArgs e)
+        {
+
+            if (dtransTime.Text != "")
+            {
+                int value;
+                //
+                //if something is in box try to convert to int
+                try
+                {
+                    value = Convert.ToInt32(dtransTime.Text);
+                    //validate data is within correct range
+                    if (value >= 0 && value <= 9999)
+                    {
+                        //if correct keep text black
+                        dtransTime.ForeColor = Color.Black;
+                        //data is valid
+                        dtt_valid = true;
+
+                                            }
+                    else
+                    {
+                        //if invalid value then change to red text
+                        dtransTime.ForeColor = Color.Red;
+                        //data is invalid
+                        dtt_valid = false;
+                    }
+                }
+                catch
+                {
+                    //if not a number then change text to red
+                    dtransTime.ForeColor = Color.Red;
+                    //data is invalid
+                    dtt_valid = false;
+                }
+
+            }
+        }
+
     }
 }
