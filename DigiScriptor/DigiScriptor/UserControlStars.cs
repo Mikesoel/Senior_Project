@@ -114,14 +114,14 @@ namespace DigiScriptor
             //if result is 'yes' then show submited
             if (results == DialogResult.Yes)
             {
-                String desription = String.Empty;
+                String description = String.Empty;
 
                 //create desrciption 
-                desription += "Right Ascention: " + RAHr + "h " + RAMin + "m " + RASec + "s\n"+
-                    "Description: " + DecD + "° " + DecMin + "\' " + DecSec + "\"";
+                description += "Right Ascention: " + RAHr + "h " + RAMin + "m " + RASec + "s\n"+
+                    "Declination: " + DecD + "° " + DecMin + "\' " + DecSec + "\"";
 
                 //create star item
-                ShowItem Staritem = new ShowItem("Star Move", desription);
+                ShowItem Staritem = new ShowItem("Star Move", description, codeMaker());
 
                 //add show item to list
                 HomeScreen.Current.AddItem(Staritem);
@@ -455,5 +455,22 @@ namespace DigiScriptor
             EditPopularStarsPopup editData = new EditPopularStarsPopup(this);
             editData.Show();
         }
+
+
+        private String codeMaker()
+        {
+            String code = String.Empty;
+
+
+
+
+
+
+            return code;
+        }
+
+
+
+
     }
 }
