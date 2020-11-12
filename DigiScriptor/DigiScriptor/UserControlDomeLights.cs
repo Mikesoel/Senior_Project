@@ -28,12 +28,11 @@ namespace DigiScriptor
         {
             colorDialog1.ShowDialog();
             textBox1.BackColor = colorDialog1.Color;
-            textBoxR.Text = "" + ((colorDialog1.Color.R)/255)*100;
-            textBoxG.Text = "" + ((colorDialog1.Color.G)/255)*100;
-            textBoxB.Text = "" + ((colorDialog1.Color.B)/255)*100;
-            //converts the rgb to a hex color
-            String hex_color = String.Format("#{0:X2}{1:X2}{2:X2}", colorDialog1.Color.R, colorDialog1.Color.G, colorDialog1.Color.B);
-            //hex.Text = hex_color;
+            //decimals rounded to whole numbers
+            textBoxR.Text = "" + Decimal.Round((decimal)(((colorDialog1.Color.R) /255.0)*100));
+            textBoxG.Text = "" + Decimal.Round((decimal)((colorDialog1.Color.G)/255.00)*100);
+            textBoxB.Text = "" + Decimal.Round((decimal)((colorDialog1.Color.B) / 255.00) * 100);
+           
            
 
 
@@ -81,18 +80,18 @@ namespace DigiScriptor
         //Mouse hover gives direction to the user on inputs of the manual color entry
         private void textBoxR_MouseHover(object sender, EventArgs e)
         {
-            toolTip1.Show("Enter a number between 0 and 255", textBoxR);
+            toolTip1.Show("Enter a number between 0 and 100", textBoxR);
         }
 
         private void textBoxG_MouseHover(object sender, EventArgs e)
         {
-            toolTip2.Show("Enter a number between 0 and 255", textBoxR);
+            toolTip2.Show("Enter a number between 0 and 100", textBoxR);
 
         }
 
         private void textBoxB_MouseHover(object sender, EventArgs e)
         {
-            toolTip3.Show("Enter a number between 0 and 255", textBoxR);
+            toolTip3.Show("Enter a number between 0 and 100", textBoxR);
 
         }
         private void colorEnter_MouseHover(object sender, EventArgs e)
@@ -111,14 +110,14 @@ namespace DigiScriptor
                 {
                     value = Convert.ToInt32(textBoxR.Text);
                     //validate data is within correct range
-                    if (value >= 0 && value <= 255)
+                    if (value >= 0 && value <= 100)
                     {
                         //if correct keep text black
                         textBoxR.ForeColor = Color.Black;
                         //data is valid
                         r_valid = true;
 
-                        r = value;
+                        r = (int)((((value)/100.0)*255));
                     }
                     else
                     {
@@ -150,13 +149,13 @@ namespace DigiScriptor
                 {
                     value = Convert.ToInt32(textBoxG.Text);
                     //validate data is within correct range
-                    if (value >= 0 && value <= 255)
+                    if (value >= 0 && value <= 100)
                     {
                         //if correct keep text black
                         textBoxG.ForeColor = Color.Black;
                         //data is valid
                         g_valid = true;
-                        g = value;
+                        g = (int)((((value) / 100.0) * 255));
 
                     }
                     else
@@ -189,13 +188,13 @@ namespace DigiScriptor
                 {
                     value = Convert.ToInt32(textBoxB.Text);
                     //validate data is within correct range
-                    if (value >= 0 && value <= 255)
+                    if (value >= 0 && value <= 100)
                     {
                         //if correct keep text black
                         textBoxB.ForeColor = Color.Black;
                         //data is valid
                         b_valid = true;
-                        b = value;
+                        b = (int)((((value) / 100.0) * 255));
 
                     }
                     else
