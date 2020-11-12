@@ -33,8 +33,7 @@ namespace DigiScriptor
         }
 
 
-
-        public ShowItem(String Title,String Description, String Code)
+        public ShowItem(String Title, String Description, String Code)
         {
             InitializeComponent();
             //set tittle and text 
@@ -67,7 +66,7 @@ namespace DigiScriptor
         }
 
 
-        public String Decription
+        public String Description
         {
             get { return description; }
             set { description = value; descriptionBox.Text = value; }
@@ -80,8 +79,6 @@ namespace DigiScriptor
             set { code = value; }
 
         }
-
-
 
         #endregion
 

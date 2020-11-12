@@ -19,7 +19,11 @@ namespace DigiScriptor
         string sqlPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\")) + @"DigiDataBase.mdf;Integrated Security=True";
         SqlConnection connect;
 
-        private string name = string.Empty;
+        //Variables for nebula name, cellName (name of selected row in datagrid) declination degree/min/max and right ascension hour/minutes/seconds
+        private string commonName = string.Empty;
+        private string sciName = string.Empty;
+        private string search = string.Empty;
+        int RAHr, RAMin, RASec, DDeg, DMin, DSec = 0;
         private string cellName = string.Empty;
         private Boolean DecDTxt_Valid = false;
         private Boolean DecMinTxt_Valid = false;
@@ -27,6 +31,8 @@ namespace DigiScriptor
         private Boolean RAsHrTxt_Valid = false;
         private Boolean RAsMinTxt_Valid = false;
         private Boolean RAsSecTxt_Valid = false;
+        private Boolean sciName_Valid = false;
+        private Boolean search_Valid = false;
 
         public EditPopularNebulaePopup()
         {
@@ -45,7 +51,7 @@ namespace DigiScriptor
             if (RAsHrTxt_Valid == false || RAsMinTxt_Valid == false || RAsSecTxt_Valid == false)
             {
                 //reort error in Right ascention
-                if (MessageBox.Show("Right Ascention is not correct. Please validate data.") ==
+                if (MessageBox.Show("Right Ascension is not correct. Please validate data.") ==
                     DialogResult.OK)
                 {
                     RAsHrTxt.Select();
@@ -69,15 +75,35 @@ namespace DigiScriptor
             // If all values valid, add to database
             else
             {
+                // Open DB connection
                 connect.Open();
+                
+                //Bind cmd to SQL commands
                 SqlCommand cmd = connect.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into NebulaeFavorites (Name, Latitude, Longitude) VALUES (@Name, @Latitude, @Longitude)";
-                cmd.Parameters.AddWithValue("@Name", name);
-                //cmd.Parameters.AddWithValue("@Latitude", latitude);
-                //cmd.Parameters.AddWithValue("@Longitude", longitude);
+
+                //SQL command to be entered into DB with Scientific Name
+                if (sciName_Valid == true)
+                    cmd.CommandText = "insert into NebulaeFavorites (CommonName, ScientificName, RAHr, RAMin, RASec, DDeg, DMin, DSec) VALUES (@commonName, @sciName, @RAHr, @RAMin, @RASec, @DDeg, @DMin, @DSec)";
+                
+                //SQL command to be entered into DB without scientific name
+                else
+                    cmd.CommandText = "insert into NebulaeFavorites (CommonName, RAHr, RAMin, RASec, DDeg, DMin, DSec) VALUES (@commonName,  @RAHr, @RAMin, @RASec, @DDeg, @DMin, @DSec)";
+
+                //Bind variables to SQL command names
+                cmd.Parameters.AddWithValue("@commonName", commonName);
+                cmd.Parameters.AddWithValue("@sciName", sciName);
+                cmd.Parameters.AddWithValue("@RAHr", RAHr);
+                cmd.Parameters.AddWithValue("@RAMin", RAMin);
+                cmd.Parameters.AddWithValue("@RASec", RASec);
+                cmd.Parameters.AddWithValue("@DDeg", DDeg);
+                cmd.Parameters.AddWithValue("@DMin", DMin);
+                cmd.Parameters.AddWithValue("@DSec", DSec);
                 cmd.ExecuteNonQuery();
+                
+                //Close DB connection and reload datagrid
                 connect.Close();
+                MessageBox.Show("Submitted " + commonName + " into database");
                 LoadTable();
             }
         }
@@ -86,13 +112,33 @@ namespace DigiScriptor
         private void LoadTable()
 
         {
+            //Open DB connection
             connect.Open();
+
+            //Bind cmd to SQL commands
             SqlCommand cmd = connect.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Name, Latitude, Longitude from NebulaeFavorites";
-            cmd.ExecuteNonQuery();
 
-            //opens connection for selected data from table
+            //SQL command to be entered into DB if search is false
+            if (search_Valid == false)
+            {
+                cmd.CommandText = "select CommonName, ScientificName, RAHr, RAMin, RASec, DDEG, Dmin, Dsec " +
+                                  "FROM NebulaeFavorites";
+                cmd.ExecuteNonQuery();
+            }
+
+            //SQL command to be entered into DB if search is true
+            else
+            {
+                cmd.CommandText = "select CommonName, ScientificName, RAHr, RAMin, RASec, DDEG, Dmin, Dsec " +
+                                  "FROM NebulaeFavorites" +
+                                  "WHERE CommonName LIKE '*" + "@searchValue" + "*'";
+                cmd.Parameters.AddWithValue("@searchValue", search);
+                cmd.ExecuteNonQuery();
+            }
+
+
+            //Bind DB into datagrid view
             try
             {
                 SqlDataAdapter sda = new SqlDataAdapter();
@@ -115,7 +161,7 @@ namespace DigiScriptor
 
         private void txtBoxName_TextChanged(object sender, EventArgs e)
         {
-            name = txtBoxName.Text;
+            commonName = txtBoxName.Text;
         }
 
 
@@ -134,11 +180,12 @@ namespace DigiScriptor
                 cellName = nebulaeDataGrid.SelectedCells[0].Value.ToString();
 
                 //Queries database with selected info to delete row
-                cmd.CommandText = "DELETE FROM NebulaeFavorites WHERE Name = @index";
+                cmd.CommandText = "DELETE FROM NebulaeFavorites WHERE CommonName = @index";
                 cmd.Parameters.AddWithValue("@index", cellName);
                 cmd.ExecuteNonQuery();
 
             }
+            //Close DB connection and reload datagrid view
             connect.Close();
             LoadTable();
         }
@@ -160,6 +207,7 @@ namespace DigiScriptor
                         //if correct keep text black
                         RAsHrTxt.ForeColor = Color.Black;
                         RAsHrTxt_Valid = true;
+                        RAHr = value;
 
                     }
                     else
@@ -201,6 +249,7 @@ namespace DigiScriptor
                         //if correct keep text black
                         RAsMinTxt.ForeColor = Color.Black;
                         RAsMinTxt_Valid = true;
+                        RAMin = value;
 
                     }
                     else
@@ -225,6 +274,40 @@ namespace DigiScriptor
             }
         }
 
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            //When clear button is clicked, clear all contents from text boxes
+
+            txtBoxName.Clear();
+            txtBoxSciName.Clear();
+            RAsHrTxt.Clear();
+            RAsMinTxt.Clear();
+            RAsSecTxt.Clear();
+            DecDTxt.Clear();
+            DecMinTxt.Clear();
+            DecSecTxt.Clear();
+        }
+
+        private void txtBoxSciName_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBoxSciName.Text != "")
+            {
+                sciName = txtBoxName.Text;
+                sciName_Valid = true;
+            }
+        }
+
+        private void searchTxt_TextChanged(object sender, EventArgs e)
+        {
+            if(searchTxt.Text != "")
+            {
+                search = searchTxt.Text;
+                search_Valid = true;
+                LoadTable();
+            }
+             
+        }
+
         private void RAsSecTxt_TextChanged(object sender, EventArgs e)
         {
             //check if text is empty
@@ -242,6 +325,7 @@ namespace DigiScriptor
                         //if correct keep text black
                         RAsSecTxt.ForeColor = Color.Black;
                         RAsSecTxt_Valid = true;
+                        RASec = value;
 
                     }
                     else
@@ -284,6 +368,7 @@ namespace DigiScriptor
                         DecDTxt.ForeColor = Color.Black;
                         //data is valid
                         DecDTxt_Valid = true;
+                        DDeg = value;
                     }
                     else
                     {
@@ -326,6 +411,7 @@ namespace DigiScriptor
                         //if correct keep text black
                         DecMinTxt.ForeColor = Color.Black;
                         DecMinTxt_Valid = true;
+                        DMin = value;
                     }
                     else
                     {
@@ -366,7 +452,7 @@ namespace DigiScriptor
                         //if correct keep text black
                         DecSecTxt.ForeColor = Color.Black;
                         DecSecTxt_Valid = true;
-
+                        DSec = value;
 
                     }
                     else
