@@ -225,9 +225,27 @@ namespace DigiScriptor
 
         private void dimmer_Scroll(object sender, EventArgs e)
         {
+            int r_value = Convert.ToInt32(textBoxR.Text);
+            int g_value = Convert.ToInt32(textBoxG.Text);
+            int b_value = Convert.ToInt32(textBoxB.Text);
             dimmerValue.Text = "" + dimmer.Value;
+            if(dimmer.Value==0)
+            {
+                //textBox1.BackColor = Color.FromArgb(r_value,g_value,b_value);
+                textBox1.BackColor = colorDialog1.Color;
+            }
+           else if(textBoxR.Text!=null & r_valid & textBoxG.Text !=null & g_valid & textBoxB.Text!=null & b_valid)
+            {
+                
+                r = r_value - (dimmer.Value)*(int)((r_value) /10.0) ;
+                g = g_value - (dimmer.Value)*(int)((g_value) /10.0 );
+                b = b_value - (dimmer.Value)*(int)((b_value) /10.0) ;
+                
+                Color myRgbColor = new Color();
+                myRgbColor= Color.FromArgb(r,g,b);
+                textBox1.BackColor = myRgbColor;
+            }
             
-
         }
     }
 }

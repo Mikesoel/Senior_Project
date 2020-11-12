@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelDomeLights = new System.Windows.Forms.Panel();
+            this.dimmerValue = new System.Windows.Forms.TextBox();
+            this.colorEnter = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblB = new System.Windows.Forms.Label();
             this.lblG = new System.Windows.Forms.Label();
@@ -48,9 +50,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
-            this.colorEnter = new System.Windows.Forms.Button();
             this.toolTip4 = new System.Windows.Forms.ToolTip(this.components);
-            this.dimmerValue = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panelDomeLights.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dimmer)).BeginInit();
@@ -79,6 +79,24 @@
             this.panelDomeLights.Name = "panelDomeLights";
             this.panelDomeLights.Size = new System.Drawing.Size(944, 798);
             this.panelDomeLights.TabIndex = 31;
+            // 
+            // dimmerValue
+            // 
+            this.dimmerValue.Location = new System.Drawing.Point(375, 327);
+            this.dimmerValue.Name = "dimmerValue";
+            this.dimmerValue.Size = new System.Drawing.Size(43, 22);
+            this.dimmerValue.TabIndex = 57;
+            // 
+            // colorEnter
+            // 
+            this.colorEnter.Location = new System.Drawing.Point(361, 257);
+            this.colorEnter.Name = "colorEnter";
+            this.colorEnter.Size = new System.Drawing.Size(75, 23);
+            this.colorEnter.TabIndex = 56;
+            this.colorEnter.Text = "Enter";
+            this.colorEnter.UseVisualStyleBackColor = true;
+            this.colorEnter.Click += new System.EventHandler(this.colorEnter_Click);
+            this.colorEnter.MouseHover += new System.EventHandler(this.colorEnter_MouseHover);
             // 
             // label1
             // 
@@ -196,6 +214,7 @@
             // 
             // dimmer
             // 
+            this.dimmer.LargeChange = 1;
             this.dimmer.Location = new System.Drawing.Point(130, 327);
             this.dimmer.Name = "dimmer";
             this.dimmer.Size = new System.Drawing.Size(239, 56);
@@ -224,24 +243,6 @@
             this.lblDomeLights.Size = new System.Drawing.Size(244, 55);
             this.lblDomeLights.TabIndex = 3;
             this.lblDomeLights.Text = "Dome Lights";
-            // 
-            // colorEnter
-            // 
-            this.colorEnter.Location = new System.Drawing.Point(361, 257);
-            this.colorEnter.Name = "colorEnter";
-            this.colorEnter.Size = new System.Drawing.Size(75, 23);
-            this.colorEnter.TabIndex = 56;
-            this.colorEnter.Text = "Enter";
-            this.colorEnter.UseVisualStyleBackColor = true;
-            this.colorEnter.Click += new System.EventHandler(this.colorEnter_Click);
-            this.colorEnter.MouseHover += new System.EventHandler(this.colorEnter_MouseHover);
-            // 
-            // dimmerValue
-            // 
-            this.dimmerValue.Location = new System.Drawing.Point(375, 327);
-            this.dimmerValue.Name = "dimmerValue";
-            this.dimmerValue.Size = new System.Drawing.Size(43, 22);
-            this.dimmerValue.TabIndex = 57;
             // 
             // contextMenuStrip1
             // 
