@@ -50,6 +50,9 @@
             this.StarFavorites = new System.Windows.Forms.ComboBox();
             this.btnStarsBack = new System.Windows.Forms.Button();
             this.labelStars = new System.Windows.Forms.Label();
+            this.DurationLbl = new System.Windows.Forms.Label();
+            this.DurationTxt = new System.Windows.Forms.TextBox();
+            this.secondsLbl = new System.Windows.Forms.Label();
             this.panelStars.SuspendLayout();
             this.CoordinateBox.SuspendLayout();
             this.SuspendLayout();
@@ -112,6 +115,9 @@
             // 
             // CoordinateBox
             // 
+            this.CoordinateBox.Controls.Add(this.secondsLbl);
+            this.CoordinateBox.Controls.Add(this.DurationTxt);
+            this.CoordinateBox.Controls.Add(this.DurationLbl);
             this.CoordinateBox.Controls.Add(this.DecSecLbl);
             this.CoordinateBox.Controls.Add(this.DecSecTxt);
             this.CoordinateBox.Controls.Add(this.DecMinLbl);
@@ -130,7 +136,7 @@
             this.CoordinateBox.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.CoordinateBox.Location = new System.Drawing.Point(274, 114);
             this.CoordinateBox.Name = "CoordinateBox";
-            this.CoordinateBox.Size = new System.Drawing.Size(400, 164);
+            this.CoordinateBox.Size = new System.Drawing.Size(400, 221);
             this.CoordinateBox.TabIndex = 32;
             this.CoordinateBox.TabStop = false;
             this.CoordinateBox.Text = "Coordinates";
@@ -306,6 +312,35 @@
             this.labelStars.TabIndex = 3;
             this.labelStars.Text = "Stars";
             // 
+            // DurationLbl
+            // 
+            this.DurationLbl.AutoSize = true;
+            this.DurationLbl.Location = new System.Drawing.Point(11, 152);
+            this.DurationLbl.Name = "DurationLbl";
+            this.DurationLbl.Size = new System.Drawing.Size(80, 24);
+            this.DurationLbl.TabIndex = 16;
+            this.DurationLbl.Text = "Duration";
+            this.DurationLbl.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // DurationTxt
+            // 
+            this.DurationTxt.Location = new System.Drawing.Point(7, 180);
+            this.DurationTxt.Name = "DurationTxt";
+            this.DurationTxt.Size = new System.Drawing.Size(99, 29);
+            this.DurationTxt.TabIndex = 17;
+            this.DurationTxt.Text = "5";
+            this.DurationTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // secondsLbl
+            // 
+            this.secondsLbl.AutoSize = true;
+            this.secondsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.secondsLbl.Location = new System.Drawing.Point(112, 189);
+            this.secondsLbl.Name = "secondsLbl";
+            this.secondsLbl.Size = new System.Drawing.Size(37, 20);
+            this.secondsLbl.TabIndex = 18;
+            this.secondsLbl.Text = "Sec";
+            // 
             // UserControlStars
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,5 +382,8 @@
         private System.Windows.Forms.TextBox DecMinTxt;
         private System.Windows.Forms.Label FavLbl;
         private System.Windows.Forms.Button EditFavorite;
+        private System.Windows.Forms.Label DurationLbl;
+        private System.Windows.Forms.Label secondsLbl;
+        private System.Windows.Forms.TextBox DurationTxt;
     }
 }

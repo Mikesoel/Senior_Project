@@ -30,6 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelDomeLights = new System.Windows.Forms.Panel();
+            this.dtimmer_unit = new System.Windows.Forms.Label();
+            this.dtransTime = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dimmerValue = new System.Windows.Forms.TextBox();
+            this.colorEnter = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblB = new System.Windows.Forms.Label();
             this.lblG = new System.Windows.Forms.Label();
@@ -48,16 +53,18 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
-            this.colorEnter = new System.Windows.Forms.Button();
             this.toolTip4 = new System.Windows.Forms.ToolTip(this.components);
-            this.dimmerValue = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolTip5 = new System.Windows.Forms.ToolTip(this.components);
             this.panelDomeLights.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dimmer)).BeginInit();
             this.SuspendLayout();
             // 
             // panelDomeLights
             // 
+            this.panelDomeLights.Controls.Add(this.dtimmer_unit);
+            this.panelDomeLights.Controls.Add(this.dtransTime);
+            this.panelDomeLights.Controls.Add(this.label2);
             this.panelDomeLights.Controls.Add(this.dimmerValue);
             this.panelDomeLights.Controls.Add(this.colorEnter);
             this.panelDomeLights.Controls.Add(this.label1);
@@ -80,11 +87,60 @@
             this.panelDomeLights.Size = new System.Drawing.Size(944, 798);
             this.panelDomeLights.TabIndex = 31;
             // 
+            // dtimmer_unit
+            // 
+            this.dtimmer_unit.AutoSize = true;
+            this.dtimmer_unit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtimmer_unit.Location = new System.Drawing.Point(379, 461);
+            this.dtimmer_unit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.dtimmer_unit.Name = "dtimmer_unit";
+            this.dtimmer_unit.Size = new System.Drawing.Size(86, 25);
+            this.dtimmer_unit.TabIndex = 60;
+            this.dtimmer_unit.Text = "seconds";
+            // 
+            // dtransTime
+            // 
+            this.dtransTime.Location = new System.Drawing.Point(255, 461);
+            this.dtransTime.Name = "dtransTime";
+            this.dtransTime.Size = new System.Drawing.Size(91, 22);
+            this.dtransTime.TabIndex = 59;
+            this.dtransTime.TextChanged += new System.EventHandler(this.dtransTime_TextChanged);
+            this.dtransTime.MouseHover += new System.EventHandler(this.dtransTime_MouseHover);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(25, 458);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(209, 25);
+            this.label2.TabIndex = 58;
+            this.label2.Text = "Dimmer transition time:";
+            // 
+            // dimmerValue
+            // 
+            this.dimmerValue.Location = new System.Drawing.Point(412, 400);
+            this.dimmerValue.Name = "dimmerValue";
+            this.dimmerValue.Size = new System.Drawing.Size(43, 22);
+            this.dimmerValue.TabIndex = 57;
+            // 
+            // colorEnter
+            // 
+            this.colorEnter.Location = new System.Drawing.Point(366, 296);
+            this.colorEnter.Name = "colorEnter";
+            this.colorEnter.Size = new System.Drawing.Size(75, 23);
+            this.colorEnter.TabIndex = 56;
+            this.colorEnter.Text = "Enter";
+            this.colorEnter.UseVisualStyleBackColor = true;
+            this.colorEnter.Click += new System.EventHandler(this.colorEnter_Click);
+            this.colorEnter.MouseHover += new System.EventHandler(this.colorEnter_MouseHover);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 327);
+            this.label1.Location = new System.Drawing.Point(42, 396);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 25);
@@ -95,7 +151,7 @@
             // 
             this.lblB.AutoSize = true;
             this.lblB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblB.Location = new System.Drawing.Point(250, 253);
+            this.lblB.Location = new System.Drawing.Point(255, 292);
             this.lblB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblB.Name = "lblB";
             this.lblB.Size = new System.Drawing.Size(31, 25);
@@ -106,7 +162,7 @@
             // 
             this.lblG.AutoSize = true;
             this.lblG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblG.Location = new System.Drawing.Point(145, 253);
+            this.lblG.Location = new System.Drawing.Point(150, 292);
             this.lblG.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblG.Name = "lblG";
             this.lblG.Size = new System.Drawing.Size(33, 25);
@@ -117,7 +173,7 @@
             // 
             this.lblR.AutoSize = true;
             this.lblR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblR.Location = new System.Drawing.Point(42, 253);
+            this.lblR.Location = new System.Drawing.Point(47, 292);
             this.lblR.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblR.Name = "lblR";
             this.lblR.Size = new System.Drawing.Size(31, 25);
@@ -128,7 +184,7 @@
             // 
             this.lblManualColor.AutoSize = true;
             this.lblManualColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblManualColor.Location = new System.Drawing.Point(57, 228);
+            this.lblManualColor.Location = new System.Drawing.Point(62, 267);
             this.lblManualColor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblManualColor.Name = "lblManualColor";
             this.lblManualColor.Size = new System.Drawing.Size(185, 25);
@@ -137,7 +193,7 @@
             // 
             // textBoxG
             // 
-            this.textBoxG.Location = new System.Drawing.Point(185, 257);
+            this.textBoxG.Location = new System.Drawing.Point(190, 296);
             this.textBoxG.Name = "textBoxG";
             this.textBoxG.Size = new System.Drawing.Size(58, 22);
             this.textBoxG.TabIndex = 50;
@@ -146,7 +202,7 @@
             // 
             // textBoxB
             // 
-            this.textBoxB.Location = new System.Drawing.Point(283, 256);
+            this.textBoxB.Location = new System.Drawing.Point(288, 295);
             this.textBoxB.Name = "textBoxB";
             this.textBoxB.Size = new System.Drawing.Size(58, 22);
             this.textBoxB.TabIndex = 49;
@@ -155,7 +211,7 @@
             // 
             // textBoxR
             // 
-            this.textBoxR.Location = new System.Drawing.Point(80, 256);
+            this.textBoxR.Location = new System.Drawing.Point(85, 295);
             this.textBoxR.Name = "textBoxR";
             this.textBoxR.Size = new System.Drawing.Size(58, 22);
             this.textBoxR.TabIndex = 48;
@@ -168,7 +224,7 @@
             this.btnSubmitPlanet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmitPlanet.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmitPlanet.ForeColor = System.Drawing.Color.SpringGreen;
-            this.btnSubmitPlanet.Location = new System.Drawing.Point(116, 441);
+            this.btnSubmitPlanet.Location = new System.Drawing.Point(140, 528);
             this.btnSubmitPlanet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSubmitPlanet.Name = "btnSubmitPlanet";
             this.btnSubmitPlanet.Size = new System.Drawing.Size(165, 60);
@@ -196,7 +252,8 @@
             // 
             // dimmer
             // 
-            this.dimmer.Location = new System.Drawing.Point(130, 327);
+            this.dimmer.LargeChange = 1;
+            this.dimmer.Location = new System.Drawing.Point(154, 387);
             this.dimmer.Name = "dimmer";
             this.dimmer.Size = new System.Drawing.Size(239, 56);
             this.dimmer.TabIndex = 29;
@@ -224,24 +281,6 @@
             this.lblDomeLights.Size = new System.Drawing.Size(244, 55);
             this.lblDomeLights.TabIndex = 3;
             this.lblDomeLights.Text = "Dome Lights";
-            // 
-            // colorEnter
-            // 
-            this.colorEnter.Location = new System.Drawing.Point(361, 257);
-            this.colorEnter.Name = "colorEnter";
-            this.colorEnter.Size = new System.Drawing.Size(75, 23);
-            this.colorEnter.TabIndex = 56;
-            this.colorEnter.Text = "Enter";
-            this.colorEnter.UseVisualStyleBackColor = true;
-            this.colorEnter.Click += new System.EventHandler(this.colorEnter_Click);
-            this.colorEnter.MouseHover += new System.EventHandler(this.colorEnter_MouseHover);
-            // 
-            // dimmerValue
-            // 
-            this.dimmerValue.Location = new System.Drawing.Point(375, 327);
-            this.dimmerValue.Name = "dimmerValue";
-            this.dimmerValue.Size = new System.Drawing.Size(43, 22);
-            this.dimmerValue.TabIndex = 57;
             // 
             // contextMenuStrip1
             // 
@@ -290,5 +329,9 @@
         private System.Windows.Forms.ToolTip toolTip4;
         private System.Windows.Forms.TextBox dimmerValue;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label dtimmer_unit;
+        private System.Windows.Forms.TextBox dtransTime;
+        private System.Windows.Forms.ToolTip toolTip5;
     }
 }

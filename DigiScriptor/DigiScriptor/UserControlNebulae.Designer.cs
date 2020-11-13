@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelNebulae = new System.Windows.Forms.Panel();
+            this.lblGalaxies = new System.Windows.Forms.Label();
             this.editPopularNebulaeButton = new System.Windows.Forms.Button();
             this.nebulaePanel = new System.Windows.Forms.Panel();
             this.comboNebVantagePoint = new System.Windows.Forms.ComboBox();
@@ -38,7 +39,6 @@
             this.lblNebulaeSelectionDropdown = new System.Windows.Forms.Label();
             this.btnSubmitNebulae = new System.Windows.Forms.Button();
             this.btnNebulaeBack = new System.Windows.Forms.Button();
-            this.lblGalaxies = new System.Windows.Forms.Label();
             this.panelNebulae.SuspendLayout();
             this.nebulaePanel.SuspendLayout();
             this.SuspendLayout();
@@ -54,11 +54,23 @@
             this.panelNebulae.Controls.Add(this.btnSubmitNebulae);
             this.panelNebulae.Controls.Add(this.btnNebulaeBack);
             this.panelNebulae.Location = new System.Drawing.Point(0, 0);
-            this.panelNebulae.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelNebulae.Margin = new System.Windows.Forms.Padding(2);
             this.panelNebulae.Name = "panelNebulae";
             this.panelNebulae.Size = new System.Drawing.Size(708, 648);
             this.panelNebulae.TabIndex = 27;
             this.panelNebulae.Paint += new System.Windows.Forms.PaintEventHandler(this.panelNebulae_Paint);
+            // 
+            // lblGalaxies
+            // 
+            this.lblGalaxies.AutoSize = true;
+            this.lblGalaxies.Font = new System.Drawing.Font("Bernard MT Condensed", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGalaxies.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lblGalaxies.Location = new System.Drawing.Point(18, 11);
+            this.lblGalaxies.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGalaxies.Name = "lblGalaxies";
+            this.lblGalaxies.Size = new System.Drawing.Size(120, 45);
+            this.lblGalaxies.TabIndex = 31;
+            this.lblGalaxies.Text = "Nebula";
             // 
             // editPopularNebulaeButton
             // 
@@ -113,6 +125,8 @@
             // 
             // nebulaeDropdown
             // 
+            this.nebulaeDropdown.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.nebulaeDropdown.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.nebulaeDropdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nebulaeDropdown.FormattingEnabled = true;
             this.nebulaeDropdown.Location = new System.Drawing.Point(182, 72);
@@ -140,7 +154,7 @@
             this.btnSubmitNebulae.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmitNebulae.ForeColor = System.Drawing.Color.SpringGreen;
             this.btnSubmitNebulae.Location = new System.Drawing.Point(552, 578);
-            this.btnSubmitNebulae.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSubmitNebulae.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmitNebulae.Name = "btnSubmitNebulae";
             this.btnSubmitNebulae.Size = new System.Drawing.Size(124, 49);
             this.btnSubmitNebulae.TabIndex = 23;
@@ -153,24 +167,12 @@
             this.btnNebulaeBack.BackColor = System.Drawing.Color.Gray;
             this.btnNebulaeBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNebulaeBack.Location = new System.Drawing.Point(22, 603);
-            this.btnNebulaeBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNebulaeBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnNebulaeBack.Name = "btnNebulaeBack";
             this.btnNebulaeBack.Size = new System.Drawing.Size(57, 25);
             this.btnNebulaeBack.TabIndex = 22;
             this.btnNebulaeBack.Text = "Back";
             this.btnNebulaeBack.UseVisualStyleBackColor = false;
-            // 
-            // lblGalaxies
-            // 
-            this.lblGalaxies.AutoSize = true;
-            this.lblGalaxies.Font = new System.Drawing.Font("Bernard MT Condensed", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGalaxies.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lblGalaxies.Location = new System.Drawing.Point(18, 11);
-            this.lblGalaxies.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblGalaxies.Name = "lblGalaxies";
-            this.lblGalaxies.Size = new System.Drawing.Size(120, 45);
-            this.lblGalaxies.TabIndex = 31;
-            this.lblGalaxies.Text = "Nebula";
             // 
             // UserControlNebulae
             // 
@@ -178,7 +180,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Controls.Add(this.panelNebulae);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserControlNebulae";
             this.Size = new System.Drawing.Size(708, 648);
             this.panelNebulae.ResumeLayout(false);

@@ -26,6 +26,12 @@ namespace DigiScriptor
         //to the show list
         private Boolean isNavigationOn = false;
 
+
+        //create flag if stars need to be on
+        private Boolean isStarOn = false;
+
+
+
         //create singular save menu
         public SaveMenu save;
 
@@ -100,14 +106,23 @@ namespace DigiScriptor
                 isNavigationOn = true;
             }
 
+            //checking to see if the item being added is to turn
+            //stars on
+            if((newItem.Title).Equals("Turn on Stars"))
+            {
+                isStarOn = true;
+            }
+
+
             UpdateList();
         }
-
 
         public List<ShowItem> GetList()
         {
             return theList;
         }
+
+     
 
 
         public void Swap<ShowItem>(int index1, int index2)
@@ -131,6 +146,13 @@ namespace DigiScriptor
         {
             //returns whether nagivation has been turned on yet
             return isNavigationOn;
+        }
+
+
+
+        public Boolean getIsStarsOn()
+        {
+            return isStarOn;
         }
 
 
@@ -192,7 +214,7 @@ namespace DigiScriptor
                 codeOut += "\n";
 
                 //comment the description
-                codeOut += @"/*";
+                codeOut += @"/* " + "\n";
                 if((theList[i].Title).Contains("Custom"))
                 {
                     codeOut += "user inputted code";
