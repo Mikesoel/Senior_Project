@@ -279,13 +279,21 @@ namespace DigiScriptor {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class NebulaeFavoritesDataTable : global::System.Data.TypedTableBase<NebulaeFavoritesRow> {
             
-            private global::System.Data.DataColumn columnNebulaeID;
+            private global::System.Data.DataColumn columnCommonName;
             
-            private global::System.Data.DataColumn columnName;
+            private global::System.Data.DataColumn columnScientificName;
             
-            private global::System.Data.DataColumn columnLatitude;
+            private global::System.Data.DataColumn columnRAHr;
             
-            private global::System.Data.DataColumn columnLongitude;
+            private global::System.Data.DataColumn columnRAMin;
+            
+            private global::System.Data.DataColumn columnRASec;
+            
+            private global::System.Data.DataColumn columnDMin;
+            
+            private global::System.Data.DataColumn columnDDeg;
+            
+            private global::System.Data.DataColumn columnDSec;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -322,33 +330,65 @@ namespace DigiScriptor {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NebulaeIDColumn {
+            public global::System.Data.DataColumn CommonNameColumn {
                 get {
-                    return this.columnNebulaeID;
+                    return this.columnCommonName;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NameColumn {
+            public global::System.Data.DataColumn ScientificNameColumn {
                 get {
-                    return this.columnName;
+                    return this.columnScientificName;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn LatitudeColumn {
+            public global::System.Data.DataColumn RAHrColumn {
                 get {
-                    return this.columnLatitude;
+                    return this.columnRAHr;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn LongitudeColumn {
+            public global::System.Data.DataColumn RAMinColumn {
                 get {
-                    return this.columnLongitude;
+                    return this.columnRAMin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn RASecColumn {
+                get {
+                    return this.columnRASec;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DMinColumn {
+                get {
+                    return this.columnDMin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DDegColumn {
+                get {
+                    return this.columnDDeg;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DSecColumn {
+                get {
+                    return this.columnDSec;
                 }
             }
             
@@ -389,23 +429,20 @@ namespace DigiScriptor {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public NebulaeFavoritesRow AddNebulaeFavoritesRow(string Name, int Latitude, int Longitude) {
+            public NebulaeFavoritesRow AddNebulaeFavoritesRow(string CommonName, string ScientificName, int RAHr, int RAMin, double RASec, int DMin, int DDeg, double DSec) {
                 NebulaeFavoritesRow rowNebulaeFavoritesRow = ((NebulaeFavoritesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
-                        Name,
-                        Latitude,
-                        Longitude};
+                        CommonName,
+                        ScientificName,
+                        RAHr,
+                        RAMin,
+                        RASec,
+                        DMin,
+                        DDeg,
+                        DSec};
                 rowNebulaeFavoritesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowNebulaeFavoritesRow);
                 return rowNebulaeFavoritesRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public NebulaeFavoritesRow FindByNebulaeID(int NebulaeID) {
-                return ((NebulaeFavoritesRow)(this.Rows.Find(new object[] {
-                            NebulaeID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -425,35 +462,44 @@ namespace DigiScriptor {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnNebulaeID = base.Columns["NebulaeID"];
-                this.columnName = base.Columns["Name"];
-                this.columnLatitude = base.Columns["Latitude"];
-                this.columnLongitude = base.Columns["Longitude"];
+                this.columnCommonName = base.Columns["CommonName"];
+                this.columnScientificName = base.Columns["ScientificName"];
+                this.columnRAHr = base.Columns["RAHr"];
+                this.columnRAMin = base.Columns["RAMin"];
+                this.columnRASec = base.Columns["RASec"];
+                this.columnDMin = base.Columns["DMin"];
+                this.columnDDeg = base.Columns["DDeg"];
+                this.columnDSec = base.Columns["DSec"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnNebulaeID = new global::System.Data.DataColumn("NebulaeID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNebulaeID);
-                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnName);
-                this.columnLatitude = new global::System.Data.DataColumn("Latitude", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLatitude);
-                this.columnLongitude = new global::System.Data.DataColumn("Longitude", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLongitude);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnNebulaeID}, true));
-                this.columnNebulaeID.AutoIncrement = true;
-                this.columnNebulaeID.AutoIncrementSeed = -1;
-                this.columnNebulaeID.AutoIncrementStep = -1;
-                this.columnNebulaeID.AllowDBNull = false;
-                this.columnNebulaeID.ReadOnly = true;
-                this.columnNebulaeID.Unique = true;
-                this.columnName.AllowDBNull = false;
-                this.columnName.MaxLength = 30;
-                this.columnLatitude.AllowDBNull = false;
-                this.columnLongitude.AllowDBNull = false;
+                this.columnCommonName = new global::System.Data.DataColumn("CommonName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCommonName);
+                this.columnScientificName = new global::System.Data.DataColumn("ScientificName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnScientificName);
+                this.columnRAHr = new global::System.Data.DataColumn("RAHr", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRAHr);
+                this.columnRAMin = new global::System.Data.DataColumn("RAMin", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRAMin);
+                this.columnRASec = new global::System.Data.DataColumn("RASec", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRASec);
+                this.columnDMin = new global::System.Data.DataColumn("DMin", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDMin);
+                this.columnDDeg = new global::System.Data.DataColumn("DDeg", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDDeg);
+                this.columnDSec = new global::System.Data.DataColumn("DSec", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDSec);
+                this.columnCommonName.AllowDBNull = false;
+                this.columnCommonName.MaxLength = 50;
+                this.columnScientificName.MaxLength = 50;
+                this.columnRAHr.AllowDBNull = false;
+                this.columnRAMin.AllowDBNull = false;
+                this.columnRASec.AllowDBNull = false;
+                this.columnDMin.AllowDBNull = false;
+                this.columnDDeg.AllowDBNull = false;
+                this.columnDSec.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -596,46 +642,107 @@ namespace DigiScriptor {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int NebulaeID {
+            public string CommonName {
                 get {
-                    return ((int)(this[this.tableNebulaeFavorites.NebulaeIDColumn]));
+                    return ((string)(this[this.tableNebulaeFavorites.CommonNameColumn]));
                 }
                 set {
-                    this[this.tableNebulaeFavorites.NebulaeIDColumn] = value;
+                    this[this.tableNebulaeFavorites.CommonNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Name {
+            public string ScientificName {
                 get {
-                    return ((string)(this[this.tableNebulaeFavorites.NameColumn]));
+                    try {
+                        return ((string)(this[this.tableNebulaeFavorites.ScientificNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ScientificName\' in table \'NebulaeFavorites\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableNebulaeFavorites.NameColumn] = value;
+                    this[this.tableNebulaeFavorites.ScientificNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Latitude {
+            public int RAHr {
                 get {
-                    return ((int)(this[this.tableNebulaeFavorites.LatitudeColumn]));
+                    return ((int)(this[this.tableNebulaeFavorites.RAHrColumn]));
                 }
                 set {
-                    this[this.tableNebulaeFavorites.LatitudeColumn] = value;
+                    this[this.tableNebulaeFavorites.RAHrColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Longitude {
+            public int RAMin {
                 get {
-                    return ((int)(this[this.tableNebulaeFavorites.LongitudeColumn]));
+                    return ((int)(this[this.tableNebulaeFavorites.RAMinColumn]));
                 }
                 set {
-                    this[this.tableNebulaeFavorites.LongitudeColumn] = value;
+                    this[this.tableNebulaeFavorites.RAMinColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double RASec {
+                get {
+                    return ((double)(this[this.tableNebulaeFavorites.RASecColumn]));
+                }
+                set {
+                    this[this.tableNebulaeFavorites.RASecColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int DMin {
+                get {
+                    return ((int)(this[this.tableNebulaeFavorites.DMinColumn]));
+                }
+                set {
+                    this[this.tableNebulaeFavorites.DMinColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int DDeg {
+                get {
+                    return ((int)(this[this.tableNebulaeFavorites.DDegColumn]));
+                }
+                set {
+                    this[this.tableNebulaeFavorites.DDegColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double DSec {
+                get {
+                    return ((double)(this[this.tableNebulaeFavorites.DSecColumn]));
+                }
+                set {
+                    this[this.tableNebulaeFavorites.DSecColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsScientificNameNull() {
+                return this.IsNull(this.tableNebulaeFavorites.ScientificNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetScientificNameNull() {
+                this[this.tableNebulaeFavorites.ScientificNameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -798,43 +905,29 @@ namespace DigiScriptor.DigiDataBaseDataSetTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "NebulaeFavorites";
-            tableMapping.ColumnMappings.Add("NebulaeID", "NebulaeID");
-            tableMapping.ColumnMappings.Add("Name", "Name");
-            tableMapping.ColumnMappings.Add("Latitude", "Latitude");
-            tableMapping.ColumnMappings.Add("Longitude", "Longitude");
+            tableMapping.ColumnMappings.Add("CommonName", "CommonName");
+            tableMapping.ColumnMappings.Add("ScientificName", "ScientificName");
+            tableMapping.ColumnMappings.Add("RAHr", "RAHr");
+            tableMapping.ColumnMappings.Add("RAMin", "RAMin");
+            tableMapping.ColumnMappings.Add("RASec", "RASec");
+            tableMapping.ColumnMappings.Add("DMin", "DMin");
+            tableMapping.ColumnMappings.Add("DDeg", "DDeg");
+            tableMapping.ColumnMappings.Add("DSec", "DSec");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[NebulaeFavorites] WHERE (([NebulaeID] = @Original_NebulaeID) A" +
-                "ND ([Name] = @Original_Name) AND ([Latitude] = @Original_Latitude) AND ([Longitu" +
-                "de] = @Original_Longitude))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NebulaeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NebulaeID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Latitude", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Latitude", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Longitude", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Longitude", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[NebulaeFavorites] ([Name], [Latitude], [Longitude]) VALUES (@N" +
-                "ame, @Latitude, @Longitude);\r\nSELECT NebulaeID, Name, Latitude, Longitude FROM N" +
-                "ebulaeFavorites WHERE (NebulaeID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [NebulaeFavorites] ([CommonName], [ScientificName], [RAHr], [RAMin], " +
+                "[RASec], [DMin], [DDeg], [DSec]) VALUES (@CommonName, @ScientificName, @RAHr, @R" +
+                "AMin, @RASec, @DMin, @DDeg, @DSec)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Latitude", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Latitude", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Longitude", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Longitude", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[NebulaeFavorites] SET [Name] = @Name, [Latitude] = @Latitude, [Longitude] = @Longitude WHERE (([NebulaeID] = @Original_NebulaeID) AND ([Name] = @Original_Name) AND ([Latitude] = @Original_Latitude) AND ([Longitude] = @Original_Longitude));
-SELECT NebulaeID, Name, Latitude, Longitude FROM NebulaeFavorites WHERE (NebulaeID = @NebulaeID)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Latitude", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Latitude", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Longitude", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Longitude", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NebulaeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NebulaeID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Latitude", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Latitude", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Longitude", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Longitude", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NebulaeID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NebulaeID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CommonName", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CommonName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ScientificName", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ScientificName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RAHr", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RAHr", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RAMin", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RAMin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RASec", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RASec", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DMin", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DMin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DDeg", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DDeg", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DSec", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DSec", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -847,11 +940,19 @@ SELECT NebulaeID, Name, Latitude, Longitude FROM NebulaeFavorites WHERE (Nebulae
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT NebulaeID, Name, Latitude, Longitude FROM dbo.NebulaeFavorites";
+            this._commandCollection[0].CommandText = "SELECT        CommonName, ScientificName, RAHr, RAMin, RASec, DMin, DDeg, DSec\r\nF" +
+                "ROM            NebulaeFavorites";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        CommonName, ScientificName, RAHr, RAMin, RASec, DMin, DDeg, DSec\r\nF" +
+                "ROM            NebulaeFavorites\r\nWHERE        (CommonName LIKE @CommonName + N\'%" +
+                "\')";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CommonName", global::System.Data.SqlDbType.NChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "CommonName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -876,6 +977,25 @@ SELECT NebulaeID, Name, Latitude, Longitude FROM NebulaeFavorites WHERE (Nebulae
             DigiDataBaseDataSet.NebulaeFavoritesDataTable dataTable = new DigiDataBaseDataSet.NebulaeFavoritesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int SearchNebulae(DigiDataBaseDataSet.NebulaeFavoritesDataTable dataTable, string CommonName) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((CommonName == null)) {
+                throw new global::System.ArgumentNullException("CommonName");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(CommonName));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -910,46 +1030,26 @@ SELECT NebulaeID, Name, Latitude, Longitude FROM NebulaeFavorites WHERE (Nebulae
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_NebulaeID, string Original_Name, int Original_Latitude, int Original_Longitude) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_NebulaeID));
-            if ((Original_Name == null)) {
-                throw new global::System.ArgumentNullException("Original_Name");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Name));
-            }
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Latitude));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_Longitude));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Name, int Latitude, int Longitude) {
-            if ((Name == null)) {
-                throw new global::System.ArgumentNullException("Name");
+        public virtual int Insert(string CommonName, string ScientificName, int RAHr, int RAMin, double RASec, int DMin, int DDeg, double DSec) {
+            if ((CommonName == null)) {
+                throw new global::System.ArgumentNullException("CommonName");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Name));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(CommonName));
             }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Latitude));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Longitude));
+            if ((ScientificName == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(ScientificName));
+            }
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(RAHr));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(RAMin));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((double)(RASec));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(DMin));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(DDeg));
+            this.Adapter.InsertCommand.Parameters[7].Value = ((double)(DSec));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -964,53 +1064,6 @@ SELECT NebulaeID, Name, Latitude, Longitude FROM NebulaeFavorites WHERE (Nebulae
                     this.Adapter.InsertCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, int Latitude, int Longitude, int Original_NebulaeID, string Original_Name, int Original_Latitude, int Original_Longitude, int NebulaeID) {
-            if ((Name == null)) {
-                throw new global::System.ArgumentNullException("Name");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Name));
-            }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Latitude));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Longitude));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_NebulaeID));
-            if ((Original_Name == null)) {
-                throw new global::System.ArgumentNullException("Original_Name");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_Name));
-            }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Latitude));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Longitude));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(NebulaeID));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, int Latitude, int Longitude, int Original_NebulaeID, string Original_Name, int Original_Latitude, int Original_Longitude) {
-            return this.Update(Name, Latitude, Longitude, Original_NebulaeID, Original_Name, Original_Latitude, Original_Longitude, Original_NebulaeID);
         }
     }
     

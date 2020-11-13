@@ -176,9 +176,6 @@
     <EmbeddedResource Include="EditPopularNebulaePopup.resx">
       <DependentUpon>EditPopularNebulaePopup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditPopularStarsPopup.resx">
-      <DependentUpon>EditPopularStarsPopup.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="HomeScreen.resx">
       <DependentUpon>HomeScreen.cs</DependentUpon>
     </EmbeddedResource>

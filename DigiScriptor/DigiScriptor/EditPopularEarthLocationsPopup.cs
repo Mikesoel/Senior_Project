@@ -19,12 +19,13 @@ namespace DigiScriptor
         string sqlPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\")) + @"DigiDataBase.mdf;Integrated Security=True";
         SqlConnection connect;
         private string name = string.Empty;
-        private string cellName = string.Empty;
-        private int latitude, longitude;
+        private string earthID = string.Empty;
+        private double latitude, longitude;
         private Boolean latitude_Valid = false;
         private Boolean longitude_Valid = false;
+        UserControlEarth earthPanel;
 
-        public EditPopularEarthLocationsPopup()
+        public EditPopularEarthLocationsPopup(UserControlEarth EarthP)
         {
             InitializeComponent();
 
@@ -32,7 +33,9 @@ namespace DigiScriptor
             connect = new SqlConnection(sqlPath);
 
             //Load earth favorites table into data grid
-            LoadTable();                                                                                
+            LoadTable();
+
+            earthPanel = EarthP;
 
         }
 
@@ -48,7 +51,7 @@ namespace DigiScriptor
             cmd.CommandType = CommandType.Text;
             
             //SQL command for database
-            cmd.CommandText = "select Name, Latitude, Longitude from EarthScreenFavorites";
+            cmd.CommandText = "select Name, Latitude, Longitude, LocationID from EarthScreenFavorites";
             cmd.ExecuteNonQuery();
 
             //opens connection for selected data from table
@@ -86,25 +89,24 @@ namespace DigiScriptor
             {
                 MessageBox.Show("Latitude and Longitude values are invalid");
 
-                // Clear both boxes if invalid
-                latitudeTextBox.Clear();
-                longitudeTextBox.Clear();
+                // Select Top text box if both incorrect
+                latitudeTextBox.Select();
             }
 
             //Check latitude validity if longitude is valid
             else if (latitude_Valid == false)
             {
                 MessageBox.Show("Latitude value is invalid");
-                //clear latitude box if invalid
-                latitudeTextBox.Clear();
+                //Select latitude text box if incorrect
+                latitudeTextBox.Select();
             }
 
             //Check longitude validity if latitude is valid
             else if (longitude_Valid == false)
             {
                 MessageBox.Show("Latitude value is invalid");
-                //clear longitude box if invalid
-                longitudeTextBox.Clear();
+                //Select longitude text box if incorrect
+                longitudeTextBox.Select();
             }
 
             // If all values valid, add to database
@@ -129,6 +131,7 @@ namespace DigiScriptor
                 
                 //Re-Load database into datagrid
                 LoadTable();
+                earthPanel.LoadComboBox();
             }
 
         }
@@ -138,12 +141,12 @@ namespace DigiScriptor
             //check if text is empty
             if (latitudeTextBox.Text != "")
             {
-                int value = 0;
+                double value = 0;
 
                 //if something is in box try to convert to int
                 try
                 {
-                    value = Convert.ToInt32(latitudeTextBox.Text);
+                    value = Convert.ToDouble(latitudeTextBox.Text);
                     //validate data is within correct range
                     if (value >= -180 && value <= 180)
                     {
@@ -182,12 +185,12 @@ namespace DigiScriptor
             //check if text is empty
             if (longitudeTextBox.Text != "")
             {
-                int value = 0;
+                double value = 0;
 
                 //if something is in box try to convert to int
                 try
                 {
-                    value = Convert.ToInt32(longitudeTextBox.Text);
+                    value = Convert.ToDouble(longitudeTextBox.Text);
                     //validate data is within correct range
                     if (value >= -180 && value <= 180)
                     {
@@ -234,19 +237,20 @@ namespace DigiScriptor
                 MessageBox.Show("Successfully Deleted " +dataGridView1.SelectedCells[0].Value.ToString());
                 
                 //Reads info from first cell in row selected to use as variable to delete selected from database
-                cellName = dataGridView1.SelectedCells[0].Value.ToString();
+                earthID = dataGridView1.SelectedCells[3].Value.ToString();
                 
                 //Queries database with selected info to delete row
-                cmd.CommandText = "DELETE FROM EarthScreenFavorites WHERE Name = @index";
-                cmd.Parameters.AddWithValue("@index", cellName);
+                cmd.CommandText = "DELETE FROM EarthScreenFavorites WHERE LocationID = @index";
+                cmd.Parameters.AddWithValue("@index", earthID);
                 cmd.ExecuteNonQuery();
                
             }
             //Close database connection
             connect.Close();
             
-            //Re-Load database into Datagrid
+            //Re-Load database into Datagrid and combobox in earth panel
             LoadTable();
+            earthPanel.LoadComboBox();
         }
 
         private void EditPopularEarthLocationsPopup_Load(object sender, EventArgs e)

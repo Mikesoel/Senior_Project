@@ -111,14 +111,6 @@ namespace DigiScriptor
                     //update the show list after submit
                     HomeScreen.Current.UpdateList();
 
-
-                    //NO CONFIRMATIONS NEEDED
-                    /*/for after submited is 'ok'
-                    if (MessageBox.Show("Submitted") == DialogResult.OK)
-                    {
-                        //do something after submitted message
-                    }
-                    */
                 }
             }
         }
