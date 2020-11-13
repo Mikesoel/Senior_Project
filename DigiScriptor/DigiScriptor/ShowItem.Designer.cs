@@ -43,7 +43,7 @@
             this.titleBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.titleBox.Location = new System.Drawing.Point(0, 0);
             this.titleBox.Name = "titleBox";
-            this.titleBox.Size = new System.Drawing.Size(300, 140);
+            this.titleBox.Size = new System.Drawing.Size(277, 140);
             this.titleBox.TabIndex = 0;
             this.titleBox.TabStop = false;
             this.titleBox.Text = "default title";
@@ -52,7 +52,7 @@
             // btnUp
             // 
             this.btnUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUp.Location = new System.Drawing.Point(256, 53);
+            this.btnUp.Location = new System.Drawing.Point(233, 53);
             this.btnUp.Margin = new System.Windows.Forms.Padding(1);
             this.btnUp.Name = "btnUp";
             this.btnUp.Size = new System.Drawing.Size(40, 20);
@@ -64,7 +64,7 @@
             // btnDown
             // 
             this.btnDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDown.Location = new System.Drawing.Point(256, 75);
+            this.btnDown.Location = new System.Drawing.Point(233, 75);
             this.btnDown.Margin = new System.Windows.Forms.Padding(1);
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(40, 20);
@@ -80,7 +80,7 @@
             this.descriptionBox.Name = "descriptionBox";
             this.descriptionBox.ReadOnly = true;
             this.descriptionBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.descriptionBox.Size = new System.Drawing.Size(247, 104);
+            this.descriptionBox.Size = new System.Drawing.Size(224, 104);
             this.descriptionBox.TabIndex = 0;
             this.descriptionBox.TabStop = false;
             this.descriptionBox.Text = "";
@@ -92,7 +92,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.titleBox);
             this.Name = "ShowItem";
-            this.Size = new System.Drawing.Size(300, 140);
+            this.Size = new System.Drawing.Size(280, 140);
             this.titleBox.ResumeLayout(false);
             this.ResumeLayout(false);
 

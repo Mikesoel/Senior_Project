@@ -21,6 +21,8 @@ namespace DigiScriptor
         private Boolean RAsMinTxt_Valid = false;
         private Boolean RAsSecTxt_Valid = false;
 
+        private String selectedName;
+
         private int DecD,DecMin,DecSec;
         private int RAHr, RAMin, RASec;
 
@@ -111,6 +113,14 @@ namespace DigiScriptor
             {
                 String description = String.Empty;
 
+                //see if star is selected
+                if(selectedName != String.Empty)
+                {
+                    description += "Name: " + selectedName + "\n";
+                }
+
+
+
                 //create desrciption 
                 description += "Right Ascention: " + RAHr + "h " + RAMin + "m " + RASec + "s\n"+
                     "Declination: " + DecD + "° " + DecMin + "\' " + DecSec + "\"";
@@ -136,6 +146,7 @@ namespace DigiScriptor
 
         private void DecDTxt_TextChanged(object sender, EventArgs e)
         {
+
             //check if text is empty
             if(DecDTxt.Text != "")
             {
@@ -397,6 +408,11 @@ namespace DigiScriptor
 
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void panelStars_Paint(object sender, PaintEventArgs e)
         {
 
@@ -404,6 +420,7 @@ namespace DigiScriptor
 
         private void StarFavorites_SelectedIndexChanged(object sender, EventArgs e)
         {
+            selectedName = String.Empty;
             
             //open database
             connect.Open();
@@ -416,7 +433,6 @@ namespace DigiScriptor
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
 
-            
             try {
                 //build command to search for star in DB
                 String select = "Name = \'" + StarFavorites.Text + "\'";
@@ -437,9 +453,14 @@ namespace DigiScriptor
 
             }
 
-
             //close data base
             connect.Close();
+
+
+            //update name
+            selectedName = StarFavorites.Text;
+
+
         }
 
         private void EditFavorite_Click(object sender, EventArgs e)
@@ -458,9 +479,6 @@ namespace DigiScriptor
 
             return code;
         }
-
-
-
 
     }
 }
