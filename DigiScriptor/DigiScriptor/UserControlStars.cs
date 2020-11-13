@@ -21,6 +21,10 @@ namespace DigiScriptor
         private Boolean RAsMinTxt_Valid = false;
         private Boolean RAsSecTxt_Valid = false;
 
+        private Boolean selecting = false;
+
+
+
         private String selectedName;
 
         private int DecD,DecMin,DecSec;
@@ -120,25 +124,21 @@ namespace DigiScriptor
                 }
 
 
-
                 //create desrciption 
                 description += "Right Ascention: " + RAHr + "h " + RAMin + "m " + RASec + "s\n"+
                     "Declination: " + DecD + "° " + DecMin + "\' " + DecSec + "\"";
 
 
-
+                //see if stars are on
                 Boolean starsOn = HomeScreen.Current.getIsStarsOn();
 
                 //see if stars are needed for commands to come
                 if (!starsOn)
                 {
-                    ShowItem turnOnStars = new ShowItem("Turn on Stars", "turn on stars for any command using stars", "\tstars on");
+                    ShowItem turnOnStars = new ShowItem("Turn on Stars", "Turn on stars for any command using stars", "\tstars on");
                     HomeScreen.Current.AddItem(turnOnStars);
 
                 }
-
-
-
 
 
                 //create star item
@@ -162,11 +162,22 @@ namespace DigiScriptor
 
         private void DecDTxt_TextChanged(object sender, EventArgs e)
         {
+            int value = 0;
 
-            //check if text is empty
-            if(DecDTxt.Text != "")
+            if (selecting == true)
             {
-                int value = 0;
+                //if correct keep text black
+                DecDTxt.ForeColor = Color.Black;
+                DecDTxt_Valid = true;
+                value = Convert.ToInt32(DecDTxt.Text);
+                DecD = value;
+
+            }
+            //check if text is empty for user input
+            else if(DecDTxt.Text != "")
+            {
+                //clear selected if user types in box
+                StarFavorites.SelectedItem = null;
 
                 //if something is in box try to convert to int
                 try
@@ -201,6 +212,9 @@ namespace DigiScriptor
             }
             else
             {
+                //clear selected if user types in box
+                StarFavorites.SelectedItem = null;
+
                 //no data input
                 DecDTxt_Valid = false;
             }
@@ -210,11 +224,23 @@ namespace DigiScriptor
 
         private void DecMinTxt_TextChanged(object sender, EventArgs e)
         {
-           
-            //check if text is empty
-            if (DecMinTxt.Text != "")
+            int value = 0;
+
+            if (selecting == true)
             {
-                int value = 0;
+                //if correct keep text black
+                DecMinTxt.ForeColor = Color.Black;
+                DecMinTxt_Valid = true;
+                value = Convert.ToInt32(DecMinTxt.Text);
+                DecMin = value;
+
+            }
+
+            //check if text is empty
+            else if (DecMinTxt.Text != "")
+            {
+                //clear selected if user types in box
+                StarFavorites.SelectedItem = null;
 
                 //if something is in box try to convert to int
                 try
@@ -245,6 +271,8 @@ namespace DigiScriptor
             }
             else
             {
+                //clear selected if user types in box
+                StarFavorites.SelectedItem = null;
                 //no data input
                 DecMinTxt_Valid = false;
             }
@@ -253,10 +281,22 @@ namespace DigiScriptor
 
         private void DecSecTxt_TextChanged(object sender, EventArgs e)
         {
-            //check if text is empty
-            if (DecSecTxt.Text != "")
+            int value = 0;
+
+            if (selecting == true)
             {
-                int value = 0;
+                //if correct keep text black
+                DecSecTxt.ForeColor = Color.Black;
+                DecSecTxt_Valid = true;
+                value = Convert.ToInt32(DecSecTxt.Text);
+                DecSec = value;
+
+            }
+            //check if text is empty
+            else if (DecSecTxt.Text != "")
+            {
+                //clear selected if user types in box
+                StarFavorites.SelectedItem = null;
 
                 //if something is in box try to convert to int
                 try
@@ -288,19 +328,39 @@ namespace DigiScriptor
             }
             else
             {
+                //clear selected if user types in box
+                StarFavorites.SelectedItem = null;
+
                 //no data input
                 DecSecTxt_Valid = false;
             }
+
+
+
+
 
         }
 
 
         private void RAsHrTxt_TextChanged(object sender, EventArgs e)
         {
-            //check if text is empty
-            if (RAsHrTxt.Text != "")
+            int value = 0;
+
+            if (selecting == true)
             {
-                int value = 0;
+                //if correct keep text black
+                RAsHrTxt.ForeColor = Color.Black;
+                RAsHrTxt_Valid = true;
+                value = Convert.ToInt32(RAsHrTxt.Text);
+                RAHr = value;
+
+            }
+
+            //check if text is empty
+            else if (RAsHrTxt.Text != "")
+            {
+                //clear selected if user types in box
+                StarFavorites.SelectedItem = null;
 
                 //if something is in box try to convert to int
                 try
@@ -332,6 +392,9 @@ namespace DigiScriptor
             }
             else
             {
+                //clear selected if user types in box
+                StarFavorites.SelectedItem = null;
+
                 //no data input
                 RAsHrTxt_Valid = false;
             }
@@ -340,10 +403,26 @@ namespace DigiScriptor
 
         private void RAsMinTxt_TextChanged(object sender, EventArgs e)
         {
-            //check if text is empty
-            if (RAsMinTxt.Text != "")
+            int value = 0;
+
+            //see if selection is updating box
+            if (selecting == true)
             {
-                int value = 0;
+                //if correct keep text black
+                RAsMinTxt.ForeColor = Color.Black;
+                RAsMinTxt_Valid = true;
+                value = Convert.ToInt32(RAsMinTxt.Text);
+                RAMin = value;
+
+            }
+
+
+
+            //check if text is empty
+            else if (RAsMinTxt.Text != "")
+            {
+                //clear selected if user types in box
+                StarFavorites.SelectedItem = null;
 
                 //if something is in box try to convert to int
                 try
@@ -375,6 +454,9 @@ namespace DigiScriptor
             }
             else
             {
+                //clear selected if user types in box
+                StarFavorites.SelectedItem = null;
+
                 //no data input
                 RAsMinTxt_Valid = false;
             }
@@ -383,10 +465,25 @@ namespace DigiScriptor
 
         private void RAsSecTxt_TextChanged(object sender, EventArgs e)
         {
-            //check if text is empty
-            if (RAsSecTxt.Text != "")
+            int value = 0;
+
+            //see if selection is updating box
+            if (selecting == true)
             {
-                int value = 0;
+                //if correct keep text black
+                RAsSecTxt.ForeColor = Color.Black;
+                RAsSecTxt_Valid = true;
+                value = Convert.ToInt32(RAsSecTxt.Text);
+                RASec = value;
+
+            }
+
+
+            //check if text is empty
+            else if (RAsSecTxt.Text != "")
+            {
+                //clear selected if user types in box
+                StarFavorites.SelectedItem = null;
 
                 //if something is in box try to convert to int
                 try
@@ -418,6 +515,9 @@ namespace DigiScriptor
             }
             else
             {
+                //clear selected if user types in box
+                StarFavorites.SelectedItem = null;
+
                 //no data input
                 RAsSecTxt_Valid = false;
             }
@@ -456,6 +556,9 @@ namespace DigiScriptor
                 //get row with name from DB
                 DataRow[] dr = dt.Select(select);
 
+                //update txt from selection
+                selecting = true;
+
                 //grab data from database
                 RAsHrTxt.Text = dr[1][1].ToString();
                 RAsMinTxt.Text = dr[1][2].ToString();
@@ -463,6 +566,9 @@ namespace DigiScriptor
                 DecDTxt.Text = dr[1][4].ToString();
                 DecMinTxt.Text = dr[1][5].ToString();
                 DecSecTxt.Text = dr[1][6].ToString();
+
+                
+                
             }
             catch
             {
@@ -476,6 +582,8 @@ namespace DigiScriptor
             //update name
             selectedName = StarFavorites.Text;
 
+            //default selecting
+            selecting = false;
 
         }
 
