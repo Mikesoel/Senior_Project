@@ -125,6 +125,22 @@ namespace DigiScriptor
                 description += "Right Ascention: " + RAHr + "h " + RAMin + "m " + RASec + "s\n"+
                     "Declination: " + DecD + "° " + DecMin + "\' " + DecSec + "\"";
 
+
+
+                Boolean starsOn = HomeScreen.Current.getIsStarsOn();
+
+                //see if stars are needed for commands to come
+                if (!starsOn)
+                {
+                    ShowItem turnOnStars = new ShowItem("Turn on Stars", "turn on stars for any command using stars", "\tstars on");
+                    HomeScreen.Current.AddItem(turnOnStars);
+
+                }
+
+
+
+
+
                 //create star item
                 ShowItem Staritem = new ShowItem("Star Move", description, codeMaker());
 
@@ -475,7 +491,22 @@ namespace DigiScriptor
         {
             String code = String.Empty;
 
+            //if a favorite is picked then code based off name
+            if(selectedName != String.Empty)
+            {
 
+
+
+
+
+            }
+            else
+            {
+
+
+
+
+            }
 
             return code;
         }
