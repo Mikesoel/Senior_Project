@@ -416,19 +416,26 @@ namespace DigiScriptor
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
 
-            //build command to search for star in DB
-            String select = "Name = \'" + StarFavorites.Text + "\'";
-
-            //get row with name from DB
-            DataRow[] dr = dt.Select(select);
             
-            //grab data from database
-            RAsHrTxt.Text = dr[1][1].ToString();
-            RAsMinTxt.Text = dr[1][2].ToString();
-            RAsSecTxt.Text = dr[1][3].ToString();
-            DecDTxt.Text = dr[1][4].ToString();
-            DecMinTxt.Text = dr[1][5].ToString();
-            DecSecTxt.Text = dr[1][6].ToString();
+            try {
+                //build command to search for star in DB
+                String select = "Name = \'" + StarFavorites.Text + "\'";
+
+                //get row with name from DB
+                DataRow[] dr = dt.Select(select);
+
+                //grab data from database
+                RAsHrTxt.Text = dr[1][1].ToString();
+                RAsMinTxt.Text = dr[1][2].ToString();
+                RAsSecTxt.Text = dr[1][3].ToString();
+                DecDTxt.Text = dr[1][4].ToString();
+                DecMinTxt.Text = dr[1][5].ToString();
+                DecSecTxt.Text = dr[1][6].ToString();
+            }
+            catch
+            {
+
+            }
 
 
             //close data base
