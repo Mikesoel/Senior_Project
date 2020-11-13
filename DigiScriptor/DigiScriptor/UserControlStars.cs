@@ -405,43 +405,34 @@ namespace DigiScriptor
         private void StarFavorites_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+            //open database
             connect.Open();
+            //establish connection
             SqlCommand cmd = connect.CreateCommand();
             cmd.CommandType = CommandType.Text;
-
-            //Tracks user selected row in datagridview
-
-            //Queries database with selected info to delete row
-            cmd.CommandText = "SELECT * FROM StarFavorites WHERE Name = @index";
-            cmd.Parameters.AddWithValue("@index", StarFavorites.SelectedItem);
+            cmd.CommandText = "select * from StarFavorites";
             cmd.ExecuteNonQuery();
-
-            try
-            {
-                SqlDataAdapter sda = new SqlDataAdapter();
-                sda.SelectCommand = cmd;
-
-                
-                sda.Fill(dt);
-                foreach (DataRow dr in dt.Rows)
-                {
-                    //StarFavorites.Items.Add(dr["Name"].ToString().Trim());
-
-                    RAsHrTxt.Text = dr["RAHr"].ToString();
-
-                }
-
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-
-            connect.Close();
             
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
 
+            //build command to search for star in DB
+            String select = "Name = \'" + StarFavorites.Text + "\'";
+
+            //get row with name from DB
+            DataRow[] dr = dt.Select(select);
+            
+            //grab data from database
+            RAsHrTxt.Text = dr[1][1].ToString();
+            RAsMinTxt.Text = dr[1][2].ToString();
+            RAsSecTxt.Text = dr[1][3].ToString();
+            DecDTxt.Text = dr[1][4].ToString();
+            DecMinTxt.Text = dr[1][5].ToString();
+            DecSecTxt.Text = dr[1][6].ToString();
+
+
+            //close data base
+            connect.Close();
         }
 
         private void EditFavorite_Click(object sender, EventArgs e)
