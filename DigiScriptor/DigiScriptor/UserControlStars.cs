@@ -178,6 +178,7 @@ namespace DigiScriptor
             {
                 //clear selected if user types in box
                 StarFavorites.SelectedItem = null;
+                selectedName = String.Empty;
 
                 //if something is in box try to convert to int
                 try
@@ -214,6 +215,7 @@ namespace DigiScriptor
             {
                 //clear selected if user types in box
                 StarFavorites.SelectedItem = null;
+                selectedName = String.Empty;
 
                 //no data input
                 DecDTxt_Valid = false;
@@ -241,6 +243,7 @@ namespace DigiScriptor
             {
                 //clear selected if user types in box
                 StarFavorites.SelectedItem = null;
+                selectedName = String.Empty;
 
                 //if something is in box try to convert to int
                 try
@@ -273,6 +276,8 @@ namespace DigiScriptor
             {
                 //clear selected if user types in box
                 StarFavorites.SelectedItem = null;
+                selectedName = String.Empty;
+
                 //no data input
                 DecMinTxt_Valid = false;
             }
@@ -297,6 +302,7 @@ namespace DigiScriptor
             {
                 //clear selected if user types in box
                 StarFavorites.SelectedItem = null;
+                selectedName = String.Empty;
 
                 //if something is in box try to convert to int
                 try
@@ -330,6 +336,7 @@ namespace DigiScriptor
             {
                 //clear selected if user types in box
                 StarFavorites.SelectedItem = null;
+                selectedName = String.Empty;
 
                 //no data input
                 DecSecTxt_Valid = false;
@@ -361,6 +368,7 @@ namespace DigiScriptor
             {
                 //clear selected if user types in box
                 StarFavorites.SelectedItem = null;
+                selectedName = String.Empty;
 
                 //if something is in box try to convert to int
                 try
@@ -394,6 +402,7 @@ namespace DigiScriptor
             {
                 //clear selected if user types in box
                 StarFavorites.SelectedItem = null;
+                selectedName = String.Empty;
 
                 //no data input
                 RAsHrTxt_Valid = false;
@@ -417,12 +426,12 @@ namespace DigiScriptor
             }
 
 
-
             //check if text is empty
             else if (RAsMinTxt.Text != "")
             {
                 //clear selected if user types in box
                 StarFavorites.SelectedItem = null;
+                selectedName = String.Empty;
 
                 //if something is in box try to convert to int
                 try
@@ -456,6 +465,7 @@ namespace DigiScriptor
             {
                 //clear selected if user types in box
                 StarFavorites.SelectedItem = null;
+                selectedName = String.Empty;
 
                 //no data input
                 RAsMinTxt_Valid = false;
@@ -484,6 +494,7 @@ namespace DigiScriptor
             {
                 //clear selected if user types in box
                 StarFavorites.SelectedItem = null;
+                selectedName = String.Empty;
 
                 //if something is in box try to convert to int
                 try
@@ -517,6 +528,7 @@ namespace DigiScriptor
             {
                 //clear selected if user types in box
                 StarFavorites.SelectedItem = null;
+                selectedName = String.Empty;
 
                 //no data input
                 RAsSecTxt_Valid = false;
@@ -602,6 +614,13 @@ namespace DigiScriptor
             //if a favorite is picked then code based off name
             if(selectedName != String.Empty)
             {
+                //create code for selected star
+
+                code += "\teye turnTo star";
+
+                //remove spaces from name for DS to underStand
+                string noSpaceName = selectedName;
+                noSpaceName = noSpaceName.Replace(" ", "");
 
 
 
