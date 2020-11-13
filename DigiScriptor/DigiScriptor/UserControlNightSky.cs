@@ -167,13 +167,6 @@ namespace DigiScriptor
                     //update the show list after submit
                     HomeScreen.Current.UpdateList();
 
-
-                    //for after submited is 'ok'
-                    if (MessageBox.Show("Submitted") == DialogResult.OK)
-                    {
-                        //do something after submitted message
-                    }
-
                 }
                 else
                 {
