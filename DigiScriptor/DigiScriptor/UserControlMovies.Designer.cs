@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelMovies = new System.Windows.Forms.Panel();
+            this.btnDarkMatter = new System.Windows.Forms.Button();
             this.lblGalaxyFavorites = new System.Windows.Forms.Label();
             this.lblMoviesOutput = new System.Windows.Forms.Label();
             this.lblMovieSelect = new System.Windows.Forms.Label();
@@ -47,6 +48,7 @@
             // 
             // panelMovies
             // 
+            this.panelMovies.Controls.Add(this.btnDarkMatter);
             this.panelMovies.Controls.Add(this.lblGalaxyFavorites);
             this.panelMovies.Controls.Add(this.lblMoviesOutput);
             this.panelMovies.Controls.Add(this.lblMovieSelect);
@@ -65,6 +67,19 @@
             this.panelMovies.Size = new System.Drawing.Size(1062, 997);
             this.panelMovies.TabIndex = 29;
             // 
+            // btnDarkMatter
+            // 
+            this.btnDarkMatter.BackColor = System.Drawing.Color.DimGray;
+            this.btnDarkMatter.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDarkMatter.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDarkMatter.Location = new System.Drawing.Point(402, 624);
+            this.btnDarkMatter.Name = "btnDarkMatter";
+            this.btnDarkMatter.Size = new System.Drawing.Size(257, 130);
+            this.btnDarkMatter.TabIndex = 40;
+            this.btnDarkMatter.Text = "The Dark Matter Mystery";
+            this.btnDarkMatter.UseVisualStyleBackColor = false;
+            this.btnDarkMatter.Click += new System.EventHandler(this.btnDarkMatter_Click);
+            // 
             // lblGalaxyFavorites
             // 
             this.lblGalaxyFavorites.AutoSize = true;
@@ -78,21 +93,23 @@
             // 
             // lblMoviesOutput
             // 
-            this.lblMoviesOutput.AutoSize = true;
+            this.lblMoviesOutput.BackColor = System.Drawing.Color.Silver;
             this.lblMoviesOutput.Font = new System.Drawing.Font("Bernard MT Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMoviesOutput.ForeColor = System.Drawing.SystemColors.Menu;
-            this.lblMoviesOutput.Location = new System.Drawing.Point(778, 449);
+            this.lblMoviesOutput.ForeColor = System.Drawing.Color.Black;
+            this.lblMoviesOutput.Location = new System.Drawing.Point(759, 439);
+            this.lblMoviesOutput.MaximumSize = new System.Drawing.Size(500, 500);
             this.lblMoviesOutput.Name = "lblMoviesOutput";
-            this.lblMoviesOutput.Size = new System.Drawing.Size(199, 43);
+            this.lblMoviesOutput.Size = new System.Drawing.Size(247, 180);
             this.lblMoviesOutput.TabIndex = 38;
-            this.lblMoviesOutput.Text = "(Some Movie)";
+            this.lblMoviesOutput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMoviesOutput.Click += new System.EventHandler(this.lblMoviesOutput_Click);
             // 
             // lblMovieSelect
             // 
             this.lblMovieSelect.AutoSize = true;
             this.lblMovieSelect.Font = new System.Drawing.Font("Bernard MT Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMovieSelect.ForeColor = System.Drawing.SystemColors.Menu;
-            this.lblMovieSelect.Location = new System.Drawing.Point(802, 375);
+            this.lblMovieSelect.Location = new System.Drawing.Point(805, 375);
             this.lblMovieSelect.Name = "lblMovieSelect";
             this.lblMovieSelect.Size = new System.Drawing.Size(151, 43);
             this.lblMovieSelect.TabIndex = 37;
@@ -104,7 +121,7 @@
             this.lblSearchMovies.AutoSize = true;
             this.lblSearchMovies.Font = new System.Drawing.Font("Bernard MT Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearchMovies.ForeColor = System.Drawing.SystemColors.Menu;
-            this.lblSearchMovies.Location = new System.Drawing.Point(724, 211);
+            this.lblSearchMovies.Location = new System.Drawing.Point(727, 216);
             this.lblSearchMovies.Name = "lblSearchMovies";
             this.lblSearchMovies.Size = new System.Drawing.Size(74, 28);
             this.lblSearchMovies.TabIndex = 36;
@@ -116,28 +133,25 @@
             this.btnSubmitMovies.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmitMovies.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmitMovies.ForeColor = System.Drawing.Color.SpringGreen;
-            this.btnSubmitMovies.Location = new System.Drawing.Point(784, 593);
+            this.btnSubmitMovies.Location = new System.Drawing.Point(787, 652);
             this.btnSubmitMovies.Name = "btnSubmitMovies";
             this.btnSubmitMovies.Size = new System.Drawing.Size(186, 75);
             this.btnSubmitMovies.TabIndex = 35;
             this.btnSubmitMovies.Text = "Submit";
             this.btnSubmitMovies.UseVisualStyleBackColor = false;
+            this.btnSubmitMovies.Click += new System.EventHandler(this.btnSubmitMovies_Click);
             // 
             // comboBoxMovies
             // 
             this.comboBoxMovies.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBoxMovies.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBoxMovies.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxMovies.DropDownWidth = 360;
+            this.comboBoxMovies.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBoxMovies.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxMovies.FormattingEnabled = true;
-            this.comboBoxMovies.Items.AddRange(new object[] {
-            "Frozen Worlds",
-            "Secrets of the Sun",
-            "Stars of the Pharaohs",
-            "The Christmas Star",
-            "Two Small Pieces of Glass"});
-            this.comboBoxMovies.Location = new System.Drawing.Point(729, 248);
+            this.comboBoxMovies.Location = new System.Drawing.Point(732, 247);
             this.comboBoxMovies.Name = "comboBoxMovies";
-            this.comboBoxMovies.Size = new System.Drawing.Size(296, 37);
+            this.comboBoxMovies.Size = new System.Drawing.Size(298, 33);
             this.comboBoxMovies.Sorted = true;
             this.comboBoxMovies.TabIndex = 34;
             this.comboBoxMovies.SelectedIndexChanged += new System.EventHandler(this.comboBoxMovies_SelectedIndexChanged);
@@ -151,7 +165,7 @@
             this.btnFrozenWorlds.Name = "btnFrozenWorlds";
             this.btnFrozenWorlds.Size = new System.Drawing.Size(257, 130);
             this.btnFrozenWorlds.TabIndex = 33;
-            this.btnFrozenWorlds.Text = "Frozen Worlds";
+            this.btnFrozenWorlds.Text = "Ice Worlds";
             this.btnFrozenWorlds.UseVisualStyleBackColor = false;
             this.btnFrozenWorlds.Click += new System.EventHandler(this.btnFrozenWorlds_Click);
             // 
@@ -177,7 +191,7 @@
             this.btnChristmasStar.Name = "btnChristmasStar";
             this.btnChristmasStar.Size = new System.Drawing.Size(257, 130);
             this.btnChristmasStar.TabIndex = 31;
-            this.btnChristmasStar.Text = "The Christmas Star";
+            this.btnChristmasStar.Text = "The Mystery of the Christmas Star";
             this.btnChristmasStar.UseCompatibleTextRendering = true;
             this.btnChristmasStar.UseVisualStyleBackColor = false;
             this.btnChristmasStar.Click += new System.EventHandler(this.btnChristmasStar_Click);
@@ -260,5 +274,6 @@
         private System.Windows.Forms.Label lblMoviesOutput;
         private System.Windows.Forms.Label lblMovieSelect;
         private System.Windows.Forms.Label lblGalaxyFavorites;
+        private System.Windows.Forms.Button btnDarkMatter;
     }
 }

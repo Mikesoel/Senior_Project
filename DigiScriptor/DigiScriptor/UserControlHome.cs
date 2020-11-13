@@ -41,5 +41,13 @@ namespace DigiScriptor
         {
 
         }
+
+        private void btnCustomCode_Click(object sender, EventArgs e)
+        {   
+            //make a new ShowItem that allows for text to be added
+            ShowItem customItem = new ShowItem("Custom Code", "", "");
+            customItem.descriptionBox.ReadOnly = false;
+            HomeScreen.Current.AddItem(customItem);
+        }
     }
 }
