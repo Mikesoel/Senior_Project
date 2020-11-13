@@ -63,11 +63,6 @@ namespace DigiScriptor
             {
                 StarFavorites.Items.Add(dr["Name"].ToString().Trim());
 
-                
-                
-
-
-
             }
             connect.Close();
 
@@ -460,9 +455,6 @@ namespace DigiScriptor
         private String codeMaker()
         {
             String code = String.Empty;
-
-
-
 
 
 
