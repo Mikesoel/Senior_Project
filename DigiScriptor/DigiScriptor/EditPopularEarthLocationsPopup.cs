@@ -227,30 +227,43 @@ namespace DigiScriptor
         //Delete selected row from datagrid and database table
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            connect.Open();
-            SqlCommand cmd = connect.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            
-            //Tracks user selected row in datagridview
-            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            //confirmation message
+            String sub = "Deleting will permanantly remove selected data from the database. \n"
+                       + "Are you sure you want to proceed?";
+            String con = "Confirm";
+            DialogResult results;
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+
+            //display messgae
+            results = MessageBox.Show(sub, con, buttons);
+            //if result is 'yes' then show submited
+            if (results == DialogResult.Yes)
             {
-                MessageBox.Show("Successfully Deleted " +dataGridView1.SelectedCells[0].Value.ToString());
-                
-                //Reads info from first cell in row selected to use as variable to delete selected from database
-                earthID = dataGridView1.SelectedCells[3].Value.ToString();
-                
-                //Queries database with selected info to delete row
-                cmd.CommandText = "DELETE FROM EarthScreenFavorites WHERE LocationID = @index";
-                cmd.Parameters.AddWithValue("@index", earthID);
-                cmd.ExecuteNonQuery();
-               
+                connect.Open();
+                SqlCommand cmd = connect.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+
+                //Tracks user selected row in datagridview
+                foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                {
+                    MessageBox.Show("Successfully Deleted " + dataGridView1.SelectedCells[0].Value.ToString());
+
+                    //Reads info from first cell in row selected to use as variable to delete selected from database
+                    earthID = dataGridView1.SelectedCells[3].Value.ToString();
+
+                    //Queries database with selected info to delete row
+                    cmd.CommandText = "DELETE FROM EarthScreenFavorites WHERE LocationID = @index";
+                    cmd.Parameters.AddWithValue("@index", earthID);
+                    cmd.ExecuteNonQuery();
+
+                }
+                //Close database connection
+                connect.Close();
+
+                //Re-Load database into Datagrid and combobox in earth panel
+                LoadTable();
+                earthPanel.LoadComboBox();
             }
-            //Close database connection
-            connect.Close();
-            
-            //Re-Load database into Datagrid and combobox in earth panel
-            LoadTable();
-            earthPanel.LoadComboBox();
         }
 
         private void EditPopularEarthLocationsPopup_Load(object sender, EventArgs e)

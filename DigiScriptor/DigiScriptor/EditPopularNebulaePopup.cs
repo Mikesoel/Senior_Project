@@ -199,28 +199,42 @@ namespace DigiScriptor
 
         private void btnNebulaeDelete_Click(object sender, EventArgs e)
         {
-            connect.Open();
-            SqlCommand cmd = connect.CreateCommand();
-            cmd.CommandType = CommandType.Text;
+            //confirmation message
+            String sub = "Deleting will permanantly remove selected data from the database. \n"
+                       + "Are you sure you want to proceed?";
+            String con = "Confirm";
+            DialogResult results;
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
 
-            //Tracks user selected row in datagridview
-            foreach (DataGridViewRow row in nebulaeDataGrid.SelectedRows)
+            //display messgae
+            results = MessageBox.Show(sub, con, buttons);
+
+            //if result is 'yes' then show submited
+            if (results == DialogResult.Yes)
             {
-                MessageBox.Show("Successfully Deleted " + nebulaeDataGrid.SelectedCells[0].Value.ToString());
+                connect.Open();
+                SqlCommand cmd = connect.CreateCommand();
+                cmd.CommandType = CommandType.Text;
 
-                //Reads nebula id from specified cell to use to delete row from DB
-                nebulaID = nebulaeDataGrid.SelectedCells[8].Value.ToString();
+                //Tracks user selected row in datagridview
+                foreach (DataGridViewRow row in nebulaeDataGrid.SelectedRows)
+                {
+                    MessageBox.Show("Successfully Deleted " + nebulaeDataGrid.SelectedCells[0].Value.ToString());
 
-                //Queries database with selected info to delete row
-                cmd.CommandText = "DELETE FROM NebulaeFavorites WHERE NebulaeID = @index";
-                cmd.Parameters.AddWithValue("@index", nebulaID);
-                cmd.ExecuteNonQuery();
-                nebulaID = null;
+                    //Reads nebula id from specified cell to use to delete row from DB
+                    nebulaID = nebulaeDataGrid.SelectedCells[8].Value.ToString();
 
+                    //Queries database with selected info to delete row
+                    cmd.CommandText = "DELETE FROM NebulaeFavorites WHERE NebulaeID = @index";
+                    cmd.Parameters.AddWithValue("@index", nebulaID);
+                    cmd.ExecuteNonQuery();
+                    nebulaID = null;
+
+                }
+                //Close DB connection and reload datagrid view
+                connect.Close();
+                LoadTable();
             }
-            //Close DB connection and reload datagrid view
-            connect.Close();
-            LoadTable();
         }
 
         private void RAsHrTxt_TextChanged(object sender, EventArgs e)
