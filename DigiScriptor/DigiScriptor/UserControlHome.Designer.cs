@@ -39,11 +39,13 @@
             this.btnMoons = new System.Windows.Forms.Button();
             this.btnLights = new System.Windows.Forms.Button();
             this.lblDigi = new System.Windows.Forms.Label();
+            this.btnCustomCode = new System.Windows.Forms.Button();
             this.panelHomeScreen.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelHomeScreen
             // 
+            this.panelHomeScreen.Controls.Add(this.btnCustomCode);
             this.panelHomeScreen.Controls.Add(this.btnMovies);
             this.panelHomeScreen.Controls.Add(this.btnNebulae);
             this.panelHomeScreen.Controls.Add(this.btnStars);
@@ -55,9 +57,8 @@
             this.panelHomeScreen.Controls.Add(this.btnLights);
             this.panelHomeScreen.Controls.Add(this.lblDigi);
             this.panelHomeScreen.Location = new System.Drawing.Point(0, 0);
-            this.panelHomeScreen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelHomeScreen.Name = "panelHomeScreen";
-            this.panelHomeScreen.Size = new System.Drawing.Size(708, 648);
+            this.panelHomeScreen.Size = new System.Drawing.Size(1062, 997);
             this.panelHomeScreen.TabIndex = 27;
             this.panelHomeScreen.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHomeScreen_Paint);
             // 
@@ -66,10 +67,9 @@
             this.btnMovies.BackColor = System.Drawing.Color.DimGray;
             this.btnMovies.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMovies.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMovies.Location = new System.Drawing.Point(499, 456);
-            this.btnMovies.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMovies.Location = new System.Drawing.Point(748, 622);
             this.btnMovies.Name = "btnMovies";
-            this.btnMovies.Size = new System.Drawing.Size(156, 72);
+            this.btnMovies.Size = new System.Drawing.Size(234, 111);
             this.btnMovies.TabIndex = 40;
             this.btnMovies.Text = "Movies";
             this.btnMovies.UseVisualStyleBackColor = false;
@@ -79,10 +79,9 @@
             this.btnNebulae.BackColor = System.Drawing.Color.DimGray;
             this.btnNebulae.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNebulae.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNebulae.Location = new System.Drawing.Point(292, 456);
-            this.btnNebulae.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNebulae.Location = new System.Drawing.Point(438, 622);
             this.btnNebulae.Name = "btnNebulae";
-            this.btnNebulae.Size = new System.Drawing.Size(156, 72);
+            this.btnNebulae.Size = new System.Drawing.Size(234, 111);
             this.btnNebulae.TabIndex = 39;
             this.btnNebulae.Text = "Nebulae";
             this.btnNebulae.UseVisualStyleBackColor = false;
@@ -96,10 +95,9 @@
             this.btnStars.BackColor = System.Drawing.Color.DimGray;
             this.btnStars.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStars.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnStars.Location = new System.Drawing.Point(499, 295);
-            this.btnStars.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStars.Location = new System.Drawing.Point(748, 405);
             this.btnStars.Name = "btnStars";
-            this.btnStars.Size = new System.Drawing.Size(156, 72);
+            this.btnStars.Size = new System.Drawing.Size(234, 111);
             this.btnStars.TabIndex = 38;
             this.btnStars.Text = "Stars";
             this.btnStars.UseVisualStyleBackColor = false;
@@ -109,10 +107,9 @@
             this.btnPlanets.BackColor = System.Drawing.Color.DimGray;
             this.btnPlanets.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlanets.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnPlanets.Location = new System.Drawing.Point(73, 295);
-            this.btnPlanets.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPlanets.Location = new System.Drawing.Point(110, 405);
             this.btnPlanets.Name = "btnPlanets";
-            this.btnPlanets.Size = new System.Drawing.Size(156, 72);
+            this.btnPlanets.Size = new System.Drawing.Size(234, 111);
             this.btnPlanets.TabIndex = 37;
             this.btnPlanets.Text = "Planets";
             this.btnPlanets.UseVisualStyleBackColor = false;
@@ -122,10 +119,9 @@
             this.btnEarth.BackColor = System.Drawing.Color.DimGray;
             this.btnEarth.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEarth.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnEarth.Location = new System.Drawing.Point(292, 139);
-            this.btnEarth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEarth.Location = new System.Drawing.Point(438, 198);
             this.btnEarth.Name = "btnEarth";
-            this.btnEarth.Size = new System.Drawing.Size(156, 72);
+            this.btnEarth.Size = new System.Drawing.Size(234, 111);
             this.btnEarth.TabIndex = 36;
             this.btnEarth.Text = "Earth";
             this.btnEarth.UseVisualStyleBackColor = false;
@@ -135,10 +131,9 @@
             this.btnGalaxies.BackColor = System.Drawing.Color.DimGray;
             this.btnGalaxies.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGalaxies.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnGalaxies.Location = new System.Drawing.Point(73, 456);
-            this.btnGalaxies.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGalaxies.Location = new System.Drawing.Point(110, 622);
             this.btnGalaxies.Name = "btnGalaxies";
-            this.btnGalaxies.Size = new System.Drawing.Size(156, 72);
+            this.btnGalaxies.Size = new System.Drawing.Size(234, 111);
             this.btnGalaxies.TabIndex = 35;
             this.btnGalaxies.Text = "Galaxies";
             this.btnGalaxies.UseVisualStyleBackColor = false;
@@ -149,10 +144,9 @@
             this.btnSky.BackColor = System.Drawing.Color.DimGray;
             this.btnSky.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSky.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSky.Location = new System.Drawing.Point(499, 139);
-            this.btnSky.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSky.Location = new System.Drawing.Point(748, 198);
             this.btnSky.Name = "btnSky";
-            this.btnSky.Size = new System.Drawing.Size(156, 72);
+            this.btnSky.Size = new System.Drawing.Size(234, 111);
             this.btnSky.TabIndex = 34;
             this.btnSky.Text = "Night Sky";
             this.btnSky.UseVisualStyleBackColor = false;
@@ -162,10 +156,9 @@
             this.btnMoons.BackColor = System.Drawing.Color.DimGray;
             this.btnMoons.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMoons.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMoons.Location = new System.Drawing.Point(292, 295);
-            this.btnMoons.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMoons.Location = new System.Drawing.Point(438, 405);
             this.btnMoons.Name = "btnMoons";
-            this.btnMoons.Size = new System.Drawing.Size(156, 72);
+            this.btnMoons.Size = new System.Drawing.Size(234, 111);
             this.btnMoons.TabIndex = 33;
             this.btnMoons.Text = "Moons";
             this.btnMoons.UseVisualStyleBackColor = false;
@@ -175,10 +168,9 @@
             this.btnLights.BackColor = System.Drawing.Color.DimGray;
             this.btnLights.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLights.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnLights.Location = new System.Drawing.Point(73, 139);
-            this.btnLights.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLights.Location = new System.Drawing.Point(110, 198);
             this.btnLights.Name = "btnLights";
-            this.btnLights.Size = new System.Drawing.Size(156, 72);
+            this.btnLights.Size = new System.Drawing.Size(234, 111);
             this.btnLights.TabIndex = 32;
             this.btnLights.Text = "Dome Lights";
             this.btnLights.UseVisualStyleBackColor = false;
@@ -188,22 +180,33 @@
             this.lblDigi.AutoSize = true;
             this.lblDigi.Font = new System.Drawing.Font("Impact", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDigi.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lblDigi.Location = new System.Drawing.Point(15, 27);
-            this.lblDigi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDigi.Location = new System.Drawing.Point(22, 42);
             this.lblDigi.Name = "lblDigi";
-            this.lblDigi.Size = new System.Drawing.Size(209, 46);
+            this.lblDigi.Size = new System.Drawing.Size(306, 68);
             this.lblDigi.TabIndex = 31;
             this.lblDigi.Text = "DigiScriptor";
             // 
+            // btnCustomCode
+            // 
+            this.btnCustomCode.BackColor = System.Drawing.Color.DimGray;
+            this.btnCustomCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomCode.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCustomCode.Location = new System.Drawing.Point(383, 819);
+            this.btnCustomCode.Name = "btnCustomCode";
+            this.btnCustomCode.Size = new System.Drawing.Size(344, 111);
+            this.btnCustomCode.TabIndex = 41;
+            this.btnCustomCode.Text = "Add Your Own Code";
+            this.btnCustomCode.UseVisualStyleBackColor = false;
+            this.btnCustomCode.Click += new System.EventHandler(this.btnCustomCode_Click);
+            // 
             // UserControlHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Controls.Add(this.panelHomeScreen);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UserControlHome";
-            this.Size = new System.Drawing.Size(708, 646);
+            this.Size = new System.Drawing.Size(1062, 994);
             this.Load += new System.EventHandler(this.UserControlHome_Load);
             this.panelHomeScreen.ResumeLayout(false);
             this.panelHomeScreen.PerformLayout();
@@ -224,5 +227,6 @@
         public System.Windows.Forms.Button btnMoons;
         public System.Windows.Forms.Button btnLights;
         private System.Windows.Forms.Label lblDigi;
+        public System.Windows.Forms.Button btnCustomCode;
     }
 }
