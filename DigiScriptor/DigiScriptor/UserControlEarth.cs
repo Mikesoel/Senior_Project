@@ -115,8 +115,8 @@ namespace DigiScriptor
 
                     getCoordinates();
                     String cartDescription = "move to " + popularLocationsCombo.Text.Trim();
-                    String cartCode = "navigation landLatitude " + landLatitude + "\n" +
-                                      "navigation landLongitude " + landLongitude + "\n ";
+                    String cartCode = "\tnavigation landLatitude " + landLatitude + "\n" +
+                                      "\tnavigation landLongitude " + landLongitude + "\n ";
 
                     //create Earth item
                     ShowItem earthItem = new ShowItem("Earth Move", cartDescription, cartCode);

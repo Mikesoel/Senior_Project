@@ -129,7 +129,7 @@ namespace DigiScriptor
 
                     getCoordinates();
                     String cartDescription = "move to " + nebulaeDropdown.Text.Trim();
-                    String cartCode = "navigation flyTo celestial " + RAHr + ":" + RAMin + ":" + RASec + " " + DDeg + ":" + DMin + ":" + DSec + "";
+                    String cartCode = "\tnavigation flyTo celestial " + RAHr + ":" + RAMin + ":" + RASec + " " + DDeg + ":" + DMin + ":" + DSec + "";
 
                     //create Nebula item
                     ShowItem nebulaeItem = new ShowItem("Nebula Move", cartDescription, cartCode);

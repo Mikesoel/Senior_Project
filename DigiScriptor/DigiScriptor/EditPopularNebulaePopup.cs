@@ -36,6 +36,7 @@ namespace DigiScriptor
         private Boolean search_Valid = false;
         private Boolean editRow = false;
         UserControlNebulae nebulaePanel;
+        public string selection;
 
         public EditPopularNebulaePopup(UserControlNebulae NebulaeP)
         {
@@ -486,6 +487,20 @@ namespace DigiScriptor
 
             }
 
+        }
+
+        private void selectBtn_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in nebulaeDataGrid.SelectedRows)
+            {
+                //Reads nebula name from specified cell to use to add name to combo box
+                selection = nebulaeDataGrid.SelectedCells[0].Value.ToString();
+
+                //sets combo box text and trims
+                nebulaePanel.nebulaeDropdown.Text = selection.Trim();
+
+            }
+            this.Close();
         }
 
         private void DecMinTxt_TextChanged(object sender, EventArgs e)
