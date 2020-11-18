@@ -32,11 +32,13 @@
             this.btnUp = new System.Windows.Forms.Button();
             this.btnDown = new System.Windows.Forms.Button();
             this.descriptionBox = new System.Windows.Forms.RichTextBox();
+            this.DelayBtn = new System.Windows.Forms.Button();
             this.titleBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // titleBox
             // 
+            this.titleBox.Controls.Add(this.DelayBtn);
             this.titleBox.Controls.Add(this.btnUp);
             this.titleBox.Controls.Add(this.btnDown);
             this.titleBox.Controls.Add(this.descriptionBox);
@@ -86,6 +88,17 @@
             this.descriptionBox.Text = "";
             this.descriptionBox.TextChanged += new System.EventHandler(this.descriptionBox_TextChanged);
             // 
+            // DelayBtn
+            // 
+            this.DelayBtn.Font = new System.Drawing.Font("Arial", 8F);
+            this.DelayBtn.Location = new System.Drawing.Point(233, 29);
+            this.DelayBtn.Name = "DelayBtn";
+            this.DelayBtn.Size = new System.Drawing.Size(40, 20);
+            this.DelayBtn.TabIndex = 40;
+            this.DelayBtn.Text = "⌛";
+            this.DelayBtn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.DelayBtn.UseVisualStyleBackColor = true;
+            // 
             // ShowItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -104,5 +117,6 @@
         public System.Windows.Forms.RichTextBox descriptionBox;
         private System.Windows.Forms.Button btnUp;
         private System.Windows.Forms.Button btnDown;
+        private System.Windows.Forms.Button DelayBtn;
     }
 }

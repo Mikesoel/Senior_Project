@@ -12,9 +12,20 @@ namespace DigiScriptor
 {
     public partial class ShowItem : UserControl
     {
+        ToolTip toolTip = new ToolTip();
+
+
+
+
         public ShowItem()
         {
             InitializeComponent();
+
+
+            //toolTip setup
+            SetupToolTips();
+
+
         }
 
 
@@ -29,6 +40,11 @@ namespace DigiScriptor
             //set description and text box
             description = Description;
             descriptionBox.Text = Description;
+
+
+            //toolTip setup
+            SetupToolTips();
+
 
         }
 
@@ -47,6 +63,12 @@ namespace DigiScriptor
 
             //set code
             code = Code;
+
+
+            //toolTip setup
+            SetupToolTips();
+
+
         }
 
 
@@ -138,5 +160,22 @@ namespace DigiScriptor
                 this.code = descriptionBox.Text;
             }
         }
+
+
+        void SetupToolTips()
+        {
+
+
+            //set up toolTip
+            toolTip.AutoPopDelay = 5000;
+            toolTip.InitialDelay = 1000;
+            toolTip.ReshowDelay = 500;
+
+            toolTip.SetToolTip(DelayBtn, "set delay");
+
+
+
+        }
+
     }
 }

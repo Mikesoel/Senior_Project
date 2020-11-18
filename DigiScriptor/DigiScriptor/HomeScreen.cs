@@ -85,13 +85,19 @@ namespace DigiScriptor
 
         public void UpdateList()
         {
+            ShowItem lastItem = new ShowItem();
             //update the show list
             for(int i= 0; i < theList.Count; i++)
             {
                 //go through list adding show items to the show
                 showPanel.Controls.Add(theList[i]);
-
+                lastItem = theList[i];
             }
+
+            //auto scroll to last item in list (newest item added)
+            showPanel.ScrollControlIntoView(lastItem);
+
+
         }
 
         public void AddItem(ShowItem newItem)
