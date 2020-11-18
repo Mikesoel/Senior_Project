@@ -215,12 +215,12 @@ namespace DigiScriptor
             for (int i = 0; i < theList.Count; i++)
             {
                 //comment the title
-                codeOut += @"//";
+                codeOut += @"#";
                 codeOut += theList[i].Title;
                 codeOut += "\n";
 
                 //comment the description
-                codeOut += @"/* " + "\n";
+                codeOut += " \"\"\" " + "\n";
                 if((theList[i].Title).Contains("Custom"))
                 {
                     codeOut += "user inputted code";
@@ -229,8 +229,13 @@ namespace DigiScriptor
                     codeOut += theList[i].Description;
                 }
                 codeOut += "\n";
-                codeOut += @"*/";
+                codeOut += "\"\"\"";
                 codeOut += "\n";
+
+
+                //add in delay
+                codeOut += "+" + theList[i].Delay;
+
 
                 //check if the item has code
                 if (theList[i].Code != "")
@@ -241,7 +246,7 @@ namespace DigiScriptor
                 else
                 {
                     //fill code sections with comment
-                    codeOut += @"// code goes here!!!!!";
+                    codeOut += @"# code goes here!!!!!";
                     codeOut += "\n\n";
                 }
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace DigiScriptor
 {
@@ -79,6 +80,7 @@ namespace DigiScriptor
         private String title = "";
         private String description = "";
         private String code = "";
+        private int delay = 0;
 
         //set up setters and getters for showitems
         public String Title
@@ -100,6 +102,13 @@ namespace DigiScriptor
             get { return code; }
             set { code = value; }
 
+        }
+
+
+        public int Delay
+        {
+            get { return delay; }
+            set { delay = value; }
         }
 
         #endregion
@@ -177,5 +186,13 @@ namespace DigiScriptor
 
         }
 
+        private void DelayBtn_Click(object sender, EventArgs e)
+        {
+            DelayPopup DelayScreen = new DelayPopup(title,delay);
+            DelayScreen.Show();
+
+
+
+        }
     }
 }

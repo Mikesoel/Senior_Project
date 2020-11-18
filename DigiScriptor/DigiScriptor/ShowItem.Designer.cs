@@ -98,6 +98,7 @@
             this.DelayBtn.Text = "⌛";
             this.DelayBtn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.DelayBtn.UseVisualStyleBackColor = true;
+            this.DelayBtn.Click += new System.EventHandler(this.DelayBtn_Click);
             // 
             // ShowItem
             // 

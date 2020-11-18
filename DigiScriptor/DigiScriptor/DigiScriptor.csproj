@@ -64,6 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DelayPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DelayPopup.Designer.cs">
+      <DependentUpon>DelayPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="DigiDataBaseDataSet.Designer.cs">
       <DependentUpon>DigiDataBaseDataSet.xsd</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -170,6 +176,9 @@
     <Compile Include="UserControlStars.Designer.cs">
       <DependentUpon>UserControlStars.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DelayPopup.resx">
+      <DependentUpon>DelayPopup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditPopularEarthLocationsPopup.resx">
       <DependentUpon>EditPopularEarthLocationsPopup.cs</DependentUpon>
     </EmbeddedResource>
