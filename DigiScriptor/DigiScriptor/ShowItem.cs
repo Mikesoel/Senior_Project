@@ -7,14 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace DigiScriptor
 {
     public partial class ShowItem : UserControl
     {
+        ToolTip toolTip = new ToolTip();
+
+
+
+
         public ShowItem()
         {
             InitializeComponent();
+
+
+            //toolTip setup
+            SetupToolTips();
+
+
         }
 
 
@@ -29,6 +41,11 @@ namespace DigiScriptor
             //set description and text box
             description = Description;
             descriptionBox.Text = Description;
+
+
+            //toolTip setup
+            SetupToolTips();
+
 
         }
 
@@ -47,6 +64,12 @@ namespace DigiScriptor
 
             //set code
             code = Code;
+
+
+            //toolTip setup
+            SetupToolTips();
+
+
         }
 
 
@@ -57,6 +80,7 @@ namespace DigiScriptor
         private String title = "";
         private String description = "";
         private String code = "";
+        private int delay = 0;
 
         //set up setters and getters for showitems
         public String Title
@@ -78,6 +102,13 @@ namespace DigiScriptor
             get { return code; }
             set { code = value; }
 
+        }
+
+
+        public int Delay
+        {
+            get { return delay; }
+            set { delay = value; }
         }
 
         #endregion
@@ -136,6 +167,57 @@ namespace DigiScriptor
             {
                 //this.description = descriptionBox.Text;
                 this.code = descriptionBox.Text;
+            }
+        }
+
+
+        void SetupToolTips()
+        {
+
+
+            //set up toolTip
+            toolTip.AutoPopDelay = 5000;
+            toolTip.InitialDelay = 1000;
+            toolTip.ReshowDelay = 500;
+
+            toolTip.SetToolTip(DelayBtn, "set delay");
+
+
+
+        }
+
+        private void DelayBtn_Click(object sender, EventArgs e)
+        {
+            DelayPopup DelayScreen = new DelayPopup(title,delay);
+            DelayScreen.Show();
+
+
+
+        }
+
+        private void btnDeleteItem_Click(object sender, EventArgs e)
+        {
+            List<ShowItem> list = HomeScreen.Current.GetList();
+            int thisIndex = list.IndexOf(this);
+
+            if (list.Count >= 1) //make sure there is one item to delete
+            {
+                //confirmation message
+                String sub = "Are you sure you want to delete? This will permanently remove this item from the Show.";
+                String con = "Confirm";
+                DialogResult results;
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+
+                //display messgae
+                results = MessageBox.Show(sub, con, buttons);
+                
+                //if result is 'yes' then delete the ShowItem
+                if (results == DialogResult.Yes)
+                {
+                    list.Remove(list[thisIndex]); //removing this ShowItem
+                    HomeScreen.Current.showPanel.Controls.Clear();
+                    HomeScreen.Current.UpdateList();
+                }
             }
         }
     }

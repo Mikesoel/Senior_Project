@@ -46,7 +46,7 @@ namespace DigiScriptor
             // splitter2
             // 
             this.splitter2.Location = new System.Drawing.Point(0, 0);
-            this.splitter2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitter2.Margin = new System.Windows.Forms.Padding(2);
             this.splitter2.Name = "splitter2";
             this.splitter2.Size = new System.Drawing.Size(7, 666);
             this.splitter2.TabIndex = 22;
@@ -54,8 +54,9 @@ namespace DigiScriptor
             // 
             // splitContainer1
             // 
+            this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(10, 4);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -103,7 +104,7 @@ namespace DigiScriptor
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.SpringGreen;
             this.btnSubmit.Location = new System.Drawing.Point(204, 545);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(181, 49);
             this.btnSubmit.TabIndex = 13;
@@ -115,7 +116,7 @@ namespace DigiScriptor
             // 
             this.userControlHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.userControlHome.Location = new System.Drawing.Point(0, 0);
-            this.userControlHome.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.userControlHome.Margin = new System.Windows.Forms.Padding(1);
             this.userControlHome.Name = "userControlHome";
             this.userControlHome.Size = new System.Drawing.Size(708, 646);
             this.userControlHome.TabIndex = 31;
@@ -130,7 +131,7 @@ namespace DigiScriptor
             this.Controls.Add(this.userControlHome);
             this.Controls.Add(this.splitter2);
             this.Controls.Add(this.splitContainer1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1285, 716);
             this.Name = "HomeScreen";
