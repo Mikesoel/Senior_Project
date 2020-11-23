@@ -98,6 +98,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaveMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaveMenu.Designer.cs">
+      <DependentUpon>SaveMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="ShowItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -170,9 +176,6 @@
     <EmbeddedResource Include="EditPopularNebulaePopup.resx">
       <DependentUpon>EditPopularNebulaePopup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditPopularStarsPopup.resx">
-      <DependentUpon>EditPopularStarsPopup.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="HomeScreen.resx">
       <DependentUpon>HomeScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,6 +191,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SaveMenu.resx">
+      <DependentUpon>SaveMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ShowItem.resx">
       <DependentUpon>ShowItem.cs</DependentUpon>
     </EmbeddedResource>

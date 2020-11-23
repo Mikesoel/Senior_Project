@@ -46,7 +46,7 @@ namespace DigiScriptor
             {
                 
                 //confirmation message
-                String sub = "submit?";
+                String sub = "Submit?";
                 String con = "Confirm";
                 DialogResult results;
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
@@ -245,6 +245,10 @@ namespace DigiScriptor
                 Color myRgbColor = new Color();
                 myRgbColor= Color.FromArgb(r,g,b);
                 textBox1.BackColor = myRgbColor;
+                textBoxR.Text=""+r;
+                textBoxG.Text=""+g;
+                textBoxB.Text = "" + b;
+
             }
             
         }
