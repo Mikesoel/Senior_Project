@@ -232,7 +232,7 @@ namespace DigiScriptor
             if (ValidPlanetEntry())
             {
                 //confirmation message
-                String sub = "submit?";
+                String sub = "Submit?";
                 String con = "Confirm";
                 DialogResult results;
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
@@ -253,13 +253,6 @@ namespace DigiScriptor
 
                     //update the show list after submit
                     HomeScreen.Current.UpdateList();
-
-
-                    //for after submited is 'ok'
-                    if (MessageBox.Show("submitted") == DialogResult.OK)
-                    {
-                        //do something after submitted message
-                    }
 
                 }
             }

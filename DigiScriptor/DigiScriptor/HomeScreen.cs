@@ -26,6 +26,12 @@ namespace DigiScriptor
         //to the show list
         private Boolean isNavigationOn = false;
 
+
+        //create flag if stars need to be on
+        private Boolean isStarOn = false;
+
+
+
         //create singular save menu
         public SaveMenu save;
 
@@ -79,13 +85,19 @@ namespace DigiScriptor
 
         public void UpdateList()
         {
+            ShowItem lastItem = new ShowItem();
             //update the show list
             for(int i= 0; i < theList.Count; i++)
             {
                 //go through list adding show items to the show
                 showPanel.Controls.Add(theList[i]);
-
+                lastItem = theList[i];
             }
+
+            //auto scroll to last item in list (newest item added)
+            showPanel.ScrollControlIntoView(lastItem);
+
+
         }
 
         public void AddItem(ShowItem newItem)
@@ -100,14 +112,23 @@ namespace DigiScriptor
                 isNavigationOn = true;
             }
 
+            //checking to see if the item being added is to turn
+            //stars on
+            if((newItem.Title).Equals("Turn on Stars"))
+            {
+                isStarOn = true;
+            }
+
+
             UpdateList();
         }
-
 
         public List<ShowItem> GetList()
         {
             return theList;
         }
+
+     
 
 
         public void Swap<ShowItem>(int index1, int index2)
@@ -131,6 +152,13 @@ namespace DigiScriptor
         {
             //returns whether nagivation has been turned on yet
             return isNavigationOn;
+        }
+
+
+
+        public Boolean getIsStarsOn()
+        {
+            return isStarOn;
         }
 
 
@@ -187,12 +215,12 @@ namespace DigiScriptor
             for (int i = 0; i < theList.Count; i++)
             {
                 //comment the title
-                codeOut += @"//";
+                codeOut += @"#";
                 codeOut += theList[i].Title;
                 codeOut += "\n";
 
                 //comment the description
-                codeOut += @"/*";
+                codeOut += " \"\"\" " + "\n";
                 if((theList[i].Title).Contains("Custom"))
                 {
                     codeOut += "user inputted code";
@@ -201,8 +229,13 @@ namespace DigiScriptor
                     codeOut += theList[i].Description;
                 }
                 codeOut += "\n";
-                codeOut += @"*/";
+                codeOut += "\"\"\"";
                 codeOut += "\n";
+
+
+                //add in delay
+                codeOut += "+" + theList[i].Delay + "\n";
+
 
                 //check if the item has code
                 if (theList[i].Code != "")
@@ -213,7 +246,7 @@ namespace DigiScriptor
                 else
                 {
                     //fill code sections with comment
-                    codeOut += @"// code goes here!!!!!";
+                    codeOut += @"# code goes here!!!!!";
                     codeOut += "\n\n";
                 }
 

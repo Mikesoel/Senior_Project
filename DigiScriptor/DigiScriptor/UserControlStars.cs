@@ -21,13 +21,24 @@ namespace DigiScriptor
         private Boolean RAsMinTxt_Valid = false;
         private Boolean RAsSecTxt_Valid = false;
 
+        private Boolean selecting = false;
+
+
+
+        private String selectedName;
+
+        private int DecD,DecMin,DecSec;
+        private int RAHr, RAMin, RASec;
+
+
+
+
+
 
         string sqlPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\")) + @"DigiDataBase.mdf;Integrated Security=True";
         SqlConnection connect;
         DataTable dt = new DataTable();
 
-
-     
 
         public UserControlStars()
         {
@@ -58,17 +69,10 @@ namespace DigiScriptor
             {
                 StarFavorites.Items.Add(dr["Name"].ToString().Trim());
 
-                
-                
-
-
-
             }
             connect.Close();
 
         }
-
-
 
 
 
@@ -111,24 +115,40 @@ namespace DigiScriptor
             //if result is 'yes' then show submited
             if (results == DialogResult.Yes)
             {
+                String description = String.Empty;
+
+                //see if star is selected
+                if(selectedName != String.Empty)
+                {
+                    description += "Name: " + selectedName + "\n";
+                }
+
+
+                //create desrciption 
+                description += "Right Ascention: " + RAHr + "h " + RAMin + "m " + RASec + "s\n"+
+                    "Declination: " + DecD + "° " + DecMin + "\' " + DecSec + "\"";
+
+
+                //see if stars are on
+                Boolean starsOn = HomeScreen.Current.getIsStarsOn();
+
+                //see if stars are needed for commands to come
+                if (!starsOn)
+                {
+                    ShowItem turnOnStars = new ShowItem("Turn on Stars", "Turn on stars for any command using stars", "\tstars on");
+                    HomeScreen.Current.AddItem(turnOnStars);
+
+                }
+
 
                 //create star item
-                ShowItem Staritem = new ShowItem("Star Move", "this is a star move");
+                ShowItem Staritem = new ShowItem("Star Move", description, codeMaker());
 
                 //add show item to list
                 HomeScreen.Current.AddItem(Staritem);
 
-
-
                 //update the show list after submit
                 HomeScreen.Current.UpdateList();
-
-
-                //for after submited is 'ok'
-                if (MessageBox.Show("Submitted") == DialogResult.OK)
-                {
-                    //do something after submitted message
-                }
 
             }
             else
@@ -136,18 +156,29 @@ namespace DigiScriptor
                 //what to do if no is selected
 
             }
-            
-
 
         }
 
 
         private void DecDTxt_TextChanged(object sender, EventArgs e)
         {
-            //check if text is empty
-            if(DecDTxt.Text != "")
+            int value = 0;
+
+            if (selecting == true)
             {
-                int value = 0;
+                //if correct keep text black
+                DecDTxt.ForeColor = Color.Black;
+                DecDTxt_Valid = true;
+                value = Convert.ToInt32(DecDTxt.Text);
+                DecD = value;
+
+            }
+            //check if text is empty for user input
+            else if(DecDTxt.Text != "")
+            {
+                //clear selected if user types in box
+                StarFavorites.SelectedItem = null;
+                selectedName = String.Empty;
 
                 //if something is in box try to convert to int
                 try
@@ -160,6 +191,8 @@ namespace DigiScriptor
                         DecDTxt.ForeColor = Color.Black;
                         //data is valid
                         DecDTxt_Valid = true;
+                        DecD = value;
+
                     }
                     else
                     {
@@ -180,6 +213,10 @@ namespace DigiScriptor
             }
             else
             {
+                //clear selected if user types in box
+                StarFavorites.SelectedItem = null;
+                selectedName = String.Empty;
+
                 //no data input
                 DecDTxt_Valid = false;
             }
@@ -189,11 +226,24 @@ namespace DigiScriptor
 
         private void DecMinTxt_TextChanged(object sender, EventArgs e)
         {
-           
-            //check if text is empty
-            if (DecMinTxt.Text != "")
+            int value = 0;
+
+            if (selecting == true)
             {
-                int value = 0;
+                //if correct keep text black
+                DecMinTxt.ForeColor = Color.Black;
+                DecMinTxt_Valid = true;
+                value = Convert.ToInt32(DecMinTxt.Text);
+                DecMin = value;
+
+            }
+
+            //check if text is empty
+            else if (DecMinTxt.Text != "")
+            {
+                //clear selected if user types in box
+                StarFavorites.SelectedItem = null;
+                selectedName = String.Empty;
 
                 //if something is in box try to convert to int
                 try
@@ -205,6 +255,7 @@ namespace DigiScriptor
                         //if correct keep text black
                         DecMinTxt.ForeColor = Color.Black;
                         DecMinTxt_Valid = true;
+                        DecMin = value;
                     }
                     else
                     {
@@ -223,6 +274,10 @@ namespace DigiScriptor
             }
             else
             {
+                //clear selected if user types in box
+                StarFavorites.SelectedItem = null;
+                selectedName = String.Empty;
+
                 //no data input
                 DecMinTxt_Valid = false;
             }
@@ -231,10 +286,23 @@ namespace DigiScriptor
 
         private void DecSecTxt_TextChanged(object sender, EventArgs e)
         {
-            //check if text is empty
-            if (DecSecTxt.Text != "")
+            int value = 0;
+
+            if (selecting == true)
             {
-                int value = 0;
+                //if correct keep text black
+                DecSecTxt.ForeColor = Color.Black;
+                DecSecTxt_Valid = true;
+                value = Convert.ToInt32(DecSecTxt.Text);
+                DecSec = value;
+
+            }
+            //check if text is empty
+            else if (DecSecTxt.Text != "")
+            {
+                //clear selected if user types in box
+                StarFavorites.SelectedItem = null;
+                selectedName = String.Empty;
 
                 //if something is in box try to convert to int
                 try
@@ -246,7 +314,7 @@ namespace DigiScriptor
                         //if correct keep text black
                         DecSecTxt.ForeColor = Color.Black;
                         DecSecTxt_Valid = true;
-
+                        DecSec = value;
 
                     }
                     else
@@ -266,19 +334,41 @@ namespace DigiScriptor
             }
             else
             {
+                //clear selected if user types in box
+                StarFavorites.SelectedItem = null;
+                selectedName = String.Empty;
+
                 //no data input
                 DecSecTxt_Valid = false;
             }
+
+
+
+
 
         }
 
 
         private void RAsHrTxt_TextChanged(object sender, EventArgs e)
         {
-            //check if text is empty
-            if (RAsHrTxt.Text != "")
+            int value = 0;
+
+            if (selecting == true)
             {
-                int value = 0;
+                //if correct keep text black
+                RAsHrTxt.ForeColor = Color.Black;
+                RAsHrTxt_Valid = true;
+                value = Convert.ToInt32(RAsHrTxt.Text);
+                RAHr = value;
+
+            }
+
+            //check if text is empty
+            else if (RAsHrTxt.Text != "")
+            {
+                //clear selected if user types in box
+                StarFavorites.SelectedItem = null;
+                selectedName = String.Empty;
 
                 //if something is in box try to convert to int
                 try
@@ -290,6 +380,7 @@ namespace DigiScriptor
                         //if correct keep text black
                         RAsHrTxt.ForeColor = Color.Black;
                         RAsHrTxt_Valid = true;
+                        RAHr = value;
 
                     }
                     else
@@ -309,6 +400,10 @@ namespace DigiScriptor
             }
             else
             {
+                //clear selected if user types in box
+                StarFavorites.SelectedItem = null;
+                selectedName = String.Empty;
+
                 //no data input
                 RAsHrTxt_Valid = false;
             }
@@ -317,10 +412,26 @@ namespace DigiScriptor
 
         private void RAsMinTxt_TextChanged(object sender, EventArgs e)
         {
-            //check if text is empty
-            if (RAsMinTxt.Text != "")
+            int value = 0;
+
+            //see if selection is updating box
+            if (selecting == true)
             {
-                int value = 0;
+                //if correct keep text black
+                RAsMinTxt.ForeColor = Color.Black;
+                RAsMinTxt_Valid = true;
+                value = Convert.ToInt32(RAsMinTxt.Text);
+                RAMin = value;
+
+            }
+
+
+            //check if text is empty
+            else if (RAsMinTxt.Text != "")
+            {
+                //clear selected if user types in box
+                StarFavorites.SelectedItem = null;
+                selectedName = String.Empty;
 
                 //if something is in box try to convert to int
                 try
@@ -332,6 +443,7 @@ namespace DigiScriptor
                         //if correct keep text black
                         RAsMinTxt.ForeColor = Color.Black;
                         RAsMinTxt_Valid = true;
+                        RAMin = value;
 
                     }
                     else
@@ -351,6 +463,10 @@ namespace DigiScriptor
             }
             else
             {
+                //clear selected if user types in box
+                StarFavorites.SelectedItem = null;
+                selectedName = String.Empty;
+
                 //no data input
                 RAsMinTxt_Valid = false;
             }
@@ -359,10 +475,26 @@ namespace DigiScriptor
 
         private void RAsSecTxt_TextChanged(object sender, EventArgs e)
         {
-            //check if text is empty
-            if (RAsSecTxt.Text != "")
+            int value = 0;
+
+            //see if selection is updating box
+            if (selecting == true)
             {
-                int value = 0;
+                //if correct keep text black
+                RAsSecTxt.ForeColor = Color.Black;
+                RAsSecTxt_Valid = true;
+                value = Convert.ToInt32(RAsSecTxt.Text);
+                RASec = value;
+
+            }
+
+
+            //check if text is empty
+            else if (RAsSecTxt.Text != "")
+            {
+                //clear selected if user types in box
+                StarFavorites.SelectedItem = null;
+                selectedName = String.Empty;
 
                 //if something is in box try to convert to int
                 try
@@ -374,6 +506,7 @@ namespace DigiScriptor
                         //if correct keep text black
                         RAsSecTxt.ForeColor = Color.Black;
                         RAsSecTxt_Valid = true;
+                        RASec = value;
 
                     }
                     else
@@ -393,9 +526,18 @@ namespace DigiScriptor
             }
             else
             {
+                //clear selected if user types in box
+                StarFavorites.SelectedItem = null;
+                selectedName = String.Empty;
+
                 //no data input
                 RAsSecTxt_Valid = false;
             }
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
 
@@ -406,48 +548,54 @@ namespace DigiScriptor
 
         private void StarFavorites_SelectedIndexChanged(object sender, EventArgs e)
         {
+            selectedName = String.Empty;
             
+            //open database
             connect.Open();
+            //establish connection
             SqlCommand cmd = connect.CreateCommand();
             cmd.CommandType = CommandType.Text;
-
-            //Tracks user selected row in datagridview
-
-            //Queries database with selected info to delete row
-            cmd.CommandText = "SELECT * FROM StarFavorites WHERE Name LIKE @index";
-            cmd.Parameters.AddWithValue("@index", StarFavorites.SelectedItem);
+            cmd.CommandText = "select * from StarFavorites";
             cmd.ExecuteNonQuery();
+            
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
 
-            try
-            {
-                SqlDataAdapter sda = new SqlDataAdapter();
-                sda.SelectCommand = cmd;
+            try {
+                //build command to search for star in DB
+                String select = "Name = \'" + StarFavorites.Text + "\'";
+
+                //get row with name from DB
+                DataRow[] dr = dt.Select(select);
+
+                //update txt from selection
+                selecting = true;
+
+                //grab data from database
+                RAsHrTxt.Text = dr[1][1].ToString();
+                RAsMinTxt.Text = dr[1][2].ToString();
+                RAsSecTxt.Text = dr[1][3].ToString();
+                DecDTxt.Text = dr[1][4].ToString();
+                DecMinTxt.Text = dr[1][5].ToString();
+                DecSecTxt.Text = dr[1][6].ToString();
 
                 
-                sda.Fill(dt);
-                foreach (DataRow dr in dt.Rows)
-                {
-                    //StarFavorites.Items.Add(dr["Name"].ToString().Trim());
-
-                    RAsHrTxt.Text = dr["RAHr"].ToString();
-
-
-
-
-                }
-
-
-
+                
             }
-
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
+
             }
 
-
+            //close data base
             connect.Close();
-            
+
+
+            //update name
+            selectedName = StarFavorites.Text;
+
+            //default selecting
+            selecting = false;
 
         }
 
@@ -457,5 +605,38 @@ namespace DigiScriptor
             EditPopularStarsPopup editData = new EditPopularStarsPopup(this);
             editData.Show();
         }
+
+
+        private String codeMaker()
+        {
+            String code = String.Empty;
+
+            //if a favorite is picked then code based off name
+            if(selectedName != String.Empty)
+            {
+                //create code for selected star
+
+                code += "\teye turnTo star";
+
+                //remove spaces from name for DS to underStand
+                string noSpaceName = selectedName;
+                noSpaceName = noSpaceName.Replace(" ", "");
+
+
+
+
+
+            }
+            else
+            {
+
+
+
+
+            }
+
+            return code;
+        }
+
     }
 }
