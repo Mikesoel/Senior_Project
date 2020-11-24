@@ -110,6 +110,12 @@
     <Compile Include="SaveMenu.Designer.cs">
       <DependentUpon>SaveMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchGalaxiesPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchGalaxiesPopup.Designer.cs">
+      <DependentUpon>SearchGalaxiesPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="ShowItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -202,6 +208,9 @@
     </Compile>
     <EmbeddedResource Include="SaveMenu.resx">
       <DependentUpon>SaveMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchGalaxiesPopup.resx">
+      <DependentUpon>SearchGalaxiesPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShowItem.resx">
       <DependentUpon>ShowItem.cs</DependentUpon>

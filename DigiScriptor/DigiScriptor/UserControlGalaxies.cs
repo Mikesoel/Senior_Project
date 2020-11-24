@@ -35,15 +35,18 @@ namespace DigiScriptor
             connect.Open();
             SqlCommand cmd = connect.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Name from GalaxiesScreenList";
+            cmd.CommandText = "select CommonName from GalaxiesScreenList";
             cmd.ExecuteNonQuery();
+
+            //Add names to combobox
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             foreach (DataRow dr in dt.Rows)
             {
-                comboBoxGalaxies.Items.Add((dr["Name"].ToString()).TrimEnd());
+                comboBoxGalaxies.Items.Add(dr["CommonName"].ToString().Trim());
             }
+
             connect.Close();
         }
 
@@ -100,17 +103,52 @@ namespace DigiScriptor
                 if (results == DialogResult.Yes)
                 {
                     Boolean isNavigationOn = HomeScreen.Current.GetIsNavOn();
+                    String galaxyOutput = "";
 
                     //if navigation has not been turned on yet, turn it on to
                     //flyTo galaxy
                     if(!isNavigationOn)
                     {
-                        ShowItem naviItem = new ShowItem("Navigation On", "turn navigation on for flyTo commands", "navigation on;");
+                        ShowItem naviItem = new ShowItem("Navigation On", "turn navigation on", "\tnavigation on");
                         HomeScreen.Current.AddItem(naviItem);
                     }
 
+
+                    connect.Open();
+                    SqlCommand cmd = connect.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    //cmd.CommandText = "select CommonName from GalaxiesScreenList WHERE (CommonName LIKE '%' + @searchValue + '%')";
+                    //cmd.Parameters.AddWithValue("@searchValue", lblGalaxiesOutput.Text);
+                    cmd.CommandText = "select CommonName, DigistarName from GalaxiesScreenList";
+                    cmd.ExecuteNonQuery();
+
+                    //Get the digistar name based on common name selected
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        if((dr["CommonName"].ToString().Trim()).Contains(lblGalaxiesOutput.Text))
+                        {
+                            try
+                            {
+                                galaxyOutput = dr["DigistarName"].ToString().Trim();
+                            } catch
+                            {
+
+                            }
+                        }
+                    }
+
+                    connect.Close();
+
                     String cartDescription = "move to " + lblGalaxiesOutput.Text + " Galaxy";
-                    String cartCode = "navigation flyTo " + lblGalaxiesOutput.Text + ";";
+
+                    //lines of code for going to a galaxy
+                    String cartCode = "\t" + galaxyOutput + " on\n" + "\t" + galaxyOutput + " intensity 90\n";
+                    cartCode += "\teye turnto " + galaxyOutput + "\n";
+                    cartCode += "\tscene attitude 0 -90 0\n";
+                    cartCode += "\tscene zoomFOV 2";
 
                     //create star item
                     ShowItem galaxyItem = new ShowItem("Galaxy Move", cartDescription, cartCode);
@@ -158,6 +196,13 @@ namespace DigiScriptor
         private void btnTriangulum_Click(object sender, EventArgs e)
         {
             this.lblGalaxiesOutput.Text = this.btnTriangulum.Text;
+        }
+
+        private void btnSearchGalaxies_Click(object sender, EventArgs e)
+        {
+            //Opens galaxies search/edit popup window when clicked
+            SearchGalaxiesPopup searchGalaxyData = new SearchGalaxiesPopup(this);
+            searchGalaxyData.Show();
         }
     }
 }
