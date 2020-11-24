@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelEarth = new System.Windows.Forms.Panel();
+            this.lblGalaxies = new System.Windows.Forms.Label();
             this.editPopularLocationsButton = new System.Windows.Forms.Button();
             this.btnSubmitEarth = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -48,7 +49,6 @@
             this.lblEarthCustomLocation = new System.Windows.Forms.Label();
             this.popularLocationsCombo = new System.Windows.Forms.ComboBox();
             this.lblPopularDropdown = new System.Windows.Forms.Label();
-            this.lblGalaxies = new System.Windows.Forms.Label();
             this.panelEarth.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -74,6 +74,18 @@
             this.panelEarth.Size = new System.Drawing.Size(708, 648);
             this.panelEarth.TabIndex = 25;
             this.panelEarth.Paint += new System.Windows.Forms.PaintEventHandler(this.panelEarth_Paint);
+            // 
+            // lblGalaxies
+            // 
+            this.lblGalaxies.AutoSize = true;
+            this.lblGalaxies.Font = new System.Drawing.Font("Bernard MT Condensed", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGalaxies.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lblGalaxies.Location = new System.Drawing.Point(14, 15);
+            this.lblGalaxies.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGalaxies.Name = "lblGalaxies";
+            this.lblGalaxies.Size = new System.Drawing.Size(96, 45);
+            this.lblGalaxies.TabIndex = 30;
+            this.lblGalaxies.Text = "Earth";
             // 
             // editPopularLocationsButton
             // 
@@ -189,6 +201,7 @@
             this.textBoxLongitude.Size = new System.Drawing.Size(100, 20);
             this.textBoxLongitude.TabIndex = 6;
             this.textBoxLongitude.Text = "Enter Longitude";
+            this.textBoxLongitude.TextChanged += new System.EventHandler(this.textBoxLongitude_TextChanged);
             // 
             // panel2
             // 
@@ -228,6 +241,7 @@
             this.textBoxLatitude.Size = new System.Drawing.Size(100, 20);
             this.textBoxLatitude.TabIndex = 0;
             this.textBoxLatitude.Text = "Enter Latitude";
+            this.textBoxLatitude.TextChanged += new System.EventHandler(this.textBoxLatitude_TextChanged);
             // 
             // btnEarthBack
             // 
@@ -253,7 +267,8 @@
             // 
             // popularLocationsCombo
             // 
-            this.popularLocationsCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.popularLocationsCombo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.popularLocationsCombo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.popularLocationsCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.popularLocationsCombo.FormattingEnabled = true;
             this.popularLocationsCombo.Location = new System.Drawing.Point(163, 69);
@@ -273,18 +288,6 @@
             this.lblPopularDropdown.Size = new System.Drawing.Size(140, 20);
             this.lblPopularDropdown.TabIndex = 21;
             this.lblPopularDropdown.Text = "Popular Locations:";
-            // 
-            // lblGalaxies
-            // 
-            this.lblGalaxies.AutoSize = true;
-            this.lblGalaxies.Font = new System.Drawing.Font("Bernard MT Condensed", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGalaxies.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lblGalaxies.Location = new System.Drawing.Point(14, 15);
-            this.lblGalaxies.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblGalaxies.Name = "lblGalaxies";
-            this.lblGalaxies.Size = new System.Drawing.Size(96, 45);
-            this.lblGalaxies.TabIndex = 30;
-            this.lblGalaxies.Text = "Earth";
             // 
             // UserControlEarth
             // 
