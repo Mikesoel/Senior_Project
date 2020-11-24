@@ -13,6 +13,7 @@ namespace DigiScriptor
     public partial class DelayPopup : Form
     {
         private int currentDelay = 0;
+        Boolean validValue = true;
 
         public DelayPopup()
         {
@@ -79,6 +80,38 @@ namespace DigiScriptor
 
         private void delayBox_TextChanged(object sender, EventArgs e)
         {
+            int value = 0;
+
+
+            try
+            {
+                value = Convert.ToInt32(DelayBox.Text);
+
+                if(value >= 0)
+                {
+                    //valid value
+                    DelayBox.ForeColor = Color.Black;
+                    validValue = true;
+                }
+                else
+                {
+                    //not valid value
+                    DelayBox.ForeColor = Color.Red;
+                    validValue = false;
+                }
+
+
+            }
+            catch
+            {
+                //error on data entered
+                DelayBox.ForeColor = Color.Red;
+                validValue = false;
+            }
+
+
+
+
 
         }
     }
