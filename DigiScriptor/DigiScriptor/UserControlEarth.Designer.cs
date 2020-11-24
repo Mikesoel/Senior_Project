@@ -69,7 +69,7 @@
             this.panelEarth.Controls.Add(this.popularLocationsCombo);
             this.panelEarth.Controls.Add(this.lblPopularDropdown);
             this.panelEarth.Location = new System.Drawing.Point(0, 0);
-            this.panelEarth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelEarth.Margin = new System.Windows.Forms.Padding(2);
             this.panelEarth.Name = "panelEarth";
             this.panelEarth.Size = new System.Drawing.Size(708, 648);
             this.panelEarth.TabIndex = 25;
@@ -93,7 +93,7 @@
             this.editPopularLocationsButton.Name = "editPopularLocationsButton";
             this.editPopularLocationsButton.Size = new System.Drawing.Size(75, 23);
             this.editPopularLocationsButton.TabIndex = 29;
-            this.editPopularLocationsButton.Text = "Add/Edit";
+            this.editPopularLocationsButton.Text = "Search/Edit";
             this.editPopularLocationsButton.UseVisualStyleBackColor = true;
             this.editPopularLocationsButton.Click += new System.EventHandler(this.editPopularLocationsButton_Click);
             // 
@@ -104,7 +104,7 @@
             this.btnSubmitEarth.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmitEarth.ForeColor = System.Drawing.Color.SpringGreen;
             this.btnSubmitEarth.Location = new System.Drawing.Point(561, 584);
-            this.btnSubmitEarth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSubmitEarth.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmitEarth.Name = "btnSubmitEarth";
             this.btnSubmitEarth.Size = new System.Drawing.Size(124, 49);
             this.btnSubmitEarth.TabIndex = 26;
@@ -182,6 +182,7 @@
             this.westRadioButton.TabStop = true;
             this.westRadioButton.Text = "West";
             this.westRadioButton.UseVisualStyleBackColor = true;
+            this.westRadioButton.CheckedChanged += new System.EventHandler(this.westRadioButton_CheckedChanged);
             // 
             // eastRadio
             // 
@@ -193,6 +194,7 @@
             this.eastRadio.TabStop = true;
             this.eastRadio.Text = "East";
             this.eastRadio.UseVisualStyleBackColor = true;
+            this.eastRadio.CheckedChanged += new System.EventHandler(this.eastRadio_CheckedChanged);
             // 
             // textBoxLongitude
             // 
@@ -222,6 +224,7 @@
             this.northRadio.TabStop = true;
             this.northRadio.Text = "North";
             this.northRadio.UseVisualStyleBackColor = true;
+            this.northRadio.CheckedChanged += new System.EventHandler(this.northRadio_CheckedChanged);
             // 
             // southRadio
             // 
@@ -233,6 +236,7 @@
             this.southRadio.TabStop = true;
             this.southRadio.Text = "South";
             this.southRadio.UseVisualStyleBackColor = true;
+            this.southRadio.CheckedChanged += new System.EventHandler(this.southRadio_CheckedChanged);
             // 
             // textBoxLatitude
             // 
@@ -248,7 +252,7 @@
             this.btnEarthBack.BackColor = System.Drawing.Color.Gray;
             this.btnEarthBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEarthBack.Location = new System.Drawing.Point(13, 608);
-            this.btnEarthBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEarthBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnEarthBack.Name = "btnEarthBack";
             this.btnEarthBack.Size = new System.Drawing.Size(57, 25);
             this.btnEarthBack.TabIndex = 25;
@@ -295,7 +299,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Controls.Add(this.panelEarth);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserControlEarth";
             this.Size = new System.Drawing.Size(708, 648);
             this.panelEarth.ResumeLayout(false);

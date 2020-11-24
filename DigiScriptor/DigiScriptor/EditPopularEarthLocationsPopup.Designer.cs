@@ -37,6 +37,7 @@
             this.longitudeTextBox = new System.Windows.Forms.TextBox();
             this.dataSave = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
+            this.btnEditRow = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,7 +121,7 @@
             // deleteButton
             // 
             this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.deleteButton.Location = new System.Drawing.Point(551, 441);
+            this.deleteButton.Location = new System.Drawing.Point(674, 441);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(192, 26);
             this.deleteButton.TabIndex = 8;
@@ -128,12 +129,24 @@
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
+            // btnEditRow
+            // 
+            this.btnEditRow.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnEditRow.Location = new System.Drawing.Point(443, 441);
+            this.btnEditRow.Name = "btnEditRow";
+            this.btnEditRow.Size = new System.Drawing.Size(192, 26);
+            this.btnEditRow.TabIndex = 9;
+            this.btnEditRow.Text = "Edit Selected Row";
+            this.btnEditRow.UseVisualStyleBackColor = true;
+            this.btnEditRow.Click += new System.EventHandler(this.btnEditRow_Click);
+            // 
             // EditPopularEarthLocationsPopup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(986, 544);
+            this.Controls.Add(this.btnEditRow);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.dataSave);
             this.Controls.Add(this.longitudeTextBox);
@@ -163,5 +176,6 @@
         private System.Windows.Forms.TextBox longitudeTextBox;
         private System.Windows.Forms.Button dataSave;
         private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Button btnEditRow;
     }
 }

@@ -475,8 +475,8 @@ namespace DigiScriptor
             foreach (DataGridViewRow row in nebulaeDataGrid.SelectedRows)
             {
                 //Reads info from each cell in data table and adds to text boxes to be edited
-                txtBoxName.Text = nebulaeDataGrid.SelectedCells[0].Value.ToString();
-                txtBoxSciName.Text = nebulaeDataGrid.SelectedCells[1].Value.ToString();
+                txtBoxName.Text = nebulaeDataGrid.SelectedCells[0].Value.ToString().Trim();
+                txtBoxSciName.Text = nebulaeDataGrid.SelectedCells[1].Value.ToString().Trim();
                 RAsHrTxt.Text = nebulaeDataGrid.SelectedCells[2].Value.ToString();
                 RAsMinTxt.Text = nebulaeDataGrid.SelectedCells[3].Value.ToString();
                 RAsSecTxt.Text = nebulaeDataGrid.SelectedCells[4].Value.ToString();

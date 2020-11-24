@@ -71,7 +71,7 @@ namespace DigiScriptor
 
         private void popularLocationsCombo_Click(object sender, EventArgs e)
         {
-            //Now load combo box from editpopularearthpopup to let auto suggest work properly
+            //Now loads combo box from editpopularearthpopup to let auto suggest work properly
             
             //Reload combo box every time it is clicked, assures data within is always accurate
             
@@ -89,6 +89,8 @@ namespace DigiScriptor
 
         private void btnSubmitEarth_Click(object sender, EventArgs e)
         {
+            String cartCode = "";
+            String cartDescription = "";
             String outputLbl = popularLocationsCombo.Text;
             if (!(String.IsNullOrEmpty(outputLbl)))
             {
@@ -113,22 +115,71 @@ namespace DigiScriptor
                         HomeScreen.Current.AddItem(naviItem);
                     }
 
-                    getCoordinates();
-                    String cartDescription = "move to " + popularLocationsCombo.Text.Trim();
-                    String cartCode = "\tnavigation landLatitude " + landLatitude + "\n" +
-                                      "\tnavigation landLongitude " + landLongitude + "\n ";
 
-                    //create Earth item
-                    ShowItem earthItem = new ShowItem("Earth Move", cartDescription, cartCode);
+                    //if user does not enter manual lat and long values
 
-                    //add show item to list
-                    HomeScreen.Current.AddItem(earthItem);
+                    cartDescription = "move to " + popularLocationsCombo.Text.Trim();
+                    cartCode = "\tnavigation landLatitude " + landLatitude + "\n" +
+                               "\tnavigation landLongitude " + landLongitude + "\n ";
 
-
-                    //update the show list after submit
-                    HomeScreen.Current.UpdateList();
                 }
             }
+
+            else
+            {
+                //confirmation message
+                String sub = "Submit?";
+                String con = "Confirm";
+                DialogResult results;
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+
+                //display messgae
+                results = MessageBox.Show(sub, con, buttons);
+                //if result is 'yes' then show submited
+                if (results == DialogResult.Yes)
+                {
+                    Boolean isNavigationOn = HomeScreen.Current.GetIsNavOn();
+
+                    //if navigation has not been turned on yet, turn it on to
+                    //flyTo galaxy
+                    if (!isNavigationOn)
+                    {
+                        ShowItem naviItem = new ShowItem("Navigation On", "turn navigation on for flyTo commands", "navigation on;");
+                        HomeScreen.Current.AddItem(naviItem);
+                    }
+
+
+                    //if user enters manual lat and long values
+                    if (Latitude_Valid && Longitude_Valid == true)
+                    {
+                        if (southRadio.Checked)
+                        {
+                            latitude = latitude * -1;
+                        }
+                        if (westRadioButton.Checked)
+                        {
+                            longitude = longitude * -1;
+                        }
+
+
+                        Latitude_Valid = false;
+                        Longitude_Valid = false;
+                        cartDescription = "move to custom coordinates: " +latitude+ ", " +longitude ;
+                        cartCode = "\tnavigation landLatitude " + latitude + "\n" +
+                                   "\tnavigation landLongitude " + longitude + "\n ";
+                    }
+                }
+            }
+
+            //create Earth item
+            ShowItem earthItem = new ShowItem("Earth Move", cartDescription, cartCode);
+
+            //add show item to list
+            HomeScreen.Current.AddItem(earthItem);
+
+
+            //update the show list after submit
+            HomeScreen.Current.UpdateList();
         }
 
         private void getCoordinates()
@@ -160,6 +211,26 @@ namespace DigiScriptor
         }
 
         private void panelEarth_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void northRadio_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void southRadio_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void eastRadio_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void westRadioButton_CheckedChanged(object sender, EventArgs e)
         {
 
         }
