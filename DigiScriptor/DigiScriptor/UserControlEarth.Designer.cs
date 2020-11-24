@@ -49,6 +49,9 @@
             this.lblEarthCustomLocation = new System.Windows.Forms.Label();
             this.popularLocationsCombo = new System.Windows.Forms.ComboBox();
             this.lblPopularDropdown = new System.Windows.Forms.Label();
+            this.landDurationLbl = new System.Windows.Forms.Label();
+            this.landDurationText = new System.Windows.Forms.TextBox();
+            this.secondsLbl = new System.Windows.Forms.Label();
             this.panelEarth.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -58,6 +61,9 @@
             // 
             // panelEarth
             // 
+            this.panelEarth.Controls.Add(this.secondsLbl);
+            this.panelEarth.Controls.Add(this.landDurationText);
+            this.panelEarth.Controls.Add(this.landDurationLbl);
             this.panelEarth.Controls.Add(this.lblGalaxies);
             this.panelEarth.Controls.Add(this.editPopularLocationsButton);
             this.panelEarth.Controls.Add(this.btnSubmitEarth);
@@ -146,7 +152,7 @@
             // 
             this.lblEarthVantagePoint.AutoSize = true;
             this.lblEarthVantagePoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEarthVantagePoint.Location = new System.Drawing.Point(18, 195);
+            this.lblEarthVantagePoint.Location = new System.Drawing.Point(43, 196);
             this.lblEarthVantagePoint.Name = "lblEarthVantagePoint";
             this.lblEarthVantagePoint.Size = new System.Drawing.Size(114, 20);
             this.lblEarthVantagePoint.TabIndex = 27;
@@ -263,7 +269,7 @@
             // 
             this.lblEarthCustomLocation.AutoSize = true;
             this.lblEarthCustomLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEarthCustomLocation.Location = new System.Drawing.Point(18, 123);
+            this.lblEarthCustomLocation.Location = new System.Drawing.Point(27, 123);
             this.lblEarthCustomLocation.Name = "lblEarthCustomLocation";
             this.lblEarthCustomLocation.Size = new System.Drawing.Size(133, 20);
             this.lblEarthCustomLocation.TabIndex = 23;
@@ -292,6 +298,34 @@
             this.lblPopularDropdown.Size = new System.Drawing.Size(140, 20);
             this.lblPopularDropdown.TabIndex = 21;
             this.lblPopularDropdown.Text = "Popular Locations:";
+            // 
+            // landDurationLbl
+            // 
+            this.landDurationLbl.AutoSize = true;
+            this.landDurationLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.landDurationLbl.Location = new System.Drawing.Point(22, 257);
+            this.landDurationLbl.Name = "landDurationLbl";
+            this.landDurationLbl.Size = new System.Drawing.Size(135, 20);
+            this.landDurationLbl.TabIndex = 31;
+            this.landDurationLbl.Text = "Landing Duration:";
+            // 
+            // landDurationText
+            // 
+            this.landDurationText.Location = new System.Drawing.Point(163, 259);
+            this.landDurationText.Name = "landDurationText";
+            this.landDurationText.Size = new System.Drawing.Size(47, 20);
+            this.landDurationText.TabIndex = 32;
+            this.landDurationText.TextChanged += new System.EventHandler(this.landDurationText_TextChanged);
+            // 
+            // secondsLbl
+            // 
+            this.secondsLbl.AutoSize = true;
+            this.secondsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.secondsLbl.Location = new System.Drawing.Point(216, 259);
+            this.secondsLbl.Name = "secondsLbl";
+            this.secondsLbl.Size = new System.Drawing.Size(69, 20);
+            this.secondsLbl.TabIndex = 33;
+            this.secondsLbl.Text = "seconds";
             // 
             // UserControlEarth
             // 
@@ -339,5 +373,8 @@
         private System.Windows.Forms.Label lblPopularDropdown;
         private System.Windows.Forms.Button editPopularLocationsButton;
         private System.Windows.Forms.Label lblGalaxies;
+        private System.Windows.Forms.Label secondsLbl;
+        private System.Windows.Forms.TextBox landDurationText;
+        private System.Windows.Forms.Label landDurationLbl;
     }
 }
