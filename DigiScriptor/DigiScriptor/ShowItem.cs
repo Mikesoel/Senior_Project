@@ -188,11 +188,23 @@ namespace DigiScriptor
 
         private void DelayBtn_Click(object sender, EventArgs e)
         {
-            DelayPopup DelayScreen = new DelayPopup(title,delay);
+            DelayPopup DelayScreen = new DelayPopup(title,delay,this);
             DelayScreen.Show();
 
 
 
         }
+
+        public void updateDelayBtn(String value)
+        {
+
+            this.DelayBtn.Text = value;
+
+        }
+
+
+
+
+
     }
 }

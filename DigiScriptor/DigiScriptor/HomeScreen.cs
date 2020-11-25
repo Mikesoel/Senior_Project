@@ -232,23 +232,23 @@ namespace DigiScriptor
                 codeOut += "\"\"\"";
                 codeOut += "\n";
 
-
-                //add in delay
-                codeOut += "+" + theList[i].Delay;
-
-
                 //check if the item has code
                 if (theList[i].Code != "")
                 {
                     codeOut += theList[i].Code;
-                    codeOut += "\n\n";
+                    codeOut += "\n";
                 }
                 else
                 {
                     //fill code sections with comment
                     codeOut += @"# code goes here!!!!!";
-                    codeOut += "\n\n";
+                    codeOut += "\n";
                 }
+
+                //add in delay
+                codeOut += "+" + theList[i].Delay + "\n";
+
+
 
             }//end of for-loop
 
