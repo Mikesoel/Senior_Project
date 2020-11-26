@@ -31,10 +31,6 @@ namespace DigiScriptor
         private int RAHr, RAMin, RASec;
 
 
-
-
-
-
         string sqlPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\")) + @"DigiDataBase.mdf;Integrated Security=True";
         SqlConnection connect;
         DataTable dt = new DataTable();
@@ -125,7 +121,7 @@ namespace DigiScriptor
 
 
                 //create desrciption 
-                description += "Right Ascention: " + RAHr + "h " + RAMin + "m " + RASec + "s\n"+
+                description += "Right Ascention: " + RAHr + "h " + RAMin + "m " + RASec + "s \n"+
                     "Declination: " + DecD + "° " + DecMin + "\' " + DecSec + "\"";
 
 
@@ -578,9 +574,7 @@ namespace DigiScriptor
                 DecDTxt.Text = dr[1][4].ToString();
                 DecMinTxt.Text = dr[1][5].ToString();
                 DecSecTxt.Text = dr[1][6].ToString();
-
-                
-                
+   
             }
             catch
             {
@@ -622,9 +616,8 @@ namespace DigiScriptor
                 string noSpaceName = selectedName;
                 noSpaceName = noSpaceName.Replace(" ", "");
 
-
-
-
+                //add name into code for stars
+                code += noSpaceName;
 
             }
             else

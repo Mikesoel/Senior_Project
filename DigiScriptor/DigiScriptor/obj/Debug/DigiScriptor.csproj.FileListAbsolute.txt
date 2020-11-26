@@ -339,6 +339,7 @@ C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\bi
 C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.exe.config
 C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.exe
 C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.pdb
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.DelayPopup.resources
 C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.EditPopularEarthLocationsPopup.resources
 C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.EditPopularNebulaePopup.resources
 C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.HomeScreen.resources
@@ -357,7 +358,7 @@ C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\ob
 C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlPlanets.resources
 C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlStars.resources
 C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.csproj.GenerateResource.cache
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.csproj.CoreCompileInputs.cache
 C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.exe
 C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.pdb
-C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.DelayPopup.resources
-C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.csproj.CoreCompileInputs.cache
+C:\Users\micha\Source\Repos\Mikesoel\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.csprojAssemblyReference.cache

@@ -182,6 +182,7 @@ namespace DigiScriptor
 
         private void btnSubmit_Click_1(object sender, EventArgs e)
         {
+            
             if(save != null)
             {
                 //if previously closed then remake save popup
@@ -211,26 +212,31 @@ namespace DigiScriptor
         public string showCodeBuilder()
         {
             string codeOut = string.Empty;
+            string newLineString;
 
             for (int i = 0; i < theList.Count; i++)
             {
                 //comment the title
-                codeOut += @"#";
+                codeOut += @"# ";
                 codeOut += theList[i].Title;
                 codeOut += "\n";
 
                 //comment the description
-                codeOut += " \"\"\" " + "\n";
+                codeOut += "# " + "Description: \n#";
                 if((theList[i].Title).Contains("Custom"))
                 {
-                    codeOut += "user inputted code";
+                    codeOut += "# user inputted code";
                 } else
                 {
-                    codeOut += theList[i].Description;
+
+                    //replace \n with \n# to commet next line of description
+                    newLineString = theList[i].Description;
+                    newLineString = newLineString.Replace("\n", "\n#");
+
+                    codeOut += newLineString;
                 }
-                codeOut += "\n";
-                codeOut += "\"\"\"";
-                codeOut += "\n";
+                codeOut += "\n\n";
+
 
                 //check if the item has code
                 if (theList[i].Code != "")
@@ -247,7 +253,6 @@ namespace DigiScriptor
 
                 //add in delay
                 codeOut += "+" + theList[i].Delay + "\n";
-
 
 
             }//end of for-loop

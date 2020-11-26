@@ -88,7 +88,6 @@
             this.ShowPanel.Size = new System.Drawing.Size(310, 400);
             this.ShowPanel.TabIndex = 4;
             this.ShowPanel.WrapContents = false;
-            this.ShowPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.showPanel_Paint);
             // 
             // SaveMenu
             // 
