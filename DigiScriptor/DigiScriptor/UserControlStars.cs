@@ -20,6 +20,7 @@ namespace DigiScriptor
         private Boolean RAsHrTxt_Valid = false;
         private Boolean RAsMinTxt_Valid = false;
         private Boolean RAsSecTxt_Valid = false;
+        private Boolean durTxt_Valid = true;
 
         private Boolean selecting = false;
 
@@ -29,6 +30,7 @@ namespace DigiScriptor
 
         private int DecD,DecMin,DecSec;
         private int RAHr, RAMin, RASec;
+        private int duration = 0;
 
 
         string sqlPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\")) + @"DigiDataBase.mdf;Integrated Security=True";
@@ -99,6 +101,21 @@ namespace DigiScriptor
                 }
                 return;
             }
+
+            //check if duration is correct
+            if (durTxt_Valid == false)
+            {
+                //report an error in declination
+                if (MessageBox.Show("Duration is not correct. Please validate data.") ==
+                    DialogResult.OK)
+                {
+                    DurationTxt.Select();
+                }
+                return;
+            }
+
+
+
 
             //confirmation message
             String sub = "Submit?";
@@ -534,6 +551,57 @@ namespace DigiScriptor
 
         private void label1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void DurationTxt_TextChanged(object sender, EventArgs e)
+        {
+
+            int value = 0;
+
+
+            if (DurationTxt.Text != "")
+            {
+
+                //if something is in box try to convert to int
+                try
+                {
+                    value = Convert.ToInt32(DurationTxt.Text);
+                    //validate data is within correct range
+                    if (value >= 0 && value <= 1000)
+                    {
+                        //if correct keep text black
+                        DurationTxt.ForeColor = Color.Black;
+                        durTxt_Valid = true;
+                        duration = value;
+
+                    }
+                    else
+                    {
+                        //if invalid value then change to red text
+                        DurationTxt.ForeColor = Color.Red;
+                        durTxt_Valid = false;
+                    }
+                }
+                catch
+                {
+                    //if not a number then change text to red
+                    DurationTxt.ForeColor = Color.Red;
+                    durTxt_Valid = false;
+                }
+
+            }
+            else
+            {
+                //no data input
+                durTxt_Valid = false;
+            }
+
+
+
+
+
+
 
         }
 
