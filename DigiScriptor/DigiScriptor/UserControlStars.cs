@@ -28,9 +28,13 @@ namespace DigiScriptor
 
         private String selectedName;
 
-        private int DecD,DecMin,DecSec;
+        private int DecD, DecMin, DecSec;
         private int RAHr, RAMin, RASec;
         private int duration = 0;
+
+        ToolTip toolTip = new ToolTip();
+
+
 
 
         string sqlPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\")) + @"DigiDataBase.mdf;Integrated Security=True";
@@ -44,6 +48,10 @@ namespace DigiScriptor
             //set up connection
             connect = new SqlConnection(sqlPath);
             LoadComboBox();
+
+
+            SetupToolTips();
+
         }
 
 
@@ -52,7 +60,7 @@ namespace DigiScriptor
         {
             //clear combo box
             StarFavorites.Items.Clear();
-            
+
             //open database
             connect.Open();
             //establish connection
@@ -60,7 +68,7 @@ namespace DigiScriptor
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select Name from StarFavorites";
             cmd.ExecuteNonQuery();
-            
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             foreach (DataRow dr in dt.Rows)
@@ -78,7 +86,7 @@ namespace DigiScriptor
         {
 
             //check Right Ascention is correct
-            if(RAsHrTxt_Valid == false|| RAsMinTxt_Valid == false || RAsSecTxt_Valid == false)
+            if (RAsHrTxt_Valid == false || RAsMinTxt_Valid == false || RAsSecTxt_Valid == false)
             {
                 //reort error in Right ascention
                 if (MessageBox.Show("Right Ascention is not correct. Please validate data.") ==
@@ -91,10 +99,10 @@ namespace DigiScriptor
             }
 
             //check that Declination is correct
-            if(DecDTxt_Valid== false|| DecMinTxt_Valid == false || DecSecTxt_Valid == false)
-            {   
+            if (DecDTxt_Valid == false || DecMinTxt_Valid == false || DecSecTxt_Valid == false)
+            {
                 //report an error in declination
-                if(MessageBox.Show("Declination is not correct. Please validate data.") ==
+                if (MessageBox.Show("Declination is not correct. Please validate data.") ==
                     DialogResult.OK)
                 {
                     DecDTxt.Select();
@@ -131,14 +139,14 @@ namespace DigiScriptor
                 String description = String.Empty;
 
                 //see if star is selected
-                if(selectedName != String.Empty)
+                if (selectedName != String.Empty)
                 {
                     description += "Name: " + selectedName + "\n";
                 }
 
 
                 //create desrciption 
-                description += "Right Ascention: " + RAHr + "h " + RAMin + "m " + RASec + "s \n"+
+                description += "Right Ascention: " + RAHr + "h " + RAMin + "m " + RASec + "s \n" +
                     "Declination: " + DecD + "° " + DecMin + "\' " + DecSec + "\"";
 
 
@@ -187,7 +195,7 @@ namespace DigiScriptor
 
             }
             //check if text is empty for user input
-            else if(DecDTxt.Text != "")
+            else if (DecDTxt.Text != "")
             {
                 //clear selected if user types in box
                 StarFavorites.SelectedItem = null;
@@ -199,7 +207,7 @@ namespace DigiScriptor
                     value = Convert.ToInt32(DecDTxt.Text);
                     //validate data is within correct range
                     if (value >= -90 && value <= 90)
-                    {   
+                    {
                         //if correct keep text black
                         DecDTxt.ForeColor = Color.Black;
                         //data is valid
@@ -222,7 +230,7 @@ namespace DigiScriptor
                     //data is invalid
                     DecDTxt_Valid = false;
                 }
-                
+
             }
             else
             {
@@ -233,7 +241,7 @@ namespace DigiScriptor
                 //no data input
                 DecDTxt_Valid = false;
             }
-            
+
 
         }
 
@@ -613,7 +621,7 @@ namespace DigiScriptor
         private void StarFavorites_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedName = String.Empty;
-            
+
             //open database
             connect.Open();
             //establish connection
@@ -621,11 +629,12 @@ namespace DigiScriptor
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select * from StarFavorites";
             cmd.ExecuteNonQuery();
-            
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
 
-            try {
+            try
+            {
                 //build command to search for star in DB
                 String select = "Name = \'" + StarFavorites.Text + "\'";
 
@@ -642,7 +651,7 @@ namespace DigiScriptor
                 DecDTxt.Text = dr[1][4].ToString();
                 DecMinTxt.Text = dr[1][5].ToString();
                 DecSecTxt.Text = dr[1][6].ToString();
-   
+
             }
             catch
             {
@@ -674,15 +683,29 @@ namespace DigiScriptor
             String code = String.Empty;
 
             //if a favorite is picked then code based off name
-            if(selectedName != String.Empty)
+            if (selectedName != String.Empty)
             {
+                //remove spaces from name for DS to underStand
+                string noSpaceName = selectedName;
+                noSpaceName = noSpaceName.Replace(" ", "");
+
+                //if marker checked then inable it in code
+                if (checkMark.Checked)
+                {
+                    code += "\tstar" + noSpaceName + "marker on\n";
+                }
+
+                //if lable check then inable it in code
+                if (checkLbl.Checked)
+                {
+                    code += "\tstar" + noSpaceName + "label on\n";
+                }
+
+
                 //create code for selected star
 
                 code += "\teye turnto star";
 
-                //remove spaces from name for DS to underStand
-                string noSpaceName = selectedName;
-                noSpaceName = noSpaceName.Replace(" ", "");
 
                 //add name into code for stars
                 code += noSpaceName;
@@ -699,5 +722,38 @@ namespace DigiScriptor
             return code;
         }
 
+
+        void SetupToolTips()
+        {
+
+
+            //set up toolTip
+            toolTip.AutoPopDelay = 4000;
+            toolTip.InitialDelay = 1000;
+            toolTip.ReshowDelay = 500;
+
+
+            //set up tool tip for DurationTxt
+            toolTip.SetToolTip(DurationTxt, "set duration to do move over");
+
+            //set up tool tip for checkMark
+            toolTip.SetToolTip(checkMark, "enable marker for star (only works for stars with names not cordinates)");
+
+            //set up tool tip for checkLbl
+            toolTip.SetToolTip(checkLbl, "enable label for star (only works for stars with names not cordinates)");
+
+
+
+            //set up tool tip for favorite stars
+            toolTip.SetToolTip(StarFavorites, "select star from star favorite database");
+
+
+            //set up tool tip for editBtn
+            toolTip.SetToolTip(EditFavorite, "edit database of favorite stars");
+
+
+
+
+        }
     }
 }

@@ -180,9 +180,9 @@ namespace DigiScriptor
             toolTip.InitialDelay = 1000;
             toolTip.ReshowDelay = 500;
 
+
+            //set up tool tip for delayBtn
             toolTip.SetToolTip(DelayBtn, "set delay");
-
-
 
         }
 
