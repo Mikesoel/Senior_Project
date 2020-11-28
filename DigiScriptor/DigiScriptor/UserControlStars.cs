@@ -709,6 +709,12 @@ namespace DigiScriptor
 
                 //add name into code for stars
                 code += noSpaceName;
+                
+
+                if(duration > 0)
+                {
+                    code += " dur " + duration;
+                }
 
             }
             else
