@@ -678,7 +678,7 @@ namespace DigiScriptor
             {
                 //create code for selected star
 
-                code += "\teye turnTo star";
+                code += "\teye turnto star";
 
                 //remove spaces from name for DS to underStand
                 string noSpaceName = selectedName;

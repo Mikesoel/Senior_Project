@@ -128,8 +128,6 @@ namespace DigiScriptor
             return theList;
         }
 
-     
-
 
         public void Swap<ShowItem>(int index1, int index2)
         {
