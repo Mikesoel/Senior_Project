@@ -16,7 +16,7 @@ namespace DigiScriptor
         string filePath = string.Empty;
         FileStream fs;
 
-        public List<ShowItem> showList = new List<ShowItem>();
+        public List<ShowItem> showList;
 
 
 
@@ -24,8 +24,7 @@ namespace DigiScriptor
         {
             InitializeComponent();
 
-            
-
+          
 
         }
 
@@ -47,9 +46,6 @@ namespace DigiScriptor
                 ShowPanel.Controls.Add(showList[i]);
 
             }
-
-
-
         }
 
 
@@ -58,7 +54,7 @@ namespace DigiScriptor
         {
             //set up dialog box for .ds and .js files
             saveFileDialog.InitialDirectory = "c:\\";
-            saveFileDialog.Filter = "JaveScript files (*.js)|*.js|DigiStarScript files (*.ds)|*.ds";
+            saveFileDialog.Filter = "DigiStarScript files (*.ds)|*.ds";
             saveFileDialog.FilterIndex = 2;
             saveFileDialog.RestoreDirectory = true;
 
@@ -108,9 +104,5 @@ namespace DigiScriptor
 
         }
 
-        private void showPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
