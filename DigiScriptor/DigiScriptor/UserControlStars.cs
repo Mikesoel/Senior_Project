@@ -14,13 +14,14 @@ namespace DigiScriptor
 {
     public partial class UserControlStars : UserControl
     {
-        private Boolean DecDTxt_Valid = false;
-        private Boolean DecMinTxt_Valid = false;
-        private Boolean DecSecTxt_Valid = false;
-        private Boolean RAsHrTxt_Valid = false;
-        private Boolean RAsMinTxt_Valid = false;
-        private Boolean RAsSecTxt_Valid = false;
+        private Boolean decDTxt_Valid = false;
+        private Boolean decMinTxt_Valid = false;
+        private Boolean decSecTxt_Valid = false;
+        private Boolean rAsHrTxt_Valid = false;
+        private Boolean rAsMinTxt_Valid = false;
+        private Boolean rAsSecTxt_Valid = false;
         private Boolean durTxt_Valid = true;
+        private Boolean distanceTxt_Valid = true;
 
         private Boolean selecting = false;
 
@@ -31,6 +32,7 @@ namespace DigiScriptor
         private int DecD, DecMin, DecSec;
         private int RAHr, RAMin, RASec;
         private int duration = 0;
+        private Double distance = 0;
 
         ToolTip toolTip = new ToolTip();
 
@@ -86,26 +88,26 @@ namespace DigiScriptor
         {
 
             //check Right Ascention is correct
-            if (RAsHrTxt_Valid == false || RAsMinTxt_Valid == false || RAsSecTxt_Valid == false)
+            if (rAsHrTxt_Valid == false || rAsMinTxt_Valid == false || rAsSecTxt_Valid == false)
             {
                 //reort error in Right ascention
                 if (MessageBox.Show("Right Ascention is not correct. Please validate data.") ==
                     DialogResult.OK)
                 {
-                    RAsHrTxt.Select();
+                    rAsHrTxt.Select();
                 }
 
                 return;
             }
 
             //check that Declination is correct
-            if (DecDTxt_Valid == false || DecMinTxt_Valid == false || DecSecTxt_Valid == false)
+            if (decDTxt_Valid == false || decMinTxt_Valid == false || decSecTxt_Valid == false)
             {
                 //report an error in declination
                 if (MessageBox.Show("Declination is not correct. Please validate data.") ==
                     DialogResult.OK)
                 {
-                    DecDTxt.Select();
+                    decDTxt.Select();
                 }
                 return;
             }
@@ -117,11 +119,24 @@ namespace DigiScriptor
                 if (MessageBox.Show("Duration is not correct. Please validate data.") ==
                     DialogResult.OK)
                 {
-                    DurationTxt.Select();
+                    durationTxt.Select();
                 }
                 return;
             }
 
+
+            //check if distance is correct
+            if(distanceTxt_Valid == false)
+            {
+                //report an error in declination
+                if (MessageBox.Show("Distance is not correct. Please validate data.") ==
+                    DialogResult.OK)
+                {
+                    distanceTxt.Select();
+                }
+                return;
+
+            }
 
 
 
@@ -188,14 +203,14 @@ namespace DigiScriptor
             if (selecting == true)
             {
                 //if correct keep text black
-                DecDTxt.ForeColor = Color.Black;
-                DecDTxt_Valid = true;
-                value = Convert.ToInt32(DecDTxt.Text);
+                decDTxt.ForeColor = Color.Black;
+                decDTxt_Valid = true;
+                value = Convert.ToInt32(decDTxt.Text);
                 DecD = value;
 
             }
             //check if text is empty for user input
-            else if (DecDTxt.Text != "")
+            else if (decDTxt.Text != "")
             {
                 //clear selected if user types in box
                 StarFavorites.SelectedItem = null;
@@ -204,31 +219,31 @@ namespace DigiScriptor
                 //if something is in box try to convert to int
                 try
                 {
-                    value = Convert.ToInt32(DecDTxt.Text);
+                    value = Convert.ToInt32(decDTxt.Text);
                     //validate data is within correct range
                     if (value >= -90 && value <= 90)
                     {
                         //if correct keep text black
-                        DecDTxt.ForeColor = Color.Black;
+                        decDTxt.ForeColor = Color.Black;
                         //data is valid
-                        DecDTxt_Valid = true;
+                        decDTxt_Valid = true;
                         DecD = value;
 
                     }
                     else
                     {
                         //if invalid value then change to red text
-                        DecDTxt.ForeColor = Color.Red;
+                        decDTxt.ForeColor = Color.Red;
                         //data is invalid
-                        DecDTxt_Valid = false;
+                        decDTxt_Valid = false;
                     }
                 }
                 catch
                 {
                     //if not a number then change text to red
-                    DecDTxt.ForeColor = Color.Red;
+                    decDTxt.ForeColor = Color.Red;
                     //data is invalid
-                    DecDTxt_Valid = false;
+                    decDTxt_Valid = false;
                 }
 
             }
@@ -239,7 +254,7 @@ namespace DigiScriptor
                 selectedName = String.Empty;
 
                 //no data input
-                DecDTxt_Valid = false;
+                decDTxt_Valid = false;
             }
 
 
@@ -253,7 +268,7 @@ namespace DigiScriptor
             {
                 //if correct keep text black
                 DecMinTxt.ForeColor = Color.Black;
-                DecMinTxt_Valid = true;
+                decMinTxt_Valid = true;
                 value = Convert.ToInt32(DecMinTxt.Text);
                 DecMin = value;
 
@@ -275,21 +290,21 @@ namespace DigiScriptor
                     {
                         //if correct keep text black
                         DecMinTxt.ForeColor = Color.Black;
-                        DecMinTxt_Valid = true;
+                        decMinTxt_Valid = true;
                         DecMin = value;
                     }
                     else
                     {
                         //if invalid value then change to red text
                         DecMinTxt.ForeColor = Color.Red;
-                        DecMinTxt_Valid = false;
+                        decMinTxt_Valid = false;
                     }
                 }
                 catch
                 {
                     //if not a number then change text to red
                     DecMinTxt.ForeColor = Color.Red;
-                    DecMinTxt_Valid = false;
+                    decMinTxt_Valid = false;
                 }
 
             }
@@ -300,7 +315,7 @@ namespace DigiScriptor
                 selectedName = String.Empty;
 
                 //no data input
-                DecMinTxt_Valid = false;
+                decMinTxt_Valid = false;
             }
 
         }
@@ -313,7 +328,7 @@ namespace DigiScriptor
             {
                 //if correct keep text black
                 DecSecTxt.ForeColor = Color.Black;
-                DecSecTxt_Valid = true;
+                decSecTxt_Valid = true;
                 value = Convert.ToInt32(DecSecTxt.Text);
                 DecSec = value;
 
@@ -334,7 +349,7 @@ namespace DigiScriptor
                     {
                         //if correct keep text black
                         DecSecTxt.ForeColor = Color.Black;
-                        DecSecTxt_Valid = true;
+                        decSecTxt_Valid = true;
                         DecSec = value;
 
                     }
@@ -342,14 +357,14 @@ namespace DigiScriptor
                     {
                         //if invalid value then change to red text
                         DecSecTxt.ForeColor = Color.Red;
-                        DecSecTxt_Valid = false;
+                        decSecTxt_Valid = false;
                     }
                 }
                 catch
                 {
                     //if not a number then change text to red
                     DecSecTxt.ForeColor = Color.Red;
-                    DecSecTxt_Valid = false;
+                    decSecTxt_Valid = false;
                 }
 
             }
@@ -360,7 +375,7 @@ namespace DigiScriptor
                 selectedName = String.Empty;
 
                 //no data input
-                DecSecTxt_Valid = false;
+                decSecTxt_Valid = false;
             }
 
 
@@ -377,15 +392,15 @@ namespace DigiScriptor
             if (selecting == true)
             {
                 //if correct keep text black
-                RAsHrTxt.ForeColor = Color.Black;
-                RAsHrTxt_Valid = true;
-                value = Convert.ToInt32(RAsHrTxt.Text);
+                rAsHrTxt.ForeColor = Color.Black;
+                rAsHrTxt_Valid = true;
+                value = Convert.ToInt32(rAsHrTxt.Text);
                 RAHr = value;
 
             }
 
             //check if text is empty
-            else if (RAsHrTxt.Text != "")
+            else if (rAsHrTxt.Text != "")
             {
                 //clear selected if user types in box
                 StarFavorites.SelectedItem = null;
@@ -394,28 +409,28 @@ namespace DigiScriptor
                 //if something is in box try to convert to int
                 try
                 {
-                    value = Convert.ToInt32(RAsHrTxt.Text);
+                    value = Convert.ToInt32(rAsHrTxt.Text);
                     //validate data is within correct range
                     if (value >= 0 && value <= 23)
                     {
                         //if correct keep text black
-                        RAsHrTxt.ForeColor = Color.Black;
-                        RAsHrTxt_Valid = true;
+                        rAsHrTxt.ForeColor = Color.Black;
+                        rAsHrTxt_Valid = true;
                         RAHr = value;
 
                     }
                     else
                     {
                         //if invalid value then change to red text
-                        RAsHrTxt.ForeColor = Color.Red;
-                        RAsHrTxt_Valid = false;
+                        rAsHrTxt.ForeColor = Color.Red;
+                        rAsHrTxt_Valid = false;
                     }
                 }
                 catch
                 {
                     //if not a number then change text to red
-                    RAsHrTxt.ForeColor = Color.Red;
-                    RAsHrTxt_Valid = false;
+                    rAsHrTxt.ForeColor = Color.Red;
+                    rAsHrTxt_Valid = false;
                 }
 
             }
@@ -426,7 +441,7 @@ namespace DigiScriptor
                 selectedName = String.Empty;
 
                 //no data input
-                RAsHrTxt_Valid = false;
+                rAsHrTxt_Valid = false;
             }
 
         }
@@ -440,7 +455,7 @@ namespace DigiScriptor
             {
                 //if correct keep text black
                 RAsMinTxt.ForeColor = Color.Black;
-                RAsMinTxt_Valid = true;
+                rAsMinTxt_Valid = true;
                 value = Convert.ToInt32(RAsMinTxt.Text);
                 RAMin = value;
 
@@ -463,7 +478,7 @@ namespace DigiScriptor
                     {
                         //if correct keep text black
                         RAsMinTxt.ForeColor = Color.Black;
-                        RAsMinTxt_Valid = true;
+                        rAsMinTxt_Valid = true;
                         RAMin = value;
 
                     }
@@ -471,14 +486,14 @@ namespace DigiScriptor
                     {
                         //if invalid value then change to red text
                         RAsMinTxt.ForeColor = Color.Red;
-                        RAsMinTxt_Valid = false;
+                        rAsMinTxt_Valid = false;
                     }
                 }
                 catch
                 {
                     //if not a number then change text to red
                     RAsMinTxt.ForeColor = Color.Red;
-                    RAsMinTxt_Valid = false;
+                    rAsMinTxt_Valid = false;
                 }
 
             }
@@ -489,7 +504,7 @@ namespace DigiScriptor
                 selectedName = String.Empty;
 
                 //no data input
-                RAsMinTxt_Valid = false;
+                rAsMinTxt_Valid = false;
             }
 
         }
@@ -503,7 +518,7 @@ namespace DigiScriptor
             {
                 //if correct keep text black
                 RAsSecTxt.ForeColor = Color.Black;
-                RAsSecTxt_Valid = true;
+                rAsSecTxt_Valid = true;
                 value = Convert.ToInt32(RAsSecTxt.Text);
                 RASec = value;
 
@@ -526,7 +541,7 @@ namespace DigiScriptor
                     {
                         //if correct keep text black
                         RAsSecTxt.ForeColor = Color.Black;
-                        RAsSecTxt_Valid = true;
+                        rAsSecTxt_Valid = true;
                         RASec = value;
 
                     }
@@ -534,14 +549,14 @@ namespace DigiScriptor
                     {
                         //if invalid value then change to red text
                         RAsSecTxt.ForeColor = Color.Red;
-                        RAsSecTxt_Valid = false;
+                        rAsSecTxt_Valid = false;
                     }
                 }
                 catch
                 {
                     //if not a number then change text to red
                     RAsSecTxt.ForeColor = Color.Red;
-                    RAsSecTxt_Valid = false;
+                    rAsSecTxt_Valid = false;
                 }
 
             }
@@ -552,7 +567,7 @@ namespace DigiScriptor
                 selectedName = String.Empty;
 
                 //no data input
-                RAsSecTxt_Valid = false;
+                rAsSecTxt_Valid = false;
             }
 
         }
@@ -568,18 +583,18 @@ namespace DigiScriptor
             int value = 0;
 
 
-            if (DurationTxt.Text != "")
+            if (durationTxt.Text != "")
             {
 
                 //if something is in box try to convert to int
                 try
                 {
-                    value = Convert.ToInt32(DurationTxt.Text);
+                    value = Convert.ToInt32(durationTxt.Text);
                     //validate data is within correct range
                     if (value >= 0 && value <= 1000)
                     {
                         //if correct keep text black
-                        DurationTxt.ForeColor = Color.Black;
+                        durationTxt.ForeColor = Color.Black;
                         durTxt_Valid = true;
                         duration = value;
 
@@ -587,14 +602,14 @@ namespace DigiScriptor
                     else
                     {
                         //if invalid value then change to red text
-                        DurationTxt.ForeColor = Color.Red;
+                        durationTxt.ForeColor = Color.Red;
                         durTxt_Valid = false;
                     }
                 }
                 catch
                 {
                     //if not a number then change text to red
-                    DurationTxt.ForeColor = Color.Red;
+                    durationTxt.ForeColor = Color.Red;
                     durTxt_Valid = false;
                 }
 
@@ -607,14 +622,74 @@ namespace DigiScriptor
 
 
 
-
-
-
-
         }
 
         private void panelStars_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void CoordinateBox_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void distanceTxt_TextChanged(object sender, EventArgs e)
+        {
+
+            Double value = 0;
+
+
+            if (distanceTxt.Text != "")
+            {
+
+                //if something is in box try to convert to int
+                try
+                {
+                    value = Convert.ToDouble(distanceTxt.Text);
+                    //validate data is within correct range
+                    if (value >= 0 && value <= 100000)
+                    {
+                        //if correct keep text black
+                        distanceTxt.ForeColor = Color.Black;
+                        distanceTxt_Valid = true;
+                        distance = value;
+
+                    }
+                    else
+                    {
+                        //if invalid value then change to red text
+                        distanceTxt.ForeColor = Color.Red;
+                        distanceTxt_Valid = false;
+                    }
+                }
+                catch
+                {
+                    //if not a number then change text to red
+                    distanceTxt.ForeColor = Color.Red;
+                    distanceTxt_Valid = false;
+                }
+
+            }
+            else
+            {
+                //no data input
+                distanceTxt_Valid = false;
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         }
 
@@ -645,10 +720,10 @@ namespace DigiScriptor
                 selecting = true;
 
                 //grab data from database
-                RAsHrTxt.Text = dr[1][1].ToString();
+                rAsHrTxt.Text = dr[1][1].ToString();
                 RAsMinTxt.Text = dr[1][2].ToString();
                 RAsSecTxt.Text = dr[1][3].ToString();
-                DecDTxt.Text = dr[1][4].ToString();
+                decDTxt.Text = dr[1][4].ToString();
                 DecMinTxt.Text = dr[1][5].ToString();
                 DecSecTxt.Text = dr[1][6].ToString();
 
@@ -740,7 +815,7 @@ namespace DigiScriptor
 
 
             //set up tool tip for DurationTxt
-            toolTip.SetToolTip(DurationTxt, "set duration to do move over");
+            toolTip.SetToolTip(durationTxt, "set duration to do move over");
 
             //set up tool tip for checkMark
             toolTip.SetToolTip(checkMark, "enable marker for star (only works for stars with names not cordinates)");
