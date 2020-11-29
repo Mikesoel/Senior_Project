@@ -33,6 +33,7 @@
             this.FavLbl = new System.Windows.Forms.Label();
             this.SubBtn = new System.Windows.Forms.Button();
             this.CoordinateBox = new System.Windows.Forms.GroupBox();
+            this.distancLbl = new System.Windows.Forms.Label();
             this.distanceTxt = new System.Windows.Forms.TextBox();
             this.DistanceLbl = new System.Windows.Forms.Label();
             this.checkLbl = new System.Windows.Forms.CheckBox();
@@ -57,7 +58,6 @@
             this.StarFavorites = new System.Windows.Forms.ComboBox();
             this.btnStarsBack = new System.Windows.Forms.Button();
             this.labelStars = new System.Windows.Forms.Label();
-            this.distancLbl = new System.Windows.Forms.Label();
             this.panelStars.SuspendLayout();
             this.CoordinateBox.SuspendLayout();
             this.SuspendLayout();
@@ -152,12 +152,21 @@
             this.CoordinateBox.Text = "Coordinates";
             this.CoordinateBox.Enter += new System.EventHandler(this.CoordinateBox_Enter);
             // 
+            // distancLbl
+            // 
+            this.distancLbl.AutoSize = true;
+            this.distancLbl.Location = new System.Drawing.Point(105, 176);
+            this.distancLbl.Name = "distancLbl";
+            this.distancLbl.Size = new System.Drawing.Size(23, 24);
+            this.distancLbl.TabIndex = 23;
+            this.distancLbl.Text = "ly";
+            // 
             // distanceTxt
             // 
             this.distanceTxt.Location = new System.Drawing.Point(6, 176);
             this.distanceTxt.Name = "distanceTxt";
             this.distanceTxt.Size = new System.Drawing.Size(100, 29);
-            this.distanceTxt.TabIndex = 22;
+            this.distanceTxt.TabIndex = 7;
             this.distanceTxt.Text = "0";
             this.distanceTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.distanceTxt.TextChanged += new System.EventHandler(this.distanceTxt_TextChanged);
@@ -201,12 +210,12 @@
             this.secondsLbl.TabIndex = 18;
             this.secondsLbl.Text = "Sec";
             // 
-            // DurationTxt
+            // durationTxt
             // 
             this.durationTxt.Location = new System.Drawing.Point(136, 175);
-            this.durationTxt.Name = "DurationTxt";
+            this.durationTxt.Name = "durationTxt";
             this.durationTxt.Size = new System.Drawing.Size(99, 29);
-            this.durationTxt.TabIndex = 17;
+            this.durationTxt.TabIndex = 8;
             this.durationTxt.Text = "0";
             this.durationTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.durationTxt.TextChanged += new System.EventHandler(this.DurationTxt_TextChanged);
@@ -317,10 +326,10 @@
             this.RAsMinTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.RAsMinTxt.TextChanged += new System.EventHandler(this.RAsMinTxt_TextChanged);
             // 
-            // DecDTxt
+            // decDTxt
             // 
             this.decDTxt.Location = new System.Drawing.Point(6, 116);
-            this.decDTxt.Name = "DecDTxt";
+            this.decDTxt.Name = "decDTxt";
             this.decDTxt.Size = new System.Drawing.Size(100, 29);
             this.decDTxt.TabIndex = 4;
             this.decDTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -344,12 +353,12 @@
             this.RightAscentionLbl.TabIndex = 1;
             this.RightAscentionLbl.Text = "Right Ascension";
             // 
-            // RAsHrTxt
+            // rAsHrTxt
             // 
             this.rAsHrTxt.AcceptsTab = true;
             this.rAsHrTxt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.rAsHrTxt.Location = new System.Drawing.Point(6, 57);
-            this.rAsHrTxt.Name = "RAsHrTxt";
+            this.rAsHrTxt.Name = "rAsHrTxt";
             this.rAsHrTxt.Size = new System.Drawing.Size(100, 29);
             this.rAsHrTxt.TabIndex = 1;
             this.rAsHrTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -391,15 +400,6 @@
             this.labelStars.Size = new System.Drawing.Size(109, 44);
             this.labelStars.TabIndex = 3;
             this.labelStars.Text = "Stars";
-            // 
-            // distancLbl
-            // 
-            this.distancLbl.AutoSize = true;
-            this.distancLbl.Location = new System.Drawing.Point(105, 176);
-            this.distancLbl.Name = "distancLbl";
-            this.distancLbl.Size = new System.Drawing.Size(23, 24);
-            this.distancLbl.TabIndex = 23;
-            this.distancLbl.Text = "ly";
             // 
             // UserControlStars
             // 

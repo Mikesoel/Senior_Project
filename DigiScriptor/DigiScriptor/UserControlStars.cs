@@ -128,13 +128,17 @@ namespace DigiScriptor
             //check if distance is correct
             if(distanceTxt_Valid == false)
             {
-                //report an error in declination
-                if (MessageBox.Show("Distance is not correct. Please validate data.") ==
+                if(StarFavorites.Text != "")
+                {
+                    //if a star is selected then ignore distance
+
+                }//report an error in declination
+                else if (MessageBox.Show("Distance is not correct. Please validate data.") ==
                     DialogResult.OK)
                 {
                     distanceTxt.Select();
-                }
-                return;
+                    return;
+                }   
 
             }
 
@@ -794,9 +798,23 @@ namespace DigiScriptor
             }
             else
             {
+                //if no favorite selected
+                code += "\teye face position celestial ";
 
+                //add RA to code
+                code += RAHr + ":" + RAMin + ":" + RASec + " ";
 
+                //add dec to code
+                code += DecD + ":" + DecMin + ":" + DecSec + " ";
 
+                //add distance to code
+                code += duration + " ly ";
+
+                //get axis
+                code += "axis +z ";
+
+                //getting duration
+                code += "dur " + duration;
 
             }
 
