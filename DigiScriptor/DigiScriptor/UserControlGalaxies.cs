@@ -17,6 +17,8 @@ namespace DigiScriptor
         //SqlConnection setup string
         string sqlPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\")) + @"DigiDataBase.mdf;Integrated Security=True";
         SqlConnection connect;
+        Boolean durationValid = true;
+        int durationValue = 0;
 
         public UserControlGalaxies()
         {
@@ -89,7 +91,7 @@ namespace DigiScriptor
         private void btnSubmitGalaxy_Click(object sender, EventArgs e)
         {
             String outputLbl = lblGalaxiesOutput.Text;
-            if (!(String.IsNullOrEmpty(outputLbl)))
+            if (!(String.IsNullOrEmpty(outputLbl)) && durationValid)
             {
                 //confirmation message
                 String sub = "Submit?";
@@ -142,19 +144,25 @@ namespace DigiScriptor
 
                     connect.Close();
 
-                    String cartDescription = "move to " + lblGalaxiesOutput.Text + " Galaxy";
+                    //the description shown in the Current Script
+                    String cartDescription = "Move to " + lblGalaxiesOutput.Text + " Galaxy.\nDuration: " + durationValue + " seconds\n";
 
                     //lines of code for going to a galaxy
-                    String cartCode = "\t" + galaxyOutput + " on\n" + "\t" + galaxyOutput + " intensity 90\n";
-                    cartCode += "\teye turnto " + galaxyOutput + "\n";
-                    cartCode += "\tscene attitude 0 -90 0\n";
-                    cartCode += "\tscene zoomFOV 2";
+                    String cartCode = "\tscene attitude 0 -45 0\n";
+                    cartCode += "\tstars on\n";
+                    cartCode += "\t" + galaxyOutput + " on\n" + "\t" + galaxyOutput + " intensity 90 duration 4\n";
+                    //cartCode += "\tnavigation on\n";
+                    cartCode += "\tnavigation defaultOrbitRate 0\n";
 
-                    //create star item
-                    ShowItem galaxyItem = new ShowItem("Galaxy Move", cartDescription, cartCode);
+                    if (durationValid)
+                    {
+                        cartCode += "\tnavigation flyto " + galaxyOutput + " duration " + durationValue + "\n";
 
-                    //add show item to list
-                    HomeScreen.Current.AddItem(galaxyItem);
+                        //create star item
+                        ShowItem galaxyItem = new ShowItem("Galaxy Move", cartDescription, cartCode);
+                        //add show item to list
+                        HomeScreen.Current.AddItem(galaxyItem);
+                    }
 
 
                     //update the show list after submit
@@ -203,6 +211,36 @@ namespace DigiScriptor
             //Opens galaxies search/edit popup window when clicked
             SearchGalaxiesPopup searchGalaxyData = new SearchGalaxiesPopup(this);
             searchGalaxyData.Show();
+        }
+
+        private void textBoxDuration_TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(textBoxDuration.Text) || (textBoxDuration.Text).Equals(""))
+            {
+                durationValid = true;
+                durationValue = 0;
+                textBoxDuration.ForeColor = Color.Black;
+            }
+            else if (Int32.Parse(textBoxDuration.Text) > 200)
+            {
+                textBoxDuration.ForeColor = Color.Red;
+                durationValid = false;
+            }
+            else if (Int32.Parse(textBoxDuration.Text) <= 200)
+            {
+                durationValid = true;
+                durationValue = Int32.Parse(textBoxDuration.Text);
+                textBoxDuration.ForeColor = Color.Black;
+            }
+            else
+            {
+                durationValid = false;
+            }
+        }
+
+        private void lblDuration_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
