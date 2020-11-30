@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelGalaxies = new System.Windows.Forms.Panel();
+            this.lblDuration = new System.Windows.Forms.Label();
+            this.textBoxDuration = new System.Windows.Forms.TextBox();
             this.btnSearchGalaxies = new System.Windows.Forms.Button();
             this.lblSearchGalaxies = new System.Windows.Forms.Label();
             this.btnSubmitGalaxy = new System.Windows.Forms.Button();
@@ -47,8 +49,6 @@
             this.btnAndromeda = new System.Windows.Forms.Button();
             this.digiDataBaseDataSet = new DigiScriptor.DigiDataBaseDataSet();
             this.digiDataBaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textBoxDuration = new System.Windows.Forms.TextBox();
-            this.lblDuration = new System.Windows.Forms.Label();
             this.panelGalaxies.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.digiDataBaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.digiDataBaseDataSetBindingSource)).BeginInit();
@@ -79,6 +79,26 @@
             this.panelGalaxies.TabIndex = 27;
             this.panelGalaxies.Paint += new System.Windows.Forms.PaintEventHandler(this.panelGalaxies_Paint);
             // 
+            // lblDuration
+            // 
+            this.lblDuration.AutoSize = true;
+            this.lblDuration.Font = new System.Drawing.Font("Bernard MT Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDuration.ForeColor = System.Drawing.SystemColors.Menu;
+            this.lblDuration.Location = new System.Drawing.Point(763, 732);
+            this.lblDuration.Name = "lblDuration";
+            this.lblDuration.Size = new System.Drawing.Size(129, 28);
+            this.lblDuration.TabIndex = 33;
+            this.lblDuration.Text = "Duration (s):";
+            this.lblDuration.Click += new System.EventHandler(this.lblDuration_Click);
+            // 
+            // textBoxDuration
+            // 
+            this.textBoxDuration.Location = new System.Drawing.Point(898, 736);
+            this.textBoxDuration.Name = "textBoxDuration";
+            this.textBoxDuration.Size = new System.Drawing.Size(100, 26);
+            this.textBoxDuration.TabIndex = 32;
+            this.textBoxDuration.TextChanged += new System.EventHandler(this.textBoxDuration_TextChanged);
+            // 
             // btnSearchGalaxies
             // 
             this.btnSearchGalaxies.Location = new System.Drawing.Point(731, 330);
@@ -86,7 +106,7 @@
             this.btnSearchGalaxies.Name = "btnSearchGalaxies";
             this.btnSearchGalaxies.Size = new System.Drawing.Size(112, 35);
             this.btnSearchGalaxies.TabIndex = 31;
-            this.btnSearchGalaxies.Text = "Search/Edit";
+            this.btnSearchGalaxies.Text = "Search";
             this.btnSearchGalaxies.UseVisualStyleBackColor = true;
             this.btnSearchGalaxies.Click += new System.EventHandler(this.btnSearchGalaxies_Click);
             // 
@@ -272,26 +292,6 @@
             // 
             this.digiDataBaseDataSetBindingSource.DataSource = this.digiDataBaseDataSet;
             this.digiDataBaseDataSetBindingSource.Position = 0;
-            // 
-            // textBoxDuration
-            // 
-            this.textBoxDuration.Location = new System.Drawing.Point(898, 736);
-            this.textBoxDuration.Name = "textBoxDuration";
-            this.textBoxDuration.Size = new System.Drawing.Size(100, 26);
-            this.textBoxDuration.TabIndex = 32;
-            this.textBoxDuration.TextChanged += new System.EventHandler(this.textBoxDuration_TextChanged);
-            // 
-            // lblDuration
-            // 
-            this.lblDuration.AutoSize = true;
-            this.lblDuration.Font = new System.Drawing.Font("Bernard MT Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDuration.ForeColor = System.Drawing.SystemColors.Menu;
-            this.lblDuration.Location = new System.Drawing.Point(763, 732);
-            this.lblDuration.Name = "lblDuration";
-            this.lblDuration.Size = new System.Drawing.Size(129, 28);
-            this.lblDuration.TabIndex = 33;
-            this.lblDuration.Text = "Duration (s):";
-            this.lblDuration.Click += new System.EventHandler(this.lblDuration_Click);
             // 
             // UserControlGalaxies
             // 

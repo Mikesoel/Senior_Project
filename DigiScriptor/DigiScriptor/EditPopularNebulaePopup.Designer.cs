@@ -61,6 +61,7 @@
             this.nebulaeFavoritesTableAdapter = new DigiScriptor.DigiDataBaseDataSetTableAdapters.NebulaeFavoritesTableAdapter();
             this.nebulaeFavoritesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.editRowBtn = new System.Windows.Forms.Button();
+            this.selectBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nebulaeDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nebulaeFavoritesBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.digiDataBaseDataSet)).BeginInit();
@@ -72,9 +73,10 @@
             // btnNebulaeDelete
             // 
             this.btnNebulaeDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnNebulaeDelete.Location = new System.Drawing.Point(660, 678);
+            this.btnNebulaeDelete.Location = new System.Drawing.Point(1108, 1043);
+            this.btnNebulaeDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnNebulaeDelete.Name = "btnNebulaeDelete";
-            this.btnNebulaeDelete.Size = new System.Drawing.Size(192, 26);
+            this.btnNebulaeDelete.Size = new System.Drawing.Size(288, 40);
             this.btnNebulaeDelete.TabIndex = 99;
             this.btnNebulaeDelete.Text = "Delete Selected Row";
             this.btnNebulaeDelete.UseVisualStyleBackColor = true;
@@ -83,9 +85,10 @@
             // btnNebulaeSave
             // 
             this.btnNebulaeSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnNebulaeSave.Location = new System.Drawing.Point(243, 274);
+            this.btnNebulaeSave.Location = new System.Drawing.Point(364, 422);
+            this.btnNebulaeSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnNebulaeSave.Name = "btnNebulaeSave";
-            this.btnNebulaeSave.Size = new System.Drawing.Size(75, 29);
+            this.btnNebulaeSave.Size = new System.Drawing.Size(112, 45);
             this.btnNebulaeSave.TabIndex = 9;
             this.btnNebulaeSave.Text = "Save";
             this.btnNebulaeSave.UseVisualStyleBackColor = true;
@@ -93,9 +96,10 @@
             // 
             // txtBoxName
             // 
-            this.txtBoxName.Location = new System.Drawing.Point(281, 49);
+            this.txtBoxName.Location = new System.Drawing.Point(422, 75);
+            this.txtBoxName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBoxName.Name = "txtBoxName";
-            this.txtBoxName.Size = new System.Drawing.Size(174, 20);
+            this.txtBoxName.Size = new System.Drawing.Size(259, 26);
             this.txtBoxName.TabIndex = 1;
             this.txtBoxName.TextChanged += new System.EventHandler(this.txtBoxName_TextChanged);
             // 
@@ -104,9 +108,10 @@
             this.lblNebulaeName.AutoSize = true;
             this.lblNebulaeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblNebulaeName.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblNebulaeName.Location = new System.Drawing.Point(147, 49);
+            this.lblNebulaeName.Location = new System.Drawing.Point(220, 75);
+            this.lblNebulaeName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNebulaeName.Name = "lblNebulaeName";
-            this.lblNebulaeName.Size = new System.Drawing.Size(123, 20);
+            this.lblNebulaeName.Size = new System.Drawing.Size(188, 29);
             this.lblNebulaeName.TabIndex = 10;
             this.lblNebulaeName.Text = "Common Name:";
             // 
@@ -115,10 +120,11 @@
             this.nebulaeDataGrid.AllowUserToAddRows = false;
             this.nebulaeDataGrid.AllowUserToDeleteRows = false;
             this.nebulaeDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.nebulaeDataGrid.Location = new System.Drawing.Point(141, 320);
+            this.nebulaeDataGrid.Location = new System.Drawing.Point(212, 492);
+            this.nebulaeDataGrid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nebulaeDataGrid.Name = "nebulaeDataGrid";
             this.nebulaeDataGrid.RowHeadersWidth = 62;
-            this.nebulaeDataGrid.Size = new System.Drawing.Size(941, 339);
+            this.nebulaeDataGrid.Size = new System.Drawing.Size(1412, 522);
             this.nebulaeDataGrid.TabIndex = 9;
             // 
             // nebulaeFavoritesBindingSource2
@@ -149,9 +155,11 @@
             this.CoordinateBox.Controls.Add(this.RAsHrTxt);
             this.CoordinateBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.CoordinateBox.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.CoordinateBox.Location = new System.Drawing.Point(145, 104);
+            this.CoordinateBox.Location = new System.Drawing.Point(218, 160);
+            this.CoordinateBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CoordinateBox.Name = "CoordinateBox";
-            this.CoordinateBox.Size = new System.Drawing.Size(400, 164);
+            this.CoordinateBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.CoordinateBox.Size = new System.Drawing.Size(600, 252);
             this.CoordinateBox.TabIndex = 33;
             this.CoordinateBox.TabStop = false;
             this.CoordinateBox.Text = "Coordinates";
@@ -159,17 +167,19 @@
             // DecSecLbl
             // 
             this.DecSecLbl.AutoSize = true;
-            this.DecSecLbl.Location = new System.Drawing.Point(376, 116);
+            this.DecSecLbl.Location = new System.Drawing.Point(564, 178);
+            this.DecSecLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DecSecLbl.Name = "DecSecLbl";
-            this.DecSecLbl.Size = new System.Drawing.Size(17, 24);
+            this.DecSecLbl.Size = new System.Drawing.Size(25, 32);
             this.DecSecLbl.TabIndex = 15;
             this.DecSecLbl.Text = "\"";
             // 
             // DecSecTxt
             // 
-            this.DecSecTxt.Location = new System.Drawing.Point(270, 116);
+            this.DecSecTxt.Location = new System.Drawing.Point(405, 178);
+            this.DecSecTxt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DecSecTxt.Name = "DecSecTxt";
-            this.DecSecTxt.Size = new System.Drawing.Size(100, 29);
+            this.DecSecTxt.Size = new System.Drawing.Size(148, 39);
             this.DecSecTxt.TabIndex = 8;
             this.DecSecTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.DecSecTxt.TextChanged += new System.EventHandler(this.DecSecTxt_TextChanged);
@@ -177,17 +187,19 @@
             // DecMinLbl
             // 
             this.DecMinLbl.AutoSize = true;
-            this.DecMinLbl.Location = new System.Drawing.Point(242, 116);
+            this.DecMinLbl.Location = new System.Drawing.Point(363, 178);
+            this.DecMinLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DecMinLbl.Name = "DecMinLbl";
-            this.DecMinLbl.Size = new System.Drawing.Size(14, 24);
+            this.DecMinLbl.Size = new System.Drawing.Size(20, 32);
             this.DecMinLbl.TabIndex = 13;
             this.DecMinLbl.Text = "\'";
             // 
             // DecMinTxt
             // 
-            this.DecMinTxt.Location = new System.Drawing.Point(136, 116);
+            this.DecMinTxt.Location = new System.Drawing.Point(204, 178);
+            this.DecMinTxt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DecMinTxt.Name = "DecMinTxt";
-            this.DecMinTxt.Size = new System.Drawing.Size(100, 29);
+            this.DecMinTxt.Size = new System.Drawing.Size(148, 39);
             this.DecMinTxt.TabIndex = 7;
             this.DecMinTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.DecMinTxt.TextChanged += new System.EventHandler(this.DecMinTxt_TextChanged);
@@ -195,9 +207,10 @@
             // DecDLbl
             // 
             this.DecDLbl.AutoSize = true;
-            this.DecDLbl.Location = new System.Drawing.Point(112, 116);
+            this.DecDLbl.Location = new System.Drawing.Point(168, 178);
+            this.DecDLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DecDLbl.Name = "DecDLbl";
-            this.DecDLbl.Size = new System.Drawing.Size(16, 24);
+            this.DecDLbl.Size = new System.Drawing.Size(26, 32);
             this.DecDLbl.TabIndex = 11;
             this.DecDLbl.Text = "°";
             // 
@@ -206,9 +219,10 @@
             this.RAsSLbl.AutoSize = true;
             this.RAsSLbl.BackColor = System.Drawing.Color.Transparent;
             this.RAsSLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.RAsSLbl.Location = new System.Drawing.Point(376, 57);
+            this.RAsSLbl.Location = new System.Drawing.Point(564, 88);
+            this.RAsSLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.RAsSLbl.Name = "RAsSLbl";
-            this.RAsSLbl.Size = new System.Drawing.Size(17, 20);
+            this.RAsSLbl.Size = new System.Drawing.Size(25, 29);
             this.RAsSLbl.TabIndex = 10;
             this.RAsSLbl.Text = "s";
             // 
@@ -217,9 +231,10 @@
             this.RAsMLbl.AutoSize = true;
             this.RAsMLbl.BackColor = System.Drawing.Color.Transparent;
             this.RAsMLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.RAsMLbl.Location = new System.Drawing.Point(242, 57);
+            this.RAsMLbl.Location = new System.Drawing.Point(363, 88);
+            this.RAsMLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.RAsMLbl.Name = "RAsMLbl";
-            this.RAsMLbl.Size = new System.Drawing.Size(22, 20);
+            this.RAsMLbl.Size = new System.Drawing.Size(33, 29);
             this.RAsMLbl.TabIndex = 9;
             this.RAsMLbl.Text = "m";
             // 
@@ -228,35 +243,39 @@
             this.HrLbl.AutoSize = true;
             this.HrLbl.BackColor = System.Drawing.Color.Transparent;
             this.HrLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.HrLbl.Location = new System.Drawing.Point(112, 57);
+            this.HrLbl.Location = new System.Drawing.Point(168, 88);
+            this.HrLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.HrLbl.Name = "HrLbl";
-            this.HrLbl.Size = new System.Drawing.Size(18, 20);
+            this.HrLbl.Size = new System.Drawing.Size(26, 29);
             this.HrLbl.TabIndex = 8;
             this.HrLbl.Text = "h";
             // 
             // RAsSecTxt
             // 
-            this.RAsSecTxt.Location = new System.Drawing.Point(270, 57);
+            this.RAsSecTxt.Location = new System.Drawing.Point(405, 88);
+            this.RAsSecTxt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.RAsSecTxt.Name = "RAsSecTxt";
-            this.RAsSecTxt.Size = new System.Drawing.Size(100, 29);
+            this.RAsSecTxt.Size = new System.Drawing.Size(148, 39);
             this.RAsSecTxt.TabIndex = 5;
             this.RAsSecTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.RAsSecTxt.TextChanged += new System.EventHandler(this.RAsSecTxt_TextChanged);
             // 
             // RAsMinTxt
             // 
-            this.RAsMinTxt.Location = new System.Drawing.Point(136, 57);
+            this.RAsMinTxt.Location = new System.Drawing.Point(204, 88);
+            this.RAsMinTxt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.RAsMinTxt.Name = "RAsMinTxt";
-            this.RAsMinTxt.Size = new System.Drawing.Size(100, 29);
+            this.RAsMinTxt.Size = new System.Drawing.Size(148, 39);
             this.RAsMinTxt.TabIndex = 4;
             this.RAsMinTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.RAsMinTxt.TextChanged += new System.EventHandler(this.RAsMinTxt_TextChanged);
             // 
             // DecDTxt
             // 
-            this.DecDTxt.Location = new System.Drawing.Point(6, 116);
+            this.DecDTxt.Location = new System.Drawing.Point(9, 178);
+            this.DecDTxt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DecDTxt.Name = "DecDTxt";
-            this.DecDTxt.Size = new System.Drawing.Size(100, 29);
+            this.DecDTxt.Size = new System.Drawing.Size(148, 39);
             this.DecDTxt.TabIndex = 6;
             this.DecDTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.DecDTxt.TextChanged += new System.EventHandler(this.DecDTxt_TextChanged);
@@ -264,18 +283,20 @@
             // DeclinationLbl
             // 
             this.DeclinationLbl.AutoSize = true;
-            this.DeclinationLbl.Location = new System.Drawing.Point(7, 90);
+            this.DeclinationLbl.Location = new System.Drawing.Point(10, 138);
+            this.DeclinationLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DeclinationLbl.Name = "DeclinationLbl";
-            this.DeclinationLbl.Size = new System.Drawing.Size(103, 24);
+            this.DeclinationLbl.Size = new System.Drawing.Size(158, 32);
             this.DeclinationLbl.TabIndex = 2;
             this.DeclinationLbl.Text = "Declination";
             // 
             // RightAscentionLbl
             // 
             this.RightAscentionLbl.AutoSize = true;
-            this.RightAscentionLbl.Location = new System.Drawing.Point(7, 29);
+            this.RightAscentionLbl.Location = new System.Drawing.Point(10, 45);
+            this.RightAscentionLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.RightAscentionLbl.Name = "RightAscentionLbl";
-            this.RightAscentionLbl.Size = new System.Drawing.Size(147, 24);
+            this.RightAscentionLbl.Size = new System.Drawing.Size(221, 32);
             this.RightAscentionLbl.TabIndex = 1;
             this.RightAscentionLbl.Text = "Right Ascension";
             // 
@@ -283,9 +304,10 @@
             // 
             this.RAsHrTxt.AcceptsTab = true;
             this.RAsHrTxt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.RAsHrTxt.Location = new System.Drawing.Point(6, 57);
+            this.RAsHrTxt.Location = new System.Drawing.Point(9, 88);
+            this.RAsHrTxt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.RAsHrTxt.Name = "RAsHrTxt";
-            this.RAsHrTxt.Size = new System.Drawing.Size(100, 29);
+            this.RAsHrTxt.Size = new System.Drawing.Size(148, 39);
             this.RAsHrTxt.TabIndex = 3;
             this.RAsHrTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.RAsHrTxt.TextChanged += new System.EventHandler(this.RAsHrTxt_TextChanged);
@@ -295,26 +317,29 @@
             this.lblSciName.AutoSize = true;
             this.lblSciName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblSciName.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblSciName.Location = new System.Drawing.Point(129, 79);
+            this.lblSciName.Location = new System.Drawing.Point(194, 122);
+            this.lblSciName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSciName.Name = "lblSciName";
-            this.lblSciName.Size = new System.Drawing.Size(141, 20);
+            this.lblSciName.Size = new System.Drawing.Size(215, 29);
             this.lblSciName.TabIndex = 34;
             this.lblSciName.Text = "Scientific Name(s):";
             // 
             // txtBoxSciName
             // 
-            this.txtBoxSciName.Location = new System.Drawing.Point(281, 81);
+            this.txtBoxSciName.Location = new System.Drawing.Point(422, 125);
+            this.txtBoxSciName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBoxSciName.Name = "txtBoxSciName";
-            this.txtBoxSciName.Size = new System.Drawing.Size(174, 20);
+            this.txtBoxSciName.Size = new System.Drawing.Size(259, 26);
             this.txtBoxSciName.TabIndex = 2;
             this.txtBoxSciName.TextChanged += new System.EventHandler(this.txtBoxSciName_TextChanged);
             // 
             // clearButton
             // 
             this.clearButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.clearButton.Location = new System.Drawing.Point(367, 274);
+            this.clearButton.Location = new System.Drawing.Point(550, 422);
+            this.clearButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(75, 29);
+            this.clearButton.Size = new System.Drawing.Size(112, 45);
             this.clearButton.TabIndex = 10;
             this.clearButton.Text = "Clear";
             this.clearButton.UseVisualStyleBackColor = true;
@@ -325,9 +350,10 @@
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblSearch.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblSearch.Location = new System.Drawing.Point(628, 161);
+            this.lblSearch.Location = new System.Drawing.Point(942, 248);
+            this.lblSearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(68, 20);
+            this.lblSearch.Size = new System.Drawing.Size(101, 29);
             this.lblSearch.TabIndex = 37;
             this.lblSearch.Text = "Search: ";
             // 
@@ -335,9 +361,10 @@
             // 
             this.searchTxt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.searchTxt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.searchTxt.Location = new System.Drawing.Point(702, 161);
+            this.searchTxt.Location = new System.Drawing.Point(1053, 248);
+            this.searchTxt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.searchTxt.Name = "searchTxt";
-            this.searchTxt.Size = new System.Drawing.Size(206, 20);
+            this.searchTxt.Size = new System.Drawing.Size(307, 26);
             this.searchTxt.TabIndex = 38;
             this.searchTxt.TextChanged += new System.EventHandler(this.searchTxt_TextChanged);
             // 
@@ -358,20 +385,34 @@
             // editRowBtn
             // 
             this.editRowBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.editRowBtn.Location = new System.Drawing.Point(391, 678);
+            this.editRowBtn.Location = new System.Drawing.Point(756, 1043);
+            this.editRowBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.editRowBtn.Name = "editRowBtn";
-            this.editRowBtn.Size = new System.Drawing.Size(192, 26);
+            this.editRowBtn.Size = new System.Drawing.Size(288, 40);
             this.editRowBtn.TabIndex = 39;
             this.editRowBtn.Text = "Edit Selected Row";
             this.editRowBtn.UseVisualStyleBackColor = true;
             this.editRowBtn.Click += new System.EventHandler(this.editRowBtn_Click);
             // 
+            // selectBtn
+            // 
+            this.selectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.selectBtn.Location = new System.Drawing.Point(394, 1043);
+            this.selectBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.selectBtn.Name = "selectBtn";
+            this.selectBtn.Size = new System.Drawing.Size(288, 40);
+            this.selectBtn.TabIndex = 100;
+            this.selectBtn.Text = "Select Row For Show";
+            this.selectBtn.UseVisualStyleBackColor = true;
+            this.selectBtn.Click += new System.EventHandler(this.selectBtn_Click);
+            // 
             // EditPopularNebulaePopup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1264, 731);
+            this.ClientSize = new System.Drawing.Size(1896, 1050);
+            this.Controls.Add(this.selectBtn);
             this.Controls.Add(this.editRowBtn);
             this.Controls.Add(this.searchTxt);
             this.Controls.Add(this.lblSearch);
@@ -384,6 +425,7 @@
             this.Controls.Add(this.txtBoxName);
             this.Controls.Add(this.lblNebulaeName);
             this.Controls.Add(this.nebulaeDataGrid);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "EditPopularNebulaePopup";
             this.Text = "Add/Edit Popular Nebulae";
             this.Load += new System.EventHandler(this.EditPopularNebulaePopup_Load);
@@ -439,5 +481,6 @@
         private System.Windows.Forms.BindingSource nebulaeFavoritesBindingSource1;
         private System.Windows.Forms.BindingSource nebulaeFavoritesBindingSource2;
         private System.Windows.Forms.Button editRowBtn;
+        private System.Windows.Forms.Button selectBtn;
     }
 }

@@ -19,9 +19,11 @@ namespace DigiScriptor
         SqlConnection connect;
 
         //Variables
+        int landDuration;
         double latitude, longitude = 0;
         private Boolean Latitude_Valid = false;
         private Boolean Longitude_Valid = false;
+        private Boolean landDuration_Valid = false;
         string landLatitude, landLongitude;
 
         public UserControlEarth()
@@ -71,7 +73,7 @@ namespace DigiScriptor
 
         private void popularLocationsCombo_Click(object sender, EventArgs e)
         {
-            //Now load combo box from editpopularearthpopup to let auto suggest work properly
+            //Now loads combo box from editpopularearthpopup to let auto suggest work properly
             
             //Reload combo box every time it is clicked, assures data within is always accurate
             
@@ -89,6 +91,8 @@ namespace DigiScriptor
 
         private void btnSubmitEarth_Click(object sender, EventArgs e)
         {
+            String cartCode = "";
+            String cartDescription = "";
             String outputLbl = popularLocationsCombo.Text;
             if (!(String.IsNullOrEmpty(outputLbl)))
             {
@@ -113,10 +117,97 @@ namespace DigiScriptor
                         HomeScreen.Current.AddItem(naviItem);
                     }
 
-                    getCoordinates();
-                    String cartDescription = "move to " + popularLocationsCombo.Text.Trim();
-                    String cartCode = "navigation landLatitude " + landLatitude + "\n" +
-                                      "navigation landLongitude " + landLongitude + "\n ";
+
+                    //if user does not enter manual lat and long values
+
+                    cartDescription = "move to " + popularLocationsCombo.Text.Trim();
+                    cartCode = "\tnavigation landUseHeightAboveGround on\n" +
+                               "\tnavigation landHeightAboveGround 200\n" +
+                               "\tnavigation landLatitude " + landLatitude + "\n" +
+                               "\tnavigation landLongitude " + landLongitude + "\n ";
+                    
+                    if (landDuration_Valid == true)
+                    {
+                        landDuration_Valid = false;
+                        cartDescription = cartDescription +
+                                          "\nLand duration = " + landDuration + " seconds\n";
+                        cartCode = cartCode +
+                                   "\tnavigation landDuration " + landDuration + "\n";
+                    }
+                    //add land command to end of every string
+                    cartCode = cartCode +
+                               "\tnavigation land\n";
+
+                    //create Earth item
+                    ShowItem earthItem = new ShowItem("Earth Move", cartDescription, cartCode);
+
+                    //add show item to list
+                    HomeScreen.Current.AddItem(earthItem);
+
+
+                    //update the show list after submit
+                    HomeScreen.Current.UpdateList();
+
+                }
+            }
+
+            else
+            {
+                //confirmation message
+                String sub = "Submit?";
+                String con = "Confirm";
+                DialogResult results;
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+
+                //display messgae
+                results = MessageBox.Show(sub, con, buttons);
+                //if result is 'yes' then show submited
+                if (results == DialogResult.Yes)
+                {
+                    Boolean isNavigationOn = HomeScreen.Current.GetIsNavOn();
+
+                    //if navigation has not been turned on yet, turn it on to
+                    //flyTo galaxy
+                    if (!isNavigationOn)
+                    {
+                        ShowItem naviItem = new ShowItem("Navigation On", "turn navigation on for flyTo commands", "navigation on;");
+                        HomeScreen.Current.AddItem(naviItem);
+                    }
+
+
+                    //if user enters manual lat and long values
+                    if (Latitude_Valid && Longitude_Valid == true)
+                    {
+                        if (southRadio.Checked)
+                        {
+                            latitude = latitude * -1;
+                        }
+                        if (westRadioButton.Checked)
+                        {
+                            longitude = longitude * -1;
+                        }
+
+
+                        Latitude_Valid = false;
+                        Longitude_Valid = false;
+                        cartDescription = "move to custom coordinates: " +latitude+ ", " +longitude ;
+                        cartCode = "\tnavigation landUseHeightAboveGround on\n" +
+                                   "\tnavigation landHeightAboveGround 200\n" +
+                                   "\tnavigation landLatitude " + latitude + "\n" +
+                                   "\tnavigation landLongitude " + longitude + "\n ";
+                        
+                        if (landDuration_Valid == true)
+                        {
+                            landDuration_Valid = false;
+                            cartDescription = cartDescription +
+                                              "\nLand duration = " + landDuration + " seconds\n";
+                            cartCode = cartCode +
+                                       "\tnavigation landDuration " + landDuration + "\n";
+                        }
+                    }
+                    //add land command to end of every string
+                    cartCode = cartCode +
+                               "\tnavigation land\n";
 
                     //create Earth item
                     ShowItem earthItem = new ShowItem("Earth Move", cartDescription, cartCode);
@@ -162,6 +253,68 @@ namespace DigiScriptor
         private void panelEarth_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void northRadio_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void southRadio_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void eastRadio_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void westRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void landDurationText_TextChanged(object sender, EventArgs e)
+        {
+            //check if text is empty
+            if (landDurationText.Text != "")
+            {
+                int value = 0;
+
+                //if something is in box try to convert to int
+                try
+                {
+                    value = Convert.ToInt32(landDurationText.Text);
+                    //validate data is within correct range
+                    if (value >= 0 && value <= 90)
+                    {
+                        //if correct keep text black
+                        landDurationText.ForeColor = Color.Black;
+                        landDuration_Valid = true;
+                        landDuration = value;
+
+                    }
+                    else
+                    {
+                        //if invalid value then change to red text
+                        landDurationText.ForeColor = Color.Red;
+                        landDuration_Valid = false;
+                    }
+                }
+                catch
+                {
+                    //if not a number then change text to red
+                    landDurationText.ForeColor = Color.Red;
+                    landDuration_Valid = false;
+                }
+
+            }
+            else
+            {
+                //no data input
+                landDuration_Valid = false;
+            }
         }
 
         private void textBoxLongitude_TextChanged(object sender, EventArgs e)

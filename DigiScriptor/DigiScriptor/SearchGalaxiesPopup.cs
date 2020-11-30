@@ -23,6 +23,7 @@ namespace DigiScriptor
         private string search = string.Empty;
         private Boolean search_Valid = false;
         UserControlGalaxies galaxiesPanel;
+        public string selection;
 
         public SearchGalaxiesPopup(UserControlGalaxies galaxiesPage)
         {
@@ -111,5 +112,18 @@ namespace DigiScriptor
 
         }
 
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in galaxyDataGrid.SelectedRows)
+            {
+                //Reads nebula name from specified cell to use to add name to combo box
+                selection = galaxyDataGrid.SelectedCells[0].Value.ToString();
+
+                //sets combo box text and trims
+                galaxiesPanel.lblGalaxiesOutput.Text = selection.Trim();
+
+            }
+            this.Close();
+        }
     }
 }

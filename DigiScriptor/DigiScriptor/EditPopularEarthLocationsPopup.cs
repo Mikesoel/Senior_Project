@@ -23,6 +23,7 @@ namespace DigiScriptor
         private double latitude, longitude;
         private Boolean latitude_Valid = false;
         private Boolean longitude_Valid = false;
+        private Boolean editRow = false;
         UserControlEarth earthPanel;
 
         public EditPopularEarthLocationsPopup(UserControlEarth EarthP)
@@ -118,7 +119,18 @@ namespace DigiScriptor
                 //bind command to enter text for SQL commands
                 SqlCommand cmd = connect.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into EarthScreenFavorites (Name, Latitude, Longitude) VALUES (@Name, @Latitude, @Longitude)";
+
+                //SQL Command to update data if user wishes to edit data in DB
+                if (editRow == true)
+                {
+                    //set editRow to false to prevent future save/delete issues
+                    editRow = false;
+                    cmd.CommandText = "Update EarthScreenFavorites Set Name = @Name, Latitude = @Latitude, Longitude = @Longitude WHERE (LocationID = @EarthID)";
+                    cmd.Parameters.AddWithValue("@EarthID", earthID);
+                }
+
+                else
+                    cmd.CommandText = "insert into EarthScreenFavorites (Name, Latitude, Longitude) VALUES (@Name, @Latitude, @Longitude)";
                 
                 //variables for SQL command
                 cmd.Parameters.AddWithValue("@Name", name);
@@ -132,8 +144,19 @@ namespace DigiScriptor
                 //Re-Load database into datagrid
                 LoadTable();
                 earthPanel.LoadComboBox();
+
+                //clear inputs
+                Clear_Input();
             }
 
+        }
+
+        private void Clear_Input()
+        {
+            //Function to clear all text boxes of data
+            nameTextBox.Clear();
+            latitudeTextBox.Clear();
+            longitudeTextBox.Clear();
         }
 
         private void latitudeTextBox_TextChanged(object sender, EventArgs e)
@@ -227,34 +250,64 @@ namespace DigiScriptor
         //Delete selected row from datagrid and database table
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            connect.Open();
-            SqlCommand cmd = connect.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            
-            //Tracks user selected row in datagridview
-            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            //confirmation message
+            String sub = "Deleting will permanantly remove selected data from the database. \n"
+                       + "Are you sure you want to proceed?";
+            String con = "Confirm";
+            DialogResult results;
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+
+            //display messgae
+            results = MessageBox.Show(sub, con, buttons);
+            //if result is 'yes' then show submited
+            if (results == DialogResult.Yes)
             {
-                MessageBox.Show("Successfully Deleted " +dataGridView1.SelectedCells[0].Value.ToString());
-                
-                //Reads info from first cell in row selected to use as variable to delete selected from database
-                earthID = dataGridView1.SelectedCells[3].Value.ToString();
-                
-                //Queries database with selected info to delete row
-                cmd.CommandText = "DELETE FROM EarthScreenFavorites WHERE LocationID = @index";
-                cmd.Parameters.AddWithValue("@index", earthID);
-                cmd.ExecuteNonQuery();
-               
+                connect.Open();
+                SqlCommand cmd = connect.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+
+                //Tracks user selected row in datagridview
+                foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                {
+                    MessageBox.Show("Successfully Deleted " + dataGridView1.SelectedCells[0].Value.ToString());
+
+                    //Reads info from first cell in row selected to use as variable to delete selected from database
+                    earthID = dataGridView1.SelectedCells[3].Value.ToString();
+
+                    //Queries database with selected info to delete row
+                    cmd.CommandText = "DELETE FROM EarthScreenFavorites WHERE LocationID = @index";
+                    cmd.Parameters.AddWithValue("@index", earthID);
+                    cmd.ExecuteNonQuery();
+
+                }
+                //Close database connection
+                connect.Close();
+
+                //Re-Load database into Datagrid and combobox in earth panel
+                LoadTable();
+                earthPanel.LoadComboBox();
             }
-            //Close database connection
-            connect.Close();
-            
-            //Re-Load database into Datagrid and combobox in earth panel
-            LoadTable();
-            earthPanel.LoadComboBox();
         }
 
         private void EditPopularEarthLocationsPopup_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnEditRow_Click(object sender, EventArgs e)
+        {
+            //sets editRow boolean to true to use different SQL statement when save button is clicked
+            editRow = true;
+
+            //Sends all data from selected row into text boxes
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            {
+                //Reads info from each cell in data table and adds to text boxes to be edited
+                nameTextBox.Text = dataGridView1.SelectedCells[0].Value.ToString().Trim();
+                latitudeTextBox.Text = dataGridView1.SelectedCells[1].Value.ToString().Trim();
+                longitudeTextBox.Text = dataGridView1.SelectedCells[2].Value.ToString();
+                earthID = dataGridView1.SelectedCells[3].Value.ToString();
+            }
 
         }
 

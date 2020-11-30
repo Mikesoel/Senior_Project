@@ -36,6 +36,7 @@ namespace DigiScriptor
         private Boolean search_Valid = false;
         private Boolean editRow = false;
         UserControlNebulae nebulaePanel;
+        public string selection;
 
         public EditPopularNebulaePopup(UserControlNebulae NebulaeP)
         {
@@ -199,28 +200,42 @@ namespace DigiScriptor
 
         private void btnNebulaeDelete_Click(object sender, EventArgs e)
         {
-            connect.Open();
-            SqlCommand cmd = connect.CreateCommand();
-            cmd.CommandType = CommandType.Text;
+            //confirmation message
+            String sub = "Deleting will permanantly remove selected data from the database. \n"
+                       + "Are you sure you want to proceed?";
+            String con = "Confirm";
+            DialogResult results;
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
 
-            //Tracks user selected row in datagridview
-            foreach (DataGridViewRow row in nebulaeDataGrid.SelectedRows)
+            //display messgae
+            results = MessageBox.Show(sub, con, buttons);
+
+            //if result is 'yes' then show submited
+            if (results == DialogResult.Yes)
             {
-                MessageBox.Show("Successfully Deleted " + nebulaeDataGrid.SelectedCells[0].Value.ToString());
+                connect.Open();
+                SqlCommand cmd = connect.CreateCommand();
+                cmd.CommandType = CommandType.Text;
 
-                //Reads nebula id from specified cell to use to delete row from DB
-                nebulaID = nebulaeDataGrid.SelectedCells[8].Value.ToString();
+                //Tracks user selected row in datagridview
+                foreach (DataGridViewRow row in nebulaeDataGrid.SelectedRows)
+                {
+                    MessageBox.Show("Successfully Deleted " + nebulaeDataGrid.SelectedCells[0].Value.ToString());
 
-                //Queries database with selected info to delete row
-                cmd.CommandText = "DELETE FROM NebulaeFavorites WHERE NebulaeID = @index";
-                cmd.Parameters.AddWithValue("@index", nebulaID);
-                cmd.ExecuteNonQuery();
-                nebulaID = null;
+                    //Reads nebula id from specified cell to use to delete row from DB
+                    nebulaID = nebulaeDataGrid.SelectedCells[8].Value.ToString();
 
+                    //Queries database with selected info to delete row
+                    cmd.CommandText = "DELETE FROM NebulaeFavorites WHERE NebulaeID = @index";
+                    cmd.Parameters.AddWithValue("@index", nebulaID);
+                    cmd.ExecuteNonQuery();
+                    nebulaID = null;
+
+                }
+                //Close DB connection and reload datagrid view
+                connect.Close();
+                LoadTable();
             }
-            //Close DB connection and reload datagrid view
-            connect.Close();
-            LoadTable();
         }
 
         private void RAsHrTxt_TextChanged(object sender, EventArgs e)
@@ -460,8 +475,8 @@ namespace DigiScriptor
             foreach (DataGridViewRow row in nebulaeDataGrid.SelectedRows)
             {
                 //Reads info from each cell in data table and adds to text boxes to be edited
-                txtBoxName.Text = nebulaeDataGrid.SelectedCells[0].Value.ToString();
-                txtBoxSciName.Text = nebulaeDataGrid.SelectedCells[1].Value.ToString();
+                txtBoxName.Text = nebulaeDataGrid.SelectedCells[0].Value.ToString().Trim();
+                txtBoxSciName.Text = nebulaeDataGrid.SelectedCells[1].Value.ToString().Trim();
                 RAsHrTxt.Text = nebulaeDataGrid.SelectedCells[2].Value.ToString();
                 RAsMinTxt.Text = nebulaeDataGrid.SelectedCells[3].Value.ToString();
                 RAsSecTxt.Text = nebulaeDataGrid.SelectedCells[4].Value.ToString();
@@ -472,6 +487,20 @@ namespace DigiScriptor
 
             }
 
+        }
+
+        private void selectBtn_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in nebulaeDataGrid.SelectedRows)
+            {
+                //Reads nebula name from specified cell to use to add name to combo box
+                selection = nebulaeDataGrid.SelectedCells[0].Value.ToString();
+
+                //sets combo box text and trims
+                nebulaePanel.nebulaeDropdown.Text = selection.Trim();
+
+            }
+            this.Close();
         }
 
         private void DecMinTxt_TextChanged(object sender, EventArgs e)

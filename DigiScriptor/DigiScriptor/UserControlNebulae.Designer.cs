@@ -74,11 +74,11 @@
             // 
             // editPopularNebulaeButton
             // 
-            this.editPopularNebulaeButton.Location = new System.Drawing.Point(351, 73);
+            this.editPopularNebulaeButton.Location = new System.Drawing.Point(387, 72);
             this.editPopularNebulaeButton.Name = "editPopularNebulaeButton";
             this.editPopularNebulaeButton.Size = new System.Drawing.Size(75, 23);
             this.editPopularNebulaeButton.TabIndex = 30;
-            this.editPopularNebulaeButton.Text = "Add/Edit";
+            this.editPopularNebulaeButton.Text = "Search/Edit";
             this.editPopularNebulaeButton.UseVisualStyleBackColor = true;
             this.editPopularNebulaeButton.Click += new System.EventHandler(this.editPopularNebulaeButton_Click);
             // 
@@ -132,7 +132,7 @@
             this.nebulaeDropdown.Location = new System.Drawing.Point(182, 72);
             this.nebulaeDropdown.MaxDropDownItems = 20;
             this.nebulaeDropdown.Name = "nebulaeDropdown";
-            this.nebulaeDropdown.Size = new System.Drawing.Size(149, 24);
+            this.nebulaeDropdown.Size = new System.Drawing.Size(186, 24);
             this.nebulaeDropdown.TabIndex = 26;
             this.nebulaeDropdown.SelectedIndexChanged += new System.EventHandler(this.nebulaeDropdown_SelectedIndexChanged);
             this.nebulaeDropdown.Click += new System.EventHandler(this.nebulaeDropdown_Click);
@@ -194,7 +194,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panelNebulae;
-        private System.Windows.Forms.ComboBox nebulaeDropdown;
+        public System.Windows.Forms.ComboBox nebulaeDropdown;
         private System.Windows.Forms.Label lblNebulaeSelectionDropdown;
         private System.Windows.Forms.Button btnSubmitNebulae;
         public System.Windows.Forms.Button btnNebulaeBack;

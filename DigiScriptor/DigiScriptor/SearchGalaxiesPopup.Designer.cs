@@ -31,6 +31,7 @@
             this.galaxyDataGrid = new System.Windows.Forms.DataGridView();
             this.searchGalaxyTxt = new System.Windows.Forms.TextBox();
             this.lblSearchGalaxy = new System.Windows.Forms.Label();
+            this.btnSelect = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.galaxyDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,12 +71,25 @@
             this.lblSearchGalaxy.TabIndex = 39;
             this.lblSearchGalaxy.Text = "Search: ";
             // 
+            // btnSelect
+            // 
+            this.btnSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnSelect.Location = new System.Drawing.Point(72, 577);
+            this.btnSelect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(288, 40);
+            this.btnSelect.TabIndex = 101;
+            this.btnSelect.Text = "Select Row For Show";
+            this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            // 
             // SearchGalaxiesPopup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.searchGalaxyTxt);
             this.Controls.Add(this.lblSearchGalaxy);
             this.Controls.Add(this.galaxyDataGrid);
@@ -93,5 +107,6 @@
         private System.Windows.Forms.DataGridView galaxyDataGrid;
         private System.Windows.Forms.TextBox searchGalaxyTxt;
         private System.Windows.Forms.Label lblSearchGalaxy;
+        private System.Windows.Forms.Button btnSelect;
     }
 }
