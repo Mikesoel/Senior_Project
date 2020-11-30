@@ -16,36 +16,17 @@ namespace DigiScriptor
         string filePath = string.Empty;
         FileStream fs;
 
-        public List<ShowItem> showList;
-
 
 
         public SaveMenu()
         {
             InitializeComponent();
 
-          
-
         }
 
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
 
-        }
-
-
-
-        public void UpdateList()
-        {
-
-            showList = HomeScreen.Current.GetList();
-
-
-            for (int i =0; i < showList.Count; i++)
-            {
-                ShowPanel.Controls.Add(showList[i]);
-
-            }
         }
 
 
@@ -65,9 +46,6 @@ namespace DigiScriptor
                 filePath = saveFileDialog.FileName;
                 LoctxtBox.Text = filePath;
             }
-
-
-
 
         }
 
@@ -104,5 +82,14 @@ namespace DigiScriptor
 
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoctxtBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
