@@ -33,6 +33,14 @@
             this.FavLbl = new System.Windows.Forms.Label();
             this.SubBtn = new System.Windows.Forms.Button();
             this.CoordinateBox = new System.Windows.Forms.GroupBox();
+            this.distancLbl = new System.Windows.Forms.Label();
+            this.distanceTxt = new System.Windows.Forms.TextBox();
+            this.DistanceLbl = new System.Windows.Forms.Label();
+            this.checkLbl = new System.Windows.Forms.CheckBox();
+            this.checkMark = new System.Windows.Forms.CheckBox();
+            this.secondsLbl = new System.Windows.Forms.Label();
+            this.durationTxt = new System.Windows.Forms.TextBox();
+            this.DurationLbl = new System.Windows.Forms.Label();
             this.DecSecLbl = new System.Windows.Forms.Label();
             this.DecSecTxt = new System.Windows.Forms.TextBox();
             this.DecMinLbl = new System.Windows.Forms.Label();
@@ -43,16 +51,13 @@
             this.HrLbl = new System.Windows.Forms.Label();
             this.RAsSecTxt = new System.Windows.Forms.TextBox();
             this.RAsMinTxt = new System.Windows.Forms.TextBox();
-            this.DecDTxt = new System.Windows.Forms.TextBox();
+            this.decDTxt = new System.Windows.Forms.TextBox();
             this.DeclinationLbl = new System.Windows.Forms.Label();
             this.RightAscentionLbl = new System.Windows.Forms.Label();
-            this.RAsHrTxt = new System.Windows.Forms.TextBox();
+            this.rAsHrTxt = new System.Windows.Forms.TextBox();
             this.StarFavorites = new System.Windows.Forms.ComboBox();
             this.btnStarsBack = new System.Windows.Forms.Button();
             this.labelStars = new System.Windows.Forms.Label();
-            this.DurationLbl = new System.Windows.Forms.Label();
-            this.DurationTxt = new System.Windows.Forms.TextBox();
-            this.secondsLbl = new System.Windows.Forms.Label();
             this.panelStars.SuspendLayout();
             this.CoordinateBox.SuspendLayout();
             this.SuspendLayout();
@@ -115,8 +120,13 @@
             // 
             // CoordinateBox
             // 
+            this.CoordinateBox.Controls.Add(this.distancLbl);
+            this.CoordinateBox.Controls.Add(this.distanceTxt);
+            this.CoordinateBox.Controls.Add(this.DistanceLbl);
+            this.CoordinateBox.Controls.Add(this.checkLbl);
+            this.CoordinateBox.Controls.Add(this.checkMark);
             this.CoordinateBox.Controls.Add(this.secondsLbl);
-            this.CoordinateBox.Controls.Add(this.DurationTxt);
+            this.CoordinateBox.Controls.Add(this.durationTxt);
             this.CoordinateBox.Controls.Add(this.DurationLbl);
             this.CoordinateBox.Controls.Add(this.DecSecLbl);
             this.CoordinateBox.Controls.Add(this.DecSecTxt);
@@ -128,18 +138,97 @@
             this.CoordinateBox.Controls.Add(this.HrLbl);
             this.CoordinateBox.Controls.Add(this.RAsSecTxt);
             this.CoordinateBox.Controls.Add(this.RAsMinTxt);
-            this.CoordinateBox.Controls.Add(this.DecDTxt);
+            this.CoordinateBox.Controls.Add(this.decDTxt);
             this.CoordinateBox.Controls.Add(this.DeclinationLbl);
             this.CoordinateBox.Controls.Add(this.RightAscentionLbl);
-            this.CoordinateBox.Controls.Add(this.RAsHrTxt);
+            this.CoordinateBox.Controls.Add(this.rAsHrTxt);
             this.CoordinateBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.CoordinateBox.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.CoordinateBox.Location = new System.Drawing.Point(274, 114);
             this.CoordinateBox.Name = "CoordinateBox";
-            this.CoordinateBox.Size = new System.Drawing.Size(400, 221);
+            this.CoordinateBox.Size = new System.Drawing.Size(400, 249);
             this.CoordinateBox.TabIndex = 32;
             this.CoordinateBox.TabStop = false;
             this.CoordinateBox.Text = "Coordinates";
+            this.CoordinateBox.Enter += new System.EventHandler(this.CoordinateBox_Enter);
+            // 
+            // distancLbl
+            // 
+            this.distancLbl.AutoSize = true;
+            this.distancLbl.Location = new System.Drawing.Point(105, 176);
+            this.distancLbl.Name = "distancLbl";
+            this.distancLbl.Size = new System.Drawing.Size(23, 24);
+            this.distancLbl.TabIndex = 23;
+            this.distancLbl.Text = "ly";
+            // 
+            // distanceTxt
+            // 
+            this.distanceTxt.Location = new System.Drawing.Point(6, 176);
+            this.distanceTxt.Name = "distanceTxt";
+            this.distanceTxt.Size = new System.Drawing.Size(100, 29);
+            this.distanceTxt.TabIndex = 7;
+            this.distanceTxt.Text = "0";
+            this.distanceTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.distanceTxt.TextChanged += new System.EventHandler(this.distanceTxt_TextChanged);
+            // 
+            // DistanceLbl
+            // 
+            this.DistanceLbl.AutoSize = true;
+            this.DistanceLbl.Location = new System.Drawing.Point(7, 148);
+            this.DistanceLbl.Name = "DistanceLbl";
+            this.DistanceLbl.Size = new System.Drawing.Size(82, 24);
+            this.DistanceLbl.TabIndex = 21;
+            this.DistanceLbl.Text = "Distance";
+            // 
+            // checkLbl
+            // 
+            this.checkLbl.AutoSize = true;
+            this.checkLbl.Location = new System.Drawing.Point(319, 210);
+            this.checkLbl.Name = "checkLbl";
+            this.checkLbl.Size = new System.Drawing.Size(75, 28);
+            this.checkLbl.TabIndex = 20;
+            this.checkLbl.Text = "Label";
+            this.checkLbl.UseVisualStyleBackColor = true;
+            // 
+            // checkMark
+            // 
+            this.checkMark.AutoSize = true;
+            this.checkMark.Location = new System.Drawing.Point(225, 210);
+            this.checkMark.Name = "checkMark";
+            this.checkMark.Size = new System.Drawing.Size(87, 28);
+            this.checkMark.TabIndex = 19;
+            this.checkMark.Text = "Marker";
+            this.checkMark.UseVisualStyleBackColor = true;
+            // 
+            // secondsLbl
+            // 
+            this.secondsLbl.AutoSize = true;
+            this.secondsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.secondsLbl.Location = new System.Drawing.Point(242, 176);
+            this.secondsLbl.Name = "secondsLbl";
+            this.secondsLbl.Size = new System.Drawing.Size(37, 20);
+            this.secondsLbl.TabIndex = 18;
+            this.secondsLbl.Text = "Sec";
+            // 
+            // durationTxt
+            // 
+            this.durationTxt.Location = new System.Drawing.Point(136, 175);
+            this.durationTxt.Name = "durationTxt";
+            this.durationTxt.Size = new System.Drawing.Size(99, 29);
+            this.durationTxt.TabIndex = 8;
+            this.durationTxt.Text = "0";
+            this.durationTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.durationTxt.TextChanged += new System.EventHandler(this.DurationTxt_TextChanged);
+            // 
+            // DurationLbl
+            // 
+            this.DurationLbl.AutoSize = true;
+            this.DurationLbl.Location = new System.Drawing.Point(132, 148);
+            this.DurationLbl.Name = "DurationLbl";
+            this.DurationLbl.Size = new System.Drawing.Size(80, 24);
+            this.DurationLbl.TabIndex = 16;
+            this.DurationLbl.Text = "Duration";
+            this.DurationLbl.Click += new System.EventHandler(this.label1_Click);
             // 
             // DecSecLbl
             // 
@@ -237,14 +326,14 @@
             this.RAsMinTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.RAsMinTxt.TextChanged += new System.EventHandler(this.RAsMinTxt_TextChanged);
             // 
-            // DecDTxt
+            // decDTxt
             // 
-            this.DecDTxt.Location = new System.Drawing.Point(6, 116);
-            this.DecDTxt.Name = "DecDTxt";
-            this.DecDTxt.Size = new System.Drawing.Size(100, 29);
-            this.DecDTxt.TabIndex = 4;
-            this.DecDTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.DecDTxt.TextChanged += new System.EventHandler(this.DecDTxt_TextChanged);
+            this.decDTxt.Location = new System.Drawing.Point(6, 116);
+            this.decDTxt.Name = "decDTxt";
+            this.decDTxt.Size = new System.Drawing.Size(100, 29);
+            this.decDTxt.TabIndex = 4;
+            this.decDTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.decDTxt.TextChanged += new System.EventHandler(this.DecDTxt_TextChanged);
             // 
             // DeclinationLbl
             // 
@@ -264,16 +353,16 @@
             this.RightAscentionLbl.TabIndex = 1;
             this.RightAscentionLbl.Text = "Right Ascension";
             // 
-            // RAsHrTxt
+            // rAsHrTxt
             // 
-            this.RAsHrTxt.AcceptsTab = true;
-            this.RAsHrTxt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.RAsHrTxt.Location = new System.Drawing.Point(6, 57);
-            this.RAsHrTxt.Name = "RAsHrTxt";
-            this.RAsHrTxt.Size = new System.Drawing.Size(100, 29);
-            this.RAsHrTxt.TabIndex = 1;
-            this.RAsHrTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.RAsHrTxt.TextChanged += new System.EventHandler(this.RAsHrTxt_TextChanged);
+            this.rAsHrTxt.AcceptsTab = true;
+            this.rAsHrTxt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.rAsHrTxt.Location = new System.Drawing.Point(6, 57);
+            this.rAsHrTxt.Name = "rAsHrTxt";
+            this.rAsHrTxt.Size = new System.Drawing.Size(100, 29);
+            this.rAsHrTxt.TabIndex = 1;
+            this.rAsHrTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.rAsHrTxt.TextChanged += new System.EventHandler(this.RAsHrTxt_TextChanged);
             // 
             // StarFavorites
             // 
@@ -312,35 +401,6 @@
             this.labelStars.TabIndex = 3;
             this.labelStars.Text = "Stars";
             // 
-            // DurationLbl
-            // 
-            this.DurationLbl.AutoSize = true;
-            this.DurationLbl.Location = new System.Drawing.Point(11, 152);
-            this.DurationLbl.Name = "DurationLbl";
-            this.DurationLbl.Size = new System.Drawing.Size(80, 24);
-            this.DurationLbl.TabIndex = 16;
-            this.DurationLbl.Text = "Duration";
-            this.DurationLbl.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // DurationTxt
-            // 
-            this.DurationTxt.Location = new System.Drawing.Point(7, 180);
-            this.DurationTxt.Name = "DurationTxt";
-            this.DurationTxt.Size = new System.Drawing.Size(99, 29);
-            this.DurationTxt.TabIndex = 17;
-            this.DurationTxt.Text = "5";
-            this.DurationTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // secondsLbl
-            // 
-            this.secondsLbl.AutoSize = true;
-            this.secondsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.secondsLbl.Location = new System.Drawing.Point(112, 189);
-            this.secondsLbl.Name = "secondsLbl";
-            this.secondsLbl.Size = new System.Drawing.Size(37, 20);
-            this.secondsLbl.TabIndex = 18;
-            this.secondsLbl.Text = "Sec";
-            // 
             // UserControlStars
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -365,10 +425,10 @@
         private System.Windows.Forms.Label labelStars;
         private System.Windows.Forms.ComboBox StarFavorites;
         private System.Windows.Forms.GroupBox CoordinateBox;
-        private System.Windows.Forms.TextBox RAsHrTxt;
+        private System.Windows.Forms.TextBox rAsHrTxt;
         private System.Windows.Forms.Label RightAscentionLbl;
         private System.Windows.Forms.Label DeclinationLbl;
-        private System.Windows.Forms.TextBox DecDTxt;
+        private System.Windows.Forms.TextBox decDTxt;
         private System.Windows.Forms.Button SubBtn;
         private System.Windows.Forms.Label HrLbl;
         private System.Windows.Forms.TextBox RAsSecTxt;
@@ -384,6 +444,11 @@
         private System.Windows.Forms.Button EditFavorite;
         private System.Windows.Forms.Label DurationLbl;
         private System.Windows.Forms.Label secondsLbl;
-        private System.Windows.Forms.TextBox DurationTxt;
+        private System.Windows.Forms.TextBox durationTxt;
+        private System.Windows.Forms.CheckBox checkLbl;
+        private System.Windows.Forms.CheckBox checkMark;
+        private System.Windows.Forms.TextBox distanceTxt;
+        private System.Windows.Forms.Label DistanceLbl;
+        private System.Windows.Forms.Label distancLbl;
     }
 }

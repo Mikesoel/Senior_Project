@@ -181,7 +181,7 @@ namespace DigiScriptor
             toolTip.InitialDelay = 1000;
             toolTip.ReshowDelay = 500;
 
-            toolTip.SetToolTip(DelayBtn, "set delay");
+            toolTip.SetToolTip(DelayBtn, "Set delay");
 
 
 
@@ -189,12 +189,19 @@ namespace DigiScriptor
 
         private void DelayBtn_Click(object sender, EventArgs e)
         {
-            DelayPopup DelayScreen = new DelayPopup(title,delay);
+            DelayPopup DelayScreen = new DelayPopup(title,delay,this);
             DelayScreen.Show();
 
 
+        }
+
+        public void updateDelayBtn(String value)
+        {
+
+            this.DelayBtn.Text = value;
 
         }
+
 
         private void btnDeleteItem_Click(object sender, EventArgs e)
         {
