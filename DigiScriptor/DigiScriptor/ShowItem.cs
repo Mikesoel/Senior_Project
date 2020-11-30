@@ -7,14 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace DigiScriptor
 {
     public partial class ShowItem : UserControl
     {
+        ToolTip toolTip = new ToolTip();
+
+
+
+
         public ShowItem()
         {
             InitializeComponent();
+
+
+            //toolTip setup
+            SetupToolTips();
+
+
         }
 
 
@@ -29,6 +41,11 @@ namespace DigiScriptor
             //set description and text box
             description = Description;
             descriptionBox.Text = Description;
+
+
+            //toolTip setup
+            SetupToolTips();
+
 
         }
 
@@ -47,6 +64,12 @@ namespace DigiScriptor
 
             //set code
             code = Code;
+
+
+            //toolTip setup
+            SetupToolTips();
+
+
         }
 
 
@@ -57,6 +80,7 @@ namespace DigiScriptor
         private String title = "";
         private String description = "";
         private String code = "";
+        private int delay = 0;
 
         //set up setters and getters for showitems
         public String Title
@@ -80,6 +104,13 @@ namespace DigiScriptor
 
         }
 
+
+        public int Delay
+        {
+            get { return delay; }
+            set { delay = value; }
+        }
+
         #endregion
 
         private void titleBox_Enter(object sender, EventArgs e)
@@ -98,12 +129,13 @@ namespace DigiScriptor
                 if (thisIndex > 0) //if you press "up", there should be something above
                 {
                     //if this iem does not need to have navigation on, do the swap
-                    if(!((this.Title).Contains("Galaxy") || (this.Title).Contains("Nebula") || (this.Title).Contains("Star")))
+                    if (!((this.Title).Contains("Galaxy") || (this.Title).Contains("Nebula") || (this.Title).Contains("Star")))
                     {
                         //swap with the ShowItem above
                         HomeScreen.Current.Swap<ShowItem>(thisIndex, thisIndex - 1);
 
-                    } else //check to see if Navigation On is the ShowItem directly above
+                    }
+                    else //check to see if Navigation On is the ShowItem directly above
                     {
                         if (!(list[thisIndex - 1].Title).Contains("Navigation"))
                         {
@@ -132,11 +164,48 @@ namespace DigiScriptor
         private void descriptionBox_TextChanged(object sender, EventArgs e)
         {
             //if this is a Custom Code ShowItem, update the code when user changes text
-            if((this.Title).Contains("Custom"))
+            if ((this.Title).Contains("Custom"))
             {
                 //this.description = descriptionBox.Text;
                 this.code = descriptionBox.Text;
             }
         }
+
+
+        void SetupToolTips()
+        {
+
+
+            //set up toolTip
+            toolTip.AutoPopDelay = 5000;
+            toolTip.InitialDelay = 1000;
+            toolTip.ReshowDelay = 500;
+
+
+            //set up tool tip for delayBtn
+            toolTip.SetToolTip(DelayBtn, "set delay");
+
+        }
+
+        private void DelayBtn_Click(object sender, EventArgs e)
+        {
+            DelayPopup DelayScreen = new DelayPopup(title, delay, this);
+            DelayScreen.Show();
+
+
+
+        }
+
+        public void updateDelayBtn(String value)
+        {
+
+            this.DelayBtn.Text = value;
+
+        }
+
+
+
+
+
     }
 }
