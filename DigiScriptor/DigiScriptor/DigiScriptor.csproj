@@ -64,6 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DelayPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DelayPopup.Designer.cs">
+      <DependentUpon>DelayPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="DigiDataBaseDataSet.Designer.cs">
       <DependentUpon>DigiDataBaseDataSet.xsd</DependentUpon>
       <DesignTime>True</DesignTime>
