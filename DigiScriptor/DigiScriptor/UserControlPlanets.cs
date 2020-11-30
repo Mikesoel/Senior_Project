@@ -242,10 +242,27 @@ namespace DigiScriptor
                 //if result is 'yes' then show submited
                 if (results == DialogResult.Yes)
                 {
-                    String cartOutput = "planet action added";
+                   // String cartOutput = "planet action added";
+                                 
+                    //update the show list after submit
+                    HomeScreen.Current.UpdateList();
+
+                    Boolean isNavigationOn = HomeScreen.Current.GetIsNavOn();
+
+                    //if navigation has not been turned on yet, turn it on to
+                    //flyTo galaxy
+                    if (!isNavigationOn)
+                    {
+                        ShowItem naviItem = new ShowItem("Navigation On", "turn navigation on for flyTo commands", "navigation on;");
+                        HomeScreen.Current.AddItem(naviItem);
+                    }
+
+                    String cartDescription = "*planet* action added";
+                    String cartCode = "<insert ds code clip for planet here >";
 
                     //create star item
-                    ShowItem planetItem = new ShowItem("Planet Action", cartOutput);
+                    ShowItem planetItem = new ShowItem("Planet Move", cartDescription, cartCode);
+                    
 
                     //add show item to list
                     HomeScreen.Current.AddItem(planetItem);
@@ -253,6 +270,15 @@ namespace DigiScriptor
 
                     //update the show list after submit
                     HomeScreen.Current.UpdateList();
+
+
+                    //NO CONFIRMATIONS NEEDED
+                    /*/for after submited is 'ok'
+                    if (MessageBox.Show("Submitted") == DialogResult.OK)
+                    {
+                        //do something after submitted message
+                    }
+                    */
 
                 }
             }
