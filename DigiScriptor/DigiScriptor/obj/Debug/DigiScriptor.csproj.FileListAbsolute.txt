@@ -364,13 +364,14 @@ C:\Users\savan\Desktop\Senior_Project\DigiScriptor\DigiScriptor\bin\Debug\DigiDa
 C:\Users\savan\Desktop\Senior_Project\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.exe.config
 C:\Users\savan\Desktop\Senior_Project\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.exe
 C:\Users\savan\Desktop\Senior_Project\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.pdb
-C:\Users\savan\Desktop\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.csprojAssemblyReference.cache
+C:\Users\savan\Desktop\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.DelayPopup.resources
 C:\Users\savan\Desktop\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.EditPopularEarthLocationsPopup.resources
 C:\Users\savan\Desktop\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.EditPopularNebulaePopup.resources
 C:\Users\savan\Desktop\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.HomeScreen.resources
 C:\Users\savan\Desktop\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.PanelGalaxies.resources
 C:\Users\savan\Desktop\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.Properties.Resources.resources
 C:\Users\savan\Desktop\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.SaveMenu.resources
+C:\Users\savan\Desktop\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.SearchGalaxiesPopup.resources
 C:\Users\savan\Desktop\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.ShowItem.resources
 C:\Users\savan\Desktop\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlDomeLights.resources
 C:\Users\savan\Desktop\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlEarth.resources
@@ -391,6 +392,7 @@ C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\bin\Debug\D
 C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.exe.config
 C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.exe
 C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\bin\Debug\DigiScriptor.pdb
+C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.csprojAssemblyReference.cache
 C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.DelayPopup.resources
 C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.EditPopularEarthLocationsPopup.resources
 C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.EditPopularNebulaePopup.resources
@@ -398,6 +400,7 @@ C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\D
 C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.PanelGalaxies.resources
 C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.Properties.Resources.resources
 C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.SaveMenu.resources
+C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.SearchGalaxiesPopup.resources
 C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.ShowItem.resources
 C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlDomeLights.resources
 C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.UserControlEarth.resources
@@ -413,5 +416,3 @@ C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\D
 C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.csproj.CoreCompileInputs.cache
 C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.exe
 C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.pdb
-C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.csprojAssemblyReference.cache
-C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.SearchGalaxiesPopup.resources
