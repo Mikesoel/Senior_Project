@@ -60,13 +60,16 @@ namespace DigiScriptor
                 //if result is 'yes' then show submited
                 if (results == DialogResult.Yes)
                 {
-                    String cartOutput = "Domelights Update";
+                    String cartOutput = "Domelights Update:";
+                    int dur = Convert.ToInt32(dtransTime.Text);
+                    String cartCode = "\tcovelights color "+  r + " " + g + " " + b + " dur " + dur;
 
                     //create star item
-                    ShowItem planetItem = new ShowItem("Domelights", cartOutput);
+                    ShowItem lightItem = new ShowItem("Domelights", cartOutput,cartCode);
+                   
 
                     //add show item to list
-                    HomeScreen.Current.AddItem(planetItem);
+                    HomeScreen.Current.AddItem(lightItem);
 
 
                     //update the show list after submit
