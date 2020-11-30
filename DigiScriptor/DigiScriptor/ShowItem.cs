@@ -129,7 +129,8 @@ namespace DigiScriptor
                 if (thisIndex > 0) //if you press "up", there should be something above
                 {
                     //if this iem does not need to have navigation on, do the swap
-                    if(!((this.Title).Contains("Galaxy") || (this.Title).Contains("Nebula") || (this.Title).Contains("Star")))
+                    if(!((this.Title).Contains("Galaxy") || (this.Title).Contains("Nebula") || (this.Title).Contains("Star") || 
+                         (this.Title).Contains("Planet") || (this.Title).Contains("Moon")))
                     {
                         //swap with the ShowItem above
                         HomeScreen.Current.Swap<ShowItem>(thisIndex, thisIndex - 1);
@@ -200,7 +201,7 @@ namespace DigiScriptor
             List<ShowItem> list = HomeScreen.Current.GetList();
             int thisIndex = list.IndexOf(this);
 
-            if (list.Count >= 1) //make sure there is one item to delete
+            if (list.Count >= 1 && !((this.Title).Contains("Navigation"))) //make sure there is one item to delete
             {
                 //confirmation message
                 String sub = "Are you sure you want to delete? This will permanently remove this item from the Show.";
