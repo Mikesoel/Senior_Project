@@ -14,6 +14,11 @@ namespace DigiScriptor
 {
     public partial class UserControlNebulae : UserControl
     {
+        //int RAHr, RAMin, DDeg, DMin = 0;
+        //double RASec, DSec = 0;
+
+        string RAHr, RAMin, DDeg, DMin, RASec, DSec;
+
         //SqlConnection setup string
         string sqlPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\")) + @"DigiDataBase.mdf;Integrated Security=True";
         SqlConnection connect;
@@ -29,7 +34,7 @@ namespace DigiScriptor
             LoadComboBox();
         }
 
-        private void LoadComboBox()
+        public void LoadComboBox()
         {
             //Clear contents from Nebulae Favorites combo box
             nebulaeDropdown.Items.Clear();
@@ -51,10 +56,43 @@ namespace DigiScriptor
             da.Fill(dt);
             foreach (DataRow dr in dt.Rows)
             {
-                nebulaeDropdown.Items.Add(dr["CommonName"].ToString());
+                nebulaeDropdown.Items.Add(dr["CommonName"].ToString().Trim());
             }
             
             //Close DB connection
+            connect.Close();
+        }
+
+        //Gets Coordinates from DB and puts them into variables for Script Generation
+        private void getCoordinates()
+        {
+            connect.Open();
+
+            //Bind cmd to SQL commands
+            SqlCommand cmd = connect.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+
+            //SQL command to select data from DB that coorolates to drop selection in drop down box
+            cmd.CommandText = "select * from NebulaeFavorites where CommonName = @CommonName";
+            cmd.Parameters.AddWithValue("@CommonName", nebulaeDropdown.Text.Trim());
+            cmd.ExecuteNonQuery();
+
+            //Make a datareader that reads through the row
+            SqlDataReader reader = null;
+            reader = cmd.ExecuteReader();
+
+            //While row still has info, add coordinates into string variables for script
+            while(reader.Read())
+            {
+                RAHr = reader["RAHr"].ToString();
+                RAMin = reader["RAMin"].ToString();
+                RASec = reader["RASec"].ToString();
+                DDeg = reader["DDeg"].ToString();
+                DMin = reader["DMin"].ToString();
+                DSec = reader["DSec"].ToString();
+            }
+
+            //Close Connection
             connect.Close();
         }
 
@@ -65,49 +103,52 @@ namespace DigiScriptor
 
         private void btnSubmitNebulae_Click(object sender, EventArgs e)
         {
-            //confirmation message
-            String sub = "Submit?";
-            String con = "Confirm";
-            DialogResult results;
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-
-            //display message
-            results = MessageBox.Show(sub, con, buttons);
-            //if result is 'yes' then show submited
-            if (results == DialogResult.Yes)
+            String outputLbl = nebulaeDropdown.Text;
+            if (!(String.IsNullOrEmpty(outputLbl)))
             {
+                //confirmation message
+                String sub = "Submit?";
+                String con = "Confirm";
+                DialogResult results;
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
 
-                //create Earth item
-                ShowItem Nebulaeitem = new ShowItem("Nebula Move", "this is a nebula move");
-
-                //add show item to list
-                HomeScreen.Current.AddItem(Nebulaeitem);
-
-
-
-                //update the show list after submit
-                HomeScreen.Current.UpdateList();
-
-
-                //for after submited is 'ok'
-                if (MessageBox.Show("Submitted") == DialogResult.OK)
+                //display messgae
+                results = MessageBox.Show(sub, con, buttons);
+                //if result is 'yes' then show submited
+                if (results == DialogResult.Yes)
                 {
-                    //do something after submitted message
+                    Boolean isNavigationOn = HomeScreen.Current.GetIsNavOn();
+
+                    //if navigation has not been turned on yet, turn it on to
+                    //flyTo galaxy
+                    if (!isNavigationOn)
+                    {
+                        ShowItem naviItem = new ShowItem("Navigation On", "turn navigation on for flyTo commands", "navigation on;");
+                        HomeScreen.Current.AddItem(naviItem);
+                    }
+
+                    getCoordinates();
+                    String cartDescription = "move to " + nebulaeDropdown.Text.Trim();
+                    String cartCode = "\tnavigation flyTo celestial " + RAHr + ":" + RAMin + ":" + RASec + " " + DDeg + ":" + DMin + ":" + DSec + "";
+
+                    //create Nebula item
+                    ShowItem nebulaeItem = new ShowItem("Nebula Move", cartDescription, cartCode);
+
+                    //add show item to list
+                    HomeScreen.Current.AddItem(nebulaeItem);
+
+
+                    //update the show list after submit
+                    HomeScreen.Current.UpdateList();
                 }
-
-            }
-            else
-            {
-                //what to do if no is selected
-
             }
         }
 
         private void editPopularNebulaeButton_Click(object sender, EventArgs e)
         {
             //Opens nebulae favorites add/edit popup window when clicked
-            EditPopularNebulaePopup editNebulaeData = new EditPopularNebulaePopup();
-            editNebulaeData.Show();
+            EditPopularNebulaePopup editNebulaeData = new EditPopularNebulaePopup(this);
+            editNebulaeData.Show(); 
         }
 
         private void nebulaeDropdown_SelectedIndexChanged(object sender, EventArgs e)
@@ -122,8 +163,9 @@ namespace DigiScriptor
 
         private void nebulaeDropdown_Click(object sender, EventArgs e)
         {
+            //Now load combo box from editpopularearthpopup to let auto suggest work properly
             //Reload combo box every time it is clicked, assures data within is always accurate
-            LoadComboBox();
+            //LoadComboBox();
         }
     }
 }

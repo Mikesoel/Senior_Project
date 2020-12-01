@@ -99,7 +99,7 @@ namespace DigiScriptor
                 if (results == DialogResult.Yes)
                 {
                     String cartDescription = "play " + lblMoviesOutput.Text;
-                    String cartCode = "movie play " + lblMoviesOutput.Text + ";";
+                    String cartCode = "\tmovie play " + lblMoviesOutput.Text;
 
                     //create star item
                     ShowItem movieItem = new ShowItem("Movie Play", cartDescription, cartCode);
@@ -111,14 +111,6 @@ namespace DigiScriptor
                     //update the show list after submit
                     HomeScreen.Current.UpdateList();
 
-
-                    //NO CONFIRMATIONS NEEDED
-                    /*/for after submited is 'ok'
-                    if (MessageBox.Show("Submitted") == DialogResult.OK)
-                    {
-                        //do something after submitted message
-                    }
-                    */
                 }
             }
         }
