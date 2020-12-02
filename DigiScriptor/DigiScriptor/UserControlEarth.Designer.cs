@@ -210,6 +210,7 @@
             this.textBoxLongitude.TabIndex = 6;
             this.textBoxLongitude.Text = "Enter Longitude";
             this.textBoxLongitude.TextChanged += new System.EventHandler(this.textBoxLongitude_TextChanged);
+            this.textBoxLongitude.Click += new System.EventHandler(this.textBoxLongitude_Click);
             // 
             // panel2
             // 
@@ -252,6 +253,7 @@
             this.textBoxLatitude.TabIndex = 0;
             this.textBoxLatitude.Text = "Enter Latitude";
             this.textBoxLatitude.TextChanged += new System.EventHandler(this.textBoxLatitude_TextChanged);
+            this.textBoxLatitude.Click += new System.EventHandler(this.textBoxLatitude_Click);
             // 
             // btnEarthBack
             // 

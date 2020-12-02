@@ -119,7 +119,7 @@ namespace DigiScriptor
 
 
                     //if user does not enter manual lat and long values
-
+                    getCoordinates();
                     cartDescription = "move to " + popularLocationsCombo.Text.Trim();
                     cartCode = "\tnavigation landUseHeightAboveGround on\n" +
                                "\tnavigation landHeightAboveGround 200\n" +
@@ -361,6 +361,7 @@ namespace DigiScriptor
 
         private void textBoxLatitude_TextChanged(object sender, EventArgs e)
         {
+
             //check if text is empty
             if (textBoxLatitude.Text != "")
             {
@@ -400,5 +401,21 @@ namespace DigiScriptor
                 Latitude_Valid = false;
             }
         }
+        private void textBoxLatitude_Click(object sender, EventArgs e)
+        {
+            if(textBoxLatitude.Text == "Enter Latitude")
+            {
+                textBoxLatitude.Clear();
+            }
+        }
+
+        private void textBoxLongitude_Click(object sender, EventArgs e)
+        {
+            if (textBoxLongitude.Text == "Enter Longitude")
+            {
+                textBoxLongitude.Clear();
+            }
+        }
+
     }
 }
