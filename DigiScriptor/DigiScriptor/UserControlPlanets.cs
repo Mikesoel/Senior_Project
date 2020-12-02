@@ -263,7 +263,7 @@ namespace DigiScriptor
         private Boolean ValidPlanetEntry()
         {
          //checks if all inputs have been completed and are valid
-            if (textBoxRot_Valid & textBoxOrbit_Valid & textBoxVantage_Valid & planet_selected & RotationAxis_selected & vp_unit_selected & os_unit_selected & rs_unit_selected & durationValid)
+            if (textBoxRot_Valid & textBoxOrbit_Valid & textBoxVantage_Valid & planet_selected & rs_unit_selected & durationValid)
             {
                 return true;
             }else   return false;

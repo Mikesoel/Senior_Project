@@ -123,7 +123,7 @@ namespace DigiScriptor
                     //flyTo galaxy
                     if (!isNavigationOn)
                     {
-                        ShowItem naviItem = new ShowItem("Navigation On", "turn navigation on for flyTo commands", "navigation on;");
+                        ShowItem naviItem = new ShowItem("Navigation On", "turn navigation on for flyTo commands", "navigation on");
                         HomeScreen.Current.AddItem(naviItem);
                     }
 

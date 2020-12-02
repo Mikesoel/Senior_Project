@@ -98,8 +98,38 @@ namespace DigiScriptor
                 //if result is 'yes' then show submited
                 if (results == DialogResult.Yes)
                 {
+                    String movieOutput = "";
+
+                    connect.Open();
+                    SqlCommand cmd = connect.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "select Name, FilePath from MoviesScreenList";
+                    cmd.ExecuteNonQuery();
+
+                    //Get the digistar name based on common name selected
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        if ((dr["Name"].ToString().Trim()).Contains(lblMoviesOutput.Text))
+                        {
+                            try
+                            {
+                                movieOutput = dr["FilePath"].ToString().Trim();
+                            }
+                            catch
+                            {
+
+                            }
+                        }
+                    }
+
+                    connect.Close();
+
                     String cartDescription = "play " + lblMoviesOutput.Text;
-                    String cartCode = "\tmovie play " + lblMoviesOutput.Text;
+                    String cartCode = "\tshow open " + movieOutput;
+                    cartCode += "\n\tshow play\n";
 
                     //create star item
                     ShowItem movieItem = new ShowItem("Movie Play", cartDescription, cartCode);

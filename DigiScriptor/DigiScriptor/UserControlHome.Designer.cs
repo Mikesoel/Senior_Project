@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelHomeScreen = new System.Windows.Forms.Panel();
+            this.btnCustomCode = new System.Windows.Forms.Button();
             this.btnMovies = new System.Windows.Forms.Button();
             this.btnNebulae = new System.Windows.Forms.Button();
             this.btnStars = new System.Windows.Forms.Button();
@@ -39,7 +40,6 @@
             this.btnMoons = new System.Windows.Forms.Button();
             this.btnLights = new System.Windows.Forms.Button();
             this.lblDigi = new System.Windows.Forms.Label();
-            this.btnCustomCode = new System.Windows.Forms.Button();
             this.panelHomeScreen.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,10 +62,23 @@
             this.panelHomeScreen.TabIndex = 27;
             this.panelHomeScreen.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHomeScreen_Paint);
             // 
+            // btnCustomCode
+            // 
+            this.btnCustomCode.BackColor = System.Drawing.Color.DimGray;
+            this.btnCustomCode.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomCode.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCustomCode.Location = new System.Drawing.Point(383, 819);
+            this.btnCustomCode.Name = "btnCustomCode";
+            this.btnCustomCode.Size = new System.Drawing.Size(344, 111);
+            this.btnCustomCode.TabIndex = 41;
+            this.btnCustomCode.Text = "Add Your Own Code";
+            this.btnCustomCode.UseVisualStyleBackColor = false;
+            this.btnCustomCode.Click += new System.EventHandler(this.btnCustomCode_Click);
+            // 
             // btnMovies
             // 
             this.btnMovies.BackColor = System.Drawing.Color.DimGray;
-            this.btnMovies.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMovies.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMovies.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnMovies.Location = new System.Drawing.Point(748, 622);
             this.btnMovies.Name = "btnMovies";
@@ -77,7 +90,7 @@
             // btnNebulae
             // 
             this.btnNebulae.BackColor = System.Drawing.Color.DimGray;
-            this.btnNebulae.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNebulae.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNebulae.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnNebulae.Location = new System.Drawing.Point(438, 622);
             this.btnNebulae.Name = "btnNebulae";
@@ -93,7 +106,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnStars.BackColor = System.Drawing.Color.DimGray;
-            this.btnStars.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStars.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStars.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnStars.Location = new System.Drawing.Point(748, 405);
             this.btnStars.Name = "btnStars";
@@ -105,7 +118,7 @@
             // btnPlanets
             // 
             this.btnPlanets.BackColor = System.Drawing.Color.DimGray;
-            this.btnPlanets.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlanets.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlanets.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnPlanets.Location = new System.Drawing.Point(110, 405);
             this.btnPlanets.Name = "btnPlanets";
@@ -117,7 +130,7 @@
             // btnEarth
             // 
             this.btnEarth.BackColor = System.Drawing.Color.DimGray;
-            this.btnEarth.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEarth.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEarth.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnEarth.Location = new System.Drawing.Point(438, 198);
             this.btnEarth.Name = "btnEarth";
@@ -129,7 +142,7 @@
             // btnGalaxies
             // 
             this.btnGalaxies.BackColor = System.Drawing.Color.DimGray;
-            this.btnGalaxies.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGalaxies.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGalaxies.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnGalaxies.Location = new System.Drawing.Point(110, 622);
             this.btnGalaxies.Name = "btnGalaxies";
@@ -142,7 +155,7 @@
             // btnSky
             // 
             this.btnSky.BackColor = System.Drawing.Color.DimGray;
-            this.btnSky.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSky.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSky.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnSky.Location = new System.Drawing.Point(748, 198);
             this.btnSky.Name = "btnSky";
@@ -154,7 +167,7 @@
             // btnMoons
             // 
             this.btnMoons.BackColor = System.Drawing.Color.DimGray;
-            this.btnMoons.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMoons.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMoons.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnMoons.Location = new System.Drawing.Point(438, 405);
             this.btnMoons.Name = "btnMoons";
@@ -166,7 +179,7 @@
             // btnLights
             // 
             this.btnLights.BackColor = System.Drawing.Color.DimGray;
-            this.btnLights.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLights.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLights.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnLights.Location = new System.Drawing.Point(110, 198);
             this.btnLights.Name = "btnLights";
@@ -185,19 +198,6 @@
             this.lblDigi.Size = new System.Drawing.Size(306, 68);
             this.lblDigi.TabIndex = 31;
             this.lblDigi.Text = "DigiScriptor";
-            // 
-            // btnCustomCode
-            // 
-            this.btnCustomCode.BackColor = System.Drawing.Color.DimGray;
-            this.btnCustomCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomCode.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCustomCode.Location = new System.Drawing.Point(383, 819);
-            this.btnCustomCode.Name = "btnCustomCode";
-            this.btnCustomCode.Size = new System.Drawing.Size(344, 111);
-            this.btnCustomCode.TabIndex = 41;
-            this.btnCustomCode.Text = "Add Your Own Code";
-            this.btnCustomCode.UseVisualStyleBackColor = false;
-            this.btnCustomCode.Click += new System.EventHandler(this.btnCustomCode_Click);
             // 
             // UserControlHome
             // 

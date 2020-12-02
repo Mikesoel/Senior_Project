@@ -182,7 +182,7 @@ namespace DigiScriptor
 
         private void btnSubmit_Click_1(object sender, EventArgs e)
         {
-            if(save != null)
+            if(save != null && theList.Count > 0)
             {
                 //if previously closed then remake save popup
                 if(save.IsDisposed == true)
@@ -195,7 +195,7 @@ namespace DigiScriptor
                 save.Show();
                 save.Focus();
             }
-            else
+            else if(theList.Count > 0)
             {
                 //initial time save menu shows
                 save = new SaveMenu();

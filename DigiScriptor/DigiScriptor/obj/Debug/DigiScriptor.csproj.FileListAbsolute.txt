@@ -502,3 +502,4 @@ C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\D
 C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.csproj.CoreCompileInputs.cache
 C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.exe
 C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.pdb
+C:\Users\savan\source\repos\Senior_Project\DigiScriptor\DigiScriptor\obj\Debug\DigiScriptor.csprojAssemblyReference.cache

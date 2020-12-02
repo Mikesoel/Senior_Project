@@ -52,14 +52,14 @@ namespace DigiScriptor
             //SQL command to be entered into DB if search is false
             if (search_Valid == false)
             {
-                cmd.CommandText = "select CommonName, DigistarName, GalaxyID " +
+                cmd.CommandText = "select CommonName, DigistarName " +
                                   "FROM GalaxiesScreenList";
             }
 
             //SQL command to be entered into DB if search is true
             else
             {
-                cmd.CommandText = "select CommonName, DigistarName, GalaxyID FROM GalaxiesScreenList WHERE (CommonName LIKE '%' + @searchValue + '%') " +
+                cmd.CommandText = "select CommonName, DigistarName FROM GalaxiesScreenList WHERE (CommonName LIKE '%' + @searchValue + '%') " +
                     "OR (DigistarName LIKE '%' + @searchValue + '%') ";
 
                 //Binds text from search text box into searchValue variable
