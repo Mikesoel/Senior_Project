@@ -150,13 +150,20 @@ namespace DigiScriptor
                     //lines of code for going to a galaxy
                     String cartCode = "\tscene attitude 0 -45 0\n";
                     cartCode += "\tstars on\n";
-                    cartCode += "\t" + galaxyOutput + " on\n" + "\t" + galaxyOutput + " intensity 90 duration 4\n";
+                    cartCode += "\t" + galaxyOutput + " on\n" + "\t" + galaxyOutput + " intensity 90 duration 2\n";
                     //cartCode += "\tnavigation on\n";
                     cartCode += "\tnavigation defaultOrbitRate 0\n";
 
                     if (durationValid)
                     {
-                        cartCode += "\tnavigation flyto " + galaxyOutput + " duration " + durationValue + "\n";
+                        if(durationValue > 0)
+                        {
+                            cartCode += "\tnavigation flyto " + galaxyOutput + " duration " + durationValue + "\n";
+                        }
+                        else
+                        {
+                            cartCode += "\tnavigation flyto " + galaxyOutput + "\n";
+                        }
 
                         //create star item
                         ShowItem galaxyItem = new ShowItem("Galaxy Move", cartDescription, cartCode);

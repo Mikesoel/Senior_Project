@@ -155,6 +155,15 @@ namespace DigiScriptor
                 //if result is 'yes' then show submitted
                 if (results == DialogResult.Yes)
                 {
+                    //see if stars are on
+                    Boolean starsOn = HomeScreen.Current.getIsStarsOn();
+
+                    //see if stars are needed for commands to come
+                    if (!starsOn)
+                    {
+                        ShowItem turnOnStars = new ShowItem("Turn on Stars", "Turn on stars for any command using stars", "\tstars on");
+                        HomeScreen.Current.AddItem(turnOnStars);
+                    }
 
                     //create star item
                     ShowItem nightitem = new ShowItem("Night Sky Move", sub, createCode());
@@ -206,29 +215,44 @@ namespace DigiScriptor
             //if an option is made then create code based off specific option
             if (checkBox_MoreStars.Checked == true)
             {
-                code += "\t";
+                code += "\tstars lumScale 50 dur 7\n";
             }
 
             if (checkBox_LabelConst.Checked == true)
             {
-                code += "\t";
+                code += "\tallLabel on\n";
             }
 
             if (checkBox_ConstLines.Checked == true)
             {
-                code += "\t";
+                code += "\tallStick on\n";
             }
 
             if (checkBox_ConstArt.Checked == true)
             {
-                code += "\t";
+                code += "\tallArt on\n";
             }
 
 
 
-            code += "sceneDate " + monthCalendar1.SelectionStart.ToString();
+            code += "\tscene date " + monthCalendar1.SelectionRange.Start.ToString("yyyy-M-d") + " ";
 
-            return code;
+            if(((comboBox_Periods.SelectedItem.ToString()).Equals("PM") && Int32.Parse(comboBox_Hours.SelectedItem.ToString()) > 12))
+            {
+                //Changing the time to military time, so anything PM past twelve adds 12
+                int hours = Int32.Parse(comboBox_Hours.SelectedItem.ToString()) + 12;
+                code += hours.ToString() + ":" + comboBox_Min.SelectedItem.ToString() + ":00" + "\n";
+            } else if ((comboBox_Periods.SelectedItem.ToString()).Equals("AM") && Int32.Parse(comboBox_Hours.SelectedItem.ToString()) == 12)
+            {
+                //If it is 12 AM then it is 00 hours
+                int hours = Int32.Parse(comboBox_Hours.SelectedItem.ToString()) - 12;
+                code += hours.ToString() + ":" + comboBox_Min.SelectedItem.ToString() + ":00" + "\n";
+            } else
+            {
+                code += comboBox_Hours.SelectedItem.ToString() + ":" + comboBox_Min.SelectedItem.ToString() + ":00" + "\n";
+            }
+
+                return code;
         }
 
 
