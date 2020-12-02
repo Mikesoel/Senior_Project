@@ -6,20 +6,49 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
+using System.Runtime.CompilerServices;
 
 namespace DigiScriptor
 {
     public partial class HomeScreen : Form
     {
         public static HomeScreen Current;
+        public String dir;
+        public String fileName;
+        public String filePath;
+
+        //create show list
+        private List<ShowItem> theList = new List<ShowItem>();
+        
+        //create flag for whether turning navigation on has been added
+        //to the show list
+        private Boolean isNavigationOn = false;
+
+
+        //create flag if stars need to be on
+        private Boolean isStarOn = false;
+
+
+
+        //create singular save menu
+        public SaveMenu save;
+
+
+
         public HomeScreen()
         {
             InitializeComponent();
 
             //used to keep track of this form
             Current = this;
+            dir = Directory.GetCurrentDirectory();
+            fileName = "script.txt";
+            filePath = dir + "\\" + fileName;
+            Console.WriteLine(filePath);
 
+            // Events for moving to different screens
             this.userControlHome.btnGalaxies.Click += ButtonGalaxies;
             this.userControlHome.btnSky.Click += ButtonNightSky;
             this.userControlHome.btnEarth.Click += ButtonEarth;
@@ -29,27 +58,114 @@ namespace DigiScriptor
             this.userControlHome.btnNebulae.Click += ButtonNebulae;
             this.userControlHome.btnMovies.Click += ButtonMovies;
             this.userControlHome.btnLights.Click += ButtonDomeLights;
+
+            //populateList();
+
         }
 
 
 
-        private void splitter1_SplitterMoved(object sender, SplitterEventArgs e)
+        private void populateList()
         {
+            //test show
+            for (int i = 0; i < 2; i++)
+            {
+
+                ShowItem test = new ShowItem();
+                test.Title = "test title " + i;
+                test.Description = "this is a test description";
+                theList.Add(test);
+                
+            }
+
+            UpdateList();
 
         }
+
+
+        public void UpdateList()
+        {
+            ShowItem lastItem = new ShowItem();
+            //update the show list
+            for(int i= 0; i < theList.Count; i++)
+            {
+                //go through list adding show items to the show
+                showPanel.Controls.Add(theList[i]);
+                lastItem = theList[i];
+            }
+
+            //auto scroll to last item in list (newest item added)
+            showPanel.ScrollControlIntoView(lastItem);
+
+
+        }
+
+        public void AddItem(ShowItem newItem)
+        {
+            //add items to list from other screens
+            theList.Add(newItem);
+
+            //checking to see if the item being added is to turn
+            //navigation on
+            if ((newItem.Title).Equals("Navigation On"))
+            {
+                isNavigationOn = true;
+            }
+
+            //checking to see if the item being added is to turn
+            //stars on
+            if((newItem.Title).Equals("Turn on Stars"))
+            {
+                isStarOn = true;
+            }
+
+
+            UpdateList();
+        }
+
+        public List<ShowItem> GetList()
+        {
+            return theList;
+        }
+
+     
+
+
+        public void Swap<ShowItem>(int index1, int index2)
+        {
+            //swap two ShowItems in the list
+            DigiScriptor.ShowItem tmp = theList[index1];
+            theList[index1] = theList[index2];
+            theList[index2] = tmp;
+            UpdateList();
+        }
+
+
+        public int GetListCount()
+        {
+            //returns the number of elements in the ShowItem list
+            return theList.Count;
+        }
+
+
+        public Boolean GetIsNavOn()
+        {
+            //returns whether nagivation has been turned on yet
+            return isNavigationOn;
+        }
+
+
+
+        public Boolean getIsStarsOn()
+        {
+            return isStarOn;
+        }
+
 
         private void HomeScreen_Load(object sender, EventArgs e)
         {
-            //panelHomeScreen.Show();
-            //panelHomeScreen.BringToFront();
-            //panelHomeScreen.Hide();
             userControlHome.Show();
             userControlHome.BringToFront();
-
-        }
-
-        private void lblDigi_Click_1(object sender, EventArgs e)
-        {
 
         }
 
@@ -63,197 +179,80 @@ namespace DigiScriptor
 
         }
 
-        private void btnLights_Click_1(object sender, EventArgs e)
+
+        private void btnSubmit_Click_1(object sender, EventArgs e)
+        {
+            if(save != null)
+            {
+                //if previously closed then remake save popup
+                if(save.IsDisposed == true)
+                {
+                    save = null;
+                    save = new SaveMenu();
+                }
+
+                //make sure show is showing and brought to front
+                save.Show();
+                save.Focus();
+            }
+            else
+            {
+                //initial time save menu shows
+                save = new SaveMenu();
+                save.Show();
+            }
+        }
+
+        private void showPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void btnGalaxies_Click_1(object sender, EventArgs e)
+        public string showCodeBuilder()
         {
-            //hiding the home screen
-            this.Hide();
+            string codeOut = string.Empty;
 
-            //opening up the galaxies screen
-            GalaxiesScreen galScreen = new GalaxiesScreen();
-            galScreen.Show();
-        }
+            for (int i = 0; i < theList.Count; i++)
+            {
+                //comment the title
+                codeOut += @"#";
+                codeOut += theList[i].Title;
+                codeOut += "\n";
 
-        private void btnEarth_Click_1(object sender, EventArgs e)
-        {
-            //close home screen
-            //this.Hide();
-
-            //open earth screen
-            //EarthScreen earScreen = new EarthScreen();
-            //earScreen.Show();
-            
-        }
-
-        private void btnNebulae_Click_1(object sender, EventArgs e)
-        {
-            //hiding the home screen
-            this.Hide();
-
-            //opening up the galaxies screen
-            NebulaeScreen nebScreen = new NebulaeScreen();
-            nebScreen.Show();
-        }
-
-        private void btnSky_Click_1(object sender, EventArgs e)
-        {
-            //hide the home screen
-            this.Hide();
-
-            //open night sky screen
-            NightSkyScreen skyScreen = new NightSkyScreen();
-            skyScreen.Show();
-        }
-
-        private void btnStars_Click_1(object sender, EventArgs e)
-        {
-            //hiding the home screen
-            this.Hide();
+                //comment the description
+                codeOut += " \"\"\" " + "\n";
+                if((theList[i].Title).Contains("Custom"))
+                {
+                    codeOut += "user inputted code";
+                } else
+                {
+                    codeOut += theList[i].Description;
+                }
+                codeOut += "\n";
+                codeOut += "\"\"\"";
+                codeOut += "\n";
 
 
-            // open stars screen
-            StarsScreen starScreen = new StarsScreen();
-            starScreen.Show();
-        }
+                //add in delay
+                codeOut += "+" + theList[i].Delay + "\n";
 
-        private void lblCart_Click(object sender, EventArgs e)
-        {
 
-        }
+                //check if the item has code
+                if (theList[i].Code != "")
+                {
+                    codeOut += theList[i].Code;
+                    codeOut += "\n\n";
+                }
+                else
+                {
+                    //fill code sections with comment
+                    codeOut += @"# code goes here!!!!!";
+                    codeOut += "\n\n";
+                }
 
-        private void panelDomeLights_Paint(object sender, PaintEventArgs e)
-        {
+            }//end of for-loop
 
-        }
-
-        private void panelNebulae_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelMoons_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnSubmitNebulae_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelNightSky_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelStars_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnEarthBack_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnLights_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnEarth_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnSky_Click(object sender, EventArgs e)
-        {
-            //panelHomeScreen.Hide();
-            
-        }
-
-        private void btnPlanets_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnMoons_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnStars_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnGalaxies_Click(object sender, EventArgs e)
-        {
-            //panelHomeScreen.Hide();
-            //panelGalaxies.Show();
-            //panelGalaxies.BringToFront();
-        }
-
-        private void btnNebulae_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnMovies_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnNebulaeBack_Click(object sender, EventArgs e)
-        {
-            //panelHomeScreen.Show();
-            //panelHomeScreen.BringToFront();
-        }
-
-        private void btnGalaxiesBack_Click(object sender, EventArgs e)
-        {
-            //panelGalaxies.Hide();
-            //panelHomeScreen.Show();
-            //panelHomeScreen.BringToFront();
-        }
-
-        private void btnMoviesBack_Click(object sender, EventArgs e)
-        {
-            //panelHomeScreen.Show();
-            //panelHomeScreen.BringToFront();
-        }
-
-        private void btnMoonsBack_Click(object sender, EventArgs e)
-        {
-            //panelHomeScreen.Show();
-            //panelHomeScreen.BringToFront();
-        }
-
-        private void btnSkyBack_Click(object sender, EventArgs e)
-        {
-            
-            //panelHomeScreen.Show();
-            //panelHomeScreen.BringToFront();
-        }
-
-        private void btnStarsBack_Click(object sender, EventArgs e)
-        {
-            //panelHomeScreen.Show();
-            //panelHomeScreen.BringToFront();
-        }
-
-        private void btnPlanetsBack_Click(object sender, EventArgs e)
-        {
-            //panelHomeScreen.Show();
-            //panelHomeScreen.BringToFront();
-        }
-
-        private void btnDomeLightsBack_Click(object sender, EventArgs e)
-        {
-            
-            //panelHomeScreen.Show();
-            //panelHomeScreen.BringToFront();
-        }
-
-        private void userControlHome_Load(object sender, EventArgs e)
-        {
-            
+            return codeOut;
         }
     }
 }

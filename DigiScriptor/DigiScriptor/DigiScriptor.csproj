@@ -37,7 +37,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <NoWarn>Suppress Transact-SQL warnings:</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -49,7 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
@@ -63,10 +64,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DelayPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DelayPopup.Designer.cs">
+      <DependentUpon>DelayPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="DigiDataBaseDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>DigiDataBaseDataSet.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="EditPopularEarthLocationsPopup.cs">
       <SubType>Form</SubType>
@@ -80,26 +87,14 @@
     <Compile Include="EditPopularNebulaePopup.Designer.cs">
       <DependentUpon>EditPopularNebulaePopup.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditPopularStarsPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditPopularStarsPopup.Designer.cs">
+      <DependentUpon>EditPopularStarsPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="PanelGalaxies.cs">
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="EarthScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EarthScreen.Designer.cs">
-      <DependentUpon>EarthScreen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NebulaeScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NebulaeScreen.Designer.cs">
-      <DependentUpon>NebulaeScreen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GalaxiesScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GalaxiesScreen.Designer.cs">
-      <DependentUpon>GalaxiesScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="HomeScreen.cs">
       <SubType>Form</SubType>
@@ -107,19 +102,25 @@
     <Compile Include="HomeScreen.Designer.cs">
       <DependentUpon>HomeScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="NightSkyScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NightSkyScreen.Designer.cs">
-      <DependentUpon>NightSkyScreen.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StarsScreen.cs">
+    <Compile Include="SaveMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StarsScreen.Designer.cs">
-      <DependentUpon>StarsScreen.cs</DependentUpon>
+    <Compile Include="SaveMenu.Designer.cs">
+      <DependentUpon>SaveMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchGalaxiesPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchGalaxiesPopup.Designer.cs">
+      <DependentUpon>SearchGalaxiesPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShowItem.Designer.cs">
+      <DependentUpon>ShowItem.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlDomeLights.cs">
       <SubType>UserControl</SubType>
@@ -181,8 +182,8 @@
     <Compile Include="UserControlStars.Designer.cs">
       <DependentUpon>UserControlStars.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="EarthScreen.resx">
-      <DependentUpon>EarthScreen.cs</DependentUpon>
+    <EmbeddedResource Include="DelayPopup.resx">
+      <DependentUpon>DelayPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditPopularEarthLocationsPopup.resx">
       <DependentUpon>EditPopularEarthLocationsPopup.cs</DependentUpon>
@@ -190,17 +191,8 @@
     <EmbeddedResource Include="EditPopularNebulaePopup.resx">
       <DependentUpon>EditPopularNebulaePopup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GalaxiesScreen.resx">
-      <DependentUpon>GalaxiesScreen.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="HomeScreen.resx">
       <DependentUpon>HomeScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NebulaeScreen.resx">
-      <DependentUpon>NebulaeScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NightSkyScreen.resx">
-      <DependentUpon>NightSkyScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PanelGalaxies.resx">
       <DependentUpon>PanelGalaxies.cs</DependentUpon>
@@ -214,8 +206,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="StarsScreen.resx">
-      <DependentUpon>StarsScreen.cs</DependentUpon>
+    <EmbeddedResource Include="SaveMenu.resx">
+      <DependentUpon>SaveMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchGalaxiesPopup.resx">
+      <DependentUpon>SearchGalaxiesPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowItem.resx">
+      <DependentUpon>ShowItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlDomeLights.resx">
       <DependentUpon>UserControlDomeLights.cs</DependentUpon>
@@ -251,9 +249,9 @@
       <DependentUpon>DigiDataBaseDataSet.xsd</DependentUpon>
     </None>
     <None Include="DigiDataBaseDataSet.xsd">
+      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DigiDataBaseDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </None>
     <None Include="DigiDataBaseDataSet.xss">
       <DependentUpon>DigiDataBaseDataSet.xsd</DependentUpon>
@@ -288,8 +286,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="DigiDataBase_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DigiDataBase.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
