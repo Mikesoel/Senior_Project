@@ -20,6 +20,9 @@ namespace DigiScriptor
         private int r;
         private int g;
         private int b;
+        int OGr_value = 0;
+        int OGg_value = 0;
+        int OGb_value = 0;
         public UserControlDomeLights()
         {
             InitializeComponent();
@@ -33,9 +36,10 @@ namespace DigiScriptor
             textBoxR.Text = "" + Decimal.Round((decimal)(((colorDialog1.Color.R) /255.0)*100));
             textBoxG.Text = "" + Decimal.Round((decimal)((colorDialog1.Color.G)/255.00)*100);
             textBoxB.Text = "" + Decimal.Round((decimal)((colorDialog1.Color.B) / 255.00) * 100);
-           
-           
-
+            OGr_value = Convert.ToInt32(textBoxR.Text);
+            OGg_value = Convert.ToInt32(textBoxG.Text);
+            OGb_value = Convert.ToInt32(textBoxB.Text);
+            dimmer.Value = dimmer.Minimum;
 
         }
 
@@ -56,13 +60,16 @@ namespace DigiScriptor
                 //if result is 'yes' then show submited
                 if (results == DialogResult.Yes)
                 {
-                    String cartOutput = "Domelights Update";
+                    String cartOutput = "Domelights Update:";
+                    int dur = Convert.ToInt32(dtransTime.Text);
+                    String cartCode = "\tcovelights color "+  r + " " + g + " " + b + " dur " + dur;
 
                     //create star item
-                    ShowItem planetItem = new ShowItem("Domelights", cartOutput);
+                    ShowItem lightItem = new ShowItem("Domelights", cartOutput,cartCode);
+                   
 
                     //add show item to list
-                    HomeScreen.Current.AddItem(planetItem);
+                    HomeScreen.Current.AddItem(lightItem);
 
 
                     //update the show list after submit
@@ -222,13 +229,13 @@ namespace DigiScriptor
             colorDialog1.CustomColors = new int[] {ColorTranslator.ToOle(Color.FromArgb(r, g, b)) };
             colorDialog1.ShowDialog();
             textBox1.BackColor = colorDialog1.Color;
+            dimmer.Value = (0);
         }
 
         private void dimmer_Scroll(object sender, EventArgs e)
         {
-            int r_value = Convert.ToInt32(textBoxR.Text);
-            int g_value = Convert.ToInt32(textBoxG.Text);
-            int b_value = Convert.ToInt32(textBoxB.Text);
+            
+
             dimmerValue.Text = "" + dimmer.Value;
             if(dimmer.Value==0)
             {
@@ -237,14 +244,21 @@ namespace DigiScriptor
             }
            else if(textBoxR.Text!=null & r_valid & textBoxG.Text !=null & g_valid & textBoxB.Text!=null & b_valid)
             {
-                
-                r = r_value - (dimmer.Value)*(int)((r_value) /10.0) ;
-                g = g_value - (dimmer.Value)*(int)((g_value) /10.0 );
-                b = b_value - (dimmer.Value)*(int)((b_value) /10.0) ;
+               // int r_value = Convert.ToInt32(textBoxR.Text);
+                //int g_value = Convert.ToInt32(textBoxG.Text);
+                //int b_value = Convert.ToInt32(textBoxB.Text);
+
+                r = OGr_value - (dimmer.Value)*(int)((OGr_value) /10.0) ;
+                g = OGg_value - (dimmer.Value)*(int)((OGg_value) /10.0 );
+                b = OGb_value - (dimmer.Value)*(int)((OGb_value) /10.0) ;
                 
                 Color myRgbColor = new Color();
                 myRgbColor= Color.FromArgb(r,g,b);
                 textBox1.BackColor = myRgbColor;
+                textBoxR.Text=""+r;
+                textBoxG.Text=""+g;
+                textBoxB.Text = "" + b;
+
             }
             
         }

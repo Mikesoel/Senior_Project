@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelGalaxies = new System.Windows.Forms.Panel();
+            this.lblDuration = new System.Windows.Forms.Label();
+            this.textBoxDuration = new System.Windows.Forms.TextBox();
+            this.btnSearchGalaxies = new System.Windows.Forms.Button();
             this.lblSearchGalaxies = new System.Windows.Forms.Label();
             this.btnSubmitGalaxy = new System.Windows.Forms.Button();
             this.lblGalaxiesOutput = new System.Windows.Forms.Label();
@@ -53,6 +56,9 @@
             // 
             // panelGalaxies
             // 
+            this.panelGalaxies.Controls.Add(this.lblDuration);
+            this.panelGalaxies.Controls.Add(this.textBoxDuration);
+            this.panelGalaxies.Controls.Add(this.btnSearchGalaxies);
             this.panelGalaxies.Controls.Add(this.lblSearchGalaxies);
             this.panelGalaxies.Controls.Add(this.btnSubmitGalaxy);
             this.panelGalaxies.Controls.Add(this.lblGalaxiesOutput);
@@ -73,6 +79,37 @@
             this.panelGalaxies.TabIndex = 27;
             this.panelGalaxies.Paint += new System.Windows.Forms.PaintEventHandler(this.panelGalaxies_Paint);
             // 
+            // lblDuration
+            // 
+            this.lblDuration.AutoSize = true;
+            this.lblDuration.Font = new System.Drawing.Font("Bernard MT Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDuration.ForeColor = System.Drawing.SystemColors.Menu;
+            this.lblDuration.Location = new System.Drawing.Point(763, 732);
+            this.lblDuration.Name = "lblDuration";
+            this.lblDuration.Size = new System.Drawing.Size(129, 28);
+            this.lblDuration.TabIndex = 33;
+            this.lblDuration.Text = "Duration (s):";
+            this.lblDuration.Click += new System.EventHandler(this.lblDuration_Click);
+            // 
+            // textBoxDuration
+            // 
+            this.textBoxDuration.Location = new System.Drawing.Point(898, 736);
+            this.textBoxDuration.Name = "textBoxDuration";
+            this.textBoxDuration.Size = new System.Drawing.Size(100, 26);
+            this.textBoxDuration.TabIndex = 32;
+            this.textBoxDuration.TextChanged += new System.EventHandler(this.textBoxDuration_TextChanged);
+            // 
+            // btnSearchGalaxies
+            // 
+            this.btnSearchGalaxies.Location = new System.Drawing.Point(731, 330);
+            this.btnSearchGalaxies.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSearchGalaxies.Name = "btnSearchGalaxies";
+            this.btnSearchGalaxies.Size = new System.Drawing.Size(112, 35);
+            this.btnSearchGalaxies.TabIndex = 31;
+            this.btnSearchGalaxies.Text = "Search";
+            this.btnSearchGalaxies.UseVisualStyleBackColor = true;
+            this.btnSearchGalaxies.Click += new System.EventHandler(this.btnSearchGalaxies_Click);
+            // 
             // lblSearchGalaxies
             // 
             this.lblSearchGalaxies.AutoSize = true;
@@ -80,9 +117,9 @@
             this.lblSearchGalaxies.ForeColor = System.Drawing.SystemColors.Menu;
             this.lblSearchGalaxies.Location = new System.Drawing.Point(726, 253);
             this.lblSearchGalaxies.Name = "lblSearchGalaxies";
-            this.lblSearchGalaxies.Size = new System.Drawing.Size(74, 28);
+            this.lblSearchGalaxies.Size = new System.Drawing.Size(132, 28);
             this.lblSearchGalaxies.TabIndex = 30;
-            this.lblSearchGalaxies.Text = "Search";
+            this.lblSearchGalaxies.Text = "Quick Search";
             // 
             // btnSubmitGalaxy
             // 
@@ -90,7 +127,7 @@
             this.btnSubmitGalaxy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmitGalaxy.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmitGalaxy.ForeColor = System.Drawing.Color.SpringGreen;
-            this.btnSubmitGalaxy.Location = new System.Drawing.Point(786, 713);
+            this.btnSubmitGalaxy.Location = new System.Drawing.Point(786, 792);
             this.btnSubmitGalaxy.Name = "btnSubmitGalaxy";
             this.btnSubmitGalaxy.Size = new System.Drawing.Size(186, 75);
             this.btnSubmitGalaxy.TabIndex = 29;
@@ -103,7 +140,7 @@
             this.lblGalaxiesOutput.BackColor = System.Drawing.Color.Silver;
             this.lblGalaxiesOutput.Font = new System.Drawing.Font("Bernard MT Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGalaxiesOutput.ForeColor = System.Drawing.Color.Black;
-            this.lblGalaxiesOutput.Location = new System.Drawing.Point(760, 495);
+            this.lblGalaxiesOutput.Location = new System.Drawing.Point(760, 524);
             this.lblGalaxiesOutput.Name = "lblGalaxiesOutput";
             this.lblGalaxiesOutput.Size = new System.Drawing.Size(242, 180);
             this.lblGalaxiesOutput.TabIndex = 28;
@@ -127,7 +164,7 @@
             this.lblGalaxyDestination.AutoSize = true;
             this.lblGalaxyDestination.Font = new System.Drawing.Font("Bernard MT Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGalaxyDestination.ForeColor = System.Drawing.SystemColors.Menu;
-            this.lblGalaxyDestination.Location = new System.Drawing.Point(788, 432);
+            this.lblGalaxyDestination.Location = new System.Drawing.Point(788, 461);
             this.lblGalaxyDestination.Name = "lblGalaxyDestination";
             this.lblGalaxyDestination.Size = new System.Drawing.Size(183, 43);
             this.lblGalaxyDestination.TabIndex = 26;
@@ -173,13 +210,13 @@
             // btnLargeMagCloud
             // 
             this.btnLargeMagCloud.BackColor = System.Drawing.Color.DimGray;
-            this.btnLargeMagCloud.Font = new System.Drawing.Font("Bernard MT Condensed", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLargeMagCloud.Font = new System.Drawing.Font("Bernard MT Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLargeMagCloud.ForeColor = System.Drawing.Color.Black;
             this.btnLargeMagCloud.Location = new System.Drawing.Point(91, 459);
             this.btnLargeMagCloud.Name = "btnLargeMagCloud";
             this.btnLargeMagCloud.Size = new System.Drawing.Size(249, 112);
             this.btnLargeMagCloud.TabIndex = 22;
-            this.btnLargeMagCloud.Text = "Large Magellanic Cloud";
+            this.btnLargeMagCloud.Text = "Pinwheel";
             this.btnLargeMagCloud.UseVisualStyleBackColor = false;
             this.btnLargeMagCloud.Click += new System.EventHandler(this.btnLargeMagCloud_Click);
             // 
@@ -292,5 +329,8 @@
         private System.Windows.Forms.Label lblSearchGalaxies;
         private DigiDataBaseDataSet digiDataBaseDataSet;
         private System.Windows.Forms.BindingSource digiDataBaseDataSetBindingSource;
+        private System.Windows.Forms.Button btnSearchGalaxies;
+        private System.Windows.Forms.Label lblDuration;
+        private System.Windows.Forms.TextBox textBoxDuration;
     }
 }

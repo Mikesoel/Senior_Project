@@ -99,7 +99,7 @@ namespace DigiScriptor
                 if (results == DialogResult.Yes)
                 {
                     String cartDescription = "play " + lblMoviesOutput.Text;
-                    String cartCode = "movie play " + lblMoviesOutput.Text + ";";
+                    String cartCode = "\tmovie play " + lblMoviesOutput.Text;
 
                     //create star item
                     ShowItem movieItem = new ShowItem("Movie Play", cartDescription, cartCode);
