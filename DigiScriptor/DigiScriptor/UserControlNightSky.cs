@@ -242,6 +242,7 @@ namespace DigiScriptor
                 //Changing the time to military time, so anything PM past twelve adds 12
                 int hours = Int32.Parse(comboBox_Hours.SelectedItem.ToString()) + 12;
                 code += hours.ToString() + ":" + comboBox_Min.SelectedItem.ToString() + ":00" + "\n";
+
             } else if ((comboBox_Periods.SelectedItem.ToString()).Equals("AM") && Int32.Parse(comboBox_Hours.SelectedItem.ToString()) == 12)
             {
                 //If it is 12 AM then it is 00 hours
